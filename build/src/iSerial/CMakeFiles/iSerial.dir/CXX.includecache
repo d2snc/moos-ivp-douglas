@@ -19,6 +19,24 @@ Serial.h
 /home/moos-ivp-douglas/src/iSerial/Serial.h
 MOOS/libMOOS/Thirdparty/AppCasting/AppCastingMOOSApp.h
 /home/moos-ivp-douglas/src/iSerial/MOOS/libMOOS/Thirdparty/AppCasting/AppCastingMOOSApp.h
+MOOS/libMOOS/Utils/MOOSNTSerialPort.h
+/home/moos-ivp-douglas/src/iSerial/MOOS/libMOOS/Utils/MOOSNTSerialPort.h
+MOOS/libMOOS/Utils/MOOSLinuxSerialPort.h
+/home/moos-ivp-douglas/src/iSerial/MOOS/libMOOS/Utils/MOOSLinuxSerialPort.h
+
+/home/moos-ivp-douglas/src/iSerial/Serial_Info.h
+
+/home/moos-ivp-douglas/src/iSerial/main.cpp
+string
+-
+MBUtils.h
+/home/moos-ivp-douglas/src/iSerial/MBUtils.h
+ColorParse.h
+/home/moos-ivp-douglas/src/iSerial/ColorParse.h
+Serial.h
+/home/moos-ivp-douglas/src/iSerial/Serial.h
+Serial_Info.h
+/home/moos-ivp-douglas/src/iSerial/Serial_Info.h
 
 /home/moos-ivp/MOOS/MOOSCore/Core/libMOOS/App/include/MOOS/libMOOS/App/ClientDefines.h
 
@@ -374,6 +392,24 @@ string
 map
 -
 
+/home/moos-ivp/MOOS/MOOSCore/Core/libMOOS/Utils/include/MOOS/libMOOS/Utils/MOOSLinuxSerialPort.h
+string
+-
+fcntl.h
+-
+sys/signal.h
+-
+sys/types.h
+-
+termios.h
+-
+unistd.h
+-
+stdio.h
+-
+MOOS/libMOOS/Utils/MOOSSerialPort.h
+/home/moos-ivp/MOOS/MOOSCore/Core/libMOOS/Utils/include/MOOS/libMOOS/Utils/MOOS/libMOOS/Utils/MOOSSerialPort.h
+
 /home/moos-ivp/MOOS/MOOSCore/Core/libMOOS/Utils/include/MOOS/libMOOS/Utils/MOOSLock.h
 windows.h
 /home/moos-ivp/MOOS/MOOSCore/Core/libMOOS/Utils/include/MOOS/libMOOS/Utils/windows.h
@@ -384,11 +420,31 @@ winnt.h
 pthread.h
 -
 
+/home/moos-ivp/MOOS/MOOSCore/Core/libMOOS/Utils/include/MOOS/libMOOS/Utils/MOOSNTSerialPort.h
+winsock2.h
+-
+windows.h
+/home/moos-ivp/MOOS/MOOSCore/Core/libMOOS/Utils/include/MOOS/libMOOS/Utils/windows.h
+winbase.h
+/home/moos-ivp/MOOS/MOOSCore/Core/libMOOS/Utils/include/MOOS/libMOOS/Utils/winbase.h
+winnt.h
+/home/moos-ivp/MOOS/MOOSCore/Core/libMOOS/Utils/include/MOOS/libMOOS/Utils/winnt.h
+MOOS/libMOOS/Utils/NTSerial.h
+/home/moos-ivp/MOOS/MOOSCore/Core/libMOOS/Utils/include/MOOS/libMOOS/Utils/MOOS/libMOOS/Utils/NTSerial.h
+
 /home/moos-ivp/MOOS/MOOSCore/Core/libMOOS/Utils/include/MOOS/libMOOS/Utils/MOOSScopedLock.h
 MOOS/libMOOS/Utils/MOOSLock.h
 /home/moos-ivp/MOOS/MOOSCore/Core/libMOOS/Utils/include/MOOS/libMOOS/Utils/MOOS/libMOOS/Utils/MOOSLock.h
 
 /home/moos-ivp/MOOS/MOOSCore/Core/libMOOS/Utils/include/MOOS/libMOOS/Utils/MOOSScopedPtr.h
+
+/home/moos-ivp/MOOS/MOOSCore/Core/libMOOS/Utils/include/MOOS/libMOOS/Utils/MOOSSerialPort.h
+MOOS/libMOOS/Utils/MOOSLock.h
+/home/moos-ivp/MOOS/MOOSCore/Core/libMOOS/Utils/include/MOOS/libMOOS/Utils/MOOS/libMOOS/Utils/MOOSLock.h
+string
+-
+list
+-
 
 /home/moos-ivp/MOOS/MOOSCore/Core/libMOOS/Utils/include/MOOS/libMOOS/Utils/MOOSThread.h
 MOOS/libMOOS/Utils/MOOSLock.h
@@ -424,6 +480,10 @@ algorithm
 string
 -
 
+/home/moos-ivp/MOOS/MOOSCore/Core/libMOOS/Utils/include/MOOS/libMOOS/Utils/NTSerial.h
+MOOSSerialPort.h
+/home/moos-ivp/MOOS/MOOSCore/Core/libMOOS/Utils/include/MOOS/libMOOS/Utils/MOOSSerialPort.h
+
 /home/moos-ivp/MOOS/MOOSCore/Core/libMOOS/Utils/include/MOOS/libMOOS/Utils/ProcInfo.h
 MOOS/libMOOS/Utils/MOOSScopedPtr.h
 /home/moos-ivp/MOOS/MOOSCore/Core/libMOOS/Utils/include/MOOS/libMOOS/Utils/MOOS/libMOOS/Utils/MOOSScopedPtr.h
@@ -458,6 +518,12 @@ string
 vector
 -
 list
+-
+
+/home/moos-ivp/ivp/src/lib_mbutil/ColorParse.h
+vector
+-
+string
 -
 
 /home/moos-ivp/ivp/src/lib_mbutil/MBUtils.h

@@ -10,6 +10,12 @@
 
 #include "MOOS/libMOOS/Thirdparty/AppCasting/AppCastingMOOSApp.h"
 
+#ifdef _WIN32
+  #include "MOOS/libMOOS/Utils/MOOSNTSerialPort.h"
+#else
+  #include "MOOS/libMOOS/Utils/MOOSLinuxSerialPort.h"
+#endif
+
 class Serial : public AppCastingMOOSApp
 {
  public:
@@ -31,8 +37,15 @@ class Serial : public AppCastingMOOSApp
    void enviaSerial(); //Função que envia os dados via serial para o PIC
 
  private: // Configuration variables
+    std::string endereco_porta_serial;
+    int baudrate; // Baudrate a ser usada para envio dos dados na porta serial
 
  private: // State variables
+    #ifdef _WIN32
+      CMOOSNTSerialPort porta_serial;
+    #else
+      CMOOSLinuxSerialPort porta_serial;
+    #endif
     double rudder;
     double thrust;
     std::string rudder_convertido;

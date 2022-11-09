@@ -17,6 +17,10 @@ using namespace std;
 
 Serial::Serial()
 {
+  //Configurações para envio de dados via Serial
+  endereco_porta_serial = "/dev/pts/3"; //Porta simulada para testes
+  baudrate = 9600;
+
   // Valores padrões:
   rudder = 0; //Valor inicial do leme
   thrust = 0; //Valor inicial da máquina
@@ -127,9 +131,9 @@ bool Serial::OnStartUp()
       reportUnhandledConfigWarning(orig);
 
   }
-  
+  bool portOpened = porta_serial.Create(endereco_porta_serial.c_str(), baudrate); //Abertura da porta serial
   registerVariables();	
-  enviaSerial();
+  enviaSerial(); //Função que faz o envio
   return(true);
 }
 
@@ -182,6 +186,7 @@ void Serial::enviaSerial()
   }
   
   //Envio dos dados via serial
+  porta_serial.Write(rudder_convertido.c_str(),2); //Envia os caracteres para essa porta, coloquei 2 pq nos testes por enquanto só tem 2 caracteres
 
 }
 
