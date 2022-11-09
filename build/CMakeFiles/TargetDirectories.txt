@@ -11,3 +11,9 @@
 /home/moos-ivp-douglas/build/src/pXRelayTest/CMakeFiles/rebuild_cache.dir
 /home/moos-ivp-douglas/build/src/pXRelayTest/CMakeFiles/edit_cache.dir
 /home/moos-ivp-douglas/build/src/pXRelayTest/CMakeFiles/pXRelayTest.dir
+/home/moos-ivp-douglas/build/src/pOdometry/CMakeFiles/rebuild_cache.dir
+/home/moos-ivp-douglas/build/src/pOdometry/CMakeFiles/edit_cache.dir
+/home/moos-ivp-douglas/build/src/pOdometry/CMakeFiles/pOdometry.dir
+/home/moos-ivp-douglas/build/src/iSerial/CMakeFiles/rebuild_cache.dir
+/home/moos-ivp-douglas/build/src/iSerial/CMakeFiles/edit_cache.dir
+/home/moos-ivp-douglas/build/src/iSerial/CMakeFiles/iSerial.dir

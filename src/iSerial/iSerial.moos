@@ -1,0 +1,9 @@
+//------------------------------------------------
+// iSerial config block
+
+ProcessConfig = iSerial
+{
+   AppTick   = 4
+   CommsTick = 4
+}
+

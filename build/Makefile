@@ -149,6 +149,32 @@ pXRelayTest/fast:
 	$(MAKE) -f src/pXRelayTest/CMakeFiles/pXRelayTest.dir/build.make src/pXRelayTest/CMakeFiles/pXRelayTest.dir/build
 .PHONY : pXRelayTest/fast
 
+#=============================================================================
+# Target rules for targets named pOdometry
+
+# Build rule for target.
+pOdometry: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 pOdometry
+.PHONY : pOdometry
+
+# fast build rule for target.
+pOdometry/fast:
+	$(MAKE) -f src/pOdometry/CMakeFiles/pOdometry.dir/build.make src/pOdometry/CMakeFiles/pOdometry.dir/build
+.PHONY : pOdometry/fast
+
+#=============================================================================
+# Target rules for targets named iSerial
+
+# Build rule for target.
+iSerial: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 iSerial
+.PHONY : iSerial
+
+# fast build rule for target.
+iSerial/fast:
+	$(MAKE) -f src/iSerial/CMakeFiles/iSerial.dir/build.make src/iSerial/CMakeFiles/iSerial.dir/build
+.PHONY : iSerial/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -160,6 +186,8 @@ help:
 	@echo "... BHV_SimpleWaypoint"
 	@echo "... pExampleApp"
 	@echo "... pXRelayTest"
+	@echo "... pOdometry"
+	@echo "... iSerial"
 .PHONY : help
 
 
