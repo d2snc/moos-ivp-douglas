@@ -18,7 +18,7 @@ using namespace std;
 Serial::Serial()
 {
   //Configurações para envio de dados via Serial
-  endereco_porta_serial = "/dev/pts/3"; //Porta simulada para testes
+  endereco_porta_serial = "/dev/pts/4"; //Porta simulada para testes
   baudrate = 9600;
 
   // Valores padrões:
@@ -174,15 +174,18 @@ void Serial::enviaSerial()
 
   //Iteração para o leme
   if (thrust > 0) {
-    thrust_convertido = "A0"; // Aumenta a rotação
+    thrust_convertido = "A1"; // Aumenta a rotação
   }
 
   //Iteração para a máquina
+  if (rudder == 0) {
+    rudder_convertido = "L0";
+  }
   if (rudder > 0) {
-    rudder_convertido = "L1"; //Guina para BE
+    rudder_convertido = "L2"; //Guina para BE
   }
   else if (rudder < 0) {
-    rudder_convertido = "L0"; //Guina para BB
+    rudder_convertido = "L1"; //Guina para BB
   }
   
   //Envio dos dados via serial
