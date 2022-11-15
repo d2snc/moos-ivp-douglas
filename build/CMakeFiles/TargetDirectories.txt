@@ -2,6 +2,14 @@
 /home/moos-ivp-douglas/build/CMakeFiles/edit_cache.dir
 /home/moos-ivp-douglas/build/src/CMakeFiles/rebuild_cache.dir
 /home/moos-ivp-douglas/build/src/CMakeFiles/edit_cache.dir
+/home/moos-ivp-douglas/build/src/lib/CMakeFiles/rebuild_cache.dir
+/home/moos-ivp-douglas/build/src/lib/CMakeFiles/edit_cache.dir
+/home/moos-ivp-douglas/build/src/lib/documentation/CMakeFiles/rebuild_cache.dir
+/home/moos-ivp-douglas/build/src/lib/documentation/CMakeFiles/edit_cache.dir
+/home/moos-ivp-douglas/build/src/lib/documentation/CMakeFiles/xml-documentation.dir
+/home/moos-ivp-douglas/build/src/lib/graphics/CMakeFiles/rebuild_cache.dir
+/home/moos-ivp-douglas/build/src/lib/graphics/CMakeFiles/edit_cache.dir
+/home/moos-ivp-douglas/build/src/lib/graphics/CMakeFiles/graphics.dir
 /home/moos-ivp-douglas/build/src/lib_behaviors-test/CMakeFiles/rebuild_cache.dir
 /home/moos-ivp-douglas/build/src/lib_behaviors-test/CMakeFiles/edit_cache.dir
 /home/moos-ivp-douglas/build/src/lib_behaviors-test/CMakeFiles/BHV_SimpleWaypoint.dir
@@ -17,3 +25,9 @@
 /home/moos-ivp-douglas/build/src/iSerial/CMakeFiles/rebuild_cache.dir
 /home/moos-ivp-douglas/build/src/iSerial/CMakeFiles/edit_cache.dir
 /home/moos-ivp-douglas/build/src/iSerial/CMakeFiles/iSerial.dir
+/home/moos-ivp-douglas/build/src/iDivisorNMEA/CMakeFiles/rebuild_cache.dir
+/home/moos-ivp-douglas/build/src/iDivisorNMEA/CMakeFiles/edit_cache.dir
+/home/moos-ivp-douglas/build/src/iDivisorNMEA/CMakeFiles/iDivisorNMEA.dir
+/home/moos-ivp-douglas/build/src/iDivisorNMEA/NMEAParserLib/CMakeFiles/rebuild_cache.dir
+/home/moos-ivp-douglas/build/src/iDivisorNMEA/NMEAParserLib/CMakeFiles/edit_cache.dir
+/home/moos-ivp-douglas/build/src/iDivisorNMEA/NMEAParserLib/CMakeFiles/NMEAParserLib.dir

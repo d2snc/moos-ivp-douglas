@@ -18,7 +18,7 @@ using namespace std;
 Serial::Serial()
 {
   //Configurações para envio de dados via Serial
-  endereco_porta_serial = "/dev/pts/4"; //Porta simulada para testes
+  endereco_porta_serial = "/dev/pts/1"; //Porta simulada para testes
   baudrate = 9600;
 
   // Valores padrões:

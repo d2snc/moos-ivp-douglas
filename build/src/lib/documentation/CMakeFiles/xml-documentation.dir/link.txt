@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../../../lib/libxml-documentation.a  CMakeFiles/xml-documentation.dir/MOOSAppDocumentation.cpp.o
+/usr/bin/ranlib ../../../../lib/libxml-documentation.a

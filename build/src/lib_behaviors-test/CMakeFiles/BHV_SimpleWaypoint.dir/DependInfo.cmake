@@ -53,6 +53,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/home/moos-ivp/ivp/src/lib_ufield"
   "/home/moos-ivp/ivp/src/lib_zaicview"
   "../src/./lib_behaviors-test"
+  "../src/./lib_clearpath"
   )
 
 # Targets to which this target links.

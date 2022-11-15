@@ -24,8 +24,8 @@ ProcessConfig = ANTLER
   Run = pMarineViewer	@ NewConsole = false
   Run = uProcessWatch   @ NewConsole = false
   Run = pHelmIvP	@ NewConsole = false
-  Run = pOdometry	@ NewConsole = false
-  Run = iSerial	@ NewConsole = false
+  //Run = iSerial	@ NewConsole = false
+  Run = iDivisorNMEA	@ NewConsole = false
 }
 
 //------------------------------------------
@@ -163,8 +163,18 @@ ProcessConfig = pNodeReporter
 //-------------------------------------------
 // iSerial bloco de config
 
-ProcessConfig = iSerial
+//ProcessConfig = iSerial
+//{
+//   AppTick   = 4
+//   CommsTick = 4
+//}
+
+//------------------------------------------------
+// iDivisorNMEA config block
+
+ProcessConfig = iDivisorNMEA
 {
    AppTick   = 4
    CommsTick = 4
 }
+

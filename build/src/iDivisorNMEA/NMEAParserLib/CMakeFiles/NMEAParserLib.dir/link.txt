@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../../../lib/libNMEAParserLib.a  CMakeFiles/NMEAParserLib.dir/NMEAParserPacket.cpp.o CMakeFiles/NMEAParserLib.dir/NMEAParser.cpp.o CMakeFiles/NMEAParserLib.dir/NMEASentenceBase.cpp.o CMakeFiles/NMEAParserLib.dir/NMEASentenceGGA.cpp.o CMakeFiles/NMEAParserLib.dir/NMEASentenceGSV.cpp.o CMakeFiles/NMEAParserLib.dir/NMEASentenceGSA.cpp.o CMakeFiles/NMEAParserLib.dir/NMEASentenceRMC.cpp.o
+/usr/bin/ranlib ../../../../lib/libNMEAParserLib.a

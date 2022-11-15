@@ -39,6 +39,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/home/moos-ivp/ivp/src/lib_ufield"
   "/home/moos-ivp/ivp/src/lib_zaicview"
   "../src/./lib_behaviors-test"
+  "../src/./lib_clearpath"
   "/home/moos-ivp/MOOS/MOOSCore/Core/libMOOS/include"
   "/home/moos-ivp/MOOS/MOOSCore/Core/libMOOS/App/include"
   "/home/moos-ivp/MOOS/MOOSCore/Core/libMOOS/Comms/include"

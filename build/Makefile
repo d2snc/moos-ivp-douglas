@@ -111,6 +111,32 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named xml-documentation
+
+# Build rule for target.
+xml-documentation: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 xml-documentation
+.PHONY : xml-documentation
+
+# fast build rule for target.
+xml-documentation/fast:
+	$(MAKE) -f src/lib/documentation/CMakeFiles/xml-documentation.dir/build.make src/lib/documentation/CMakeFiles/xml-documentation.dir/build
+.PHONY : xml-documentation/fast
+
+#=============================================================================
+# Target rules for targets named graphics
+
+# Build rule for target.
+graphics: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 graphics
+.PHONY : graphics
+
+# fast build rule for target.
+graphics/fast:
+	$(MAKE) -f src/lib/graphics/CMakeFiles/graphics.dir/build.make src/lib/graphics/CMakeFiles/graphics.dir/build
+.PHONY : graphics/fast
+
+#=============================================================================
 # Target rules for targets named BHV_SimpleWaypoint
 
 # Build rule for target.
@@ -175,6 +201,32 @@ iSerial/fast:
 	$(MAKE) -f src/iSerial/CMakeFiles/iSerial.dir/build.make src/iSerial/CMakeFiles/iSerial.dir/build
 .PHONY : iSerial/fast
 
+#=============================================================================
+# Target rules for targets named iDivisorNMEA
+
+# Build rule for target.
+iDivisorNMEA: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 iDivisorNMEA
+.PHONY : iDivisorNMEA
+
+# fast build rule for target.
+iDivisorNMEA/fast:
+	$(MAKE) -f src/iDivisorNMEA/CMakeFiles/iDivisorNMEA.dir/build.make src/iDivisorNMEA/CMakeFiles/iDivisorNMEA.dir/build
+.PHONY : iDivisorNMEA/fast
+
+#=============================================================================
+# Target rules for targets named NMEAParserLib
+
+# Build rule for target.
+NMEAParserLib: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 NMEAParserLib
+.PHONY : NMEAParserLib
+
+# fast build rule for target.
+NMEAParserLib/fast:
+	$(MAKE) -f src/iDivisorNMEA/NMEAParserLib/CMakeFiles/NMEAParserLib.dir/build.make src/iDivisorNMEA/NMEAParserLib/CMakeFiles/NMEAParserLib.dir/build
+.PHONY : NMEAParserLib/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -183,11 +235,15 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... xml-documentation"
+	@echo "... graphics"
 	@echo "... BHV_SimpleWaypoint"
 	@echo "... pExampleApp"
 	@echo "... pXRelayTest"
 	@echo "... pOdometry"
 	@echo "... iSerial"
+	@echo "... iDivisorNMEA"
+	@echo "... NMEAParserLib"
 .PHONY : help
 
 

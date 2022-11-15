@@ -16,6 +16,7 @@
   #include "MOOS/libMOOS/Utils/MOOSLinuxSerialPort.h"
 #endif
 
+
 class Serial : public AppCastingMOOSApp
 {
  public:

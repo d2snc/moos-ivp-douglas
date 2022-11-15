@@ -1,0 +1,123 @@
+#     _____
+#    /  _  \
+#   / _/ \  \
+#  / / \_/   \
+# /  \_/  _   \  ___  _    ___   ___   ____   ____   ___   _____  _   _
+# \  / \_/ \  / /  _\| |  | __| / _ \ | ++ \ | ++ \ / _ \ |_   _|| | | |
+#  \ \_/ \_/ /  | |  | |  | +-+| |_| || ++ / | ++_/| |_| |  | |  | +-+ |
+#   \  \_/  /   | |_ | |_ | +-+|  _  || |\ \ | |   |  _  |  | |  | +-+ |
+#    \_____/    \___/|___||___||_| |_||_| \_\|_|   |_| |_|  |_|  |_| |_|
+#            ROBOTICS™
+#
+#  File: makefile
+#  Desc: Makefile for LabView interface library
+#  Auth: R. Gariepy
+#
+#  Copyright © 2010 Clearpath Robotics, Inc. 
+#  All Rights Reserved
+#  
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions are met:
+#     * Redistributions of source code must retain the above copyright
+#       notice, this list of conditions and the following disclaimer.
+#     * Redistributions in binary form must reproduce the above copyright
+#       notice, this list of conditions and the following disclaimer in the
+#       documentation and/or other materials provided with the distribution.
+#     * Neither the name of Clearpath Robotics, Inc. nor the
+#       names of its contributors may be used to endorse or promote products
+#       derived from this software without specific prior written permission.
+# 
+# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+# ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+# WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+# DISCLAIMED. IN NO EVENT SHALL CLEARPATH ROBOTICS, INC. BE LIABLE FOR ANY
+# DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+# (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+# LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+# ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+# (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+# SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# Please send comments, questions, or patches to code@clearpathrobotics.com
+#
+
+# These variables control the compiler and linker flags. Change them as
+# appropriate.
+DEBUG_MODE = 0
+
+ADDED_CFLAGS =
+
+ifeq ($(DEBUG_MODE),1)
+OBJ_DIR := ../obj_PPC603gnu_DEBUG
+CFLAGS = -g -mlongcall
+else
+OBJ_DIR := ../obj_PPC603gnu
+CFLAGS = -Os -fstrength-reduce -fno-builtin -fno-strict-aliasing -mlongcall
+endif
+
+LINKFLAGS = $(CFLAGS)
+LIBPATH = 
+
+# List all the *compiled* object files here, under the OBJ_DIR
+# directory. Make will automatically locate the source file and
+# compile it.
+# Transport? Logger?
+OBJECTS := $(OBJ_DIR)/cwrap.o \
+		   $(OBJ_DIR)/crc.o \
+		   $(OBJ_DIR)/Number.o \
+		   $(OBJ_DIR)/Message.o \
+		   $(OBJ_DIR)/Message_data.o \
+		   $(OBJ_DIR)/Message_cmd.o \
+		   $(OBJ_DIR)/Message_request.o
+		   
+
+# This is the name of the output shared library.
+PROJECT_TARGETS := $(OBJ_DIR)/cwrap_cRIO.out
+
+# If you have other VxWorks .a files to reference, list them here.
+LIBS = 
+LIBPATH = 
+
+# Everything after this line should not need to be modified for
+# basic compilation. However, significant changes to the build structure
+# will probably involve modifying these lines.
+
+WIND_BASE := $(subst \,/,$(WIND_BASE))
+
+CPU = PPC603
+TOOL_FAMILY = gnu
+TOOL = gnu
+CC_ARCH_SPEC = -mcpu=603 -mstrict-align -mno-implicit-fp
+
+IDE_INCLUDES = -I$(WIND_BASE)/target/h -I$(WIND_BASE)/target/h/wrn/coreip 
+
+# This basic rule compiles a .c file into a .o file. It can be adapted to
+# all other source files that gcc can compile, including assembly (.s) and
+# C++ (.cpp, .cc, .C, .cxx) files. To enable support for those extensions,
+# copy this rule and modify its extension and compile flags for the
+# required source file type.
+$(OBJ_DIR)/%.o : %.c
+	ccppc $(CFLAGS) $(CC_ARCH_SPEC) -ansi  -Wall  -MD -MP $(ADDED_CFLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
+
+# Adapted rule for .cpp files
+$(OBJ_DIR)/%.o : %.cpp
+	c++ppc $(CFLAGS) $(CC_ARCH_SPEC) -ansi  -Wall  -MD -MP $(ADDED_CFLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
+
+all : check_objectdir $(PROJECT_TARGETS) 
+
+$(PROJECT_TARGETS) : $(OBJECTS)
+	rm -f "$@" ctdt.c;nmppc $(OBJECTS) | tclsh $(WIND_BASE)/host/resource/hutils/tcl/munch.tcl -c ppc > ctdt.c
+	ccppc $(LINKFLAGS) $(CC_ARCH_SPEC) -fdollars-in-identifiers -Wall $(ADDED_CFLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES)  -o ctdt.o -c ctdt.c
+	ccppc -r -nostdlib -Wl,-X -T $(WIND_BASE)/target/h/tool/gnu/ldscripts/link.OUT -o "$@" $(OBJECTS) $(LIBPATH) $(LIBS)  $(ADDED_LIBPATH) $(ADDED_LIBS) ctdt.o
+	rm -f ctdt.c ctdt.o
+
+
+check_objectdir :
+	@if [ ! -d "$(OBJ_DIR)" ]; then\
+		mkdir -p $(OBJ_DIR);\
+	fi
+
+clean :
+	rm -f $(OBJECTS) $(PROJECT_TARGETS) $(wildcard $(OBJ_DIR)/*.unstripped)
+
+.DUMMY: check_objectdir clean

@@ -71,31 +71,75 @@ clean: src/clean
 # Directory level rules for directory src
 
 # Recursive "all" directory target.
+src/all: src/lib/all
 src/all: src/lib_behaviors-test/all
 src/all: src/pExampleApp/all
 src/all: src/pXRelayTest/all
 src/all: src/pOdometry/all
 src/all: src/iSerial/all
+src/all: src/iDivisorNMEA/all
 
 .PHONY : src/all
 
 # Recursive "preinstall" directory target.
+src/preinstall: src/lib/preinstall
 src/preinstall: src/lib_behaviors-test/preinstall
 src/preinstall: src/pExampleApp/preinstall
 src/preinstall: src/pXRelayTest/preinstall
 src/preinstall: src/pOdometry/preinstall
 src/preinstall: src/iSerial/preinstall
+src/preinstall: src/iDivisorNMEA/preinstall
 
 .PHONY : src/preinstall
 
 # Recursive "clean" directory target.
+src/clean: src/lib/clean
 src/clean: src/lib_behaviors-test/clean
 src/clean: src/pExampleApp/clean
 src/clean: src/pXRelayTest/clean
 src/clean: src/pOdometry/clean
 src/clean: src/iSerial/clean
+src/clean: src/iDivisorNMEA/clean
 
 .PHONY : src/clean
+
+#=============================================================================
+# Directory level rules for directory src/iDivisorNMEA
+
+# Recursive "all" directory target.
+src/iDivisorNMEA/all: src/iDivisorNMEA/CMakeFiles/iDivisorNMEA.dir/all
+src/iDivisorNMEA/all: src/iDivisorNMEA/NMEAParserLib/all
+
+.PHONY : src/iDivisorNMEA/all
+
+# Recursive "preinstall" directory target.
+src/iDivisorNMEA/preinstall: src/iDivisorNMEA/NMEAParserLib/preinstall
+
+.PHONY : src/iDivisorNMEA/preinstall
+
+# Recursive "clean" directory target.
+src/iDivisorNMEA/clean: src/iDivisorNMEA/CMakeFiles/iDivisorNMEA.dir/clean
+src/iDivisorNMEA/clean: src/iDivisorNMEA/NMEAParserLib/clean
+
+.PHONY : src/iDivisorNMEA/clean
+
+#=============================================================================
+# Directory level rules for directory src/iDivisorNMEA/NMEAParserLib
+
+# Recursive "all" directory target.
+src/iDivisorNMEA/NMEAParserLib/all: src/iDivisorNMEA/NMEAParserLib/CMakeFiles/NMEAParserLib.dir/all
+
+.PHONY : src/iDivisorNMEA/NMEAParserLib/all
+
+# Recursive "preinstall" directory target.
+src/iDivisorNMEA/NMEAParserLib/preinstall:
+
+.PHONY : src/iDivisorNMEA/NMEAParserLib/preinstall
+
+# Recursive "clean" directory target.
+src/iDivisorNMEA/NMEAParserLib/clean: src/iDivisorNMEA/NMEAParserLib/CMakeFiles/NMEAParserLib.dir/clean
+
+.PHONY : src/iDivisorNMEA/NMEAParserLib/clean
 
 #=============================================================================
 # Directory level rules for directory src/iSerial
@@ -114,6 +158,63 @@ src/iSerial/preinstall:
 src/iSerial/clean: src/iSerial/CMakeFiles/iSerial.dir/clean
 
 .PHONY : src/iSerial/clean
+
+#=============================================================================
+# Directory level rules for directory src/lib
+
+# Recursive "all" directory target.
+src/lib/all: src/lib/documentation/all
+src/lib/all: src/lib/graphics/all
+
+.PHONY : src/lib/all
+
+# Recursive "preinstall" directory target.
+src/lib/preinstall: src/lib/documentation/preinstall
+src/lib/preinstall: src/lib/graphics/preinstall
+
+.PHONY : src/lib/preinstall
+
+# Recursive "clean" directory target.
+src/lib/clean: src/lib/documentation/clean
+src/lib/clean: src/lib/graphics/clean
+
+.PHONY : src/lib/clean
+
+#=============================================================================
+# Directory level rules for directory src/lib/documentation
+
+# Recursive "all" directory target.
+src/lib/documentation/all: src/lib/documentation/CMakeFiles/xml-documentation.dir/all
+
+.PHONY : src/lib/documentation/all
+
+# Recursive "preinstall" directory target.
+src/lib/documentation/preinstall:
+
+.PHONY : src/lib/documentation/preinstall
+
+# Recursive "clean" directory target.
+src/lib/documentation/clean: src/lib/documentation/CMakeFiles/xml-documentation.dir/clean
+
+.PHONY : src/lib/documentation/clean
+
+#=============================================================================
+# Directory level rules for directory src/lib/graphics
+
+# Recursive "all" directory target.
+src/lib/graphics/all: src/lib/graphics/CMakeFiles/graphics.dir/all
+
+.PHONY : src/lib/graphics/all
+
+# Recursive "preinstall" directory target.
+src/lib/graphics/preinstall:
+
+.PHONY : src/lib/graphics/preinstall
+
+# Recursive "clean" directory target.
+src/lib/graphics/clean: src/lib/graphics/CMakeFiles/graphics.dir/clean
+
+.PHONY : src/lib/graphics/clean
 
 #=============================================================================
 # Directory level rules for directory src/lib_behaviors-test
@@ -188,6 +289,60 @@ src/pXRelayTest/clean: src/pXRelayTest/CMakeFiles/pXRelayTest.dir/clean
 .PHONY : src/pXRelayTest/clean
 
 #=============================================================================
+# Target rules for target src/lib/documentation/CMakeFiles/xml-documentation.dir
+
+# All Build rule for target.
+src/lib/documentation/CMakeFiles/xml-documentation.dir/all:
+	$(MAKE) -f src/lib/documentation/CMakeFiles/xml-documentation.dir/build.make src/lib/documentation/CMakeFiles/xml-documentation.dir/depend
+	$(MAKE) -f src/lib/documentation/CMakeFiles/xml-documentation.dir/build.make src/lib/documentation/CMakeFiles/xml-documentation.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/moos-ivp-douglas/build/CMakeFiles --progress-num=32,33 "Built target xml-documentation"
+.PHONY : src/lib/documentation/CMakeFiles/xml-documentation.dir/all
+
+# Build rule for subdir invocation for target.
+src/lib/documentation/CMakeFiles/xml-documentation.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/moos-ivp-douglas/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 src/lib/documentation/CMakeFiles/xml-documentation.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/moos-ivp-douglas/build/CMakeFiles 0
+.PHONY : src/lib/documentation/CMakeFiles/xml-documentation.dir/rule
+
+# Convenience name for target.
+xml-documentation: src/lib/documentation/CMakeFiles/xml-documentation.dir/rule
+
+.PHONY : xml-documentation
+
+# clean rule for target.
+src/lib/documentation/CMakeFiles/xml-documentation.dir/clean:
+	$(MAKE) -f src/lib/documentation/CMakeFiles/xml-documentation.dir/build.make src/lib/documentation/CMakeFiles/xml-documentation.dir/clean
+.PHONY : src/lib/documentation/CMakeFiles/xml-documentation.dir/clean
+
+#=============================================================================
+# Target rules for target src/lib/graphics/CMakeFiles/graphics.dir
+
+# All Build rule for target.
+src/lib/graphics/CMakeFiles/graphics.dir/all:
+	$(MAKE) -f src/lib/graphics/CMakeFiles/graphics.dir/build.make src/lib/graphics/CMakeFiles/graphics.dir/depend
+	$(MAKE) -f src/lib/graphics/CMakeFiles/graphics.dir/build.make src/lib/graphics/CMakeFiles/graphics.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/moos-ivp-douglas/build/CMakeFiles --progress-num=12,13 "Built target graphics"
+.PHONY : src/lib/graphics/CMakeFiles/graphics.dir/all
+
+# Build rule for subdir invocation for target.
+src/lib/graphics/CMakeFiles/graphics.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/moos-ivp-douglas/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 src/lib/graphics/CMakeFiles/graphics.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/moos-ivp-douglas/build/CMakeFiles 0
+.PHONY : src/lib/graphics/CMakeFiles/graphics.dir/rule
+
+# Convenience name for target.
+graphics: src/lib/graphics/CMakeFiles/graphics.dir/rule
+
+.PHONY : graphics
+
+# clean rule for target.
+src/lib/graphics/CMakeFiles/graphics.dir/clean:
+	$(MAKE) -f src/lib/graphics/CMakeFiles/graphics.dir/build.make src/lib/graphics/CMakeFiles/graphics.dir/clean
+.PHONY : src/lib/graphics/CMakeFiles/graphics.dir/clean
+
+#=============================================================================
 # Target rules for target src/lib_behaviors-test/CMakeFiles/BHV_SimpleWaypoint.dir
 
 # All Build rule for target.
@@ -221,7 +376,7 @@ src/lib_behaviors-test/CMakeFiles/BHV_SimpleWaypoint.dir/clean:
 src/pExampleApp/CMakeFiles/pExampleApp.dir/all:
 	$(MAKE) -f src/pExampleApp/CMakeFiles/pExampleApp.dir/build.make src/pExampleApp/CMakeFiles/pExampleApp.dir/depend
 	$(MAKE) -f src/pExampleApp/CMakeFiles/pExampleApp.dir/build.make src/pExampleApp/CMakeFiles/pExampleApp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/moos-ivp-douglas/build/CMakeFiles --progress-num=8,9 "Built target pExampleApp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/moos-ivp-douglas/build/CMakeFiles --progress-num=22,23 "Built target pExampleApp"
 .PHONY : src/pExampleApp/CMakeFiles/pExampleApp.dir/all
 
 # Build rule for subdir invocation for target.
@@ -248,7 +403,7 @@ src/pExampleApp/CMakeFiles/pExampleApp.dir/clean:
 src/pXRelayTest/CMakeFiles/pXRelayTest.dir/all:
 	$(MAKE) -f src/pXRelayTest/CMakeFiles/pXRelayTest.dir/build.make src/pXRelayTest/CMakeFiles/pXRelayTest.dir/depend
 	$(MAKE) -f src/pXRelayTest/CMakeFiles/pXRelayTest.dir/build.make src/pXRelayTest/CMakeFiles/pXRelayTest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/moos-ivp-douglas/build/CMakeFiles --progress-num=14,15,16,17 "Built target pXRelayTest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/moos-ivp-douglas/build/CMakeFiles --progress-num=28,29,30,31 "Built target pXRelayTest"
 .PHONY : src/pXRelayTest/CMakeFiles/pXRelayTest.dir/all
 
 # Build rule for subdir invocation for target.
@@ -275,7 +430,7 @@ src/pXRelayTest/CMakeFiles/pXRelayTest.dir/clean:
 src/pOdometry/CMakeFiles/pOdometry.dir/all:
 	$(MAKE) -f src/pOdometry/CMakeFiles/pOdometry.dir/build.make src/pOdometry/CMakeFiles/pOdometry.dir/depend
 	$(MAKE) -f src/pOdometry/CMakeFiles/pOdometry.dir/build.make src/pOdometry/CMakeFiles/pOdometry.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/moos-ivp-douglas/build/CMakeFiles --progress-num=10,11,12,13 "Built target pOdometry"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/moos-ivp-douglas/build/CMakeFiles --progress-num=24,25,26,27 "Built target pOdometry"
 .PHONY : src/pOdometry/CMakeFiles/pOdometry.dir/all
 
 # Build rule for subdir invocation for target.
@@ -302,7 +457,7 @@ src/pOdometry/CMakeFiles/pOdometry.dir/clean:
 src/iSerial/CMakeFiles/iSerial.dir/all:
 	$(MAKE) -f src/iSerial/CMakeFiles/iSerial.dir/build.make src/iSerial/CMakeFiles/iSerial.dir/depend
 	$(MAKE) -f src/iSerial/CMakeFiles/iSerial.dir/build.make src/iSerial/CMakeFiles/iSerial.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/moos-ivp-douglas/build/CMakeFiles --progress-num=4,5,6,7 "Built target iSerial"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/moos-ivp-douglas/build/CMakeFiles --progress-num=18,19,20,21 "Built target iSerial"
 .PHONY : src/iSerial/CMakeFiles/iSerial.dir/all
 
 # Build rule for subdir invocation for target.
@@ -321,6 +476,60 @@ iSerial: src/iSerial/CMakeFiles/iSerial.dir/rule
 src/iSerial/CMakeFiles/iSerial.dir/clean:
 	$(MAKE) -f src/iSerial/CMakeFiles/iSerial.dir/build.make src/iSerial/CMakeFiles/iSerial.dir/clean
 .PHONY : src/iSerial/CMakeFiles/iSerial.dir/clean
+
+#=============================================================================
+# Target rules for target src/iDivisorNMEA/CMakeFiles/iDivisorNMEA.dir
+
+# All Build rule for target.
+src/iDivisorNMEA/CMakeFiles/iDivisorNMEA.dir/all:
+	$(MAKE) -f src/iDivisorNMEA/CMakeFiles/iDivisorNMEA.dir/build.make src/iDivisorNMEA/CMakeFiles/iDivisorNMEA.dir/depend
+	$(MAKE) -f src/iDivisorNMEA/CMakeFiles/iDivisorNMEA.dir/build.make src/iDivisorNMEA/CMakeFiles/iDivisorNMEA.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/moos-ivp-douglas/build/CMakeFiles --progress-num=14,15,16,17 "Built target iDivisorNMEA"
+.PHONY : src/iDivisorNMEA/CMakeFiles/iDivisorNMEA.dir/all
+
+# Build rule for subdir invocation for target.
+src/iDivisorNMEA/CMakeFiles/iDivisorNMEA.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/moos-ivp-douglas/build/CMakeFiles 4
+	$(MAKE) -f CMakeFiles/Makefile2 src/iDivisorNMEA/CMakeFiles/iDivisorNMEA.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/moos-ivp-douglas/build/CMakeFiles 0
+.PHONY : src/iDivisorNMEA/CMakeFiles/iDivisorNMEA.dir/rule
+
+# Convenience name for target.
+iDivisorNMEA: src/iDivisorNMEA/CMakeFiles/iDivisorNMEA.dir/rule
+
+.PHONY : iDivisorNMEA
+
+# clean rule for target.
+src/iDivisorNMEA/CMakeFiles/iDivisorNMEA.dir/clean:
+	$(MAKE) -f src/iDivisorNMEA/CMakeFiles/iDivisorNMEA.dir/build.make src/iDivisorNMEA/CMakeFiles/iDivisorNMEA.dir/clean
+.PHONY : src/iDivisorNMEA/CMakeFiles/iDivisorNMEA.dir/clean
+
+#=============================================================================
+# Target rules for target src/iDivisorNMEA/NMEAParserLib/CMakeFiles/NMEAParserLib.dir
+
+# All Build rule for target.
+src/iDivisorNMEA/NMEAParserLib/CMakeFiles/NMEAParserLib.dir/all:
+	$(MAKE) -f src/iDivisorNMEA/NMEAParserLib/CMakeFiles/NMEAParserLib.dir/build.make src/iDivisorNMEA/NMEAParserLib/CMakeFiles/NMEAParserLib.dir/depend
+	$(MAKE) -f src/iDivisorNMEA/NMEAParserLib/CMakeFiles/NMEAParserLib.dir/build.make src/iDivisorNMEA/NMEAParserLib/CMakeFiles/NMEAParserLib.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/moos-ivp-douglas/build/CMakeFiles --progress-num=4,5,6,7,8,9,10,11 "Built target NMEAParserLib"
+.PHONY : src/iDivisorNMEA/NMEAParserLib/CMakeFiles/NMEAParserLib.dir/all
+
+# Build rule for subdir invocation for target.
+src/iDivisorNMEA/NMEAParserLib/CMakeFiles/NMEAParserLib.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/moos-ivp-douglas/build/CMakeFiles 8
+	$(MAKE) -f CMakeFiles/Makefile2 src/iDivisorNMEA/NMEAParserLib/CMakeFiles/NMEAParserLib.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/moos-ivp-douglas/build/CMakeFiles 0
+.PHONY : src/iDivisorNMEA/NMEAParserLib/CMakeFiles/NMEAParserLib.dir/rule
+
+# Convenience name for target.
+NMEAParserLib: src/iDivisorNMEA/NMEAParserLib/CMakeFiles/NMEAParserLib.dir/rule
+
+.PHONY : NMEAParserLib
+
+# clean rule for target.
+src/iDivisorNMEA/NMEAParserLib/CMakeFiles/NMEAParserLib.dir/clean:
+	$(MAKE) -f src/iDivisorNMEA/NMEAParserLib/CMakeFiles/NMEAParserLib.dir/build.make src/iDivisorNMEA/NMEAParserLib/CMakeFiles/NMEAParserLib.dir/clean
+.PHONY : src/iDivisorNMEA/NMEAParserLib/CMakeFiles/NMEAParserLib.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
