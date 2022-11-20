@@ -29,6 +29,34 @@ DivisorNMEA.h
 /home/moos-ivp-douglas/src/iDivisorNMEA/DivisorNMEA.h
 NMEAParserLib/NMEAParser.h
 /home/moos-ivp-douglas/src/iDivisorNMEA/NMEAParserLib/NMEAParser.h
+NMEAParserLib/NMEAParser.cpp
+/home/moos-ivp-douglas/src/iDivisorNMEA/NMEAParserLib/NMEAParser.cpp
+NMEAParserLib/NMEAParserData.h
+/home/moos-ivp-douglas/src/iDivisorNMEA/NMEAParserLib/NMEAParserData.h
+NMEAParserLib/NMEAParserPacket.h
+/home/moos-ivp-douglas/src/iDivisorNMEA/NMEAParserLib/NMEAParserPacket.h
+NMEAParserLib/NMEAParserPacket.cpp
+/home/moos-ivp-douglas/src/iDivisorNMEA/NMEAParserLib/NMEAParserPacket.cpp
+NMEAParserLib/NMEASentenceBase.h
+/home/moos-ivp-douglas/src/iDivisorNMEA/NMEAParserLib/NMEASentenceBase.h
+NMEAParserLib/NMEASentenceBase.cpp
+/home/moos-ivp-douglas/src/iDivisorNMEA/NMEAParserLib/NMEASentenceBase.cpp
+NMEAParserLib/NMEASentenceGGA.h
+/home/moos-ivp-douglas/src/iDivisorNMEA/NMEAParserLib/NMEASentenceGGA.h
+NMEAParserLib/NMEASentenceGGA.cpp
+/home/moos-ivp-douglas/src/iDivisorNMEA/NMEAParserLib/NMEASentenceGGA.cpp
+NMEAParserLib/NMEASentenceGSA.h
+/home/moos-ivp-douglas/src/iDivisorNMEA/NMEAParserLib/NMEASentenceGSA.h
+NMEAParserLib/NMEASentenceGSA.cpp
+/home/moos-ivp-douglas/src/iDivisorNMEA/NMEAParserLib/NMEASentenceGSA.cpp
+NMEAParserLib/NMEASentenceGSV.h
+/home/moos-ivp-douglas/src/iDivisorNMEA/NMEAParserLib/NMEASentenceGSV.h
+NMEAParserLib/NMEASentenceGSV.cpp
+/home/moos-ivp-douglas/src/iDivisorNMEA/NMEAParserLib/NMEASentenceGSV.cpp
+NMEAParserLib/NMEASentenceRMC.cpp
+/home/moos-ivp-douglas/src/iDivisorNMEA/NMEAParserLib/NMEASentenceRMC.cpp
+NMEAParserLib/NMEASentenceRMC.h
+/home/moos-ivp-douglas/src/iDivisorNMEA/NMEAParserLib/NMEASentenceRMC.h
 
 /home/moos-ivp-douglas/src/iDivisorNMEA/DivisorNMEA.h
 MOOS/libMOOS/Thirdparty/AppCasting/AppCastingMOOSApp.h
@@ -44,7 +72,13 @@ MOOS/libMOOS/Utils/MOOSNTSerialPort.h
 MOOS/libMOOS/Utils/MOOSLinuxSerialPort.h
 /home/moos-ivp-douglas/src/iDivisorNMEA/MOOS/libMOOS/Utils/MOOSLinuxSerialPort.h
 
-/home/moos-ivp-douglas/src/iDivisorNMEA/DivisorNMEA_Info.h
+/home/moos-ivp-douglas/src/iDivisorNMEA/NMEAParserLib/NMEAParser.cpp
+stdio.h
+-
+string.h
+-
+NMEAParser.h
+/home/moos-ivp-douglas/src/iDivisorNMEA/NMEAParserLib/NMEAParser.h
 
 /home/moos-ivp-douglas/src/iDivisorNMEA/NMEAParserLib/NMEAParser.h
 cstddef
@@ -74,6 +108,12 @@ stdint.h
 time.h
 -
 
+/home/moos-ivp-douglas/src/iDivisorNMEA/NMEAParserLib/NMEAParserPacket.cpp
+stdio.h
+-
+NMEAParser.h
+/home/moos-ivp-douglas/src/iDivisorNMEA/NMEAParserLib/NMEAParser.h
+
 /home/moos-ivp-douglas/src/iDivisorNMEA/NMEAParserLib/NMEAParserPacket.h
 cstddef
 -
@@ -82,11 +122,21 @@ stdint.h
 NMEAParserData.h
 /home/moos-ivp-douglas/src/iDivisorNMEA/NMEAParserLib/NMEAParserData.h
 
+/home/moos-ivp-douglas/src/iDivisorNMEA/NMEAParserLib/NMEASentenceBase.cpp
+NMEASentenceBase.h
+/home/moos-ivp-douglas/src/iDivisorNMEA/NMEAParserLib/NMEASentenceBase.h
+
 /home/moos-ivp-douglas/src/iDivisorNMEA/NMEAParserLib/NMEASentenceBase.h
 string
 -
 NMEAParserData.h
 /home/moos-ivp-douglas/src/iDivisorNMEA/NMEAParserLib/NMEAParserData.h
+
+/home/moos-ivp-douglas/src/iDivisorNMEA/NMEAParserLib/NMEASentenceGGA.cpp
+stdlib.h
+-
+NMEASentenceGGA.h
+/home/moos-ivp-douglas/src/iDivisorNMEA/NMEAParserLib/NMEASentenceGGA.h
 
 /home/moos-ivp-douglas/src/iDivisorNMEA/NMEAParserLib/NMEASentenceGGA.h
 string
@@ -98,6 +148,14 @@ NMEASentenceBase.h
 NMEAParserData.h
 /home/moos-ivp-douglas/src/iDivisorNMEA/NMEAParserLib/NMEAParserData.h
 
+/home/moos-ivp-douglas/src/iDivisorNMEA/NMEAParserLib/NMEASentenceGSA.cpp
+stdlib.h
+-
+string.h
+-
+NMEASentenceGSA.h
+/home/moos-ivp-douglas/src/iDivisorNMEA/NMEAParserLib/NMEASentenceGSA.h
+
 /home/moos-ivp-douglas/src/iDivisorNMEA/NMEAParserLib/NMEASentenceGSA.h
 string
 -
@@ -108,27 +166,29 @@ NMEASentenceBase.h
 NMEAParserData.h
 /home/moos-ivp-douglas/src/iDivisorNMEA/NMEAParserLib/NMEAParserData.h
 
+/home/moos-ivp-douglas/src/iDivisorNMEA/NMEAParserLib/NMEASentenceGSV.cpp
+NMEASentenceGSV.h
+/home/moos-ivp-douglas/src/iDivisorNMEA/NMEAParserLib/NMEASentenceGSV.h
+stdlib.h
+-
+string.h
+-
+
 /home/moos-ivp-douglas/src/iDivisorNMEA/NMEAParserLib/NMEASentenceGSV.h
 NMEASentenceBase.h
 /home/moos-ivp-douglas/src/iDivisorNMEA/NMEAParserLib/NMEASentenceBase.h
+
+/home/moos-ivp-douglas/src/iDivisorNMEA/NMEAParserLib/NMEASentenceRMC.cpp
+NMEASentenceRMC.h
+/home/moos-ivp-douglas/src/iDivisorNMEA/NMEAParserLib/NMEASentenceRMC.h
+stdlib.h
+-
 
 /home/moos-ivp-douglas/src/iDivisorNMEA/NMEAParserLib/NMEASentenceRMC.h
 NMEASentenceBase.h
 /home/moos-ivp-douglas/src/iDivisorNMEA/NMEAParserLib/NMEASentenceBase.h
 NMEAParserData.h
 /home/moos-ivp-douglas/src/iDivisorNMEA/NMEAParserLib/NMEAParserData.h
-
-/home/moos-ivp-douglas/src/iDivisorNMEA/main.cpp
-string
--
-MBUtils.h
-/home/moos-ivp-douglas/src/iDivisorNMEA/MBUtils.h
-ColorParse.h
-/home/moos-ivp-douglas/src/iDivisorNMEA/ColorParse.h
-DivisorNMEA.h
-/home/moos-ivp-douglas/src/iDivisorNMEA/DivisorNMEA.h
-DivisorNMEA_Info.h
-/home/moos-ivp-douglas/src/iDivisorNMEA/DivisorNMEA_Info.h
 
 /home/moos-ivp/MOOS/MOOSCore/Core/libMOOS/App/include/MOOS/libMOOS/App/ClientDefines.h
 
@@ -610,12 +670,6 @@ string
 vector
 -
 list
--
-
-/home/moos-ivp/ivp/src/lib_mbutil/ColorParse.h
-vector
--
-string
 -
 
 /home/moos-ivp/ivp/src/lib_mbutil/MBUtils.h

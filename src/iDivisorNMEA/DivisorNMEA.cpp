@@ -17,10 +17,109 @@
 #include <iterator>
 #include "MBUtils.h"
 #include "ACTable.h"
+
+//Includes do divisor NMEA
+
 #include "DivisorNMEA.h"
 #include "NMEAParserLib/NMEAParser.h"
+#include "NMEAParserLib/NMEAParser.cpp"
+#include "NMEAParserLib/NMEAParserData.h"
+#include "NMEAParserLib/NMEAParserPacket.h"
+#include "NMEAParserLib/NMEAParserPacket.cpp"
+#include "NMEAParserLib/NMEASentenceBase.h"
+#include "NMEAParserLib/NMEASentenceBase.cpp"
+#include "NMEAParserLib/NMEASentenceGGA.h"
+#include "NMEAParserLib/NMEASentenceGGA.cpp"
+#include "NMEAParserLib/NMEASentenceGSA.h"
+#include "NMEAParserLib/NMEASentenceGSA.cpp"
+#include "NMEAParserLib/NMEASentenceGSV.h"
+#include "NMEAParserLib/NMEASentenceGSV.cpp"
+#include "NMEAParserLib/NMEASentenceRMC.cpp"
+#include "NMEAParserLib/NMEASentenceRMC.h"
+
 
 using namespace std;
+
+//Variáveis globais para usar no programa e debugs
+
+double lat_gps;
+double long_gps;
+double speed_gps;
+double heading_gps;
+char* saida_pCmd;
+char* saida_pData;
+
+
+
+///
+/// \class MyParser
+/// \brief child class of CNMEAParser which will redefine notification calls from the parent class.
+///
+class MyNMEAParser : public CNMEAParser {
+
+	///
+	/// \brief This method is called whenever there is a parsing error.
+	///
+	/// Redefine this method to capture errors.
+	///
+	/// \param pCmd Pointer to NMEA command that caused the error. Please note that this parameter may be NULL of not completely defined. Use with caution.
+	///
+	virtual void OnError(CNMEAParserData::ERROR_E nError, char *pCmd) {
+		printf("ERROR for Cmd: %s, Number: %d\n", pCmd, nError);
+	}
+
+protected:
+	///
+	/// \brief This method is redefined from CNMEAParserPacket::ProcessRxCommand(char *pCmd, char *pData)
+	///
+	/// Here we are capturing the ProcessRxCommand to print out status. We also are looking for
+	/// the GPGGA message and displaying some data from it.
+	///
+	/// \param pCmd Pointer to the NMEA command string
+	/// \param pData Comma separated data that belongs to the command
+	/// \return Returns CNMEAParserData::ERROR_OK If successful
+	///
+	virtual CNMEAParserData::ERROR_E ProcessRxCommand(char *pCmd, char *pData) {
+
+		// Call base class to process the command
+		CNMEAParser::ProcessRxCommand(pCmd, pData);
+
+    // Coloquei para debug
+    saida_pCmd = pCmd;
+    saida_pData = pData;
+		printf("Cmd: %s\nData: %s\n", pCmd, pData);
+
+		// Check if this is the GPGGA command. If it is, then display some data
+		if (strstr(pCmd, "GPGGA") != NULL) {
+			CNMEAParserData::GGA_DATA_T ggaData;
+			if (GetGPGGA(ggaData) == CNMEAParserData::ERROR_OK) {
+				//printf("GPGGA Parsed!\n");
+				//printf("   Time:                %02d:%02d:%02d\n", ggaData.m_nHour, ggaData.m_nMinute, ggaData.m_nSecond);
+				lat_gps = ggaData.m_dLatitude;
+        long_gps = ggaData.m_dLongitude;
+        //printf("   Latitude:            %f\n", ggaData.m_dLatitude);
+				//printf("   Longitude:           %f\n", ggaData.m_dLongitude);
+				//printf("   Altitude:            %.01fM\n", ggaData.m_dAltitudeMSL);
+				//printf("   GPS Quality:         %d\n", ggaData.m_nGPSQuality);
+				//printf("   Satellites in view:  %d\n", ggaData.m_nSatsInView);
+				//printf("   HDOP:                %.02f\n", ggaData.m_dHDOP);
+				//printf("   Differential ID:     %d\n", ggaData.m_nDifferentialID);
+				//printf("   Differential age:    %f\n", ggaData.m_dDifferentialAge);
+				//printf("   Geoidal Separation:  %f\n", ggaData.m_dGeoidalSep);
+				//printf("   Vertical Speed:      %.02f\n", ggaData.m_dVertSpeed);
+			}
+		} else if (strstr(pCmd, "GPRMC") != NULL) {
+      CNMEAParserData::RMC_DATA_T rmcdata;
+      if (GetGPRMC(rmcdata) == CNMEAParserData::ERROR_OK) {
+        speed_gps = rmcdata.m_dSpeedKnots; // SOG do GPS
+        heading_gps = rmcdata.m_dTrackAngle; // Marcação vinda do GPS
+
+      }
+    }
+
+		return CNMEAParserData::ERROR_OK;
+	}
+};
 
 //---------------------------------------------------------
 // Constructor()
@@ -28,12 +127,12 @@ using namespace std;
 DivisorNMEA::DivisorNMEA()
 {
   //Configs para receber dados da serial
-  endereco_porta_serial = "/dev/pts/3"; // Porta para testes
-  baudrate = 9600;
+  //endereco_porta_serial = "/dev/pts/3"; // Porta para testes
+  //baudrate = 9600;
 
   //Valores iniciais
-  lat_gps = 0;
-  long_gps = 0;
+  //lat_gps = 0;
+  //long_gps = 0;
 
 }
 
@@ -96,8 +195,10 @@ bool DivisorNMEA::Iterate()
   // Do your thing here!
   // Crio o buffer para receber as sentenças NMEA
   
-  //memset(&read_buf, '\0', sizeof(read_buf));
-
+  //Dou uma limpada no buffer antes de ler de novo
+  memset(&read_buf, '\0', sizeof(read_buf));
+  //Faço a leitura das sentenças vindas da porta serial
+  //read_buff defini como variável de estado no arquivo '.h'
   int num_bytes = read(serial_port, &read_buf, sizeof(read_buf));
 
   if (num_bytes < 0) {
@@ -107,6 +208,45 @@ bool DivisorNMEA::Iterate()
 
   Notify("DADOS_RECEBIDOS", read_buf);
   Notify("BYTES_RECEBIDOS", num_bytes);
+
+  //Processo os dados
+  //CNMEAParserData::ERROR_E nErr;
+
+  //if ((nErr = NMEAParser.ProcessNMEABuffer(read_buf, strlen(read_buf))) != CNMEAParserData::ERROR_OK) {
+	//		printf("NMEA Parser ProcessNMEABuffer Failed and returned error: %d\n", nErr);
+	//		return -1;
+	//	}
+
+  // Crio um objeto para parse da msg NMEA
+  MyNMEAParser NMEAParser;
+
+  //Processo a sentença
+  NMEAParser.ProcessNMEABuffer((char *)read_buf, (int)strlen(read_buf));
+
+
+  //Atualizo a sentença
+  Notify("LAT_RECEBIDA_GPS", lat_gps);
+  Notify("LONG_RECEBIDA_GPS", long_gps);
+
+  //Atualizo variáveis necessárias para o movimento do navio
+  Notify("NAV_LAT", lat_gps);
+  Notify("NAV_LONG", long_gps);
+  Notify("NAV_SPEED", speed_gps);
+  Notify("NAV_HEADING", heading_gps);
+
+  //Reseto os dados
+  NMEAParser.ResetData();
+
+  //Consigo processar uma string grande com esse leitor
+  //CNMEAParserData::RMC_DATA_T rmcdata;
+
+
+  // Chamo o comando ggaData que me dá os dados
+  //CNMEAParserData::GGA_DATA_T ggaData;
+
+  //Notify("LAT_RECEBIDA", ggaData.m_dLatitude);
+  //Notify("LONG_RECEBIDA", ggaData.m_dLongitude);
+
 
 
   AppCastingMOOSApp::PostReport();
@@ -147,8 +287,9 @@ bool DivisorNMEA::OnStartUp()
   }
   
   registerVariables();	
+  
   // Abro a porta serial
-  serial_port = open("/dev/pts/3", O_RDWR);
+  serial_port = open("/dev/pts/4", O_RDWR);
   // Check for errors
   if (serial_port < 0) {
       printf("Error %i from open: %s\n", errno, strerror(errno));
@@ -228,10 +369,10 @@ bool DivisorNMEA::buildReport()
   #endif
 
   ACTable actab(1);
-  actab << "Linha_NMEA";
+  actab << "Saida_PCmd | Saida_PData | Speed_GPS | Heading_GPS | Lat_Recebida_GPS | Long_Recebida_GPS | String Recebida ";
   actab.addHeaderLines();
 
-  actab << read_buf;
+  actab << saida_pCmd << saida_pData << speed_gps << heading_gps << lat_gps << long_gps << read_buf;
   m_msgs << actab.getFormattedString();
 
   return(true);

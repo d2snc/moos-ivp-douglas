@@ -21,6 +21,8 @@
   #include "MOOS/libMOOS/Utils/MOOSLinuxSerialPort.h"
 #endif
 
+
+
 class DivisorNMEA : public AppCastingMOOSApp
 {
  public:
@@ -53,8 +55,8 @@ class DivisorNMEA : public AppCastingMOOSApp
       CMOOSLinuxSerialPort porta_serial;
     #endif 
     char read_buf [2048];
-    double lat_gps;
-    double long_gps;
+    char nmea_data [2048]; //Declarei pela divisão
+    
 };
 
 #endif 

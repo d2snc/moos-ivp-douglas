@@ -3,13 +3,20 @@
 
 src/iDivisorNMEA/CMakeFiles/iDivisorNMEA.dir/DivisorNMEA.cpp.o: ../src/iDivisorNMEA/DivisorNMEA.cpp
 src/iDivisorNMEA/CMakeFiles/iDivisorNMEA.dir/DivisorNMEA.cpp.o: ../src/iDivisorNMEA/DivisorNMEA.h
+src/iDivisorNMEA/CMakeFiles/iDivisorNMEA.dir/DivisorNMEA.cpp.o: ../src/iDivisorNMEA/NMEAParserLib/NMEAParser.cpp
 src/iDivisorNMEA/CMakeFiles/iDivisorNMEA.dir/DivisorNMEA.cpp.o: ../src/iDivisorNMEA/NMEAParserLib/NMEAParser.h
 src/iDivisorNMEA/CMakeFiles/iDivisorNMEA.dir/DivisorNMEA.cpp.o: ../src/iDivisorNMEA/NMEAParserLib/NMEAParserData.h
+src/iDivisorNMEA/CMakeFiles/iDivisorNMEA.dir/DivisorNMEA.cpp.o: ../src/iDivisorNMEA/NMEAParserLib/NMEAParserPacket.cpp
 src/iDivisorNMEA/CMakeFiles/iDivisorNMEA.dir/DivisorNMEA.cpp.o: ../src/iDivisorNMEA/NMEAParserLib/NMEAParserPacket.h
+src/iDivisorNMEA/CMakeFiles/iDivisorNMEA.dir/DivisorNMEA.cpp.o: ../src/iDivisorNMEA/NMEAParserLib/NMEASentenceBase.cpp
 src/iDivisorNMEA/CMakeFiles/iDivisorNMEA.dir/DivisorNMEA.cpp.o: ../src/iDivisorNMEA/NMEAParserLib/NMEASentenceBase.h
+src/iDivisorNMEA/CMakeFiles/iDivisorNMEA.dir/DivisorNMEA.cpp.o: ../src/iDivisorNMEA/NMEAParserLib/NMEASentenceGGA.cpp
 src/iDivisorNMEA/CMakeFiles/iDivisorNMEA.dir/DivisorNMEA.cpp.o: ../src/iDivisorNMEA/NMEAParserLib/NMEASentenceGGA.h
+src/iDivisorNMEA/CMakeFiles/iDivisorNMEA.dir/DivisorNMEA.cpp.o: ../src/iDivisorNMEA/NMEAParserLib/NMEASentenceGSA.cpp
 src/iDivisorNMEA/CMakeFiles/iDivisorNMEA.dir/DivisorNMEA.cpp.o: ../src/iDivisorNMEA/NMEAParserLib/NMEASentenceGSA.h
+src/iDivisorNMEA/CMakeFiles/iDivisorNMEA.dir/DivisorNMEA.cpp.o: ../src/iDivisorNMEA/NMEAParserLib/NMEASentenceGSV.cpp
 src/iDivisorNMEA/CMakeFiles/iDivisorNMEA.dir/DivisorNMEA.cpp.o: ../src/iDivisorNMEA/NMEAParserLib/NMEASentenceGSV.h
+src/iDivisorNMEA/CMakeFiles/iDivisorNMEA.dir/DivisorNMEA.cpp.o: ../src/iDivisorNMEA/NMEAParserLib/NMEASentenceRMC.cpp
 src/iDivisorNMEA/CMakeFiles/iDivisorNMEA.dir/DivisorNMEA.cpp.o: ../src/iDivisorNMEA/NMEAParserLib/NMEASentenceRMC.h
 src/iDivisorNMEA/CMakeFiles/iDivisorNMEA.dir/DivisorNMEA.cpp.o: /home/moos-ivp/MOOS/MOOSCore/Core/libMOOS/App/include/MOOS/libMOOS/App/ClientDefines.h
 src/iDivisorNMEA/CMakeFiles/iDivisorNMEA.dir/DivisorNMEA.cpp.o: /home/moos-ivp/MOOS/MOOSCore/Core/libMOOS/App/include/MOOS/libMOOS/App/MOOSApp.h

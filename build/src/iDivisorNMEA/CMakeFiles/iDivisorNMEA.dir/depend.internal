@@ -4,13 +4,20 @@
 src/iDivisorNMEA/CMakeFiles/iDivisorNMEA.dir/DivisorNMEA.cpp.o
  /home/moos-ivp-douglas/src/iDivisorNMEA/DivisorNMEA.cpp
  /home/moos-ivp-douglas/src/iDivisorNMEA/DivisorNMEA.h
+ /home/moos-ivp-douglas/src/iDivisorNMEA/NMEAParserLib/NMEAParser.cpp
  /home/moos-ivp-douglas/src/iDivisorNMEA/NMEAParserLib/NMEAParser.h
  /home/moos-ivp-douglas/src/iDivisorNMEA/NMEAParserLib/NMEAParserData.h
+ /home/moos-ivp-douglas/src/iDivisorNMEA/NMEAParserLib/NMEAParserPacket.cpp
  /home/moos-ivp-douglas/src/iDivisorNMEA/NMEAParserLib/NMEAParserPacket.h
+ /home/moos-ivp-douglas/src/iDivisorNMEA/NMEAParserLib/NMEASentenceBase.cpp
  /home/moos-ivp-douglas/src/iDivisorNMEA/NMEAParserLib/NMEASentenceBase.h
+ /home/moos-ivp-douglas/src/iDivisorNMEA/NMEAParserLib/NMEASentenceGGA.cpp
  /home/moos-ivp-douglas/src/iDivisorNMEA/NMEAParserLib/NMEASentenceGGA.h
+ /home/moos-ivp-douglas/src/iDivisorNMEA/NMEAParserLib/NMEASentenceGSA.cpp
  /home/moos-ivp-douglas/src/iDivisorNMEA/NMEAParserLib/NMEASentenceGSA.h
+ /home/moos-ivp-douglas/src/iDivisorNMEA/NMEAParserLib/NMEASentenceGSV.cpp
  /home/moos-ivp-douglas/src/iDivisorNMEA/NMEAParserLib/NMEASentenceGSV.h
+ /home/moos-ivp-douglas/src/iDivisorNMEA/NMEAParserLib/NMEASentenceRMC.cpp
  /home/moos-ivp-douglas/src/iDivisorNMEA/NMEAParserLib/NMEASentenceRMC.h
  /home/moos-ivp/MOOS/MOOSCore/Core/libMOOS/App/include/MOOS/libMOOS/App/ClientDefines.h
  /home/moos-ivp/MOOS/MOOSCore/Core/libMOOS/App/include/MOOS/libMOOS/App/MOOSApp.h

@@ -8,8 +8,8 @@ Community  = alder
 
 MOOSTimeWarp = 1
 //Datum usado para o pMarineViewer
-LatOrigin  = -22.933349949492882
-LongOrigin = -43.136666653833366
+LatOrigin  = -22.93335
+LongOrigin = -43.136666665
 
  
 
@@ -20,14 +20,15 @@ ProcessConfig = ANTLER
   MSBetweenLaunches = 200
 
   Run = MOOSDB		@ NewConsole = false
-  Run = uSimMarine	@ NewConsole = false
+//  Run = uSimMarine	@ NewConsole = false
   Run = pNodeReporter	@ NewConsole = false
-  Run = pMarinePID	@ NewConsole = false
+//  Run = pMarinePID	@ NewConsole = false
   Run = pMarineViewer	@ NewConsole = false
   Run = uProcessWatch   @ NewConsole = false
   Run = pHelmIvP	@ NewConsole = false
-  Run = iSerial	@ NewConsole = false
-  Run = iGPS	@ NewConsole = false
+// Run = iSerial	@ NewConsole = false
+  Run = iDivisorNMEA	@ NewConsole = false
+  
 }
 
 //------------------------------------------
@@ -38,8 +39,8 @@ ProcessConfig = uSimMarine
   AppTick	= 10
   CommsTick	= 10
 
-  START_X       = -2000
-  START_Y       = 1900
+  START_X       = 0 
+  START_Y       = 0
   START_SPEED   = 0
   START_HEADING = 180
 
@@ -156,9 +157,15 @@ ProcessConfig = pMarineViewer
 
 ProcessConfig = pNodeReporter
 {
-  AppTick	= 2
-  CommsTick	= 2
-  VESSEL_TYPE   = KAYAK
+  AppTick	= 4
+  CommsTick	= 4
+
+  platform_type      = ship // Tamanho do Navio
+  platform_length    = 3        // meters.  Range [0,inf) 
+  VESSEL_TYPE   = SHIP
+
+  //node_report_output = REPORT_POSICAO
+  cross_fill_policy = global
 }
 
 
@@ -170,15 +177,11 @@ ProcessConfig = iSerial
    AppTick   = 4
    CommsTick = 4
 }
+//------------------------------------------------
+// iDivisorNMEA config block
 
-//-----------------------------------------
-//iGPS bloco de config
-
-ProcessConfig = iGPS
+ProcessConfig = iDivisorNMEA
 {
-  AppTick   = 4
-  CommsTick = 4
-
-  SERIAL_PORT = /dev/pts/5
-  UART_BAUD_RATE = 9600
+   AppTick   = 4
+   CommsTick = 4
 }
