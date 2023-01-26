@@ -15,6 +15,8 @@ ACTable.h
 /home/moos-ivp-douglas/src/iSerial/ACTable.h
 Serial.h
 /home/moos-ivp-douglas/src/iSerial/Serial.h
+unistd.h
+-
 
 /home/moos-ivp-douglas/src/iSerial/Serial.h
 MOOS/libMOOS/Thirdparty/AppCasting/AppCastingMOOSApp.h
@@ -23,20 +25,6 @@ MOOS/libMOOS/Utils/MOOSNTSerialPort.h
 /home/moos-ivp-douglas/src/iSerial/MOOS/libMOOS/Utils/MOOSNTSerialPort.h
 MOOS/libMOOS/Utils/MOOSLinuxSerialPort.h
 /home/moos-ivp-douglas/src/iSerial/MOOS/libMOOS/Utils/MOOSLinuxSerialPort.h
-
-/home/moos-ivp-douglas/src/iSerial/Serial_Info.h
-
-/home/moos-ivp-douglas/src/iSerial/main.cpp
-string
--
-MBUtils.h
-/home/moos-ivp-douglas/src/iSerial/MBUtils.h
-ColorParse.h
-/home/moos-ivp-douglas/src/iSerial/ColorParse.h
-Serial.h
-/home/moos-ivp-douglas/src/iSerial/Serial.h
-Serial_Info.h
-/home/moos-ivp-douglas/src/iSerial/Serial_Info.h
 
 /home/moos-ivp/MOOS/MOOSCore/Core/libMOOS/App/include/MOOS/libMOOS/App/ClientDefines.h
 
@@ -518,12 +506,6 @@ string
 vector
 -
 list
--
-
-/home/moos-ivp/ivp/src/lib_mbutil/ColorParse.h
-vector
--
-string
 -
 
 /home/moos-ivp/ivp/src/lib_mbutil/MBUtils.h

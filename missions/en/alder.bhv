@@ -6,31 +6,18 @@ initialize   RETURN = false
 //----------------------------------------------
 Behavior = BHV_SimpleWaypoint
 { 
-  name      = waypt_to_point
+  name      = transit_to_point
   pwt       = 100
   condition = RETURN = false
   condition = DEPLOY = true
-  condition = (ODOMETRY_DIST < 200)
-
-  
   endflag   = RETURN = true
 
   speed      = 2.0   // meters per second
   radius     = 8.0
-  ptx        = 100
-  pty        = -50
+  ptx        = -2238
+  pty        = 3100
+  ipf_type = zaic
 }
 
-//----------------------------------------------
-Behavior = BHV_Waypoint
-{
-  name       = waypt_return
-  pwt        = 100
-  condition  = (RETURN = true) or (ODOMETRY_DIST >= 200)
-  condition  = (DEPLOY = true)
 
-  speed      = 2.0
-  radius     = 8.0
-  point      = 0,0
-}
 

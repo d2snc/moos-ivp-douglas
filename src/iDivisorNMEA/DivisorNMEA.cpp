@@ -95,8 +95,8 @@ protected:
 			if (GetGPGGA(ggaData) == CNMEAParserData::ERROR_OK) {
 				//printf("GPGGA Parsed!\n");
 				//printf("   Time:                %02d:%02d:%02d\n", ggaData.m_nHour, ggaData.m_nMinute, ggaData.m_nSecond);
-				lat_gps = ggaData.m_dLatitude;
-        long_gps = ggaData.m_dLongitude;
+				//lat_gps = ggaData.m_dLatitude;
+        //long_gps = ggaData.m_dLongitude;
         //printf("   Latitude:            %f\n", ggaData.m_dLatitude);
 				//printf("   Longitude:           %f\n", ggaData.m_dLongitude);
 				//printf("   Altitude:            %.01fM\n", ggaData.m_dAltitudeMSL);
@@ -111,6 +111,8 @@ protected:
 		} else if (strstr(pCmd, "GPRMC") != NULL) {
       CNMEAParserData::RMC_DATA_T rmcdata;
       if (GetGPRMC(rmcdata) == CNMEAParserData::ERROR_OK) {
+        lat_gps = rmcdata.m_dLatitude; // Latitude recebida
+        long_gps = rmcdata.m_dLongitude; // Longitude recebida 
         speed_gps = rmcdata.m_dSpeedKnots; // SOG do GPS
         heading_gps = rmcdata.m_dTrackAngle; // Marcação vinda do GPS
 
@@ -206,27 +208,15 @@ bool DivisorNMEA::Iterate()
       return 1;
   }
 
+  //Debug
   Notify("DADOS_RECEBIDOS", read_buf);
   Notify("BYTES_RECEBIDOS", num_bytes);
-
-  //Processo os dados
-  //CNMEAParserData::ERROR_E nErr;
-
-  //if ((nErr = NMEAParser.ProcessNMEABuffer(read_buf, strlen(read_buf))) != CNMEAParserData::ERROR_OK) {
-	//		printf("NMEA Parser ProcessNMEABuffer Failed and returned error: %d\n", nErr);
-	//		return -1;
-	//	}
 
   // Crio um objeto para parse da msg NMEA
   MyNMEAParser NMEAParser;
 
   //Processo a sentença
   NMEAParser.ProcessNMEABuffer((char *)read_buf, (int)strlen(read_buf));
-
-
-  //Atualizo a sentença
-  Notify("LAT_RECEBIDA_GPS", lat_gps);
-  Notify("LONG_RECEBIDA_GPS", long_gps);
 
   //Atualizo variáveis necessárias para o movimento do navio
   Notify("NAV_LAT", lat_gps);
@@ -236,18 +226,6 @@ bool DivisorNMEA::Iterate()
 
   //Reseto os dados
   NMEAParser.ResetData();
-
-  //Consigo processar uma string grande com esse leitor
-  //CNMEAParserData::RMC_DATA_T rmcdata;
-
-
-  // Chamo o comando ggaData que me dá os dados
-  //CNMEAParserData::GGA_DATA_T ggaData;
-
-  //Notify("LAT_RECEBIDA", ggaData.m_dLatitude);
-  //Notify("LONG_RECEBIDA", ggaData.m_dLongitude);
-
-
 
   AppCastingMOOSApp::PostReport();
   return(true);
@@ -287,9 +265,9 @@ bool DivisorNMEA::OnStartUp()
   }
   
   registerVariables();	
-  
+  //source: https://blog.mbedded.ninja/programming/operating-systems/linux/linux-serial-ports-using-c-cpp/
   // Abro a porta serial
-  serial_port = open("/dev/pts/4", O_RDWR);
+  serial_port = open("/dev/pts/3", O_RDWR); //CONFIG DE PORTA SERIAL AQUI
   // Check for errors
   if (serial_port < 0) {
       printf("Error %i from open: %s\n", errno, strerror(errno));

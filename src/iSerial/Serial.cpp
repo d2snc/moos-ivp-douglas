@@ -9,6 +9,8 @@
 #include "MBUtils.h"
 #include "ACTable.h"
 #include "Serial.h"
+#include <unistd.h>
+
 
 using namespace std;
 
@@ -18,7 +20,7 @@ using namespace std;
 Serial::Serial()
 {
   //Configurações para envio de dados via Serial
-  endereco_porta_serial = "/dev/pts/1"; //Porta simulada para testes
+  endereco_porta_serial = "/dev/ttyUSB0"; //Porta simulada para testes
   baudrate = 9600;
 
   // Valores padrões:
@@ -182,14 +184,20 @@ void Serial::enviaSerial()
     rudder_convertido = "L0";
   }
   if (rudder > 0) {
-    rudder_convertido = "L2"; //Guina para BE
+    rudder_convertido = "L0302"; //Guina 3 seg para BE
   }
   else if (rudder < 0) {
-    rudder_convertido = "L1"; //Guina para BB
+    rudder_convertido = "L0301"; //Guina 3 seg para BB
   }
   
   //Envio dos dados via serial
-  porta_serial.Write(rudder_convertido.c_str(),2); //Envia os caracteres para essa porta, coloquei 2 pq nos testes por enquanto só tem 2 caracteres
+  if (rudder_convertido == "L0"){
+    porta_serial.Write(rudder_convertido.c_str(),2);
+  } else {
+    porta_serial.Write(rudder_convertido.c_str(),5); //Envia os caracteres para essa porta, coloquei 2 pq nos testes por enquanto só tem 2 caracteres
+  }
+  usleep(3000000); //Delay de 3 segundos 
+
 
 }
 
