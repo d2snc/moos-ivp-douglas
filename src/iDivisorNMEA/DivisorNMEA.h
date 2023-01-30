@@ -9,6 +9,7 @@
 #define DivisorNMEA_HEADER
 
 #include "MOOS/libMOOS/Thirdparty/AppCasting/AppCastingMOOSApp.h"
+#include "../../../moos-ivp/MOOS/MOOSGeodesy/libMOOSGeodesy/include/MOOS/libMOOSGeodesy/MOOSGeodesy.h"
 
 #include <boost/asio.hpp>
 #include <string>
@@ -56,6 +57,7 @@ class DivisorNMEA : public AppCastingMOOSApp
     #endif 
     char read_buf [2048];
     char nmea_data [2048]; //Declarei pela divisão
+    CMOOSGeodesy m_geodesy;
     
 };
 

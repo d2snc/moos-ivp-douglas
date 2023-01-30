@@ -1,8 +1,10 @@
 file(REMOVE_RECURSE
-  "../../../lib/libBHV_SimpleWaypoint.pdb"
-  "../../../lib/libBHV_SimpleWaypoint.so"
+  "/home/moos-ivp-douglas/lib/libBHV_SimpleWaypoint.pdb"
+  "/home/moos-ivp-douglas/lib/libBHV_SimpleWaypoint.so"
   "CMakeFiles/BHV_SimpleWaypoint.dir/AOF_SimpleWaypoint.cpp.o"
+  "CMakeFiles/BHV_SimpleWaypoint.dir/AOF_SimpleWaypoint.cpp.o.d"
   "CMakeFiles/BHV_SimpleWaypoint.dir/BHV_SimpleWaypoint.cpp.o"
+  "CMakeFiles/BHV_SimpleWaypoint.dir/BHV_SimpleWaypoint.cpp.o.d"
 )
 
 # Per-language clean rules from dependency scanning.

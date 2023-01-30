@@ -22,12 +22,14 @@ ProcessConfig = ANTLER
   Run = MOOSDB		@ NewConsole = false
 //  Run = uSimMarine	@ NewConsole = false
   Run = pNodeReporter	@ NewConsole = false
-  Run = pMarinePIDV22	@ NewConsole = false
-  Run = pMarineViewer	@ NewConsole = false
-  Run = uProcessWatch   @ NewConsole = false
   Run = pHelmIvP	@ NewConsole = false
-  Run = iSerial	@ NewConsole = false
   Run = iDivisorNMEA	@ NewConsole = false
+  Run = pMarinePIDV22	@ NewConsole = false
+  
+  Run = uProcessWatch   @ NewConsole = false
+ // Run = iSerial	@ NewConsole = false
+  Run = pContactMgrV20	@ NewConsole = false
+  Run = pMarineViewer	@ NewConsole = false
   
 }
 
@@ -85,6 +87,7 @@ ProcessConfig = pHelmIvP
 
   ok_skew = any
   start_in_drive = false
+  hold_on_apps = pContactMgrV20
 }
 
 //------------------------------------------
@@ -139,6 +142,7 @@ ProcessConfig = pMarineViewer
   //hash_viewable        = true
 
   scope = MVIEWER_LCLICK
+  center_view = active
 
    // Appcast configuration
   appcast_height       = 75
@@ -187,3 +191,32 @@ ProcessConfig = iDivisorNMEA
    AppTick   = 4
    CommsTick = 4
 }
+//------------------------------------------------
+
+//pContactMgrV20 config block
+
+ProcessConfig = pContactMgrV20                                
+{                                                               
+  AppTick   = 4                                                 
+  CommsTick = 4                                                 
+                                                                
+                                                                
+  // Policy for retaining potential stale contacts              
+  contact_max_age  = 100             //  default in secs.       
+  max_retired_history = 5            //  default in # of ships                         
+  
+  // Configuring other output                                   
+  display_radii     = false  // or {true}                        
+  alert_verbose     = false  // If true, ALERT_VERBOSE published.
+  //alert_range_color = color  // default is gray65       
+  //cpa_range_color   = color  // default is gray35       
+                                                                
+  // Policy for linear extrapolation of stale contacts          
+  decay = 15,30                       // the default in secs    
+                                                                
+  reject_range   = off      // default is 2000 (meter)                               
+  recap_interval = 10         // default in 1 (second)    
+                                                                
+  contact_local_coords    = force_lat_lon  // default is verbatim    
+  post_closest_range      = false     // default is false       
+}                  

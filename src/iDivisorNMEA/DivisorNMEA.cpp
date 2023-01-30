@@ -8,6 +8,7 @@
 #include <stdio.h>
 #include <string.h>
 
+
 // Linux headers
 #include <fcntl.h> // Contains file controls like O_RDWR
 #include <errno.h> // Error integer and strerror() function
@@ -17,6 +18,9 @@
 #include <iterator>
 #include "MBUtils.h"
 #include "ACTable.h"
+
+//Includes do libais
+#include "libais/ais.h"
 
 //Includes do divisor NMEA
 
@@ -37,6 +41,17 @@
 #include "NMEAParserLib/NMEASentenceRMC.cpp"
 #include "NMEAParserLib/NMEASentenceRMC.h"
 
+//Includes do libais
+#include <memory>
+#include <string>
+#include "libais/ais.h"
+#include "libais/ais.cpp"
+#include "libais/ais_bitset.cpp"
+#include "libais/ais1_2_3.cpp"
+
+//Include do geodesy
+#include "../../../moos-ivp/MOOS/MOOSGeodesy/libMOOSGeodesy/MOOSGeodesy.cpp"
+
 
 using namespace std;
 
@@ -48,7 +63,7 @@ double speed_gps;
 double heading_gps;
 char* saida_pCmd;
 char* saida_pData;
-
+std::string msg_debug;
 
 
 ///
@@ -218,6 +233,70 @@ bool DivisorNMEA::Iterate()
   //Processo a sentença
   NMEAParser.ProcessNMEABuffer((char *)read_buf, (int)strlen(read_buf));
 
+  //Transformo o read_buf em uma string
+  std::string str = read_buf;
+
+  //Separo essa string em vários elementos
+  std::vector<std::string> tokens;
+  std::stringstream ss(str);
+  std::string token;
+  while (std::getline(ss, token, '\n')) {
+        tokens.push_back(token);
+  }
+
+  //Iteração pelas mensagens e salvo a que contém dados AIS
+  
+  for(int i = 0; i < tokens.size(); i++){
+    //msg_debug = tokens[i].substr(0,6);
+    //Verifica o inicio da string para fazer o parsing da msg ais
+    if (tokens[i].substr(0,6) == "!AIVDM"){
+      msg_debug = tokens[i];
+      const std::string body(libais::GetBody(tokens[i]));
+      const int pad = libais::GetPad(tokens[i]);
+      //std::string chksum_block(libais::GetNthField(tokens[i], 6, ","));
+      if (pad >= 0){
+        std::unique_ptr<libais::Ais1_2_3> msg(new libais::Ais1_2_3(body.c_str(), pad));
+        
+        //Caso o código MMSI do contato seja diferente do da lancha, adicionar no quadro de contatos
+
+        if (msg->mmsi != 503999999) { //Colocar aqui o MMSI da lancha
+          Notify("MESSAGE_ID", msg->message_id);
+          Notify("MESSAGE_MMSI", msg->mmsi);
+          Notify("MESSAGE_NAVSTATUS", msg->nav_status);
+          Notify("MESSAGE_SOG", msg->sog);
+          Notify("MESSAGE_LONGITUDE", msg->position.lng_deg);
+          Notify("MESSAGE_LATITUDE", msg->position.lat_deg);
+          Notify("MESSAGE_TRUEHEADING", msg->true_heading);
+
+          string msg_lat = to_string(msg->position.lat_deg); //Latitude do ctt
+          string msg_lon = to_string(msg->position.lng_deg); //Longitude do ctt
+          string msg_spd = to_string(msg->sog); //Veloc do ctt
+          string msg_cog = to_string(msg->cog); //Rumo no chão
+          string msg_mmsi = to_string(msg->mmsi); //Codigo MMSI
+          double time = MOOSTime(); //Tempo no MOOS
+          string time_string = to_string(time); //Passo o tempo para string
+
+          //Colocar a Latitude e Longitude de Origem
+          double lat_origin = -22.93335;
+          double lon_origin = -43.136666665;
+          double nav_x = 0;
+          double nav_y = 0;
+
+          //Faz a conversão da Lat/Long para coordenadas locais
+
+          m_geodesy.Initialise(lat_origin, lon_origin);
+          m_geodesy.LatLong2LocalGrid(msg->position.lat_deg, msg->position.lng_deg, nav_y, nav_x);
+
+          string x = to_string(nav_x);
+          string y = to_string(nav_y);
+
+          Notify("NODE_REPORT","NAME=contato_"+msg_mmsi+",TYPE=SHIP,TIME="+time_string+",LAT="+msg_lat+",LON="+msg_lon+",SPD="+msg_spd+",HDG="+msg_cog+",LENGTH=3.8,MODE=DRIVE,X="+x+",Y="+y);
+
+        }
+      }
+    }
+  }
+
   //Atualizo variáveis necessárias para o movimento do navio
   Notify("NAV_LAT", lat_gps);
   Notify("NAV_LONG", long_gps);
@@ -267,7 +346,7 @@ bool DivisorNMEA::OnStartUp()
   registerVariables();	
   //source: https://blog.mbedded.ninja/programming/operating-systems/linux/linux-serial-ports-using-c-cpp/
   // Abro a porta serial
-  serial_port = open("/dev/pts/3", O_RDWR); //CONFIG DE PORTA SERIAL AQUI
+  serial_port = open("/dev/pts/2", O_RDWR); //CONFIG DE PORTA SERIAL AQUI
   // Check for errors
   if (serial_port < 0) {
       printf("Error %i from open: %s\n", errno, strerror(errno));
@@ -347,10 +426,10 @@ bool DivisorNMEA::buildReport()
   #endif
 
   ACTable actab(1);
-  actab << "Saida_PCmd | Saida_PData | Speed_GPS | Heading_GPS | Lat_Recebida_GPS | Long_Recebida_GPS | String Recebida ";
+  actab << "msg_debug | Saida_PCmd | Saida_PData | Speed_GPS | Heading_GPS | Lat_Recebida_GPS | Long_Recebida_GPS | String Recebida ";
   actab.addHeaderLines();
 
-  actab << saida_pCmd << saida_pData << speed_gps << heading_gps << lat_gps << long_gps << read_buf;
+  actab << msg_debug << saida_pCmd << saida_pData << speed_gps << heading_gps << lat_gps << long_gps << read_buf;
   m_msgs << actab.getFormattedString();
 
   return(true);

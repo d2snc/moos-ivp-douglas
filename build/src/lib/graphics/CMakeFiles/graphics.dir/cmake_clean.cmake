@@ -1,7 +1,8 @@
 file(REMOVE_RECURSE
-  "../../../../lib/libgraphics.a"
-  "../../../../lib/libgraphics.pdb"
+  "/home/moos-ivp-douglas/lib/libgraphics.a"
+  "/home/moos-ivp-douglas/lib/libgraphics.pdb"
   "CMakeFiles/graphics.dir/vibes/vibes.cpp.o"
+  "CMakeFiles/graphics.dir/vibes/vibes.cpp.o.d"
 )
 
 # Per-language clean rules from dependency scanning.

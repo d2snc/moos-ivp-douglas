@@ -9,6 +9,7 @@ SET(SRC
   main.cpp
 )
 add_subdirectory (NMEAParserLib)
+add_subdirectory (libais)
 ADD_EXECUTABLE(iDivisorNMEA ${SRC})
 
 TARGET_LINK_LIBRARIES(iDivisorNMEA
