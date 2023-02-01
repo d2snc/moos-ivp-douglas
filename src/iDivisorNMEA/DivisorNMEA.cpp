@@ -62,7 +62,8 @@ double lat_gps;
 double long_gps;
 double speed_gps;
 double heading_gps;
-std::string angulo_leme;
+long double heading_giro;
+long double angulo_leme;
 char* saida_pCmd;
 char* saida_pData;
 std::string msg_debug;
@@ -131,7 +132,7 @@ protected:
         lat_gps = rmcdata.m_dLatitude; // Latitude recebida
         long_gps = rmcdata.m_dLongitude; // Longitude recebida 
         speed_gps = rmcdata.m_dSpeedKnots; // SOG do GPS
-        heading_gps = rmcdata.m_dTrackAngle; // Marcação vinda do GPS
+        //heading_gps = rmcdata.m_dTrackAngle; // Marcação vinda do GPS - tirei esse e coloquei o heading vindo da giro
 
       }
     }
@@ -301,8 +302,12 @@ bool DivisorNMEA::Iterate()
     } 
     //Parser do ângulo do leme
     else if (tokens[i].substr(0,6) == "$AGRSA") {
-      angulo_leme = libais::GetNthField(tokens[i],1,","); //Pega o segundo campo da string NMEA
+      angulo_leme = stold(libais::GetNthField(tokens[i],1,",")); //Pega o segundo campo da string NMEA
       Notify("ANGULO_LEME", angulo_leme);
+    }
+    //Parser do Rumo Verdadeiro dado pela Giro
+    else if (tokens[i].substr(0,6) == "$HEHDT") {
+      heading_giro = stold(libais::GetNthField(tokens[i],1,",")); //Pega o primeiro campo da string NMEA
     }
   }
 
@@ -310,7 +315,7 @@ bool DivisorNMEA::Iterate()
   Notify("NAV_LAT", lat_gps);
   Notify("NAV_LONG", long_gps);
   Notify("NAV_SPEED", speed_gps);
-  Notify("NAV_HEADING", heading_gps);
+  Notify("NAV_HEADING", heading_giro); //Alterei para pegar o heading da giro ao invés do gps
 
   //Reseto os dados
   NMEAParser.ResetData();
