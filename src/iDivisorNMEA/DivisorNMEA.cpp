@@ -50,6 +50,7 @@
 #include "libais/ais1_2_3.cpp"
 
 //Include do geodesy
+//Serve para fazer a conversão do LAT/LON recebido pelo AIS para Coordenadas Locais 
 #include "../../../moos-ivp/MOOS/MOOSGeodesy/libMOOSGeodesy/MOOSGeodesy.cpp"
 
 
@@ -61,6 +62,7 @@ double lat_gps;
 double long_gps;
 double speed_gps;
 double heading_gps;
+std::string angulo_leme;
 char* saida_pCmd;
 char* saida_pData;
 std::string msg_debug;
@@ -249,6 +251,7 @@ bool DivisorNMEA::Iterate()
   for(int i = 0; i < tokens.size(); i++){
     //msg_debug = tokens[i].substr(0,6);
     //Verifica o inicio da string para fazer o parsing da msg ais
+    //PARSING DA MSG AIS
     if (tokens[i].substr(0,6) == "!AIVDM"){
       msg_debug = tokens[i];
       const std::string body(libais::GetBody(tokens[i]));
@@ -277,6 +280,7 @@ bool DivisorNMEA::Iterate()
           string time_string = to_string(time); //Passo o tempo para string
 
           //Colocar a Latitude e Longitude de Origem
+          //!!!!!!! ALTERAR ESSES DADOS SE MUDAR A CARTA NÁUTICA !!!!!!!!!!!!
           double lat_origin = -22.93335;
           double lon_origin = -43.136666665;
           double nav_x = 0;
@@ -294,6 +298,11 @@ bool DivisorNMEA::Iterate()
 
         }
       }
+    } 
+    //Parser do ângulo do leme
+    else if (tokens[i].substr(0,6) == "$AGRSA") {
+      angulo_leme = libais::GetNthField(tokens[i],1,","); //Pega o segundo campo da string NMEA
+      Notify("ANGULO_LEME", angulo_leme);
     }
   }
 
