@@ -49,6 +49,7 @@ class Serial : public AppCastingMOOSApp
     #endif
     double rudder;
     double thrust;
+    double angulo_leme;
     std::string rudder_convertido;
     std::string thrust_convertido;
 };

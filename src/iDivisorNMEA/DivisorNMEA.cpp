@@ -62,6 +62,7 @@ double lat_gps;
 double long_gps;
 double speed_gps;
 double heading_gps;
+int contador_ais;
 long double heading_giro;
 long double angulo_leme;
 char* saida_pCmd;
@@ -100,8 +101,14 @@ protected:
 	virtual CNMEAParserData::ERROR_E ProcessRxCommand(char *pCmd, char *pData) {
 
 		// Call base class to process the command
-		CNMEAParser::ProcessRxCommand(pCmd, pData);
-
+		try {
+      CNMEAParser::ProcessRxCommand(pCmd, pData);
+    }
+    catch (std::system_error& e)
+    {
+      std::cout << e.what();
+    }
+    
     // Coloquei para debug
     saida_pCmd = pCmd;
     saida_pData = pData;
@@ -132,7 +139,7 @@ protected:
         lat_gps = rmcdata.m_dLatitude; // Latitude recebida
         long_gps = rmcdata.m_dLongitude; // Longitude recebida 
         speed_gps = rmcdata.m_dSpeedKnots; // SOG do GPS
-        //heading_gps = rmcdata.m_dTrackAngle; // Marcação vinda do GPS - tirei esse e coloquei o heading vindo da giro
+        heading_gps = rmcdata.m_dTrackAngle; // Marcação vinda do GPS - tirei esse e coloquei o heading vindo da giro
 
       }
     }
@@ -226,15 +233,17 @@ bool DivisorNMEA::Iterate()
       return 1;
   }
 
-  //Debug
-  Notify("DADOS_RECEBIDOS", read_buf);
-  Notify("BYTES_RECEBIDOS", num_bytes);
-
   // Crio um objeto para parse da msg NMEA
   MyNMEAParser NMEAParser;
 
   //Processo a sentença
   NMEAParser.ProcessNMEABuffer((char *)read_buf, (int)strlen(read_buf));
+
+  //Atualizo variáveis necessárias para o movimento do navio
+  Notify("NAV_LAT", lat_gps);
+  Notify("NAV_LONG", long_gps);
+  Notify("NAV_SPEED", speed_gps);
+  Notify("NAV_HEADING", heading_gps); //Alterei para pegar o heading da giro ao invés do gps
 
   //Transformo o read_buf em uma string
   std::string str = read_buf;
@@ -243,8 +252,15 @@ bool DivisorNMEA::Iterate()
   std::vector<std::string> tokens;
   std::stringstream ss(str);
   std::string token;
-  while (std::getline(ss, token, '\n')) {
-        tokens.push_back(token);
+
+  try { //Adicionei try para evitar erros
+    while (std::getline(ss, token, '\n')) {
+          tokens.push_back(token);
+    }
+  }
+  catch (std::system_error& e)
+  {
+    std::cout << e.what();
   }
 
   //Iteração pelas mensagens e salvo a que contém dados AIS
@@ -253,69 +269,87 @@ bool DivisorNMEA::Iterate()
     //msg_debug = tokens[i].substr(0,6);
     //Verifica o inicio da string para fazer o parsing da msg ais
     //PARSING DA MSG AIS
+    
     if (tokens[i].substr(0,6) == "!AIVDM"){
-      msg_debug = tokens[i];
-      const std::string body(libais::GetBody(tokens[i]));
-      const int pad = libais::GetPad(tokens[i]);
-      //std::string chksum_block(libais::GetNthField(tokens[i], 6, ","));
-      if (pad >= 0){
-        std::unique_ptr<libais::Ais1_2_3> msg(new libais::Ais1_2_3(body.c_str(), pad));
-        
-        //Caso o código MMSI do contato seja diferente do da lancha, adicionar no quadro de contatos
+      try {
+        //msg_debug = tokens[i];
+        const std::string body(libais::GetBody(tokens[i]));
+        const int pad = libais::GetPad(tokens[i]);
+        //std::string chksum_block(libais::GetNthField(tokens[i], 6, ","));
+        if (pad >= 0){
+          std::unique_ptr<libais::Ais1_2_3> msg(new libais::Ais1_2_3(body.c_str(), pad));
+          
+          //Caso o código MMSI do contato seja diferente do da lancha, adicionar no quadro de contatos
 
-        if (msg->mmsi != 503999999) { //Colocar aqui o MMSI da lancha
-          Notify("MESSAGE_ID", msg->message_id);
-          Notify("MESSAGE_MMSI", msg->mmsi);
-          Notify("MESSAGE_NAVSTATUS", msg->nav_status);
-          Notify("MESSAGE_SOG", msg->sog);
-          Notify("MESSAGE_LONGITUDE", msg->position.lng_deg);
-          Notify("MESSAGE_LATITUDE", msg->position.lat_deg);
-          Notify("MESSAGE_TRUEHEADING", msg->true_heading);
+          if (msg->mmsi != 503999999 && msg->mmsi != 0) { //Colocar aqui o MMSI da lancha
+            Notify("MESSAGE_ID", msg->message_id);
+            Notify("MESSAGE_MMSI", msg->mmsi);
+            Notify("MESSAGE_NAVSTATUS", msg->nav_status);
+            Notify("MESSAGE_SOG", msg->sog);
+            Notify("MESSAGE_LONGITUDE", msg->position.lng_deg);
+            Notify("MESSAGE_LATITUDE", msg->position.lat_deg);
+            Notify("MESSAGE_TRUEHEADING", msg->true_heading);
 
-          string msg_lat = to_string(msg->position.lat_deg); //Latitude do ctt
-          string msg_lon = to_string(msg->position.lng_deg); //Longitude do ctt
-          string msg_spd = to_string(msg->sog); //Veloc do ctt
-          string msg_cog = to_string(msg->cog); //Rumo no chão
-          string msg_mmsi = to_string(msg->mmsi); //Codigo MMSI
-          double time = MOOSTime(); //Tempo no MOOS
-          string time_string = to_string(time); //Passo o tempo para string
+            string msg_lat = to_string(msg->position.lat_deg); //Latitude do ctt
+            string msg_lon = to_string(msg->position.lng_deg); //Longitude do ctt
+            string msg_spd = to_string(msg->sog); //Veloc do ctt
+            string msg_cog = to_string(msg->cog); //Rumo no chão
+            string msg_mmsi = to_string(msg->mmsi); //Codigo MMSI
+            msg_debug = msg_mmsi;
+            double time = MOOSTime(); //Tempo no MOOS
+            string time_string = to_string(time); //Passo o tempo para string
 
-          //Colocar a Latitude e Longitude de Origem
-          //!!!!!!! ALTERAR ESSES DADOS SE MUDAR A CARTA NÁUTICA !!!!!!!!!!!!
-          double lat_origin = -22.93335;
-          double lon_origin = -43.136666665;
-          double nav_x = 0;
-          double nav_y = 0;
+            //Colocar a Latitude e Longitude de Origem
+            //!!!!!!! ALTERAR ESSES DADOS SE MUDAR A CARTA NÁUTICA !!!!!!!!!!!!
+            double lat_origin = -22.93335;
+            double lon_origin = -43.136666665;
+            double nav_x = 0;
+            double nav_y = 0;
 
-          //Faz a conversão da Lat/Long para coordenadas locais
+            //Faz a conversão da Lat/Long para coordenadas locais
 
-          m_geodesy.Initialise(lat_origin, lon_origin);
-          m_geodesy.LatLong2LocalGrid(msg->position.lat_deg, msg->position.lng_deg, nav_y, nav_x);
+            m_geodesy.Initialise(lat_origin, lon_origin);
+            m_geodesy.LatLong2LocalGrid(msg->position.lat_deg, msg->position.lng_deg, nav_y, nav_x);
 
-          string x = to_string(nav_x);
-          string y = to_string(nav_y);
-
-          Notify("NODE_REPORT","NAME=contato_"+msg_mmsi+",TYPE=SHIP,TIME="+time_string+",LAT="+msg_lat+",LON="+msg_lon+",SPD="+msg_spd+",HDG="+msg_cog+",LENGTH=3.8,MODE=DRIVE,X="+x+",Y="+y);
-
+            string x = to_string(nav_x);
+            string y = to_string(nav_y);
+            
+            //Coloquei essa lógica para não confundir contato AIS com o navio principal no início da execução
+            if (contador_ais > 10) {
+              Notify("NODE_REPORT","NAME=contato_"+msg_mmsi+",TYPE=SHIP,TIME="+time_string+",LAT="+msg_lat+",LON="+msg_lon+",SPD="+msg_spd+",HDG="+msg_cog+",LENGTH=3.8,MODE=DRIVE,X="+x+",Y="+y);
+            }
+            contador_ais +=1;
+          }
         }
       }
-    } 
+      catch (std::system_error& e)
+      {
+        std::cout << e.what();
+      }
+    } //fechamento do if 
     //Parser do ângulo do leme
     else if (tokens[i].substr(0,6) == "$AGRSA") {
-      angulo_leme = stold(libais::GetNthField(tokens[i],1,",")); //Pega o segundo campo da string NMEA
-      Notify("ANGULO_LEME", angulo_leme);
+      try {
+        angulo_leme = stold(libais::GetNthField(tokens[i],1,",")); //Pega o segundo campo da string NMEA
+      }
+      catch (std::system_error& e)
+      {
+        std::cout << e.what();
+      }
+      double ang = angulo_leme;
+      Notify("ANGULO_LEME", ang);
     }
     //Parser do Rumo Verdadeiro dado pela Giro
     else if (tokens[i].substr(0,6) == "$HEHDT") {
-      heading_giro = stold(libais::GetNthField(tokens[i],1,",")); //Pega o primeiro campo da string NMEA
+      try {
+        heading_giro = stold(libais::GetNthField(tokens[i],1,",")); //Pega o primeiro campo da string NMEA
+      }
+      catch (std::system_error& e)
+      {
+        std::cout << e.what();
+      }
     }
   }
-
-  //Atualizo variáveis necessárias para o movimento do navio
-  Notify("NAV_LAT", lat_gps);
-  Notify("NAV_LONG", long_gps);
-  Notify("NAV_SPEED", speed_gps);
-  Notify("NAV_HEADING", heading_giro); //Alterei para pegar o heading da giro ao invés do gps
 
   //Reseto os dados
   NMEAParser.ResetData();
@@ -360,7 +394,7 @@ bool DivisorNMEA::OnStartUp()
   registerVariables();	
   //source: https://blog.mbedded.ninja/programming/operating-systems/linux/linux-serial-ports-using-c-cpp/
   // Abro a porta serial
-  serial_port = open("/dev/pts/2", O_RDWR); //CONFIG DE PORTA SERIAL AQUI
+  serial_port = open("/dev/pts/1", O_RDWR); //CONFIG DE PORTA SERIAL AQUI
   // Check for errors
   if (serial_port < 0) {
       printf("Error %i from open: %s\n", errno, strerror(errno));
@@ -417,6 +451,7 @@ void DivisorNMEA::registerVariables()
 {
   AppCastingMOOSApp::RegisterVariables();
   Register("LINHA_NMEA", 0);
+ 
 }
 
 

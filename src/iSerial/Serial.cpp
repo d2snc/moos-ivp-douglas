@@ -20,12 +20,14 @@ using namespace std;
 Serial::Serial()
 {
   //Configurações para envio de dados via Serial
-  endereco_porta_serial = "/dev/ttyUSB0"; //Porta simulada para testes
+  //endereco_porta_serial = "/dev/ttyUSB0"; //Porta real na lancha
+  endereco_porta_serial = "/dev/pts/8"; //Porta simulada para testes
   baudrate = 9600;
 
   // Valores padrões:
   rudder = 0; //Valor inicial do leme
   thrust = 0; //Valor inicial da máquina
+  angulo_leme = 0; //Valor inicial do ângulo do leme
   rudder_convertido = "NULL"; //Valor inicial de leme
   thrust_convertido = "NULL"; //Valor inicial de máquina
 
@@ -64,10 +66,10 @@ bool Serial::OnNewMail(MOOSMSG_LIST &NewMail)
 
      if(key == "DESIRED_RUDDER") 
        rudder = msg.GetDouble();
-
      else if(key == "DESIRED_THRUST")
         thrust = msg.GetDouble();
-
+     else if(key == "ANGULO_LEME")
+        angulo_leme = msg.GetDouble();
      else if(key != "APPCAST_REQ") // handled by AppCastingMOOSApp
        reportRunWarning("Unhandled Mail: " + key);
    }
@@ -147,6 +149,7 @@ void Serial::registerVariables()
   AppCastingMOOSApp::RegisterVariables();
   Register("DESIRED_RUDDER", 0); //Registro da variável do leme
   Register("DESIRED_THRUST", 0); //Registro da variável da máquina
+  Register("ANGULO_LEME", 0); //Registro da variável da máquina
 }
 
 
@@ -160,9 +163,9 @@ bool Serial::buildReport()
   m_msgs << "============================================" << endl;
 
   ACTable actab(2);
-  actab << "Maquina_Serial | Leme_Serial ";
+  actab << "angulo_leme | rudder | thrust | Maquina_Serial | Leme_Serial ";
   actab.addHeaderLines();
-  actab << thrust_convertido << rudder_convertido;
+  actab << angulo_leme << rudder << thrust << thrust_convertido << rudder_convertido;
   m_msgs << actab.getFormattedString();
 
   return(true);

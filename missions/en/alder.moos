@@ -23,11 +23,10 @@ ProcessConfig = ANTLER
 //  Run = uSimMarine	@ NewConsole = false
   Run = pNodeReporter	@ NewConsole = false
   Run = pHelmIvP	@ NewConsole = false
+  Run = iSerial	@ NewConsole = false
   Run = iDivisorNMEA	@ NewConsole = false
   Run = pMarinePIDV22	@ NewConsole = false
-  
   Run = uProcessWatch   @ NewConsole = false
- // Run = iSerial	@ NewConsole = false
   Run = pContactMgrV20	@ NewConsole = false
   Run = pMarineViewer	@ NewConsole = false
   
