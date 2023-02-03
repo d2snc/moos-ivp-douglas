@@ -1,0 +1,9 @@
+//------------------------------------------------
+// pUDP_Receiver config block
+
+ProcessConfig = pUDP_Receiver
+{
+   AppTick   = 4
+   CommsTick = 4
+}
+

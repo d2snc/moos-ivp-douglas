@@ -246,6 +246,19 @@ libais/fast:
 	$(MAKE) $(MAKESILENT) -f src/iDivisorNMEA/libais/CMakeFiles/libais.dir/build.make src/iDivisorNMEA/libais/CMakeFiles/libais.dir/build
 .PHONY : libais/fast
 
+#=============================================================================
+# Target rules for targets named pUDP_Receiver
+
+# Build rule for target.
+pUDP_Receiver: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pUDP_Receiver
+.PHONY : pUDP_Receiver
+
+# fast build rule for target.
+pUDP_Receiver/fast:
+	$(MAKE) $(MAKESILENT) -f src/pUDP_Receiver/CMakeFiles/pUDP_Receiver.dir/build.make src/pUDP_Receiver/CMakeFiles/pUDP_Receiver.dir/build
+.PHONY : pUDP_Receiver/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -262,6 +275,7 @@ help:
 	@echo "... libais"
 	@echo "... pExampleApp"
 	@echo "... pOdometry"
+	@echo "... pUDP_Receiver"
 	@echo "... pXRelayTest"
 	@echo "... xml-documentation"
 .PHONY : help

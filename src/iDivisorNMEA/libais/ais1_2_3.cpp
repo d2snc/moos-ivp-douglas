@@ -29,7 +29,8 @@ Ais1_2_3::Ais1_2_3(const char *nmea_payload, const size_t pad)
     return;
   }
 
-  assert(message_id >= 1 && message_id <= 3);
+  //assert(message_id >= 1 && message_id <= 3);
+  if(!(message_id >= 1) && !(message_id <= 3)) return; //Modifiquei aqui para não crashear o programa quando receber uma mensagem AIS de id diferente
 
   bits.SeekTo(38);
   nav_status = bits.ToUnsignedInt(38, 4);

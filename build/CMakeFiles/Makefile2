@@ -85,6 +85,7 @@ src/all: src/pXRelayTest/all
 src/all: src/pOdometry/all
 src/all: src/iSerial/all
 src/all: src/iDivisorNMEA/all
+src/all: src/pUDP_Receiver/all
 .PHONY : src/all
 
 # Recursive "preinstall" directory target.
@@ -95,6 +96,7 @@ src/preinstall: src/pXRelayTest/preinstall
 src/preinstall: src/pOdometry/preinstall
 src/preinstall: src/iSerial/preinstall
 src/preinstall: src/iDivisorNMEA/preinstall
+src/preinstall: src/pUDP_Receiver/preinstall
 .PHONY : src/preinstall
 
 # Recursive "clean" directory target.
@@ -105,6 +107,7 @@ src/clean: src/pXRelayTest/clean
 src/clean: src/pOdometry/clean
 src/clean: src/iSerial/clean
 src/clean: src/iDivisorNMEA/clean
+src/clean: src/pUDP_Receiver/clean
 .PHONY : src/clean
 
 #=============================================================================
@@ -266,6 +269,21 @@ src/pOdometry/clean: src/pOdometry/CMakeFiles/pOdometry.dir/clean
 .PHONY : src/pOdometry/clean
 
 #=============================================================================
+# Directory level rules for directory src/pUDP_Receiver
+
+# Recursive "all" directory target.
+src/pUDP_Receiver/all: src/pUDP_Receiver/CMakeFiles/pUDP_Receiver.dir/all
+.PHONY : src/pUDP_Receiver/all
+
+# Recursive "preinstall" directory target.
+src/pUDP_Receiver/preinstall:
+.PHONY : src/pUDP_Receiver/preinstall
+
+# Recursive "clean" directory target.
+src/pUDP_Receiver/clean: src/pUDP_Receiver/CMakeFiles/pUDP_Receiver.dir/clean
+.PHONY : src/pUDP_Receiver/clean
+
+#=============================================================================
 # Directory level rules for directory src/pXRelayTest
 
 # Recursive "all" directory target.
@@ -287,7 +305,7 @@ src/pXRelayTest/clean: src/pXRelayTest/CMakeFiles/pXRelayTest.dir/clean
 src/lib/documentation/CMakeFiles/xml-documentation.dir/all:
 	$(MAKE) $(MAKESILENT) -f src/lib/documentation/CMakeFiles/xml-documentation.dir/build.make src/lib/documentation/CMakeFiles/xml-documentation.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/lib/documentation/CMakeFiles/xml-documentation.dir/build.make src/lib/documentation/CMakeFiles/xml-documentation.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/moos-ivp-douglas/build/CMakeFiles --progress-num=36,37 "Built target xml-documentation"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/moos-ivp-douglas/build/CMakeFiles --progress-num=40,41 "Built target xml-documentation"
 .PHONY : src/lib/documentation/CMakeFiles/xml-documentation.dir/all
 
 # Build rule for subdir invocation for target.
@@ -391,7 +409,7 @@ src/pExampleApp/CMakeFiles/pExampleApp.dir/clean:
 src/pXRelayTest/CMakeFiles/pXRelayTest.dir/all:
 	$(MAKE) $(MAKESILENT) -f src/pXRelayTest/CMakeFiles/pXRelayTest.dir/build.make src/pXRelayTest/CMakeFiles/pXRelayTest.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/pXRelayTest/CMakeFiles/pXRelayTest.dir/build.make src/pXRelayTest/CMakeFiles/pXRelayTest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/moos-ivp-douglas/build/CMakeFiles --progress-num=32,33,34,35 "Built target pXRelayTest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/moos-ivp-douglas/build/CMakeFiles --progress-num=36,37,38,39 "Built target pXRelayTest"
 .PHONY : src/pXRelayTest/CMakeFiles/pXRelayTest.dir/all
 
 # Build rule for subdir invocation for target.
@@ -539,6 +557,32 @@ libais: src/iDivisorNMEA/libais/CMakeFiles/libais.dir/rule
 src/iDivisorNMEA/libais/CMakeFiles/libais.dir/clean:
 	$(MAKE) $(MAKESILENT) -f src/iDivisorNMEA/libais/CMakeFiles/libais.dir/build.make src/iDivisorNMEA/libais/CMakeFiles/libais.dir/clean
 .PHONY : src/iDivisorNMEA/libais/CMakeFiles/libais.dir/clean
+
+#=============================================================================
+# Target rules for target src/pUDP_Receiver/CMakeFiles/pUDP_Receiver.dir
+
+# All Build rule for target.
+src/pUDP_Receiver/CMakeFiles/pUDP_Receiver.dir/all:
+	$(MAKE) $(MAKESILENT) -f src/pUDP_Receiver/CMakeFiles/pUDP_Receiver.dir/build.make src/pUDP_Receiver/CMakeFiles/pUDP_Receiver.dir/depend
+	$(MAKE) $(MAKESILENT) -f src/pUDP_Receiver/CMakeFiles/pUDP_Receiver.dir/build.make src/pUDP_Receiver/CMakeFiles/pUDP_Receiver.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/moos-ivp-douglas/build/CMakeFiles --progress-num=32,33,34,35 "Built target pUDP_Receiver"
+.PHONY : src/pUDP_Receiver/CMakeFiles/pUDP_Receiver.dir/all
+
+# Build rule for subdir invocation for target.
+src/pUDP_Receiver/CMakeFiles/pUDP_Receiver.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/moos-ivp-douglas/build/CMakeFiles 4
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/pUDP_Receiver/CMakeFiles/pUDP_Receiver.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/moos-ivp-douglas/build/CMakeFiles 0
+.PHONY : src/pUDP_Receiver/CMakeFiles/pUDP_Receiver.dir/rule
+
+# Convenience name for target.
+pUDP_Receiver: src/pUDP_Receiver/CMakeFiles/pUDP_Receiver.dir/rule
+.PHONY : pUDP_Receiver
+
+# clean rule for target.
+src/pUDP_Receiver/CMakeFiles/pUDP_Receiver.dir/clean:
+	$(MAKE) $(MAKESILENT) -f src/pUDP_Receiver/CMakeFiles/pUDP_Receiver.dir/build.make src/pUDP_Receiver/CMakeFiles/pUDP_Receiver.dir/clean
+.PHONY : src/pUDP_Receiver/CMakeFiles/pUDP_Receiver.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

@@ -23,12 +23,15 @@ ProcessConfig = ANTLER
 //  Run = uSimMarine	@ NewConsole = false
   Run = pNodeReporter	@ NewConsole = false
   Run = pHelmIvP	@ NewConsole = false
-  Run = iSerial	@ NewConsole = false
-  Run = iDivisorNMEA	@ NewConsole = false
+  //Run = iSerial	@ NewConsole = false
+  
   Run = pMarinePIDV22	@ NewConsole = false
   Run = uProcessWatch   @ NewConsole = false
   Run = pContactMgrV20	@ NewConsole = false
+  //Run = pUDP_Receiver	@ NewConsole = false
   Run = pMarineViewer	@ NewConsole = false
+  Run = iDivisorNMEA	@ NewConsole = false
+  Run = pLogger	@ NewConsole = false
   
 }
 
@@ -54,8 +57,8 @@ ProcessConfig = uSimMarine
 
 ProcessConfig = uProcessWatch
 {
-  AppTick   = 4
-  CommsTick = 4
+  AppTick   = 100
+  CommsTick = 100
 
   term_report_interval = 0.8
 
@@ -73,8 +76,8 @@ ProcessConfig = uProcessWatch
 
 ProcessConfig = pHelmIvP
 {
-  AppTick    = 4
-  CommsTick  = 4
+  AppTick    = 100
+  CommsTick  = 100
 
   Behaviors  = alder.bhv
   Verbose    = quiet
@@ -94,8 +97,8 @@ ProcessConfig = pHelmIvP
 
 ProcessConfig = pMarinePIDV22
 {
-  AppTick    = 20
-  CommsTick  = 20
+  AppTick    = 100
+  CommsTick  = 100
 
   verbose       = true
   depth_control = false
@@ -128,8 +131,8 @@ ProcessConfig = pMarinePIDV22
 
 ProcessConfig = pMarineViewer
 {
-  AppTick    = 4
-  CommsTick  = 4
+  AppTick    = 100
+  CommsTick  = 100
 
   TIFF_FILE            = 1511geotiff.tif
   //set_pan_x            = -90
@@ -162,8 +165,8 @@ ProcessConfig = pMarineViewer
 
 ProcessConfig = pNodeReporter
 {
-  AppTick	= 4
-  CommsTick	= 4
+  AppTick	= 100
+  CommsTick	= 100
 
   platform_type      = ship // Tamanho do Navio
   platform_length    = 3        // meters.  Range [0,inf) 
@@ -187,8 +190,8 @@ ProcessConfig = iSerial
 
 ProcessConfig = iDivisorNMEA
 {
-   AppTick   = 4
-   CommsTick = 4
+   AppTick   = 100
+   CommsTick = 100
 }
 //------------------------------------------------
 
@@ -196,8 +199,8 @@ ProcessConfig = iDivisorNMEA
 
 ProcessConfig = pContactMgrV20                                
 {                                                               
-  AppTick   = 4                                                 
-  CommsTick = 4                                                 
+  AppTick   = 100                                                 
+  CommsTick = 100                                               
                                                                 
                                                                 
   // Policy for retaining potential stale contacts              
@@ -219,3 +222,36 @@ ProcessConfig = pContactMgrV20
   contact_local_coords    = force_lat_lon  // default is verbatim    
   post_closest_range      = false     // default is false       
 }                  
+
+//-----------------------------------------
+
+//------------------------------------------------------------------
+// pLogger configuration block
+ProcessConfig = pLogger
+{
+    //over loading basic params..lets be fiesty
+    AppTick  = 20.0
+    CommsTick   = 20.0
+
+    //all file names begin with this stem
+      File        = teste
+  
+      //where is the root log directory
+      PATH        = /home/moos-ivp-douglas/log
+  
+      //yes we want some sync logging for crude
+      //performance checking
+      SyncLog     = true @ 0.2
+  
+      //yes we want async logging so we can replay
+      // exactly what happened and record strings
+      AsyncLog    = true
+
+
+    WildCardLogging = false
+
+      //yes append each created directory log file
+    //with a time stamp DAY MONTH YEAR TIME
+    FileTimeStamp   = true
+
+}

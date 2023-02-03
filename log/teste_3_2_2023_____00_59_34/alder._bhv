@@ -1,0 +1,23 @@
+//--------    FILE: alder.bhv   -------------
+
+initialize   DEPLOY = false
+initialize   RETURN = false
+
+//----------------------------------------------
+Behavior = BHV_SimpleWaypoint
+{ 
+  name      = transit_to_point
+  pwt       = 100
+  condition = RETURN = false
+  condition = DEPLOY = true
+  endflag   = RETURN = true
+
+  speed      = 2.0   // meters per second
+  radius     = 8.0
+  ptx        = -2238
+  pty        = 3100
+  ipf_type = zaic
+}
+
+
+

@@ -34,3 +34,6 @@
 /home/moos-ivp-douglas/build/src/iDivisorNMEA/libais/CMakeFiles/libais.dir
 /home/moos-ivp-douglas/build/src/iDivisorNMEA/libais/CMakeFiles/edit_cache.dir
 /home/moos-ivp-douglas/build/src/iDivisorNMEA/libais/CMakeFiles/rebuild_cache.dir
+/home/moos-ivp-douglas/build/src/pUDP_Receiver/CMakeFiles/pUDP_Receiver.dir
+/home/moos-ivp-douglas/build/src/pUDP_Receiver/CMakeFiles/edit_cache.dir
+/home/moos-ivp-douglas/build/src/pUDP_Receiver/CMakeFiles/rebuild_cache.dir
