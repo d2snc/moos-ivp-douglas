@@ -1,3 +1,40 @@
+###Introdução:###
+
+ Inicialmente, foram criados alguns aplicativos para rodar em conjunto com o MOOS, de forma a alcançar o nosso objetivo, que é de controlar a lancha VSNT-LAB, além de implantar um CollisionAvoidance na mesma.
+ A princípio foram desenvolvidos os aplicativos iDivisorNMEA e iSerial, no qual eles teriam as funções de :
+
+iDivisorNMEA -> Receber as sentenças NMEA na rede, decodificá-las e jogar as informações no MOOS
+
+iSerial -> Enviar para a placa que contém o PIC da lancha as ordens de leme e máquinas que o MOOS calculou.
+
+Essas foram as funções iniciais dos aplicativos, entretanto com os testes que realizamos a bordo da lancha algumas coisas foram mudando, segue alguns testes e coisas que tivemos que mudar e adaptar:
+
+###TESTES - DIA 26JAN:###
+
+Foi basicamente o primeiro teste em seco que fizemos na lancha, inicialmente tivemos muita dificuldade de conexão, pois o Sgt tinha dito que os dados eram enviados pela rede pelo IP 172.18.14.153 e porta 10110 no formato UDP, entretanto depois eu vi que eles eram enviados no formato TCP (pelo menos naquele momento).
+
+Após conseguir receber os pacotes TCP que continham as sentenças NMEA, eu fiz uma ponte para que essa informação pudesse ser lida pelo iDivisorNMEA e assim a informação poder ser atualizada na base de dados do MOOS.
+
+O iDivisorNMEA conseguiu ler as informações e o iSerial também estava conseguindo enviar comandos para o atuador do leme, movimentando o mesmo.
+
+Após o OK desses dois testes, o de receber informações do iDivisorNMEA e o de enviar comandos pelo iSerial, eu achei que a lancha já estava pronta para os testes de mar, que foram no outro dia.
+
+####TESTES NO MAR - DIA 01FEV:####
+
+Na hora do teste no mar, aconteceram alguns problemas que não tinham acontecido antes, entre eles:
+
+iDivisorNMEA estava crasheando o tempo todo, depois eu dei uma corrigida para evitar esses erros.
+iSerial não estava enviando os comandos com velocidade o suficiente para comandar o leme, ai ele mandava meio que todo o leme para um lado só.
+Não conseguimos alcançar o objetivo de atingir o waypoint desejado.
+Por ser TCP, provavelmente alguns pacotes deviam estar se perdendo pelo caminho, atrapalhando no feedback para controle da lancha, mas EU acredito que na verdade foi a configuração de FREQUÊNCIA de cada aplicativo do Moos, tipo, cada aplicativo do Moos tem uma configuração de QUANTAS VEZES POR SEGUNDO ele deve rodar, ai depois eu vi que o iDivisorNMEA estava configurado para rodar em 4 VEZES por segundo, o que é BEM LENTO para um sistema em tempo real.
+
+####TESTES NO SECO - DIA 02FEV:####
+
+Bem, basicamente nesse dia eu fui mudar a configuração do programa para receber os pacotes UDP ao invés de TCP e ai que tudo deu merda, pq os pacotes TCP vinham todos enfileirados, enquanto os UDP vinham 1 de cada vez, tive que mudar o código do iDivisorNMEA para funcionar.
+
+Também alterei a frequência de execução de cada um dos programas do MOOS para 100 vezes por segundo, antes estava 4 vezes por segundo, provavelmente por isso que estava dando aquela lerdeza toda na atualização das informações;
+
+
 ##############################################################################
 # FILE:        moos-ivp-extend/README
 # DATE:        2014/01/02
