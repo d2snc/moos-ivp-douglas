@@ -10,6 +10,9 @@
 #include "ACTable.h"
 #include "Serial.h"
 #include <unistd.h>
+#include <cmath>
+#include <string>
+#include <iostream>
 
 
 using namespace std;
@@ -20,8 +23,8 @@ using namespace std;
 Serial::Serial()
 {
   //Configurações para envio de dados via Serial
-  //endereco_porta_serial = "/dev/ttyUSB0"; //Porta real na lancha
-  endereco_porta_serial = "/dev/pts/8"; //Porta simulada para testes
+  endereco_porta_serial = "/dev/ttyUSB0"; //Porta real na lancha
+  //endereco_porta_serial = "/dev/pts/8"; //Porta simulada para testes
   baudrate = 9600;
 
   // Valores padrões:
@@ -174,6 +177,38 @@ bool Serial::buildReport()
 
 void Serial::enviaSerial() 
 {
+  //Função para controle já pronta pelo CASNAV
+  //Em testes, caso dê ruim só comentar aq
+
+  //Converto o DESIRED_RUDDER da escala de -100 a 100 para -32,5 a 32,5
+  //float valor_controle_leme = rudder/3.0769f; //Fiz uma função de 1 grau para conversão de escalas
+
+  Notify("VALOR_CONTROLE_LEME",rudder);
+
+  float erro_Leme = angulo_leme - rudder;
+
+  Notify("ERRO_Leme",erro_Leme);
+
+
+  //erro e foi calculado sendo atual - setpoint
+  float k = 0;//constante de variação tempo(s)/erro(graus);
+  //dados de k abaixo foram calculados em testes no seco (sem carga) com motor novo (bomba)
+  float k1 = 1.0f;//adjustment factor (ideally should be 1)
+  if (erro_Leme < 0)
+      k = 0.1495f;
+  else
+      k = 0.1812f;
+  int tempo = round(k*abs(erro_Leme)*10*k1);//times 10 because we need up to decimal of seconds precision
+  //UnityEngine.Debug.Log("Tempo Leme: " + tempo + "\n");
+
+  if (tempo > 100) tempo = 99; //O tempo é só dois dígitos
+  Notify("TEMPO_LEME",tempo);
+  
+  //Passo o tempo para string e assim mandar via serial
+  std::string tempo_leme = std::to_string(tempo);
+
+  if (tempo_leme.size() == 1) tempo_leme = "0"+tempo_leme; //Caso a string só tenha 1 número - Adiciono zero pela leitura do PIC
+  
   // Função para transformar as variáveis DESIRED_RUDDER e DESIRED_THRUST para o envio via serial para o PIC
   // No momento só verifica a variável rudder e thrust e faz a conversão
 
@@ -187,20 +222,22 @@ void Serial::enviaSerial()
     rudder_convertido = "L0";
   }
   if (rudder > 0) {
-    rudder_convertido = "L0302"; //Guina 3 seg para BE
+    rudder_convertido = "L0"+tempo_leme+"2"; //Guina tempo calculado para BE
   }
   else if (rudder < 0) {
-    rudder_convertido = "L0301"; //Guina 3 seg para BB
+    rudder_convertido = "L0"+tempo_leme+"1"; //Guina tempo calculado para BB
   }
   
-  //Envio dos dados via serial
-  if (rudder_convertido == "L0"){
-    porta_serial.Write(rudder_convertido.c_str(),2);
-  } else {
-    porta_serial.Write(rudder_convertido.c_str(),5); //Envia os caracteres para essa porta, coloquei 2 pq nos testes por enquanto só tem 2 caracteres
+  //Envio dos dados via serial para o leme
+  if (angulo_leme < 34 && angulo_leme > -34){ //Modificação no teste da lancha 7fev2023
+    if (rudder_convertido == "L0"){
+      porta_serial.Write(rudder_convertido.c_str(),2);
+    } else {
+      porta_serial.Write(rudder_convertido.c_str(),5); //Envia os caracteres para essa porta, coloquei 2 pq nos testes por enquanto só tem 2 caracteres
+    }
+    
+    usleep(tempo*100000); //Delay de tempo calculado - teste - 1000000 equivale a 1 seg.
   }
-  usleep(3000000); //Delay de 3 segundos 
-
 
 }
 

@@ -266,7 +266,7 @@ bool DivisorNMEA::Iterate()
     inet_ntoa(cliAddr.sin_addr),
     ntohs(cliAddr.sin_port),msg);
 
-  Notify("MSG_UDP",msg);
+  Notify("MSG_UDP",msg); //Declarar uma variável pro MOOSDB
 
   std::string msg_string = msg;
 
@@ -297,7 +297,14 @@ bool DivisorNMEA::Iterate()
   Notify("NAV_LAT", lat_gps);
   Notify("NAV_LONG", long_gps);
   Notify("NAV_SPEED", speed_gps);
-  Notify("NAV_HEADING", heading_gps); //Alterei para pegar o heading da giro ao invés do gps
+  
+  Notify("NAV_HEADING", heading_giro);
+  /*
+  if (heading_giro == 0){ //Caso o rumo verdadeiro da giro venha zerada, pego do gps
+    Notify("NAV_HEADING", heading_gps); //Alterei para pegar o heading da giro ao invés do gps
+  } else {
+    Notify("NAV_HEADING", heading_giro);
+  }*/
 
   NMEAParser.ResetData(); //Reseto dados NMEA
   
@@ -309,17 +316,22 @@ bool DivisorNMEA::Iterate()
     
   if (msg_string.substr(0,6) == "!AIVDM"){
     try {
-      //msg_debug = msg;
+      
       const std::string body(libais::GetBody(msg));
+      
       const int pad = libais::GetPad(msg);
+      msg_debug = to_string(pad);
       //std::string chksum_block(libais::GetNthField(msg, 6, ","));
       if (pad >= 0){
         
         std::unique_ptr<libais::Ais1_2_3> msg(new libais::Ais1_2_3(body.c_str(), pad));
         
         //Caso o código MMSI do contato seja diferente do da lancha, adicionar no quadro de contatos
+        // MMSI da lancha : 710400014
 
-        if (msg->mmsi != 503999999 && msg->mmsi != 0) { //Colocar aqui o MMSI da lancha
+        //if (msg->mmsi != 710400014 && msg->mmsi != 0) { //Colocar aqui o MMSI da lancha
+        
+        if (msg->mmsi != 710400014) {
           Notify("MESSAGE_ID", msg->message_id);
           Notify("MESSAGE_MMSI", msg->mmsi);
           Notify("MESSAGE_NAVSTATUS", msg->nav_status);
@@ -333,7 +345,7 @@ bool DivisorNMEA::Iterate()
           string msg_spd = to_string(msg->sog); //Veloc do ctt
           string msg_cog = to_string(msg->cog); //Rumo no chão
           string msg_mmsi = to_string(msg->mmsi); //Codigo MMSI
-          msg_debug = msg_mmsi;
+          //msg_debug = msg_mmsi;
           double time = MOOSTime(); //Tempo no MOOS
           string time_string = to_string(time); //Passo o tempo para string
 

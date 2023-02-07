@@ -14,7 +14,7 @@ Behavior = BHV_SimpleWaypoint
 
   speed      = 2.0   // meters per second
   radius     = 8.0
-  ptx        = -2238
+  ptx        = -2338
   pty        = 3100
   ipf_type = zaic
 }

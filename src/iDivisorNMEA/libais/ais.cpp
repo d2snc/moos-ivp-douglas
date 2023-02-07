@@ -39,8 +39,8 @@ std::string GetNthField(const std::string &str, const size_t n,
 int GetPad(const std::string &nmea_str) {
   // -1 on error
   std::string chksum_block(GetNthField(nmea_str, 6, ","));
-  //Para evitar erros retiro o ultimo char
-  chksum_block.pop_back();
+  //Para evitar erros retiro o ultimo char - Comentei pois estava dando erro com os nmea da lancha
+  //chksum_block.pop_back();
   if (chksum_block.size() != 4 || chksum_block[1] != '*')
     return -1;
   const char pad = chksum_block[0];

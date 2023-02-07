@@ -17,14 +17,13 @@ LongOrigin = -43.136666665
 // Antler configuration  block
 ProcessConfig = ANTLER
 {
-  MSBetweenLaunches = 200
+  MSBetweenLaunches = 100
 
   Run = MOOSDB		@ NewConsole = false
 //  Run = uSimMarine	@ NewConsole = false
   Run = pNodeReporter	@ NewConsole = false
   Run = pHelmIvP	@ NewConsole = false
-  //Run = iSerial	@ NewConsole = false
-  
+  Run = iSerial	@ NewConsole = false  
   Run = pMarinePIDV22	@ NewConsole = false
   Run = uProcessWatch   @ NewConsole = false
   Run = pContactMgrV20	@ NewConsole = false
@@ -32,6 +31,7 @@ ProcessConfig = ANTLER
   Run = pMarineViewer	@ NewConsole = false
   Run = iDivisorNMEA	@ NewConsole = false
   Run = pLogger	@ NewConsole = false
+  //Run = uPlotViewer	@ NewConsole = false
   
 }
 
@@ -118,7 +118,8 @@ ProcessConfig = pMarinePIDV22
   speed_pid_integral_limit = 0.07
 
   //MAXIMUMS
-  maxrudder    = 100
+  //maxrudder    = 100
+  maxrudder    = 32.5 //Modifiquei pela função de controle do tempo
   maxthrust    = 100
 
   // A non-zero SPEED_FACTOR overrides use of SPEED_PID
@@ -182,8 +183,8 @@ ProcessConfig = pNodeReporter
 
 ProcessConfig = iSerial
 {
-   AppTick   = 4
-   CommsTick = 4
+   AppTick   = 100
+   CommsTick = 100
 }
 //------------------------------------------------
 // iDivisorNMEA config block
@@ -230,8 +231,8 @@ ProcessConfig = pContactMgrV20
 ProcessConfig = pLogger
 {
     //over loading basic params..lets be fiesty
-    AppTick  = 20.0
-    CommsTick   = 20.0
+    AppTick  = 100.0
+    CommsTick   = 100.0
 
     //all file names begin with this stem
       File        = teste
@@ -241,7 +242,7 @@ ProcessConfig = pLogger
   
       //yes we want some sync logging for crude
       //performance checking
-      SyncLog     = true @ 0.2
+      SyncLog     = false @ 0.2
   
       //yes we want async logging so we can replay
       // exactly what happened and record strings
@@ -254,4 +255,21 @@ ProcessConfig = pLogger
     //with a time stamp DAY MONTH YEAR TIME
     FileTimeStamp   = true
 
+
+    // Captures everything
+    LOG     = ANGULO_LEME
+
 }
+
+//------------------------------------------------------------------
+
+ProcessConfig = uPlotViewer                                     
+{                                                               
+  AppTick   = 100                                                 
+  CommsTick = 100                                                 
+                                                                
+  plot_var = var=DESIRED_RUDDER,min=0,max=400,bars=50,color=red 
+  plot_var = var=ANGULO_LEME,min=0,max=400,bars=80,color=blue  
+  //plot_var = var=LGAUSS_TEST_VAL,min=0,max=400,bars=80,color=green
+                                                                
+} 
