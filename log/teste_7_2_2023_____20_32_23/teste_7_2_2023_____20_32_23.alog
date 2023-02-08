@@ -1,0 +1,10 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% LOG FILE:       /home/moos-ivp-douglas/log/teste_7_2_2023_____20_32_23/teste_7_2_2023_____20_32_23.alog
+%% FILE OPENED ON  Wed Dec 31 21:00:00 1969
+%% LOGSTART           1675812742.989393
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+0.05746         MOOS_DEBUG           pHelmIvP        pHelmIvP AllStop: ManualOverride 
+1.42357         ANGULO_LEME          iDivisorNMEA    38.09000     
+4.33100         ANGULO_LEME          iDivisorNMEA    47.19000     
+6.61120         ANGULO_LEME          iDivisorNMEA    47.24000     
+9.16621         ANGULO_LEME          iDivisorNMEA    47.19000     

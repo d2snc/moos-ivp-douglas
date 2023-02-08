@@ -1,0 +1,31 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% LOG FILE:       /home/moos-ivp-douglas/log/teste_7_2_2023_____16_46_46/teste_7_2_2023_____16_46_46.alog
+%% FILE OPENED ON  Wed Dec 31 21:00:00 1969
+%% LOGSTART           1675799205.943095
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+-0.03654        MOOS_DEBUG           pHelmIvP        pHelmIvP AllStop: ManualOverride 
+0.69773         ANGULO_LEME          iDivisorNMEA    33.07000     
+2.84266         ANGULO_LEME          iDivisorNMEA    33.07000     
+4.93003         ANGULO_LEME          iDivisorNMEA    33.07000     
+6.94889         ANGULO_LEME          iDivisorNMEA    33.07000     
+9.02503         ANGULO_LEME          iDivisorNMEA    33.07000     
+11.05064        ANGULO_LEME          iDivisorNMEA    33.07000     
+13.14290        ANGULO_LEME          iDivisorNMEA    33.07000     
+15.21559        ANGULO_LEME          iDivisorNMEA    33.07000     
+17.27857        ANGULO_LEME          iDivisorNMEA    33.07000     
+19.36549        ANGULO_LEME          iDivisorNMEA    33.07000     
+21.36959        ANGULO_LEME          iDivisorNMEA    33.07000     
+23.37403        ANGULO_LEME          iDivisorNMEA    33.07000     
+25.42312        ANGULO_LEME          iDivisorNMEA    33.07000     
+27.50509        ANGULO_LEME          iDivisorNMEA    33.07000     
+29.56237        ANGULO_LEME          iDivisorNMEA    33.07000     
+31.62027        ANGULO_LEME          iDivisorNMEA    33.07000     
+33.66737        ANGULO_LEME          iDivisorNMEA    33.07000     
+35.71912        ANGULO_LEME          iDivisorNMEA    33.07000     
+37.74545        ANGULO_LEME          iDivisorNMEA    33.07000     
+39.84316        ANGULO_LEME          iDivisorNMEA    33.07000     
+41.84719        ANGULO_LEME          iDivisorNMEA    33.07000     
+43.84833        ANGULO_LEME          iDivisorNMEA    33.07000     
+45.88164        ANGULO_LEME          iDivisorNMEA    33.07000     
+47.92205        ANGULO_LEME          iDivisorNMEA    33.07000     
+49.95904        ANGULO_LEME          iDivisorNMEA    33.07000     

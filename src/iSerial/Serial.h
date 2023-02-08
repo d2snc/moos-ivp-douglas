@@ -50,8 +50,12 @@ class Serial : public AppCastingMOOSApp
     double rudder;
     double thrust;
     double angulo_leme;
+    double desired_speed;
+    double nav_speed;
     std::string rudder_convertido;
     std::string thrust_convertido;
+    std::string deploy;
+    std::string return_var;
 };
 
 #endif 

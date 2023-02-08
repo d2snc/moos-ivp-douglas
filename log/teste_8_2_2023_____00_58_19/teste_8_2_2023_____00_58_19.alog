@@ -1,0 +1,57 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% LOG FILE:       /home/moos-ivp-douglas/log/teste_8_2_2023_____00_58_19/teste_8_2_2023_____00_58_19.alog
+%% FILE OPENED ON  Wed Dec 31 21:00:00 1969
+%% LOGSTART            1675828699.10084
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+-0.04471        MOOS_DEBUG           pHelmIvP        pHelmIvP AllStop: ManualOverride 
+0.74651         ANGULO_LEME          iDivisorNMEA    33.07000     
+2.84386         ANGULO_LEME          iDivisorNMEA    33.07000     
+3.48249         MOOS_DEBUG           pHelmIvP        pHelmIvP AllStop: clear 
+4.92581         ANGULO_LEME          iDivisorNMEA    33.07000     
+7.00780         ANGULO_LEME          iDivisorNMEA    33.07000     
+9.08037         ANGULO_LEME          iDivisorNMEA    33.07000     
+11.09858        ANGULO_LEME          iDivisorNMEA    33.07000     
+13.15453        ANGULO_LEME          iDivisorNMEA    33.07000     
+15.17447        ANGULO_LEME          iDivisorNMEA    33.07000     
+17.25414        ANGULO_LEME          iDivisorNMEA    33.07000     
+19.32079        ANGULO_LEME          iDivisorNMEA    33.07000     
+21.35185        ANGULO_LEME          iDivisorNMEA    33.07000     
+23.42269        ANGULO_LEME          iDivisorNMEA    33.07000     
+25.45899        ANGULO_LEME          iDivisorNMEA    33.07000     
+27.52821        ANGULO_LEME          iDivisorNMEA    33.07000     
+29.59261        ANGULO_LEME          iDivisorNMEA    33.07000     
+31.62615        ANGULO_LEME          iDivisorNMEA    33.07000     
+33.68489        ANGULO_LEME          iDivisorNMEA    33.07000     
+35.80045        ANGULO_LEME          iDivisorNMEA    33.07000     
+37.88073        ANGULO_LEME          iDivisorNMEA    33.07000     
+39.95133        ANGULO_LEME          iDivisorNMEA    33.07000     
+41.96895        ANGULO_LEME          iDivisorNMEA    33.07000     
+44.01943        ANGULO_LEME          iDivisorNMEA    33.07000     
+46.09912        ANGULO_LEME          iDivisorNMEA    33.07000     
+48.18203        ANGULO_LEME          iDivisorNMEA    33.07000     
+50.24101        ANGULO_LEME          iDivisorNMEA    33.07000     
+52.27122        ANGULO_LEME          iDivisorNMEA    33.07000     
+54.38564        ANGULO_LEME          iDivisorNMEA    33.07000     
+56.40601        ANGULO_LEME          iDivisorNMEA    33.07000     
+58.41407        ANGULO_LEME          iDivisorNMEA    33.07000     
+60.44711        ANGULO_LEME          iDivisorNMEA    33.07000     
+62.47749        ANGULO_LEME          iDivisorNMEA    33.07000     
+64.48335        ANGULO_LEME          iDivisorNMEA    33.07000     
+66.49034        ANGULO_LEME          iDivisorNMEA    33.07000     
+68.52591        ANGULO_LEME          iDivisorNMEA    33.07000     
+70.53869        ANGULO_LEME          iDivisorNMEA    33.07000     
+72.57512        ANGULO_LEME          iDivisorNMEA    33.07000     
+74.63318        ANGULO_LEME          iDivisorNMEA    33.07000     
+76.77305        ANGULO_LEME          iDivisorNMEA    33.07000     
+78.83322        ANGULO_LEME          iDivisorNMEA    33.07000     
+80.86725        ANGULO_LEME          iDivisorNMEA    33.07000     
+82.92848        ANGULO_LEME          iDivisorNMEA    33.07000     
+84.94659        ANGULO_LEME          iDivisorNMEA    33.07000     
+86.99759        ANGULO_LEME          iDivisorNMEA    33.07000     
+89.01772        ANGULO_LEME          iDivisorNMEA    33.07000     
+91.06706        ANGULO_LEME          iDivisorNMEA    33.07000     
+93.12049        ANGULO_LEME          iDivisorNMEA    33.07000     
+95.14452        ANGULO_LEME          iDivisorNMEA    33.07000     
+97.17731        ANGULO_LEME          iDivisorNMEA    33.07000     
+99.19540        ANGULO_LEME          iDivisorNMEA    33.07000     
+101.30126       ANGULO_LEME          iDivisorNMEA    33.07000     

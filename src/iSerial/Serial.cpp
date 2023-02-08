@@ -73,6 +73,14 @@ bool Serial::OnNewMail(MOOSMSG_LIST &NewMail)
         thrust = msg.GetDouble();
      else if(key == "ANGULO_LEME")
         angulo_leme = msg.GetDouble();
+     else if(key == "DEPLOY")
+        deploy = msg.GetString(); 
+     else if(key == "RETURN")
+        return_var = msg.GetString();
+     else if(key == "DESIRED_SPEED")
+        desired_speed = msg.GetDouble();
+     else if(key == "NAV_SPEED")
+        nav_speed = msg.GetDouble();
      else if(key != "APPCAST_REQ") // handled by AppCastingMOOSApp
        reportRunWarning("Unhandled Mail: " + key);
    }
@@ -153,6 +161,11 @@ void Serial::registerVariables()
   Register("DESIRED_RUDDER", 0); //Registro da variável do leme
   Register("DESIRED_THRUST", 0); //Registro da variável da máquina
   Register("ANGULO_LEME", 0); //Registro da variável da máquina
+  Register("DEPLOY", 0); //Registro da variável deploy (start no pmarineviewer)
+  Register("RETURN", 0); //Registro da variável return (start no pmarineviewer)
+  Register("DESIRED_SPEED", 0); //Pega a veloc desejada
+  Register("NAV_SPEED", 0); //Veloc do navio dada pelo GPS
+
 }
 
 
@@ -166,9 +179,9 @@ bool Serial::buildReport()
   m_msgs << "============================================" << endl;
 
   ACTable actab(2);
-  actab << "angulo_leme | rudder | thrust | Maquina_Serial | Leme_Serial ";
+  actab << "deploy | angulo_leme | rudder | thrust | Maquina_Serial | Leme_Serial ";
   actab.addHeaderLines();
-  actab << angulo_leme << rudder << thrust << thrust_convertido << rudder_convertido;
+  actab << deploy << angulo_leme << rudder << thrust << thrust_convertido << rudder_convertido;
   m_msgs << actab.getFormattedString();
 
   return(true);
@@ -212,31 +225,67 @@ void Serial::enviaSerial()
   // Função para transformar as variáveis DESIRED_RUDDER e DESIRED_THRUST para o envio via serial para o PIC
   // No momento só verifica a variável rudder e thrust e faz a conversão
 
-  //Iteração para o leme
-  if (thrust > 0) {
-    thrust_convertido = "A1"; // Aumenta a rotação
-  }
+  /*
+  Comandos para o PIC:
+  A0 - diminuir rotacao
+  A1 - aumentar rotacao
+  A2 - setar marcha pra vante
+  A3 - setar marcha pra re*/
 
-  //Iteração para a máquina
-  if (rudder == 0) {
-    rudder_convertido = "L0";
+  //Iteração para o leme
+  /*
+  float erro_speed = nav_speed - desired_speed;
+
+  if (abs(erro_speed == 0)) {
+    //Faz nada se o erro for zero
   }
+  else if (erro_speed < 0) {
+    porta_serial.Write("A2".c_str(),2); //Marcha para vante
+    porta_serial.Write("A1".c_str(),2); //Aumenta a rotação
+  }
+  else if (erro_speed > 0) {
+    //porta_serial.Write("A3".c_str(),2); //Marcha para ré
+    porta_serial.Write("A0".c_str(),2); //Diminui a rotação
+  }
+  */
+
+
+  //Comando de leme
+  /* // COMANDO ANTIGO - PEGAVA PELO DESIRED_RUDDER= rudder
   if (rudder > 0) {
     rudder_convertido = "L0"+tempo_leme+"2"; //Guina tempo calculado para BE
   }
   else if (rudder < 0) {
     rudder_convertido = "L0"+tempo_leme+"1"; //Guina tempo calculado para BB
   }
+  */
+
+  //Comando novo de leme baseado no erro
+  if (erro_Leme < 0) {
+    rudder_convertido = "L0"+tempo_leme+"2"; //Guina tempo calculado para BE
+  }
+  else if (erro_Leme > 0) {
+    rudder_convertido = "L0"+tempo_leme+"1"; //Guina tempo calculado para BB
+  }
+  else if (int(erro_Leme) == 0) {
+    //Envia nada
+    rudder_convertido = "NULL";
+  }
   
   //Envio dos dados via serial para o leme
-  if (angulo_leme < 34 && angulo_leme > -34){ //Modificação no teste da lancha 7fev2023
+  //Coloquei aqui o limite do erro do leme para evitar de ficar enviando ordens com erro pequeno - Por enquanto erro<-1 e erro>1
+  if (angulo_leme < 34 && angulo_leme > -34 && deploy == "true" && return_var == "false" && erro_Leme > 1 && erro_Leme < -1){ //Modificação no teste da lancha 7fev2023 - deploy precisa ser true para enviar
     if (rudder_convertido == "L0"){
       porta_serial.Write(rudder_convertido.c_str(),2);
     } else {
       porta_serial.Write(rudder_convertido.c_str(),5); //Envia os caracteres para essa porta, coloquei 2 pq nos testes por enquanto só tem 2 caracteres
     }
     
-    usleep(tempo*100000); //Delay de tempo calculado - teste - 1000000 equivale a 1 seg.
+    if (tempo < 10) { 
+      usleep(1000000); //Coloquei 1 segundo como padrão mesmo em tempos mais baixos para não sobrecarregar o relé
+    } else {
+      usleep(tempo*100000); //Delay de tempo calculado - teste - 1000000 equivale a 1 seg.
+    }
   }
 
 }

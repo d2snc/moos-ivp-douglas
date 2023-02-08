@@ -1,0 +1,22 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% LOG FILE:       /home/moos-ivp-douglas/log/teste_8_2_2023_____00_18_23/teste_8_2_2023_____00_18_23.alog
+%% FILE OPENED ON  Wed Dec 31 21:00:00 1969
+%% LOGSTART           1675826302.474057
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+0.00608         MOOS_DEBUG           pHelmIvP        pHelmIvP AllStop: ManualOverride 
+0.68777         ANGULO_LEME          iDivisorNMEA    17.60000     
+2.97318         MOOS_DEBUG           pHelmIvP        pHelmIvP AllStop: clear 
+2.99223         ANGULO_LEME          iDivisorNMEA    38.09000     
+5.88573         ANGULO_LEME          iDivisorNMEA    47.19000     
+8.16071         ANGULO_LEME          iDivisorNMEA    47.24000     
+10.72537        ANGULO_LEME          iDivisorNMEA    47.19000     
+12.89263        ANGULO_LEME          iDivisorNMEA    44.31000     
+15.47900        ANGULO_LEME          iDivisorNMEA    35.21000     
+17.50402        ANGULO_LEME          iDivisorNMEA    19.44000     
+20.33384        ANGULO_LEME          iDivisorNMEA    0.88000      
+23.20298        ANGULO_LEME          iDivisorNMEA    6.51000      
+26.24921        ANGULO_LEME          iDivisorNMEA    22.03000     
+28.27787        ANGULO_LEME          iDivisorNMEA    18.79000     
+30.69759        ANGULO_LEME          iDivisorNMEA    -0.18000     
+32.98522        ANGULO_LEME          iDivisorNMEA    -19.41000    
+35.46461        ANGULO_LEME          iDivisorNMEA    -33.50000    
