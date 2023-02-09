@@ -1,0 +1,10 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% LOG FILE:       /home/moos-ivp-douglas/log/teste_9_2_2023_____12_10_24/teste_9_2_2023_____12_10_24.alog
+%% FILE OPENED ON  Wed Dec 31 21:00:00 1969
+%% LOGSTART           1675955423.773564
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+-0.04857        MOOS_DEBUG           pHelmIvP        pHelmIvP AllStop: ManualOverride 
+-0.04857        DESIRED_SPEED        pHelmIvP        0.00000      
+-0.04857        DESIRED_HEADING      pHelmIvP        0.00000      
+0.15335         DESIRED_RUDDER       pMarinePIDV22   0.00000      
+0.15335         DESIRED_THRUST       pMarinePIDV22   0.00000      

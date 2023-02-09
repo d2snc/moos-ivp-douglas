@@ -1,0 +1,236 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% LOG FILE:       /home/moos-ivp-douglas/log/teste_9_2_2023_____12_35_14/teste_9_2_2023_____12_35_14.alog
+%% FILE OPENED ON  Wed Dec 31 21:00:00 1969
+%% LOGSTART            1675956913.75472
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+-0.04508        MOOS_DEBUG           pHelmIvP        pHelmIvP AllStop: ManualOverride 
+-0.04508        DESIRED_SPEED        pHelmIvP        0.00000      
+-0.04508        DESIRED_HEADING      pHelmIvP        0.00000      
+0.15083         DESIRED_RUDDER       pMarinePIDV22   0.00000      
+0.15083         DESIRED_THRUST       pMarinePIDV22   0.00000      
+0.71571         ANGULO_LEME          iDivisorNMEA    -34.95000    
+0.79719         MSG_UDP              iDivisorNMEA    !AIVDM,1,1,,A,1:U8TvP000Lr<F5jrQOVgA@L088S,0*6A
+ 
+0.80255         VALOR_CONTROLE_LEME  iSerial         0.00000      
+0.80255         ERRO_Leme            iSerial         -34.95000    
+0.80256         TEMPO_LEME           iSerial         52.00000     
+0.80256         LEME_SERIAL          iSerial         L0522 
+2.80809         MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,0000632A2CC1A017*61
+ 
+2.81103         VALOR_CONTROLE_LEME  iSerial         0.00000      
+2.81104         ERRO_Leme            iSerial         -35.08000    
+2.81105         TEMPO_LEME           iSerial         52.00000     
+2.81106         LEME_SERIAL          iSerial         L0522 
+2.87206         DESIRED_RUDDER       pMarinePIDV22   0.00000      
+2.87207         DESIRED_THRUST       pMarinePIDV22   0.00000      
+2.87729         MOOS_DEBUG           pHelmIvP        pHelmIvP AllStop: clear 
+2.87731         DESIRED_SPEED        pHelmIvP        1.20000      
+2.87732         DESIRED_HEADING      pHelmIvP        23.00000     
+2.98463         ANGULO_LEME          iDivisorNMEA    -35.01000    
+4.81087         MSG_UDP              iDivisorNMEA    $AGRSA,-35.01,A,,V*55
+ 
+4.81447         VALOR_CONTROLE_LEME  iSerial         -10.18600    
+4.81447         ERRO_Leme            iSerial         -24.82400    
+4.81447         TEMPO_LEME           iSerial         37.00000     
+4.81449         LEME_SERIAL          iSerial         L0372 
+4.87531         DESIRED_RUDDER       pMarinePIDV22   -8.67400     
+4.87532         DESIRED_THRUST       pMarinePIDV22   24.00000     
+4.88111         DESIRED_SPEED        pHelmIvP        1.20000      
+4.88111         DESIRED_HEADING      pHelmIvP        22.00000     
+5.11907         ANGULO_LEME          iDivisorNMEA    -34.95000    
+6.81883         MSG_UDP              iDivisorNMEA    $MXPGN,00FF3D,6808,7FFFFF0DFFFF9F41*6E
+ 
+6.82052         VALOR_CONTROLE_LEME  iSerial         19.59400     
+6.82052         ERRO_Leme            iSerial         -54.60400    
+6.82052         TEMPO_LEME           iSerial         10.00000     
+6.82053         LEME_SERIAL          iSerial         L0102 
+6.88171         DESIRED_RUDDER       pMarinePIDV22   20.98600     
+6.88172         DESIRED_THRUST       pMarinePIDV22   24.00000     
+6.88339         DESIRED_SPEED        pHelmIvP        1.20000      
+6.88339         DESIRED_HEADING      pHelmIvP        22.00000     
+7.14596         ANGULO_LEME          iDivisorNMEA    -35.08000    
+8.82487         VALOR_CONTROLE_LEME  iSerial         32.50000     
+8.82487         ERRO_Leme            iSerial         -67.51000    
+8.82488         TEMPO_LEME           iSerial         10.00000     
+8.82488         LEME_SERIAL          iSerial         L0102 
+8.82825         MSG_UDP              iDivisorNMEA    $MXPGN,00FF3D,6808,7FFFFF0DFFFF9F41*6E
+ 
+8.88598         DESIRED_RUDDER       pMarinePIDV22   32.50000     
+8.88599         DESIRED_THRUST       pMarinePIDV22   24.00000     
+8.88681         DESIRED_SPEED        pHelmIvP        1.20000      
+8.88681         DESIRED_HEADING      pHelmIvP        22.00000     
+9.27432         ANGULO_LEME          iDivisorNMEA    -35.08000    
+10.83316        VALOR_CONTROLE_LEME  iSerial         32.50000     
+10.83317        ERRO_Leme            iSerial         -67.58000    
+10.83317        TEMPO_LEME           iSerial         10.00000     
+10.83318        LEME_SERIAL          iSerial         L0102 
+10.83649        MSG_UDP              iDivisorNMEA    $AGRSA,-35.08,A,,V*5C
+ 
+10.89044        DESIRED_SPEED        pHelmIvP        1.20000      
+10.89045        DESIRED_HEADING      pHelmIvP        23.00000     
+10.89471        DESIRED_RUDDER       pMarinePIDV22   32.50000     
+10.89471        DESIRED_THRUST       pMarinePIDV22   24.00000     
+11.39191        ANGULO_LEME          iDivisorNMEA    -35.01000    
+12.83828        MSG_UDP              iDivisorNMEA    $TIROT,-722.40,A*25
+ 
+12.83995        VALOR_CONTROLE_LEME  iSerial         32.50000     
+12.83996        ERRO_Leme            iSerial         -67.58000    
+12.83996        TEMPO_LEME           iSerial         10.00000     
+12.83998        LEME_SERIAL          iSerial         L0102 
+12.89252        DESIRED_SPEED        pHelmIvP        1.20000      
+12.89252        DESIRED_HEADING      pHelmIvP        24.00000     
+12.90067        DESIRED_RUDDER       pMarinePIDV22   32.50000     
+12.90067        DESIRED_THRUST       pMarinePIDV22   24.00000     
+13.70441        ANGULO_LEME          iDivisorNMEA    -35.08000    
+14.84623        VALOR_CONTROLE_LEME  iSerial         32.50000     
+14.84624        ERRO_Leme            iSerial         -67.63000    
+14.84624        TEMPO_LEME           iSerial         10.00000     
+14.84625        LEME_SERIAL          iSerial         L0102 
+14.84692        MSG_UDP              iDivisorNMEA    $GPZDA,153527.580,09,02,2023,,*54
+ 
+14.90286        DESIRED_SPEED        pHelmIvP        1.20000      
+14.90287        DESIRED_HEADING      pHelmIvP        25.00000     
+14.90748        DESIRED_RUDDER       pMarinePIDV22   32.50000     
+14.90748        DESIRED_THRUST       pMarinePIDV22   24.00000     
+15.70529        ANGULO_LEME          iDivisorNMEA    -35.13000    
+16.84870        MSG_UDP              iDivisorNMEA    $GPZDA,153529.580,09,02,2023,,*5A
+ 
+16.85379        VALOR_CONTROLE_LEME  iSerial         32.50000     
+16.85379        ERRO_Leme            iSerial         -67.63000    
+16.85380        TEMPO_LEME           iSerial         10.00000     
+16.85381        LEME_SERIAL          iSerial         L0102 
+16.90875        DESIRED_SPEED        pHelmIvP        1.20000      
+16.90875        DESIRED_HEADING      pHelmIvP        27.00000     
+16.91484        DESIRED_RUDDER       pMarinePIDV22   32.50000     
+16.91484        DESIRED_THRUST       pMarinePIDV22   24.00000     
+17.83707        ANGULO_LEME          iDivisorNMEA    -35.20000    
+18.85853        MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,000000A69EC1B4B8*16
+ 
+18.86054        VALOR_CONTROLE_LEME  iSerial         32.50000     
+18.86054        ERRO_Leme            iSerial         -67.70000    
+18.86055        TEMPO_LEME           iSerial         10.00000     
+18.86056        LEME_SERIAL          iSerial         L0102 
+18.91682        DESIRED_SPEED        pHelmIvP        1.20000      
+18.91683        DESIRED_HEADING      pHelmIvP        28.00000     
+18.92114        DESIRED_RUDDER       pMarinePIDV22   32.50000     
+18.92115        DESIRED_THRUST       pMarinePIDV22   24.00000     
+20.01796        ANGULO_LEME          iDivisorNMEA    -35.25000    
+20.86701        VALOR_CONTROLE_LEME  iSerial         -32.50000    
+20.86701        ERRO_Leme            iSerial         -2.70000     
+20.86701        TEMPO_LEME           iSerial         4.00000      
+20.86702        LEME_SERIAL          iSerial         L0042 
+20.86815        MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,00000000000000CD*63
+ 
+20.92692        DESIRED_SPEED        pHelmIvP        1.20000      
+20.92693        DESIRED_HEADING      pHelmIvP        28.00000     
+20.92812        DESIRED_RUDDER       pMarinePIDV22   -32.50000    
+20.92813        DESIRED_THRUST       pMarinePIDV22   24.00000     
+22.13239        ANGULO_LEME          iDivisorNMEA    -35.20000    
+22.86903        MSG_UDP              iDivisorNMEA    $MXPGN,00FF3D,6808,FFFFFF0CFFFF9F41*18
+ 
+22.87418        VALOR_CONTROLE_LEME  iSerial         -32.50000    
+22.87419        ERRO_Leme            iSerial         -2.70000     
+22.87419        TEMPO_LEME           iSerial         4.00000      
+22.87426        LEME_SERIAL          iSerial         L0042 
+22.92766        DESIRED_SPEED        pHelmIvP        1.20000      
+22.92767        DESIRED_HEADING      pHelmIvP        28.00000     
+22.93548        DESIRED_RUDDER       pMarinePIDV22   -32.50000    
+22.93549        DESIRED_THRUST       pMarinePIDV22   24.00000     
+24.51480        ANGULO_LEME          iDivisorNMEA    -35.20000    
+24.86913        MSG_UDP              iDivisorNMEA    $HCHDG,173.8,0.0,E,23.3,W*6F
+ 
+24.88147        VALOR_CONTROLE_LEME  iSerial         -32.50000    
+24.88147        ERRO_Leme            iSerial         -2.70000     
+24.88148        TEMPO_LEME           iSerial         4.00000      
+24.88150        LEME_SERIAL          iSerial         L0042 
+24.93620        DESIRED_SPEED        pHelmIvP        1.20000      
+24.93621        DESIRED_HEADING      pHelmIvP        28.00000     
+24.94239        DESIRED_RUDDER       pMarinePIDV22   -32.50000    
+24.94239        DESIRED_THRUST       pMarinePIDV22   24.00000     
+26.58717        ANGULO_LEME          iDivisorNMEA    -35.20000    
+26.86946        MSG_UDP              iDivisorNMEA    $TIROT,-749.90,A*25
+ 
+26.88567        VALOR_CONTROLE_LEME  iSerial         -32.50000    
+26.88568        ERRO_Leme            iSerial         -2.70000     
+26.88568        TEMPO_LEME           iSerial         4.00000      
+26.88569        LEME_SERIAL          iSerial         L0042 
+26.93976        DESIRED_SPEED        pHelmIvP        1.20000      
+26.93976        DESIRED_HEADING      pHelmIvP        27.00000     
+26.94660        DESIRED_RUDDER       pMarinePIDV22   -32.50000    
+26.94660        DESIRED_THRUST       pMarinePIDV22   24.00000     
+28.59454        ANGULO_LEME          iDivisorNMEA    -35.20000    
+28.87367        MSG_UDP              iDivisorNMEA    $GPRMC,153542.700,A,2254.55449,S,04309.60159,W,3.90,108.06,090223,23.38,W,A*13
+ 
+28.89372        VALOR_CONTROLE_LEME  iSerial         -32.50000    
+28.89372        ERRO_Leme            iSerial         -2.63000     
+28.89372        TEMPO_LEME           iSerial         4.00000      
+28.89373        LEME_SERIAL          iSerial         L0042 
+28.94517        DESIRED_SPEED        pHelmIvP        1.20000      
+28.94517        DESIRED_HEADING      pHelmIvP        26.00000     
+28.95485        DESIRED_RUDDER       pMarinePIDV22   -32.50000    
+28.95485        DESIRED_THRUST       pMarinePIDV22   24.00000     
+30.69355        ANGULO_LEME          iDivisorNMEA    -35.20000    
+30.88268        MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,0000000000000036*61
+ 
+30.90081        VALOR_CONTROLE_LEME  iSerial         -32.50000    
+30.90082        ERRO_Leme            iSerial         -2.70000     
+30.90082        TEMPO_LEME           iSerial         4.00000      
+30.90084        LEME_SERIAL          iSerial         L0042 
+30.94712        DESIRED_SPEED        pHelmIvP        1.20000      
+30.94713        DESIRED_HEADING      pHelmIvP        25.00000     
+30.96245        DESIRED_RUDDER       pMarinePIDV22   -32.50000    
+30.96245        DESIRED_THRUST       pMarinePIDV22   24.00000     
+32.73126        ANGULO_LEME          iDivisorNMEA    -35.20000    
+32.88525        MSG_UDP              iDivisorNMEA    $GPZDA,153545.560,09,02,2023,,*5E
+ 
+32.90849        VALOR_CONTROLE_LEME  iSerial         -32.50000    
+32.90849        ERRO_Leme            iSerial         -2.70000     
+32.90850        TEMPO_LEME           iSerial         4.00000      
+32.90852        LEME_SERIAL          iSerial         L0042 
+32.95456        DESIRED_SPEED        pHelmIvP        1.20000      
+32.95457        DESIRED_HEADING      pHelmIvP        24.00000     
+32.96937        DESIRED_RUDDER       pMarinePIDV22   -32.50000    
+32.96937        DESIRED_THRUST       pMarinePIDV22   24.00000     
+34.81865        ANGULO_LEME          iDivisorNMEA    -35.20000    
+34.89043        MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,0000001A6CC1005E*64
+ 
+34.91642        VALOR_CONTROLE_LEME  iSerial         -4.88200     
+34.91642        ERRO_Leme            iSerial         -30.31800    
+34.91642        TEMPO_LEME           iSerial         45.00000     
+34.91643        LEME_SERIAL          iSerial         L0452 
+34.95561        DESIRED_SPEED        pHelmIvP        1.20000      
+34.95561        DESIRED_HEADING      pHelmIvP        23.00000     
+34.97760        DESIRED_RUDDER       pMarinePIDV22   -4.88200     
+34.97760        DESIRED_THRUST       pMarinePIDV22   24.00000     
+36.92465        VALOR_CONTROLE_LEME  iSerial         22.40200     
+36.92465        ERRO_Leme            iSerial         -57.60200    
+36.92466        TEMPO_LEME           iSerial         10.00000     
+36.92467        LEME_SERIAL          iSerial         L0102 
+36.95021        MSG_UDP              iDivisorNMEA    !AIVDO,1,1,,,B:UOH3P09o>VosLf@a@F3wq5kP06,0*0E
+ 
+36.95575        DESIRED_SPEED        pHelmIvP        1.20000      
+36.95575        DESIRED_HEADING      pHelmIvP        23.00000     
+36.98354        ANGULO_LEME          iDivisorNMEA    -35.25000    
+36.98546        DESIRED_RUDDER       pMarinePIDV22   22.40200     
+36.98547        DESIRED_THRUST       pMarinePIDV22   24.00000     
+38.93012        VALOR_CONTROLE_LEME  iSerial         32.50000     
+38.93013        ERRO_Leme            iSerial         -67.70000    
+38.93013        TEMPO_LEME           iSerial         10.00000     
+38.93014        LEME_SERIAL          iSerial         L0102 
+38.95544        MSG_UDP              iDivisorNMEA    $MXPGN,01FA06,681C,0070007809D20041*6E
+ 
+38.96055        DESIRED_SPEED        pHelmIvP        1.20000      
+38.96055        DESIRED_HEADING      pHelmIvP        23.00000     
+38.99162        DESIRED_RUDDER       pMarinePIDV22   32.50000     
+38.99162        DESIRED_THRUST       pMarinePIDV22   24.00000     
+39.07872        ANGULO_LEME          iDivisorNMEA    -35.20000    
+40.93767        VALOR_CONTROLE_LEME  iSerial         32.50000     
+40.93768        ERRO_Leme            iSerial         -67.75000    
+40.93768        TEMPO_LEME           iSerial         10.00000     
+40.93769        LEME_SERIAL          iSerial         L0102 
+40.96199        DESIRED_SPEED        pHelmIvP        1.20000      
+40.96200        DESIRED_HEADING      pHelmIvP        24.00000     
+40.96306        MSG_UDP              iDivisorNMEA    $GPGSV,3,1,09,08,42,244,47,10,35,147,47,16,07,319,41,18,15,066,42*7E
+ 
+40.99866        DESIRED_RUDDER       pMarinePIDV22   32.50000     
+40.99866        DESIRED_THRUST       pMarinePIDV22   24.00000     

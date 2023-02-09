@@ -299,6 +299,8 @@ bool DivisorNMEA::Iterate()
   Notify("NAV_SPEED", speed_gps);
   
   Notify("NAV_HEADING", heading_giro);
+  //para testes
+  Notify("GPS_HEADING", heading_gps);
   /*
   if (heading_giro == 0){ //Caso o rumo verdadeiro da giro venha zerada, pego do gps
     Notify("NAV_HEADING", heading_gps); //Alterei para pegar o heading da giro ao invés do gps
@@ -390,7 +392,7 @@ bool DivisorNMEA::Iterate()
       Notify("ANGULO_LEME", ang);
     }
     //Parser do Rumo Verdadeiro dado pela Giro
-    else if (msg_string.substr(0,6) == "$HEHDT") {
+    else if (msg_string.substr(0,6) == "$GPHDT") {
       try {
         heading_giro = stold(libais::GetNthField(msg,1,",")); //Pega o primeiro campo da string NMEA
       }

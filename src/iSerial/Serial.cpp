@@ -215,6 +215,7 @@ void Serial::enviaSerial()
   //UnityEngine.Debug.Log("Tempo Leme: " + tempo + "\n");
 
   if (tempo > 100) tempo = 99; //O tempo é só dois dígitos
+  if (tempo > 80) tempo = 10; //Limite de 3 segundos para o tempo - Obtido em testes
   Notify("TEMPO_LEME",tempo);
   
   //Passo o tempo para string e assim mandar via serial
@@ -261,31 +262,33 @@ void Serial::enviaSerial()
   */
 
   //Comando novo de leme baseado no erro
-  if (erro_Leme < 0) {
+  if (erro_Leme < -2) {
     rudder_convertido = "L0"+tempo_leme+"2"; //Guina tempo calculado para BE
   }
-  else if (erro_Leme > 0) {
+  else if (erro_Leme > 2) {
     rudder_convertido = "L0"+tempo_leme+"1"; //Guina tempo calculado para BB
   }
   else if (int(erro_Leme) == 0) {
     //Envia nada
     rudder_convertido = "NULL";
+  } else {
+    rudder_convertido = "NULL";
   }
   
   //Envio dos dados via serial para o leme
   //Coloquei aqui o limite do erro do leme para evitar de ficar enviando ordens com erro pequeno - Por enquanto erro<-1 e erro>1
-  if (angulo_leme < 34 && angulo_leme > -34 && deploy == "true" && return_var == "false" && erro_Leme > 1 && erro_Leme < -1){ //Modificação no teste da lancha 7fev2023 - deploy precisa ser true para enviar
+  if (angulo_leme < 36 && angulo_leme > -36 && deploy == "true" && return_var == "false"){ //Modificação no teste da lancha 7fev2023 - deploy precisa ser true para enviar
     if (rudder_convertido == "L0"){
       porta_serial.Write(rudder_convertido.c_str(),2);
     } else {
       porta_serial.Write(rudder_convertido.c_str(),5); //Envia os caracteres para essa porta, coloquei 2 pq nos testes por enquanto só tem 2 caracteres
     }
     
-    if (tempo < 10) { 
-      usleep(1000000); //Coloquei 1 segundo como padrão mesmo em tempos mais baixos para não sobrecarregar o relé
-    } else {
-      usleep(tempo*100000); //Delay de tempo calculado - teste - 1000000 equivale a 1 seg.
-    }
+    //if (tempo < 10) { 
+    //  usleep(1000000); //Coloquei 1 segundo como padrão mesmo em tempos mais baixos para não sobrecarregar o relé
+    //} else {
+      //usleep(tempo*100000); //Delay de tempo calculado - teste - 1000000 equivale a 1 seg.
+    //}
   }
 
 }

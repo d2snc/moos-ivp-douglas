@@ -1,0 +1,7 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% LOG FILE:       /home/moos-ivp-douglas/log/teste_9_2_2023_____12_58_56/teste_9_2_2023_____12_58_56.ylog
+%% FILE OPENED ON  Wed Dec 31 21:00:00 1969
+%% LOGSTART           1675958336.257006
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+-0.04565597 MOOS_DEBUG           pHelmIvP             pHelmIvP AllStop: ManualOverride 
+2.474694   MOOS_DEBUG           pHelmIvP             pHelmIvP AllStop: clear 
