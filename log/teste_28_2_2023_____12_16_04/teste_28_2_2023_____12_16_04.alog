@@ -1,0 +1,23 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% LOG FILE:       /home/moos-ivp-douglas/log/teste_28_2_2023_____12_16_04/teste_28_2_2023_____12_16_04.alog
+%% FILE OPENED ON  Wed Dec 31 21:00:00 1969
+%% LOGSTART           1677597363.835247
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+-145.14764      MOOS_DEBUG           pHelmIvP        pHelmIvP AllStop: clear 
+-5.45426        ANGULO_LEME          iDivisorNMEA    -10.82000    
+-3.30069        DESIRED_RUDDER       pMarinePIDV22   0.00000      
+-3.30068        DESIRED_THRUST       pMarinePIDV22   0.00000      
+0.74758         MSG_UDP              iDivisorNMEA    $MXPGN,01FA04,680A,4303684AF2000033*16 
+0.75056         DESIRED_SPEED        pHelmIvP        4.00000      
+0.75056         DESIRED_HEADING      pHelmIvP        4.00000      
+2.75306         MSG_UDP              iDivisorNMEA    $HEHDT,36.52,T*2D 
+2.75899         DESIRED_SPEED        pHelmIvP        4.00000      
+2.75901         DESIRED_HEADING      pHelmIvP        296.00000    
+3.15669         ANGULO_LEME          iDivisorNMEA    -2.47000     
+4.75906         MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,00000017A3C1298B*14 
+4.76128         DESIRED_SPEED        pHelmIvP        4.00000      
+4.76128         DESIRED_HEADING      pHelmIvP        46.00000     
+5.40584         ANGULO_LEME          iDivisorNMEA    -2.47000     
+6.76249         MSG_UDP              iDivisorNMEA    $HEHDT,34.34,T*2F 
+6.76937         DESIRED_SPEED        pHelmIvP        4.00000      
+6.76937         DESIRED_HEADING      pHelmIvP        46.00000     

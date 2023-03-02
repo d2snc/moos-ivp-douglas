@@ -1,0 +1,29 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% LOG FILE:       /home/moos-ivp-douglas/log/teste_28_2_2023_____12_16_16/teste_28_2_2023_____12_16_16.alog
+%% FILE OPENED ON  Wed Dec 31 21:00:00 1969
+%% LOGSTART           1677597376.249985
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+-157.56238      MOOS_DEBUG           pHelmIvP        pHelmIvP AllStop: clear 
+-15.71543       DESIRED_RUDDER       pMarinePIDV22   0.00000      
+-15.71542       DESIRED_THRUST       pMarinePIDV22   0.00000      
+-2.70089        ANGULO_LEME          iDivisorNMEA    14.47000     
+0.69547         DESIRED_SPEED        pHelmIvP        4.00000      
+0.69548         DESIRED_HEADING      pHelmIvP        4.00000      
+0.70204         MSG_UDP              iDivisorNMEA    $GPVTG,50.59,T,,M,13.78,N,25.52,K,A*09 
+2.70857         MSG_UDP              iDivisorNMEA    $MXPGN,01FA04,680A,000010CC40C41366*6D 
+2.71283         DESIRED_SPEED        pHelmIvP        4.00000      
+2.71284         DESIRED_HEADING      pHelmIvP        47.00000     
+2.93470         DESIRED_RUDDER       pMarinePIDV22   0.00000      
+2.93470         DESIRED_THRUST       pMarinePIDV22   0.00000      
+3.13848         ANGULO_LEME          iDivisorNMEA    -23.04000    
+4.70921         MSG_UDP              iDivisorNMEA    $HEHDT,21.37,T*28 
+4.72150         DESIRED_SPEED        pHelmIvP        4.00000      
+4.72151         DESIRED_HEADING      pHelmIvP        284.00000    
+4.94431         DESIRED_RUDDER       pMarinePIDV22   -32.50000    
+4.94432         DESIRED_THRUST       pMarinePIDV22   80.00000     
+5.46729         ANGULO_LEME          iDivisorNMEA    -22.61000    
+6.71164         MSG_UDP              iDivisorNMEA    $MXPGN,01FA04,681C,681FF27FFFFFFED1*14 
+6.73018         DESIRED_SPEED        pHelmIvP        4.00000      
+6.73018         DESIRED_HEADING      pHelmIvP        283.00000    
+6.95135         DESIRED_RUDDER       pMarinePIDV22   -32.50000    
+6.95136         DESIRED_THRUST       pMarinePIDV22   80.00000     

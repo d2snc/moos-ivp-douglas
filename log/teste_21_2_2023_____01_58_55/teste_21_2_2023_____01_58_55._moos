@@ -1,0 +1,291 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% LOG FILE:       /home/moos-ivp-douglas/log/teste_21_2_2023_____01_58_55/teste_21_2_2023_____01_58_55._moos
+%% FILE OPENED ON  Wed Dec 31 21:00:00 1969
+%% LOGSTART           1676955535.205292
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+//-------------------------------------------------
+// NAME: L. H. S. Caldas, USP
+// FILE: main.moos
+//-------------------------------------------------
+
+ServerHost = localhost
+ServerPort = 9001 
+Community  = alfa
+
+MOOSTimeWarp = 1
+
+// 1511
+LatOrigin = -22.93335 
+LongOrigin = -43.136666665 
+
+//------------------------------------------
+// Antler configuration  block
+ProcessConfig = ANTLER
+{
+  MSBetweenLaunches = 100
+
+    Run = MOOSDB		@ NewConsole = false
+  //  Run = uSimMarine	@ NewConsole = false
+    Run = pNodeReporter	@ NewConsole = false
+    Run = pHelmIvP	@ NewConsole = false
+    Run = iSerial	@ NewConsole = false  
+    Run = pMarinePIDV22	@ NewConsole = false
+    Run = uProcessWatch   @ NewConsole = false
+    Run = pContactMgrV20	@ NewConsole = false
+    //Run = pUDP_Receiver	@ NewConsole = false
+    Run = pMarineViewer	@ NewConsole = false
+    Run = iDivisorNMEA	@ NewConsole = false
+    Run = pLogger	@ NewConsole = false
+    //Run = uPlotViewer	@ NewConsole = false
+
+}
+
+//------------------------------------------
+// uSimMarine config block
+
+ProcessConfig = uSimMarine
+{
+  AppTick	= 10
+  CommsTick	= 10
+
+START_X = -2385.0 
+START_Y = 2385.0 
+  START_SPEED   = 0
+START_HEADING = 0.0 
+
+  PREFIX        = NAV
+}
+
+
+//------------------------------------------
+// uProcessWatch config block
+
+ProcessConfig = uProcessWatch
+{
+  AppTick   = 100
+  CommsTick = 100
+
+  term_report_interval = 0.8
+
+  summary_wait = 5
+
+  nowatch   = uXMS*
+  nowatch   = uPokeDB*
+  nowatch   = uTermCommand*
+  watch_all = true
+}
+
+
+//------------------------------------------
+// pHelmIvP config block
+
+ProcessConfig = pHelmIvP
+{
+  AppTick    = 100
+  CommsTick  = 100
+
+  Behaviors  = alder.bhv
+  Verbose    = quiet
+  Domain     = course:0:359:360
+  Domain     = speed:0:4:21
+
+  IVP_BEHAVIOR_DIR = ../../lib
+  //IVP_BEHAVIOR_DIR = /Users/mikerb/Research/moos-ivp-extend/trunk/lib
+
+  ok_skew = any
+  start_in_drive = false
+  hold_on_apps = pContactMgrV20
+}
+
+//------------------------------------------
+// pMarinePID config block
+
+ProcessConfig = pMarinePIDV22
+{
+  AppTick    = 100
+  CommsTick  = 100
+
+  verbose       = true
+  depth_control = false
+
+  // SIM_INSTABILITY = 20
+
+  // Yaw PID controller
+  yaw_pid_kp		 = 0.8
+  yaw_pid_kd		 = 0.0
+  yaw_pid_ki		 = 0.1 //
+  yaw_pid_integral_limit = 0.07
+
+  // Speed PID controller
+  speed_pid_kp		 = 1.0
+  speed_pid_kd		 = 0.0
+  speed_pid_ki		 = 0.0
+  speed_pid_integral_limit = 0.07
+
+  //MAXIMUMS
+  //maxrudder    = 100
+  maxrudder    = 32.5 //Modifiquei pela função de controle do tempo
+  maxthrust    = 100
+
+  // A non-zero SPEED_FACTOR overrides use of SPEED_PID
+  // Will set DESIRED_THRUST = DESIRED_SPEED * SPEED_FACTOR
+  speed_factor = 20
+}
+
+//------------------------------------------
+// pMarineViewer config block
+
+ProcessConfig = pMarineViewer
+{
+  AppTick    = 100
+  CommsTick  = 100
+
+  TIFF_FILE            = 1511geotiff.tif
+  //set_pan_x            = -90
+  //set_pan_y            = -280
+  zoom                 = 1
+  vehicle_shape_scale  = 20
+  //hash_delta           = 50
+  //hash_shade           = 0.4
+  //hash_viewable        = true
+
+  scope = MVIEWER_LCLICK
+  center_view = active
+
+   // Appcast configuration
+  appcast_height       = 75
+  appcast_width        = 30
+  appcast_viewable     = true
+  appcast_color_scheme = indigo
+  nodes_font_size      = medium
+  procs_font_size      = medium
+  appcast_font_size    = small
+
+  BUTTON_ONE = DEPLOY # DEPLOY=true
+  BUTTON_ONE = MOOS_MANUAL_OVERIDE=false # RETURN=false
+  BUTTON_TWO = RETURN # RETURN=true
+}
+
+//------------------------------------------
+// pNodeReporter config block
+
+ProcessConfig = pNodeReporter
+{
+  AppTick	= 100
+  CommsTick	= 100
+
+  platform_type      = ship // Tamanho do Navio
+  platform_length    = 3        // meters.  Range [0,inf) 
+  VESSEL_TYPE   = SHIP
+
+  //node_report_output = REPORT_POSICAO
+  cross_fill_policy = global
+}
+
+
+//-------------------------------------------
+// iSerial bloco de config
+
+ProcessConfig = iSerial
+{
+   AppTick   = 100
+   CommsTick = 100
+}
+//------------------------------------------------
+// iDivisorNMEA config block
+
+ProcessConfig = iDivisorNMEA
+{
+   AppTick   = 100
+   CommsTick = 100
+}
+//------------------------------------------------
+
+//pContactMgrV20 config block
+
+ProcessConfig = pContactMgrV20                                
+{                                                               
+  AppTick   = 100                                                 
+  CommsTick = 100                                               
+                                                                
+                                                                
+  // Policy for retaining potential stale contacts              
+  contact_max_age  = 100             //  default in secs.       
+  max_retired_history = 5            //  default in # of ships                         
+  
+  // Configuring other output                                   
+  display_radii     = false  // or {true}                        
+  alert_verbose     = false  // If true, ALERT_VERBOSE published.
+  //alert_range_color = color  // default is gray65       
+  //cpa_range_color   = color  // default is gray35       
+                                                                
+  // Policy for linear extrapolation of stale contacts          
+  decay = 15,30                       // the default in secs    
+                                                                
+  reject_range   = off      // default is 2000 (meter)                               
+  recap_interval = 10         // default in 1 (second)    
+                                                                
+  contact_local_coords    = force_lat_lon  // default is verbatim    
+  post_closest_range      = false     // default is false       
+}                  
+
+//-----------------------------------------
+
+//------------------------------------------------------------------
+// pLogger configuration block
+ProcessConfig = pLogger
+{
+    //over loading basic params..lets be fiesty
+    AppTick  = 100.0
+    CommsTick   = 100.0
+
+    //all file names begin with this stem
+      File        = teste
+  
+      //where is the root log directory
+      PATH        = /home/moos-ivp-douglas/log
+  
+      //yes we want some sync logging for crude
+      //performance checking
+      SyncLog     = false @ 0.2
+  
+      //yes we want async logging so we can replay
+      // exactly what happened and record strings
+      AsyncLog    = true
+
+
+    WildCardLogging = false
+
+      //yes append each created directory log file
+    //with a time stamp DAY MONTH YEAR TIME
+    FileTimeStamp   = true
+
+
+    // Captures everything
+    LOG     = ANGULO_LEME
+    LOG     = DESIRED_RUDDER
+    LOG     = DESIRED_THRUST
+    LOG     = DESIRED_SPEED
+    LOG     = DESIRED_HEADING
+    LOG     = ERRO_Leme
+    LOG     = LEME_SERIAL
+    LOG     = TEMPO_LEME
+    LOG     = VALOR_CONTROLE_LEME
+    LOG     = MSG_UDP
+
+}
+
+//------------------------------------------------------------------
+
+ProcessConfig = uPlotViewer                                     
+{                                                               
+  AppTick   = 100                                                 
+  CommsTick = 100                                                 
+                                                                
+  plot_var = var=DESIRED_RUDDER,min=0,max=400,bars=50,color=red 
+  plot_var = var=ANGULO_LEME,min=0,max=400,bars=80,color=blue  
+  //plot_var = var=LGAUSS_TEST_VAL,min=0,max=400,bars=80,color=green
+                                                                
+} 
+
+

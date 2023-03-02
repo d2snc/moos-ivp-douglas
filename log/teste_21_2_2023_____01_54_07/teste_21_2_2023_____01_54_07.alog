@@ -1,0 +1,7 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% LOG FILE:       /home/moos-ivp-douglas/log/teste_21_2_2023_____01_54_07/teste_21_2_2023_____01_54_07.alog
+%% FILE OPENED ON  Wed Dec 31 21:00:00 1969
+%% LOGSTART            1676955247.16074
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+-0.06355        DESIRED_RUDDER       pMarinePIDV22   0.00000      
+-0.06355        DESIRED_THRUST       pMarinePIDV22   0.00000      

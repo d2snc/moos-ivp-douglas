@@ -1,0 +1,33 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% LOG FILE:       /home/moos-ivp-douglas/log/teste_27_2_2023_____23_42_12/teste_27_2_2023_____23_42_12.alog
+%% FILE OPENED ON  Wed Dec 31 21:00:00 1969
+%% LOGSTART           1677552131.670879
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+0.16216         DESIRED_RUDDER       pMarinePIDV22   0.00000      
+0.16216         DESIRED_THRUST       pMarinePIDV22   0.00000      
+0.62872         ANGULO_LEME          iDivisorNMEA    14.02000     
+0.75182         MSG_UDP              iDivisorNMEA    $MXPGN,00FF8C,6808,FFF100D8F34C9F41*6E 
+2.75685         MSG_UDP              iDivisorNMEA    $MXPGN,01FF2C,7808,FF7FFFFFFFFFFF62*62 
+3.51928         ANGULO_LEME          iDivisorNMEA    38.09000     
+4.76568         MSG_UDP              iDivisorNMEA    $MXPGN,01FA04,681C,7FFFFFFE1004CC94*64 
+5.52262         ANGULO_LEME          iDivisorNMEA    47.24000     
+6.77333         MSG_UDP              iDivisorNMEA    $MXPGN,01FF1A,680D,FF022B849F4105A0*1B 
+8.06387         ANGULO_LEME          iDivisorNMEA    47.24000     
+8.78261         MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,FFF8F90004AF7825*6E 
+10.19725        ANGULO_LEME          iDivisorNMEA    47.19000     
+10.78419        MSG_UDP              iDivisorNMEA    $MXPGN,01FA04,681C,FFFE113040161206*18 
+12.71643        ANGULO_LEME          iDivisorNMEA    44.36000     
+12.78651        MSG_UDP              iDivisorNMEA    $MXPGN,01FA04,680A,AC147352F2000033*6D 
+14.75053        ANGULO_LEME          iDivisorNMEA    42.52000     
+14.78860        MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,000000C749C1784D*17 
+16.80727        MSG_UDP              iDivisorNMEA    $MXPGN,01FA04,681C,FFFE125C40161286*66 
+17.28229        ANGULO_LEME          iDivisorNMEA    24.61000     
+18.82007        MSG_UDP              iDivisorNMEA    $HEHDT,64.57,T*2F 
+19.43970        ANGULO_LEME          iDivisorNMEA    7.01000      
+20.82637        MSG_UDP              iDivisorNMEA    $WIMTW,21.62,C*3A 
+21.93870        ANGULO_LEME          iDivisorNMEA    0.49000      
+22.84063        MSG_UDP              iDivisorNMEA    $MXPGN,00FF19,7808,0000000602009F41*11 
+24.84308        MSG_UDP              iDivisorNMEA    $HEHDT,52.64,T*2A 
+24.88322        ANGULO_LEME          iDivisorNMEA    19.04000     
+26.84388        MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,00000003BEC1649C*6D 
+27.65849        ANGULO_LEME          iDivisorNMEA    22.92000     
