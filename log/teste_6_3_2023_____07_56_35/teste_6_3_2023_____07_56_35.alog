@@ -1,0 +1,2107 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% LOG FILE:       /home/moos-ivp-douglas/log/teste_6_3_2023_____07_56_35/teste_6_3_2023_____07_56_35.alog
+%% FILE OPENED ON  Wed Dec 31 21:00:00 1969
+%% LOGSTART           1678100194.487611
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+-0.04289        MOOS_DEBUG           pHelmIvP        pHelmIvP AllStop: ManualOverride 
+-0.04289        DESIRED_SPEED        pHelmIvP        0.00000      
+-0.04289        DESIRED_HEADING      pHelmIvP        0.00000      
+0.16073         DESIRED_RUDDER       pMarinePIDV22   0.00000      
+0.16073         DESIRED_THRUST       pMarinePIDV22   0.00000      
+0.74356         MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,000000000257B4CA*10
+ 
+0.74430         MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,0000004AB1C1B4CA*63
+ 
+0.75441         MSG_UDP              iDivisorNMEA    $MXPGN,00FF8C,6808,FFF10695FA149F41*18
+ 
+0.76459         MSG_UDP              iDivisorNMEA    $MXPGN,00FF28,3808,FF08FFFDFC059F41*19
+ 
+0.77476         MSG_UDP              iDivisorNMEA    $AGRSA,4.37,A,,V*4F
+ 
+0.77484         ANGULO_LEME          iDivisorNMEA    4.37000      
+0.80046         MSG_UDP              iDivisorNMEA    $HCHDG,283.9,0.0,E,23.3,W*62
+ 
+0.80148         MSG_UDP              iDivisorNMEA    $GPHDT,260.62,T*05
+ 
+0.81060         MSG_UDP              iDivisorNMEA    $TIROT,-0.09,A*2F
+ 
+0.82074         MSG_UDP              iDivisorNMEA    $MXPGN,00FF00,280B,0002000005049913*19
+ 
+0.83089         MSG_UDP              iDivisorNMEA    $MXPGN,01FF1A,680B,FF022B849F410500*6C
+ 
+0.84102         MSG_UDP              iDivisorNMEA    $MXPGN,01FF1A,782B,FF010B049F410560*60
+ 
+0.85118         MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,000000000257C8CB*1E
+ 
+0.86136         MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,0000003AAEC1C8CB*1D
+ 
+0.87151         MSG_UDP              iDivisorNMEA    $AGRSA,4.37,A,,V*4F
+ 
+0.87154         ANGULO_LEME          iDivisorNMEA    4.37000      
+0.90044         MSG_UDP              iDivisorNMEA    $HCHDG,283.9,0.0,E,23.3,W*62
+ 
+0.90143         MSG_UDP              iDivisorNMEA    $GPHDT,260.64,T*03
+ 
+0.91063         MSG_UDP              iDivisorNMEA    $TIROT,0.00,A*0B
+ 
+0.92079         MSG_UDP              iDivisorNMEA    $GPGSA,A,3,08,10,16,18,21,23,26,,,,,,2.56,2.00,2.00*02
+ 
+0.93096         MSG_UDP              iDivisorNMEA    $GPGSV,2,1,07,08,43,246,47,10,35,146,00,16,07,320,43,18,14,065,43*7B
+ 
+0.94113         MSG_UDP              iDivisorNMEA    $GPGSV,2,2,07,21,15,219,00,23,11,121,00,26,00,354,00*46
+ 
+0.95132         MSG_UDP              iDivisorNMEA    $MXPGN,01FA06,681C,8A012300C8CC0F80*60
+ 
+0.96152         MSG_UDP              iDivisorNMEA    $MXPGN,01FA06,681C,008C0122F1780081*17
+ 
+0.97167         MSG_UDP              iDivisorNMEA    $MXPGN,01FA06,681C,FFFFFFFFFF01A082*66
+ 
+0.98186         MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,00000000000000CC*64
+ 
+0.99202         MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,0000003AAEC100CC*67
+ 
+1.00224         MSG_UDP              iDivisorNMEA    $MXPGN,00FF3C,3808,8000F8FE00009F41*1C
+ 
+1.01239         MSG_UDP              iDivisorNMEA    $GPGGA,135635.300,2254.75279,S,04309.53850,W,1,07,2.00,-1.24,M,-5.00,M,,*5A
+ 
+1.02254         MSG_UDP              iDivisorNMEA    $GPGLL,2254.75279,S,04309.53850,W,135635.300,A,A*58
+ 
+1.03268         MSG_UDP              iDivisorNMEA    $GPRMC,135635.300,A,2254.75279,S,04309.53850,W,0.00,86.06,060323,23.39,W,A*21
+ 
+1.04285         MSG_UDP              iDivisorNMEA    $GPVTG,86.06,T,,M,0.00,N,0.00,K,A*05
+ 
+1.05296         MSG_UDP              iDivisorNMEA    $AGRSA,4.32,A,,V*4A
+ 
+1.05300         ANGULO_LEME          iDivisorNMEA    4.32000      
+1.06309         MSG_UDP              iDivisorNMEA    $HCHDG,283.9,0.0,E,23.3,W*62
+ 
+1.07342         MSG_UDP              iDivisorNMEA    $GPHDT,260.64,T*03
+ 
+1.08358         MSG_UDP              iDivisorNMEA    $TIROT,0.00,A*0B
+ 
+1.09376         MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,00000000000014CD*66
+ 
+1.10398         MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,0000003AAEC114CD*65
+ 
+1.11416         MSG_UDP              iDivisorNMEA    $MXPGN,00FF16,7808,FF0000002B0A9F41*1B
+ 
+1.12428         MSG_UDP              iDivisorNMEA    $AGRSA,4.32,A,,V*4A
+ 
+1.12433         ANGULO_LEME          iDivisorNMEA    4.32000      
+1.13443         MSG_UDP              iDivisorNMEA    $MXPGN,00FF00,280B,0002000005049913*19
+ 
+1.14466         MSG_UDP              iDivisorNMEA    $HCHDG,283.9,0.0,E,23.3,W*62
+ 
+1.15483         MSG_UDP              iDivisorNMEA    $GPHDT,260.63,T*04
+ 
+1.16500         MSG_UDP              iDivisorNMEA    $TIROT,0.00,A*0B
+ 
+1.17519         MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,00000000000028CE*68
+ 
+1.18538         MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,0000008785C128CE*1F
+ 
+1.19557         MSG_UDP              iDivisorNMEA    $GPGGA,,2254.75259,S,04309.53879,W,1,,,,M,,M,,*50
+ 
+1.20576         MSG_UDP              iDivisorNMEA    $GPGLL,2254.75259,S,04309.53879,W,,A,A*4B
+ 
+1.21590         MSG_UDP              iDivisorNMEA    $GPVTG,7.40,T,,M,0.10,N,0.18,K,A*36
+ 
+1.22608         MSG_UDP              iDivisorNMEA    $AGRSA,4.32,A,,V*4A
+ 
+1.22613         ANGULO_LEME          iDivisorNMEA    4.32000      
+1.23634         MSG_UDP              iDivisorNMEA    $HCHDG,283.9,0.0,E,23.3,W*62
+ 
+1.24651         MSG_UDP              iDivisorNMEA    $GPHDT,260.63,T*04
+ 
+1.25664         MSG_UDP              iDivisorNMEA    $TIROT,0.09,A*02
+ 
+1.26681         MSG_UDP              iDivisorNMEA    !AIVDM,1,1,,A,1:U8vhS000LrNimjsHGGtWQp0PRm,0*45
+ 
+1.27697         MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,0000000000003CCF*11
+ 
+1.28716         MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,0000008785C13CCF*66
+ 
+1.29730         MSG_UDP              iDivisorNMEA    $GPGGA,135635.000,2254.75355,S,04309.53984,W,1,11,1.50,5.76,M,-5.60,M,,*77
+ 
+1.30745         MSG_UDP              iDivisorNMEA    $GPGLL,2254.75355,S,04309.53984,W,135635.000,A,A*5C
+ 
+1.31762         MSG_UDP              iDivisorNMEA    $GPRMC,135635.000,A,2254.75355,S,04309.53984,W,0.19,0.00,060323,23.30,W,A*1C
+ 
+1.32779         MSG_UDP              iDivisorNMEA    $GPVTG,0.00,T,,M,0.19,N,0.35,K,A*33
+ 
+1.33793         MSG_UDP              iDivisorNMEA    $AGRSA,4.32,A,,V*4A
+ 
+1.33798         ANGULO_LEME          iDivisorNMEA    4.32000      
+1.34816         MSG_UDP              iDivisorNMEA    $GPZDA,135634.700,06,03,2023,,*51
+ 
+1.35831         MSG_UDP              iDivisorNMEA    $HCHDG,283.9,0.0,E,23.3,W*62
+ 
+1.36848         MSG_UDP              iDivisorNMEA    $GPHDT,260.63,T*04
+ 
+1.37864         MSG_UDP              iDivisorNMEA    $TIROT,0.09,A*02
+ 
+1.38882         MSG_UDP              iDivisorNMEA    $MXPGN,00FF00,280B,0002000005049913*19
+ 
+1.63554         MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,0000000000008CD3*68
+ 
+1.63651         MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,0000004468C18CD3*13
+ 
+1.65045         MSG_UDP              iDivisorNMEA    $AGRSA,4.32,A,,V*4A
+ 
+1.65054         ANGULO_LEME          iDivisorNMEA    4.32000      
+1.66851         MSG_UDP              iDivisorNMEA    $MXPGN,00FF19,7808,0000000202009F41*15
+ 
+1.69343         MSG_UDP              iDivisorNMEA    $MXPGN,00FF19,7808,0080000A0A009F41*1D
+ 
+1.70050         MSG_UDP              iDivisorNMEA    $HCHDG,283.9,0.0,E,23.3,W*62
+ 
+1.70365         MSG_UDP              iDivisorNMEA    $GPHDT,260.63,T*04
+ 
+1.71385         MSG_UDP              iDivisorNMEA    $TIROT,-0.09,A*2F
+ 
+1.73560         MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,000000000000A0D4*65
+ 
+1.73638         MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,0000004468C1A0D4*1E
+ 
+1.74654         MSG_UDP              iDivisorNMEA    $MXPGN,00FF8C,6808,FFF10695FA149F41*18
+ 
+1.75669         MSG_UDP              iDivisorNMEA    $MXPGN,00FF28,3808,FF08FFFDFC059F41*19
+ 
+1.76684         MSG_UDP              iDivisorNMEA    $AGRSA,4.32,A,,V*4A
+ 
+1.76686         ANGULO_LEME          iDivisorNMEA    4.32000      
+1.80052         MSG_UDP              iDivisorNMEA    $HCHDG,283.9,0.0,E,23.3,W*62
+ 
+1.80132         MSG_UDP              iDivisorNMEA    $GPHDT,260.64,T*03
+ 
+1.81149         MSG_UDP              iDivisorNMEA    $TIROT,-0.09,A*2F
+ 
+1.82166         MSG_UDP              iDivisorNMEA    $MXPGN,00FF00,280B,0002000005049913*19
+ 
+1.83184         MSG_UDP              iDivisorNMEA    $MXPGN,01FF1A,680B,FF022B849F410520*6E
+ 
+1.84203         MSG_UDP              iDivisorNMEA    $MXPGN,01FF1A,782B,FF010B049F410580*6E
+ 
+1.85219         MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,000000000000B4D5*63
+ 
+1.86237         MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,0000005D67C1B4D5*66
+ 
+1.87252         MSG_UDP              iDivisorNMEA    $AGRSA,4.32,A,,V*4A
+ 
+1.87256         ANGULO_LEME          iDivisorNMEA    4.32000      
+1.90040         MSG_UDP              iDivisorNMEA    $HCHDG,283.9,0.0,E,23.3,W*62
+ 
+1.90135         MSG_UDP              iDivisorNMEA    $GPHDT,260.64,T*03
+ 
+1.91155         MSG_UDP              iDivisorNMEA    $TIROT,-0.29,A*2D
+ 
+1.92173         MSG_UDP              iDivisorNMEA    $GPGSA,A,3,08,10,16,18,21,23,26,,,,,,2.56,2.00,2.00*02
+ 
+1.93190         MSG_UDP              iDivisorNMEA    $GPGSV,2,1,07,08,43,246,47,10,35,146,00,16,07,320,43,18,14,065,43*7B
+ 
+1.94207         MSG_UDP              iDivisorNMEA    $GPGSV,2,2,07,21,15,219,00,23,11,121,00,26,00,354,00*46
+ 
+1.95228         MSG_UDP              iDivisorNMEA    $MXPGN,01FA06,681C,8A012300C8D60FA0*6B
+ 
+1.96259         MSG_UDP              iDivisorNMEA    $MXPGN,01FA06,681C,008C0122F17800A1*6E
+ 
+1.97299         MSG_UDP              iDivisorNMEA    $MXPGN,01FA06,681C,FFFFFFFFFF01A0A2*1F
+ 
+1.98318         MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,00000000000000D6*16
+ 
+1.99347         MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,0000005D67C100D6*13
+ 
+2.00380         MSG_UDP              iDivisorNMEA    $MXPGN,00FF3C,3808,8000F8FE00009F41*1C
+ 
+2.01394         MSG_UDP              iDivisorNMEA    $GPGGA,135636.300,2254.75279,S,04309.53850,W,1,07,2.00,-1.24,M,-5.00,M,,*59
+ 
+2.02408         MSG_UDP              iDivisorNMEA    $GPGLL,2254.75279,S,04309.53850,W,135636.300,A,A*5B
+ 
+2.03424         MSG_UDP              iDivisorNMEA    $GPRMC,135636.300,A,2254.75279,S,04309.53850,W,0.01,136.99,060323,23.39,W,A*1F
+ 
+2.04434         MSG_UDP              iDivisorNMEA    $GPVTG,136.99,T,,M,0.01,N,0.01,K,A*39
+ 
+2.05451         MSG_UDP              iDivisorNMEA    $AGRSA,4.32,A,,V*4A
+ 
+2.05453         ANGULO_LEME          iDivisorNMEA    4.32000      
+2.06460         MSG_UDP              iDivisorNMEA    $HCHDG,284.0,0.0,E,23.3,W*6C
+ 
+2.07471         MSG_UDP              iDivisorNMEA    $GPHDT,260.65,T*02
+ 
+2.08483         MSG_UDP              iDivisorNMEA    $TIROT,-0.49,A*2B
+ 
+2.09500         MSG_UDP              iDivisorNMEA    !AIVDM,1,1,,A,3:U7oI0511trLMMjr0OHBVa82000,0*44
+ 
+2.10518         MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,00000000000014D7*12
+ 
+2.11540         MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,0000005D67C114D7*17
+ 
+2.12560         MSG_UDP              iDivisorNMEA    $MXPGN,00FF16,7808,FF0000002B0A9F41*1B
+ 
+2.13583         MSG_UDP              iDivisorNMEA    $AGRSA,4.32,A,,V*4A
+ 
+2.13587         ANGULO_LEME          iDivisorNMEA    4.32000      
+2.14603         MSG_UDP              iDivisorNMEA    $MXPGN,00FF00,280B,0002000005049913*19
+ 
+2.15631         MSG_UDP              iDivisorNMEA    $HCHDG,284.0,0.0,E,23.3,W*6C
+ 
+2.16651         MSG_UDP              iDivisorNMEA    $GPHDT,260.65,T*02
+ 
+2.17677         MSG_UDP              iDivisorNMEA    $TIROT,-0.49,A*2B
+ 
+2.18700         MSG_UDP              iDivisorNMEA    !AIVDO,1,1,,,B:UOH3P007>VtBLf>c`4cwj5oP06,0*14
+ 
+2.19721         MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,00000000000028D8*12
+ 
+2.20752         MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,000000E1FAC128D8*14
+ 
+2.21774         MSG_UDP              iDivisorNMEA    $GPGGA,,2254.75259,S,04309.53889,W,1,,,,M,,M,,*5F
+ 
+2.22804         MSG_UDP              iDivisorNMEA    $GPGLL,2254.75259,S,04309.53889,W,,A,A*44
+ 
+2.23833         MSG_UDP              iDivisorNMEA    $GPVTG,7.40,T,,M,0.00,N,0.00,K,A*3E
+ 
+2.24868         MSG_UDP              iDivisorNMEA    $AGRSA,4.32,A,,V*4A
+ 
+2.24877         ANGULO_LEME          iDivisorNMEA    4.32000      
+2.25899         MSG_UDP              iDivisorNMEA    $HCHDG,284.0,0.0,E,23.3,W*6C
+ 
+2.26928         MSG_UDP              iDivisorNMEA    $GPHDT,260.66,T*01
+ 
+2.27956         MSG_UDP              iDivisorNMEA    $TIROT,-0.19,A*2E
+ 
+2.28980         MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,0000000000003CD9*69
+ 
+2.30008         MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,000000E1FAC13CD9*6F
+ 
+2.31035         MSG_UDP              iDivisorNMEA    $GPGGA,135636.000,2254.75346,S,04309.53987,W,1,11,1.50,5.76,M,-5.60,M,,*75
+ 
+2.53555         MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,00000000000078DC*6C
+ 
+2.53632         MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,000000677CC178DC*6C
+ 
+2.55041         MSG_UDP              iDivisorNMEA    $AGRSA,4.32,A,,V*4A
+ 
+2.55052         ANGULO_LEME          iDivisorNMEA    4.32000      
+2.60052         MSG_UDP              iDivisorNMEA    $HCHDG,284.0,0.0,E,23.3,W*6C
+ 
+2.60157         MSG_UDP              iDivisorNMEA    $GPHDT,260.71,T*07
+ 
+2.61082         MSG_UDP              iDivisorNMEA    $TIROT,-0.09,A*2F
+ 
+2.62109         MSG_UDP              iDivisorNMEA    $GPGSA,A,3,08,16,18,27,28,31,32,65,85,86,72,,2.40,1.90,1.90*0B
+ 
+2.63133         MSG_UDP              iDivisorNMEA    $GPGSV,3,1,11,08,43,247,46,16,07,321,41,18,15,065,34,27,59,302,43*74
+ 
+2.64159         MSG_UDP              iDivisorNMEA    $GPGSV,3,2,11,28,24,033,41,31,18,023,44,32,72,129,44,65,22,303,39*7C
+ 
+2.65207         MSG_UDP              iDivisorNMEA    $GPGSV,3,3,11,85,32,041,43,86,72,098,37,72,62,246,32*49
+ 
+2.66246         MSG_UDP              iDivisorNMEA    $MXPGN,00FF00,280B,0002000005049913*19
+ 
+2.67279         MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,0000000000008CDD*1F
+ 
+2.68295         MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,0000005280C18CDD*65
+ 
+2.69307         MSG_UDP              iDivisorNMEA    $AGRSA,4.32,A,,V*4A
+ 
+2.69310         ANGULO_LEME          iDivisorNMEA    4.32000      
+2.70318         MSG_UDP              iDivisorNMEA    $MXPGN,00FF19,7808,0000000202009F41*15
+ 
+2.71332         MSG_UDP              iDivisorNMEA    $MXPGN,00FF19,7808,0080000A0A009F41*1D
+ 
+2.72350         MSG_UDP              iDivisorNMEA    $HCHDG,284.0,0.0,E,23.3,W*6C
+ 
+2.73362         MSG_UDP              iDivisorNMEA    $GPHDT,260.71,T*07
+ 
+2.74378         MSG_UDP              iDivisorNMEA    $TIROT,-0.09,A*2F
+ 
+2.75391         MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,000000000000A0DE*14
+ 
+2.76406         MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,0000005280C1A0DE*6E
+ 
+2.77422         MSG_UDP              iDivisorNMEA    $MXPGN,00FF8C,6808,FFF10695FA149F41*18
+ 
+2.78448         MSG_UDP              iDivisorNMEA    $MXPGN,00FF28,3808,FF08FFFDFC059F41*19
+ 
+2.79466         MSG_UDP              iDivisorNMEA    $AGRSA,4.37,A,,V*4F
+ 
+2.79469         ANGULO_LEME          iDivisorNMEA    4.37000      
+2.80483         MSG_UDP              iDivisorNMEA    $HCHDG,284.0,0.0,E,23.3,W*6C
+ 
+2.81511         MSG_UDP              iDivisorNMEA    $GPHDT,260.72,T*04
+ 
+2.82539         MSG_UDP              iDivisorNMEA    $TIROT,-0.09,A*2F
+ 
+2.83563         MSG_UDP              iDivisorNMEA    $MXPGN,01FF1A,680B,FF022B849F410540*68
+ 
+2.84587         MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,000000000000A0DE*14
+ 
+2.85612         MSG_UDP              iDivisorNMEA    $MXPGN,00FF00,280B,0002000005049913*19
+ 
+2.86636         MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,0000005280C1A0DE*6E
+ 
+2.87663         MSG_UDP              iDivisorNMEA    $AGRSA,4.37,A,,V*4F
+ 
+2.87671         ANGULO_LEME          iDivisorNMEA    4.37000      
+2.88692         MSG_UDP              iDivisorNMEA    !AIVDM,1,1,,A,1:U8?kPP1kLrKqmjqGWC>Owp0W3h,0*25
+ 
+2.89718         MSG_UDP              iDivisorNMEA    $MXPGN,01FF1A,782B,FF010B049F4105A0*17
+ 
+2.90742         MSG_UDP              iDivisorNMEA    $MXPGN,01FF1A,782B,FFFAFF859F4105C0*68
+ 
+2.91767         MSG_UDP              iDivisorNMEA    $HCHDG,284.0,0.0,E,23.3,W*6C
+ 
+2.92795         MSG_UDP              iDivisorNMEA    $GPHDT,260.72,T*04
+ 
+2.93819         MSG_UDP              iDivisorNMEA    $TIROT,-0.09,A*2F
+ 
+2.94844         MSG_UDP              iDivisorNMEA    $GPGSA,A,3,08,10,16,18,21,23,26,,,,,,2.56,2.00,2.00*02
+ 
+2.95876         MSG_UDP              iDivisorNMEA    $GPGSV,2,1,07,08,43,246,47,10,35,146,00,16,07,320,43,18,14,065,43*7B
+ 
+2.96904         MSG_UDP              iDivisorNMEA    $GPGSV,2,2,07,21,15,219,00,23,11,121,00,26,00,354,00*46
+ 
+2.97929         MSG_UDP              iDivisorNMEA    $MXPGN,01FA06,681C,8A012300C8DE0FC0*1A
+ 
+2.98952         MSG_UDP              iDivisorNMEA    $MXPGN,01FA06,681C,008C0122F17A00C1*15
+ 
+2.99975         MSG_UDP              iDivisorNMEA    $MXPGN,01FA06,681C,FFFFFFFFFF01A0C2*1D
+ 
+3.01007         MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,00000000000014DF*63
+ 
+3.02034         MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,0000007605C114DF*12
+ 
+3.03062         MSG_UDP              iDivisorNMEA    $MXPGN,00FF3C,3808,8000F8FE00009F41*1C
+ 
+3.04084         MSG_UDP              iDivisorNMEA    $GPGGA,135637.100,2254.75279,S,04309.53850,W,1,07,2.00,-1.24,M,-5.00,M,,*5A
+ 
+3.05153         MSG_UDP              iDivisorNMEA    $GPGLL,2254.75279,S,04309.53850,W,135637.100,A,A*58
+ 
+3.06180         MSG_UDP              iDivisorNMEA    $GPRMC,135637.100,A,2254.75279,S,04309.53850,W,0.03,121.00,060323,23.39,W,A*18
+ 
+3.07215         MSG_UDP              iDivisorNMEA    $GPVTG,121.00,T,,M,0.03,N,0.05,K,A*39
+ 
+3.08245         MSG_UDP              iDivisorNMEA    $AGRSA,4.32,A,,V*4A
+ 
+3.08254         ANGULO_LEME          iDivisorNMEA    4.32000      
+3.09273         MSG_UDP              iDivisorNMEA    $HCHDG,284.0,0.0,E,23.3,W*6C
+ 
+3.10309         MSG_UDP              iDivisorNMEA    $GPHDT,260.72,T*04
+ 
+3.11329         MSG_UDP              iDivisorNMEA    $TIROT,0.00,A*0B
+ 
+3.12357         MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,0000000000003BE1*61
+ 
+3.13388         MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,0000007605C13BE1*10
+ 
+3.14420         MSG_UDP              iDivisorNMEA    $MXPGN,00FF16,7808,FF0000002B0A9F41*1B
+ 
+3.15450         MSG_UDP              iDivisorNMEA    $AGRSA,4.32,A,,V*4A
+ 
+3.15456         ANGULO_LEME          iDivisorNMEA    4.32000      
+3.16475         MSG_UDP              iDivisorNMEA    $MXPGN,00FF00,280B,0002000005049913*19
+ 
+3.17506         MSG_UDP              iDivisorNMEA    $HCHDG,284.0,0.0,E,23.3,W*6C
+ 
+3.18534         MSG_UDP              iDivisorNMEA    $GPHDT,260.71,T*07
+ 
+3.19568         MSG_UDP              iDivisorNMEA    $TIROT,0.00,A*0B
+ 
+3.20594         MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,00000000000050E2*16
+ 
+3.43551         MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,0000000000008CE5*6F
+ 
+3.43643         MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,000000BBA1C18CE5*6A
+ 
+3.44672         MSG_UDP              iDivisorNMEA    $MXPGN,01FF2C,7808,FFFFFFFF9F4117A0*1A
+ 
+3.45701         MSG_UDP              iDivisorNMEA    $MXPGN,01FF2C,7808,FFFF7FFFFFFF7FA1*67
+ 
+3.46730         MSG_UDP              iDivisorNMEA    $MXPGN,01FF2C,7808,FF7FFFFFFFFFFFA2*15
+ 
+3.47762         MSG_UDP              iDivisorNMEA    $MXPGN,01FF2C,7808,FFFFFFFF7FFFFFA3*14
+ 
+3.48789         MSG_UDP              iDivisorNMEA    $AGRSA,4.32,A,,V*4A
+ 
+3.48799         ANGULO_LEME          iDivisorNMEA    4.32000      
+3.49826         MSG_UDP              iDivisorNMEA    $SDDPT,1.76,0.00,*7B
+ 
+3.50849         MSG_UDP              iDivisorNMEA    $MXPGN,00FF3D,6808,7FFFFF0DFFFF9F41*6E
+ 
+3.51877         MSG_UDP              iDivisorNMEA    $HCHDG,284.0,0.0,E,23.3,W*6C
+ 
+3.52897         MSG_UDP              iDivisorNMEA    $GPHDT,260.70,T*06
+ 
+3.53919         MSG_UDP              iDivisorNMEA    $TIROT,0.00,A*0B
+ 
+3.54943         MSG_UDP              iDivisorNMEA    $MXPGN,01FF0D,780B,FF03000098900500*66
+ 
+3.56011         MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,0000000000009FE6*68
+ 
+3.57033         MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,000000BBA1C19FE6*6D
+ 
+3.58064         MSG_UDP              iDivisorNMEA    $AGRSA,4.32,A,,V*4A
+ 
+3.58071         ANGULO_LEME          iDivisorNMEA    4.32000      
+3.60068         MSG_UDP              iDivisorNMEA    $HCHDG,284.0,0.0,E,23.3,W*6C
+ 
+3.60194         MSG_UDP              iDivisorNMEA    $GPHDT,260.70,T*06
+ 
+3.61224         MSG_UDP              iDivisorNMEA    $TIROT,-0.09,A*2F
+ 
+3.62252         MSG_UDP              iDivisorNMEA    $GPGSA,A,3,08,16,18,27,28,31,32,65,85,86,72,,2.40,1.90,1.90*0B
+ 
+3.63275         MSG_UDP              iDivisorNMEA    $GPGSV,3,1,11,08,43,247,46,16,07,321,41,18,15,065,34,27,59,302,43*74
+ 
+3.64300         MSG_UDP              iDivisorNMEA    $GPGSV,3,2,11,28,24,033,41,31,18,023,43,32,72,129,44,65,22,303,39*7B
+ 
+3.65334         MSG_UDP              iDivisorNMEA    $GPGSV,3,3,11,85,32,041,43,86,72,098,37,72,62,246,32*49
+ 
+3.66367         MSG_UDP              iDivisorNMEA    $MXPGN,00FF00,280B,0002000005049913*19
+ 
+3.67395         MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,000000000000B4E7*60
+ 
+3.68415         MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,0000004850C1B4E7*1C
+ 
+3.69441         MSG_UDP              iDivisorNMEA    $AGRSA,4.32,A,,V*4A
+ 
+3.69447         ANGULO_LEME          iDivisorNMEA    4.32000      
+3.70469         MSG_UDP              iDivisorNMEA    $MXPGN,00FF19,7808,0000000202009F41*15
+ 
+3.71498         MSG_UDP              iDivisorNMEA    $MXPGN,00FF19,7808,0080000A0A009F41*1D
+ 
+3.72530         MSG_UDP              iDivisorNMEA    $HCHDG,284.0,0.0,E,23.3,W*6C
+ 
+3.73573         MSG_UDP              iDivisorNMEA    $GPHDT,260.71,T*07
+ 
+3.74602         MSG_UDP              iDivisorNMEA    $TIROT,-0.09,A*2F
+ 
+3.75629         MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,000000000000C8E8*62
+ 
+3.76654         MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,0000004850C1C8E8*1E
+ 
+3.77685         MSG_UDP              iDivisorNMEA    $MXPGN,00FF8C,6808,FFF10695FA149F41*18
+ 
+3.78711         MSG_UDP              iDivisorNMEA    $MXPGN,00FF28,3808,FF08FFFDFC059F41*19
+ 
+3.79737         MSG_UDP              iDivisorNMEA    $AGRSA,4.32,A,,V*4A
+ 
+3.79743         ANGULO_LEME          iDivisorNMEA    4.32000      
+3.80761         MSG_UDP              iDivisorNMEA    $HCHDG,284.0,0.0,E,23.3,W*6C
+ 
+3.81781         MSG_UDP              iDivisorNMEA    $GPHDT,260.71,T*07
+ 
+3.82806         MSG_UDP              iDivisorNMEA    $TIROT,-0.09,A*2F
+ 
+3.83832         MSG_UDP              iDivisorNMEA    $MXPGN,01FF1A,680B,FF022B849F410560*6A
+ 
+3.84855         MSG_UDP              iDivisorNMEA    $MXPGN,01FF1A,782B,FF010B049F4105C0*15
+ 
+3.85891         MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,000000000000DCE9*1F
+ 
+3.86922         MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,0000004850C1DCE9*63
+ 
+3.87950         MSG_UDP              iDivisorNMEA    $MXPGN,00FF00,280B,0002000005049913*19
+ 
+3.88976         MSG_UDP              iDivisorNMEA    $AGRSA,4.32,A,,V*4A
+ 
+3.88984         ANGULO_LEME          iDivisorNMEA    4.32000      
+3.90041         MSG_UDP              iDivisorNMEA    $HCHDG,284.0,0.0,E,23.3,W*6C
+ 
+3.91072         MSG_UDP              iDivisorNMEA    $GPHDT,260.70,T*06
+ 
+3.92100         MSG_UDP              iDivisorNMEA    $TIROT,-0.29,A*2D
+ 
+3.93129         MSG_UDP              iDivisorNMEA    $GPGSA,A,3,08,10,16,18,21,23,26,,,,,,2.56,2.00,2.00*02
+ 
+3.94162         MSG_UDP              iDivisorNMEA    $GPGSV,2,1,07,08,43,246,47,10,35,146,00,16,07,320,43,18,14,065,43*7B
+ 
+3.95191         MSG_UDP              iDivisorNMEA    $GPGSV,2,2,07,21,15,219,00,23,11,121,00,26,00,354,00*46
+ 
+3.96221         MSG_UDP              iDivisorNMEA    $MXPGN,01FA06,681C,8A012300C8E90FE0*61
+ 
+3.97247         MSG_UDP              iDivisorNMEA    $MXPGN,01FA06,681C,008C0122F17A00E1*13
+ 
+3.98271         MSG_UDP              iDivisorNMEA    $MXPGN,01FA06,681C,FFFFFFFFFF01A0E2*1B
+ 
+3.99290         MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,00000000000000E9*18
+ 
+4.00312         MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,000000D9CEC100E9*16
+ 
+4.01342         MSG_UDP              iDivisorNMEA    $MXPGN,00FF3C,3808,8000F8FE00009F41*1C
+ 
+4.02391         MSG_UDP              iDivisorNMEA    $GPGGA,135638.200,2254.75279,S,04309.53850,W,1,07,2.00,-1.24,M,-5.00,M,,*56
+ 
+4.03431         MSG_UDP              iDivisorNMEA    $GPGLL,2254.75279,S,04309.53850,W,135638.200,A,A*54
+ 
+4.04462         MSG_UDP              iDivisorNMEA    $GPRMC,135638.200,A,2254.75279,S,04309.53850,W,0.01,106.06,060323,23.39,W,A*15
+ 
+4.05508         MSG_UDP              iDivisorNMEA    $GPVTG,106.06,T,,M,0.01,N,0.01,K,A*3C
+ 
+4.06580         MSG_UDP              iDivisorNMEA    $AGRSA,4.37,A,,V*4F
+ 
+4.06588         ANGULO_LEME          iDivisorNMEA    4.37000      
+4.07603         MSG_UDP              iDivisorNMEA    $HCHDG,284.0,0.0,E,23.3,W*6C
+ 
+4.33555         MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,00000000000064EE*66
+ 
+4.33648         MSG_UDP              iDivisorNMEA    $MXPGN,00FF00,280B,0002000005049913*19
+ 
+4.34659         MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,000000536FC164EE*65
+ 
+4.35668         MSG_UDP              iDivisorNMEA    $AGRSA,4.32,A,,V*4A
+ 
+4.35673         ANGULO_LEME          iDivisorNMEA    4.32000      
+4.40040         MSG_UDP              iDivisorNMEA    $HCHDG,284.0,0.0,E,23.3,W*6C
+ 
+4.40128         MSG_UDP              iDivisorNMEA    $GPHDT,260.72,T*04
+ 
+4.41145         MSG_UDP              iDivisorNMEA    $TIROT,0.09,A*02
+ 
+4.43551         MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,00000000000078EF*68
+ 
+4.43652         MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,000000536FC178EF*6B
+ 
+4.44666         MSG_UDP              iDivisorNMEA    $MXPGN,01FF2C,7808,FFFFFFFF9F4117C0*18
+ 
+4.45686         MSG_UDP              iDivisorNMEA    $MXPGN,01FF2C,7808,FFFF7FFFFFFF7FC1*65
+ 
+4.46705         MSG_UDP              iDivisorNMEA    $MXPGN,01FF2C,7808,FF7FFFFFFFFFFFC2*17
+ 
+4.47723         MSG_UDP              iDivisorNMEA    $MXPGN,01FF2C,7808,FFFFFFFF7FFFFFC3*16
+ 
+4.48742         MSG_UDP              iDivisorNMEA    $AGRSA,4.32,A,,V*4A
+ 
+4.48744         ANGULO_LEME          iDivisorNMEA    4.32000      
+4.49757         MSG_UDP              iDivisorNMEA    $SDDPT,1.76,0.00,*7B
+ 
+4.50772         MSG_UDP              iDivisorNMEA    $MXPGN,00FF3D,6808,7FFFFF0DFFFF9F41*6E
+ 
+4.51789         MSG_UDP              iDivisorNMEA    $MXPGN,00FF3D,6808,0000FF0BFFFF9F41*19
+ 
+4.52810         MSG_UDP              iDivisorNMEA    $HCHDG,284.0,0.0,E,23.3,W*6C
+ 
+4.53829         MSG_UDP              iDivisorNMEA    $GPHDT,260.72,T*04
+ 
+4.54849         MSG_UDP              iDivisorNMEA    $TIROT,0.09,A*02
+ 
+4.55865         MSG_UDP              iDivisorNMEA    $MXPGN,01FF0D,780B,FF03000098900520*64
+ 
+4.56895         MSG_UDP              iDivisorNMEA    $MXPGN,00FF3D,6808,FFFFFF0CFFFF9F41*18
+ 
+4.57910         MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,0000000000008CF0*69
+ 
+4.58929         MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,000000536FC18CF0*6A
+ 
+4.59943         MSG_UDP              iDivisorNMEA    $MXPGN,00FF3D,6808,FFFFFF03FFFF9F41*68
+ 
+4.60959         MSG_UDP              iDivisorNMEA    $AGRSA,4.32,A,,V*4A
+ 
+4.60960         ANGULO_LEME          iDivisorNMEA    4.32000      
+4.61980         MSG_UDP              iDivisorNMEA    $MXPGN,00FF3D,6808,FFFFFF02FFFF9F41*69
+ 
+4.62999         MSG_UDP              iDivisorNMEA    $HCHDG,284.0,0.0,E,23.3,W*6C
+ 
+4.64015         MSG_UDP              iDivisorNMEA    $GPHDT,260.73,T*05
+ 
+4.65042         MSG_UDP              iDivisorNMEA    $TIROT,0.29,A*00
+ 
+4.66062         MSG_UDP              iDivisorNMEA    $GPGSA,A,3,08,10,16,18,27,28,31,32,65,85,86,72,2.40,1.40,1.40*0A
+ 
+4.67082         MSG_UDP              iDivisorNMEA    $GPGSV,3,1,12,08,43,247,46,10,35,146,21,16,07,321,40,18,15,065,34*7E
+ 
+4.68101         MSG_UDP              iDivisorNMEA    $GPGSV,3,2,12,27,59,302,43,28,24,033,41,31,18,023,43,32,72,129,44*7E
+ 
+4.69117         MSG_UDP              iDivisorNMEA    $GPGSV,3,3,12,65,22,303,38,85,32,041,42,86,72,098,37,72,62,246,32*73
+ 
+4.70134         MSG_UDP              iDivisorNMEA    $MXPGN,00FF00,280B,0002000005049913*19
+ 
+4.71150         MSG_UDP              iDivisorNMEA    $MXPGN,01FF06,380B,090001FF99130F20*60
+ 
+4.72170         MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,000000000000A0F1*62
+ 
+4.73186         MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,00000045F4C1A0F1*64
+ 
+4.74207         MSG_UDP              iDivisorNMEA    $MXPGN,01FF06,380B,00001C12FC000021*69
+ 
+4.75234         MSG_UDP              iDivisorNMEA    $MXPGN,01FF06,380B,FFFFFFFFFFDE6F22*6F
+ 
+4.76251         MSG_UDP              iDivisorNMEA    $AGRSA,4.32,A,,V*4A
+ 
+4.76254         ANGULO_LEME          iDivisorNMEA    4.32000      
+4.77266         MSG_UDP              iDivisorNMEA    $MXPGN,00FF19,7808,0000000202009F41*15
+ 
+4.78283         MSG_UDP              iDivisorNMEA    $MXPGN,00FF19,7808,0080000A0A009F41*1D
+ 
+4.79301         MSG_UDP              iDivisorNMEA    $HCHDG,284.0,0.0,E,23.3,W*6C
+ 
+4.80318         MSG_UDP              iDivisorNMEA    $GPHDT,260.73,T*05
+ 
+4.81339         MSG_UDP              iDivisorNMEA    $TIROT,0.29,A*00
+ 
+4.82357         MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,000000000000B4F2*66
+ 
+4.83369         MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,00000045F4C1B4F2*60
+ 
+4.84423         MSG_UDP              iDivisorNMEA    $MXPGN,00FF8C,6808,FFF10695FA149F41*18
+ 
+4.85453         MSG_UDP              iDivisorNMEA    $MXPGN,00FF28,3808,FF08FFFDFC059F41*19
+ 
+4.86469         MSG_UDP              iDivisorNMEA    $AGRSA,4.32,A,,V*4A
+ 
+4.86473         ANGULO_LEME          iDivisorNMEA    4.32000      
+4.87493         MSG_UDP              iDivisorNMEA    $HCHDG,284.0,0.0,E,23.3,W*6C
+ 
+4.88521         MSG_UDP              iDivisorNMEA    $GPHDT,260.74,T*02
+ 
+4.89552         MSG_UDP              iDivisorNMEA    $TIROT,0.49,A*06
+ 
+4.90583         MSG_UDP              iDivisorNMEA    $MXPGN,01FF1A,680B,FF022B849F410580*64
+ 
+4.91617         MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,000000000000C8F3*6A
+ 
+4.92641         MSG_UDP              iDivisorNMEA    $MXPGN,00FF00,280B,0002000005049913*19
+ 
+4.93670         MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,0000005B65C1C8F3*6B
+ 
+4.94696         MSG_UDP              iDivisorNMEA    $AGRSA,4.32,A,,V*4A
+ 
+4.94701         ANGULO_LEME          iDivisorNMEA    4.32000      
+4.95719         MSG_UDP              iDivisorNMEA    !AIVDM,1,1,,B,3:U7oI04i1trLLijr0G8DVc<213@,0*31
+ 
+4.96745         MSG_UDP              iDivisorNMEA    $MXPGN,01FF06,380B,800001FF99130F40*67
+ 
+4.97775         MSG_UDP              iDivisorNMEA    $MXPGN,01FF06,380B,00000E12FC000041*68
+ 
+4.98806         MSG_UDP              iDivisorNMEA    $MXPGN,01FF06,380B,FFFFFFFFFFA27C42*1F
+ 
+4.99832         MSG_UDP              iDivisorNMEA    $MXPGN,01FF1A,782B,FF010B049F4105E0*13
+ 
+5.23542         MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,0000000000003CF7*65
+ 
+5.23635         MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,00000083E5C13CF7*6B
+ 
+5.25040         MSG_UDP              iDivisorNMEA    $AGRSA,4.32,A,,V*4A
+ 
+5.25045         ANGULO_LEME          iDivisorNMEA    4.32000      
+5.25664         MSG_UDP              iDivisorNMEA    $GPZDA,135638.700,06,03,2023,,*5D
+ 
+5.30248         MSG_UDP              iDivisorNMEA    $GPGGA,135639.000,2254.75273,S,04309.54051,W,1,12,1.00,5.50,M,-5.60,M,,*7A
+ 
+5.30348         MSG_UDP              iDivisorNMEA    $GPGLL,2254.75273,S,04309.54051,W,135639.000,A,A*53
+ 
+5.31368         MSG_UDP              iDivisorNMEA    $GPRMC,135639.000,A,2254.75273,S,04309.54051,W,0.00,0.00,060323,23.30,W,A*1B
+ 
+5.32391         MSG_UDP              iDivisorNMEA    $GPVTG,0.00,T,,M,0.00,N,0.00,K,A*3D
+ 
+5.33411         MSG_UDP              iDivisorNMEA    $HCHDG,284.0,0.0,E,23.3,W*6C
+ 
+5.34431         MSG_UDP              iDivisorNMEA    $GPHDT,260.70,T*06
+ 
+5.35450         MSG_UDP              iDivisorNMEA    $TIROT,0.59,A*07
+ 
+5.36466         MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,00000000000050F8*1F
+ 
+5.37487         MSG_UDP              iDivisorNMEA    $MXPGN,00FF00,280B,0002000005049913*19
+ 
+5.38502         MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,000000B38CC150F8*60
+ 
+5.39521         MSG_UDP              iDivisorNMEA    $AGRSA,4.32,A,,V*4A
+ 
+5.39524         ANGULO_LEME          iDivisorNMEA    4.32000      
+5.40539         MSG_UDP              iDivisorNMEA    $MXPGN,01FF06,380B,801101FF99130F80*6B
+ 
+5.41552         MSG_UDP              iDivisorNMEA    $MXPGN,01FF06,380B,0001B112FC000081*63
+ 
+5.42570         MSG_UDP              iDivisorNMEA    $MXPGN,01FF06,380B,FFFFFFFFFFBE8E82*6E
+ 
+5.43589         MSG_UDP              iDivisorNMEA    $HCHDG,284.0,0.0,E,23.3,W*6C
+ 
+5.44609         MSG_UDP              iDivisorNMEA    $GPHDT,260.70,T*06
+ 
+5.45628         MSG_UDP              iDivisorNMEA    $TIROT,0.49,A*06
+ 
+5.46648         MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,00000000000064F9*19
+ 
+5.47666         MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,000000B38CC164F9*66
+ 
+5.48688         MSG_UDP              iDivisorNMEA    $MXPGN,01FF2C,7808,FFFFFFFF9F4117E0*1E
+ 
+5.49703         MSG_UDP              iDivisorNMEA    $MXPGN,01FF2C,7808,FFFF7FFFFFFF7FE1*63
+ 
+5.50722         MSG_UDP              iDivisorNMEA    $MXPGN,01FF2C,7808,FF7FFFFFFFFFFFE2*11
+ 
+5.51745         MSG_UDP              iDivisorNMEA    $MXPGN,01FF2C,7808,FFFFFFFF7FFFFFE3*10
+ 
+5.52760         MSG_UDP              iDivisorNMEA    $AGRSA,4.32,A,,V*4A
+ 
+5.52763         ANGULO_LEME          iDivisorNMEA    4.32000      
+5.53774         MSG_UDP              iDivisorNMEA    $SDDPT,1.76,0.00,*7B
+ 
+5.54790         MSG_UDP              iDivisorNMEA    $MXPGN,00FF3D,6808,7FFFFF0DFFFF9F41*6E
+ 
+5.55806         MSG_UDP              iDivisorNMEA    $HCHDG,284.0,0.0,E,23.3,W*6C
+ 
+5.56818         MSG_UDP              iDivisorNMEA    $GPHDT,260.69,T*0E
+ 
+5.57833         MSG_UDP              iDivisorNMEA    $TIROT,0.49,A*06
+ 
+5.58851         MSG_UDP              iDivisorNMEA    $MXPGN,01FF0D,780B,FF03000098900540*62
+ 
+5.59864         MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,00000000000078FA*6C
+ 
+5.60881         MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,000000B38CC178FA*13
+ 
+5.61898         MSG_UDP              iDivisorNMEA    $AGRSA,4.32,A,,V*4A
+ 
+5.61900         ANGULO_LEME          iDivisorNMEA    4.32000      
+5.62916         MSG_UDP              iDivisorNMEA    $HCHDG,284.0,0.0,E,23.3,W*6C
+ 
+5.63931         MSG_UDP              iDivisorNMEA    $GPHDT,260.69,T*0E
+ 
+5.64947         MSG_UDP              iDivisorNMEA    $TIROT,0.59,A*07
+ 
+5.65962         MSG_UDP              iDivisorNMEA    $GPGSA,A,3,08,10,16,18,27,28,31,32,65,85,86,72,1.70,1.40,1.40*0A
+ 
+5.66980         MSG_UDP              iDivisorNMEA    $GPGSV,3,1,12,08,43,247,46,10,35,146,22,16,07,321,40,18,15,065,34*7D
+ 
+5.67999         MSG_UDP              iDivisorNMEA    $GPGSV,3,2,12,27,59,302,43,28,24,033,41,31,18,023,43,32,72,129,44*7E
+ 
+5.69016         MSG_UDP              iDivisorNMEA    $GPGSV,3,3,12,65,22,303,38,85,32,041,42,86,72,098,37,72,62,246,32*73
+ 
+5.70030         MSG_UDP              iDivisorNMEA    $MXPGN,00FF00,280B,0002000005049913*19
+ 
+5.71044         MSG_UDP              iDivisorNMEA    $MXPGN,01FF06,380B,800401FF99130FA0*16
+ 
+5.72063         MSG_UDP              iDivisorNMEA    $MXPGN,01FF06,380B,00005002000000A1*69
+ 
+5.73080         MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,0000000000008C00*1F
+ 
+5.74095         MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,000000623FC18C00*1B
+ 
+5.75129         MSG_UDP              iDivisorNMEA    $MXPGN,01FF06,380B,FFFFFFFFFF2E3BA2*6B
+ 
+5.76144         MSG_UDP              iDivisorNMEA    $AGRSA,4.32,A,,V*4A
+ 
+5.76147         ANGULO_LEME          iDivisorNMEA    4.32000      
+5.77157         MSG_UDP              iDivisorNMEA    $MXPGN,00FF19,7808,0000000202009F41*15
+ 
+5.78175         MSG_UDP              iDivisorNMEA    $MXPGN,00FF19,7808,0080000A0A009F41*1D
+ 
+5.79189         MSG_UDP              iDivisorNMEA    $HCHDG,284.0,0.0,E,23.3,W*6C
+ 
+5.80206         MSG_UDP              iDivisorNMEA    $GPHDT,260.69,T*0E
+ 
+5.81222         MSG_UDP              iDivisorNMEA    $TIROT,0.59,A*07
+ 
+5.82239         MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,000000000000A001*14
+ 
+5.83259         MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,000000623FC1A001*10
+ 
+5.84273         MSG_UDP              iDivisorNMEA    $MXPGN,00FF8C,6808,FFF10695FA149F41*18
+ 
+5.85290         MSG_UDP              iDivisorNMEA    $MXPGN,00FF28,3808,FF08FFFDFC059F41*19
+ 
+5.86309         MSG_UDP              iDivisorNMEA    $AGRSA,4.32,A,,V*4A
+ 
+5.86313         ANGULO_LEME          iDivisorNMEA    4.32000      
+5.87326         MSG_UDP              iDivisorNMEA    $HCHDG,284.0,0.0,E,23.3,W*6C
+ 
+5.88344         MSG_UDP              iDivisorNMEA    $GPHDT,260.70,T*06
+ 
+5.89358         MSG_UDP              iDivisorNMEA    $TIROT,0.59,A*07
+ 
+6.11050         MSG_UDP              iDivisorNMEA    $MXPGN,01FF06,380B,010001FF99130FE0*1F
+ 
+6.11147         MSG_UDP              iDivisorNMEA    $MXPGN,01FF06,380B,00007702FC0101E1*6D
+ 
+6.12161         MSG_UDP              iDivisorNMEA    $MXPGN,01FF06,380B,FFFFFFFFFFA633E2*1E
+ 
+6.13551         MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,0000000000003C05*11
+ 
+6.14269         MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,000000AA5FC13C05*17
+ 
+6.15284         MSG_UDP              iDivisorNMEA    $GPGGA,,2254.75259,S,04309.53929,W,1,,,,M,,M,,*54
+ 
+6.16303         MSG_UDP              iDivisorNMEA    $GPGLL,2254.75259,S,04309.53929,W,,A,A*4F
+ 
+6.17320         MSG_UDP              iDivisorNMEA    $GPVTG,7.40,T,,M,0.10,N,0.18,K,A*36
+ 
+6.18336         MSG_UDP              iDivisorNMEA    $AGRSA,4.32,A,,V*4A
+ 
+6.18342         ANGULO_LEME          iDivisorNMEA    4.32000      
+6.19355         MSG_UDP              iDivisorNMEA    !AIVDO,1,1,,,B:UOH3P007>Vt@Lf>cP4cwl5oP06,0*20
+ 
+6.20370         MSG_UDP              iDivisorNMEA    $HCHDG,284.0,0.0,E,23.3,W*6C
+ 
+6.21391         MSG_UDP              iDivisorNMEA    $GPHDT,260.69,T*0E
+ 
+6.22407         MSG_UDP              iDivisorNMEA    $TIROT,0.59,A*07
+ 
+6.23547         MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,0000000000005006*67
+ 
+6.24468         MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,000000AA5FC15006*61
+ 
+6.25509         MSG_UDP              iDivisorNMEA    $AGRSA,4.32,A,,V*4A
+ 
+6.25513         ANGULO_LEME          iDivisorNMEA    4.32000      
+6.26527         MSG_UDP              iDivisorNMEA    $GPZDA,135639.700,06,03,2023,,*5C
+ 
+6.30249         MSG_UDP              iDivisorNMEA    $GPGGA,135640.000,2254.75237,S,04309.54072,W,1,12,1.00,5.30,M,-5.60,M,,*73
+ 
+6.30350         MSG_UDP              iDivisorNMEA    $GPGLL,2254.75237,S,04309.54072,W,135640.000,A,A*5C
+ 
+6.31368         MSG_UDP              iDivisorNMEA    $GPRMC,135640.000,A,2254.75237,S,04309.54072,W,0.19,0.00,060323,23.30,W,A*1C
+ 
+6.32384         MSG_UDP              iDivisorNMEA    $GPVTG,0.00,T,,M,0.19,N,0.35,K,A*33
+ 
+6.33401         MSG_UDP              iDivisorNMEA    $HCHDG,284.0,0.0,E,23.3,W*6C
+ 
+6.34419         MSG_UDP              iDivisorNMEA    $GPHDT,260.69,T*0E
+ 
+6.35437         MSG_UDP              iDivisorNMEA    $TIROT,0.59,A*07
+ 
+6.36456         MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,0000000000006407*61
+ 
+6.37473         MSG_UDP              iDivisorNMEA    $MXPGN,00FF00,280B,0002000005049913*19
+ 
+6.38493         MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,00000088AEC16407*10
+ 
+6.39508         MSG_UDP              iDivisorNMEA    $AGRSA,4.32,A,,V*4A
+ 
+6.39514         ANGULO_LEME          iDivisorNMEA    4.32000      
+6.40526         MSG_UDP              iDivisorNMEA    !AIVDM,1,1,,A,1:U7uhP01?LrM:qjrPSWR63B0D2L,0*57
+ 
+6.41544         MSG_UDP              iDivisorNMEA    $HCHDG,284.0,0.0,E,23.3,W*6C
+ 
+6.42563         MSG_UDP              iDivisorNMEA    $GPHDT,260.68,T*0F
+ 
+6.43584         MSG_UDP              iDivisorNMEA    $TIROT,0.39,A*01
+ 
+6.44602         MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,0000000000007808*63
+ 
+6.45621         MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,00000088AEC17808*12
+ 
+6.46641         MSG_UDP              iDivisorNMEA    $MXPGN,01FF2C,7808,FFFFFFFF9F411700*6B
+ 
+6.47660         MSG_UDP              iDivisorNMEA    $MXPGN,01FF2C,7808,FFFF7FFFFFFF7F01*16
+ 
+6.48673         MSG_UDP              iDivisorNMEA    $MXPGN,01FF2C,7808,FF7FFFFFFFFFFF02*64
+ 
+6.49689         MSG_UDP              iDivisorNMEA    $MXPGN,01FF2C,7808,FFFFFFFF7FFFFF03*65
+ 
+6.50704         MSG_UDP              iDivisorNMEA    $AGRSA,4.32,A,,V*4A
+ 
+6.50706         ANGULO_LEME          iDivisorNMEA    4.32000      
+6.51722         MSG_UDP              iDivisorNMEA    $SDDPT,1.76,0.00,*7B
+ 
+6.52739         MSG_UDP              iDivisorNMEA    !AIVDM,1,1,,A,1:U8?H0P1MtrLN=jrSPo<Ow@20RJ,0*38
+ 
+6.53756         MSG_UDP              iDivisorNMEA    $MXPGN,00FF3D,6808,7FFFFF0DFFFF9F41*6E
+ 
+6.54774         MSG_UDP              iDivisorNMEA    $HCHDG,284.0,0.0,E,23.3,W*6C
+ 
+6.55793         MSG_UDP              iDivisorNMEA    $GPHDT,260.68,T*0F
+ 
+6.56809         MSG_UDP              iDivisorNMEA    $TIROT,0.39,A*01
+ 
+6.57831         MSG_UDP              iDivisorNMEA    $MXPGN,01FF0D,780B,FF03000098900560*60
+ 
+6.58850         MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,0000000000008C09*16
+ 
+6.59865         MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,00000088AEC18C09*67
+ 
+6.60876         MSG_UDP              iDivisorNMEA    $AGRSA,4.37,A,,V*4F
+ 
+6.60881         ANGULO_LEME          iDivisorNMEA    4.37000      
+6.61897         MSG_UDP              iDivisorNMEA    $HCHDG,284.0,0.0,E,23.3,W*6C
+ 
+6.62916         MSG_UDP              iDivisorNMEA    $GPHDT,260.69,T*0E
+ 
+6.63929         MSG_UDP              iDivisorNMEA    $TIROT,0.59,A*07
+ 
+6.64949         MSG_UDP              iDivisorNMEA    $GPGSA,A,3,08,10,16,18,27,28,31,32,65,85,86,72,1.70,1.40,1.40*0A
+ 
+6.65967         MSG_UDP              iDivisorNMEA    $GPGSV,3,1,12,08,43,247,46,10,35,146,22,16,07,321,40,18,15,065,34*7D
+ 
+6.66982         MSG_UDP              iDivisorNMEA    $GPGSV,3,2,12,27,59,302,43,28,24,033,41,31,18,023,43,32,72,129,44*7E
+ 
+6.68000         MSG_UDP              iDivisorNMEA    $GPGSV,3,3,12,65,22,303,38,85,32,041,42,86,72,098,37,72,62,246,32*73
+ 
+6.69017         MSG_UDP              iDivisorNMEA    $MXPGN,00FF00,280B,0002000005049913*19
+ 
+6.70036         MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,000000000000A00A*64
+ 
+6.71052         MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,000000A92AC1A00A*1A
+ 
+6.72066         MSG_UDP              iDivisorNMEA    $AGRSA,4.37,A,,V*4F
+ 
+6.72067         ANGULO_LEME          iDivisorNMEA    4.37000      
+6.73081         MSG_UDP              iDivisorNMEA    $MXPGN,00FF19,7808,0000000202009F41*15
+ 
+6.74104         MSG_UDP              iDivisorNMEA    $MXPGN,00FF19,7808,0080000A0A009F41*1D
+ 
+6.75140         MSG_UDP              iDivisorNMEA    $HCHDG,284.0,0.0,E,23.3,W*6C
+ 
+6.76184         MSG_UDP              iDivisorNMEA    $GPHDT,260.68,T*0F
+ 
+7.00169         MSG_UDP              iDivisorNMEA    $HCHDG,284.0,0.0,E,23.3,W*6C
+ 
+7.00180         MSG_UDP              iDivisorNMEA    $GPHDT,260.70,T*06
+ 
+7.01204         MSG_UDP              iDivisorNMEA    $TIROT,0.99,A*0B
+ 
+7.03551         MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,000000000000140E*14
+ 
+7.03633         MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,000000BC8EC1140E*1D
+ 
+7.04666         MSG_UDP              iDivisorNMEA    $MXPGN,00FF16,7808,FF0000002B0A9F41*1B
+ 
+7.05691         MSG_UDP              iDivisorNMEA    $AGRSA,4.37,A,,V*4F
+ 
+7.05700         ANGULO_LEME          iDivisorNMEA    4.37000      
+7.08555         MSG_UDP              iDivisorNMEA    $MXPGN,00FF00,280B,0002000005049913*19
+ 
+7.10149         MSG_UDP              iDivisorNMEA    $HCHDG,284.0,0.0,E,23.3,W*6C
+ 
+7.10157         MSG_UDP              iDivisorNMEA    $GPHDT,260.70,T*06
+ 
+7.11181         MSG_UDP              iDivisorNMEA    $TIROT,0.99,A*0B
+ 
+7.13559         MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,000000000000280F*18
+ 
+7.13649         MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,0000009259C1280F*6A
+ 
+7.15163         MSG_UDP              iDivisorNMEA    $GPGGA,,2254.75279,S,04309.53929,W,1,,,,M,,M,,*56
+ 
+7.15686         MSG_UDP              iDivisorNMEA    $GPGLL,2254.75279,S,04309.53929,W,,A,A*4D
+ 
+7.16712         MSG_UDP              iDivisorNMEA    $GPVTG,7.40,T,,M,0.00,N,0.00,K,A*3E
+ 
+7.17738         MSG_UDP              iDivisorNMEA    $AGRSA,4.32,A,,V*4A
+ 
+7.17744         ANGULO_LEME          iDivisorNMEA    4.32000      
+7.20156         MSG_UDP              iDivisorNMEA    $HCHDG,284.0,0.0,E,23.3,W*6C
+ 
+7.20165         MSG_UDP              iDivisorNMEA    $GPHDT,260.70,T*06
+ 
+7.21210         MSG_UDP              iDivisorNMEA    $TIROT,0.79,A*05
+ 
+7.22233         MSG_UDP              iDivisorNMEA    $MXPGN,01FF06,380B,030001FF99130F20*6A
+ 
+7.23262         MSG_UDP              iDivisorNMEA    $MXPGN,01FF06,380B,00007C02000D0021*1F
+ 
+7.24309         MSG_UDP              iDivisorNMEA    $MXPGN,01FF06,380B,FFFFFFFFFF31DA22*19
+ 
+7.25342         MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,0000000000003C10*15
+ 
+7.26408         MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,0000009259C13C10*67
+ 
+7.27430         MSG_UDP              iDivisorNMEA    $AGRSA,4.32,A,,V*4A
+ 
+7.27439         ANGULO_LEME          iDivisorNMEA    4.32000      
+7.28463         MSG_UDP              iDivisorNMEA    $GPZDA,135640.700,06,03,2023,,*52
+ 
+7.30140         MSG_UDP              iDivisorNMEA    $HCHDG,284.0,0.0,E,23.3,W*6C
+ 
+7.30566         MSG_UDP              iDivisorNMEA    $GPHDT,260.69,T*0E
+ 
+7.31592         MSG_UDP              iDivisorNMEA    $TIROT,0.79,A*05
+ 
+7.33551         MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,0000000000005011*61
+ 
+7.33673         MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,00000020F6C15011*66
+ 
+7.35262         MSG_UDP              iDivisorNMEA    $GPGGA,135641.000,2254.75216,S,04309.54078,W,1,12,1.00,5.24,M,-5.60,M,,*7E
+ 
+7.35792         MSG_UDP              iDivisorNMEA    $GPGLL,2254.75216,S,04309.54078,W,135641.000,A,A*54
+ 
+7.36818         MSG_UDP              iDivisorNMEA    $GPRMC,135641.000,A,2254.75216,S,04309.54078,W,0.09,0.00,060323,23.30,W,A*15
+ 
+7.37840         MSG_UDP              iDivisorNMEA    $GPVTG,0.00,T,,M,0.09,N,0.16,K,A*33
+ 
+7.38867         MSG_UDP              iDivisorNMEA    $AGRSA,4.32,A,,V*4A
+ 
+7.38875         ANGULO_LEME          iDivisorNMEA    4.32000      
+7.39905         MSG_UDP              iDivisorNMEA    $MXPGN,00FF00,280B,0002000005049913*19
+ 
+7.40929         MSG_UDP              iDivisorNMEA    $HCHDG,284.0,0.0,E,23.3,W*6C
+ 
+7.41975         MSG_UDP              iDivisorNMEA    $GPHDT,260.69,T*0E
+ 
+7.43004         MSG_UDP              iDivisorNMEA    $TIROT,0.89,A*0A
+ 
+7.44029         MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,0000000000006412*65
+ 
+7.45059         MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,00000020F6C16412*62
+ 
+7.46085         MSG_UDP              iDivisorNMEA    $MXPGN,01FF2C,7808,FFFFFFFF9F411720*69
+ 
+7.47113         MSG_UDP              iDivisorNMEA    $MXPGN,01FF2C,7808,FFFF7FFFFFFF7F21*14
+ 
+7.48138         MSG_UDP              iDivisorNMEA    $MXPGN,01FF2C,7808,FF7FFFFFFFFFFF22*66
+ 
+7.49159         MSG_UDP              iDivisorNMEA    $MXPGN,01FF2C,7808,FFFFFFFF7FFFFF23*67
+ 
+7.50185         MSG_UDP              iDivisorNMEA    $AGRSA,4.32,A,,V*4A
+ 
+7.50191         ANGULO_LEME          iDivisorNMEA    4.32000      
+7.51205         MSG_UDP              iDivisorNMEA    $SDDPT,1.76,0.00,*7B
+ 
+7.52224         MSG_UDP              iDivisorNMEA    $MXPGN,00FF3D,6808,7FFFFF0DFFFF9F41*6E
+ 
+7.53251         MSG_UDP              iDivisorNMEA    $MXPGN,01FF06,380B,050001FF99130F40*6A
+ 
+7.54279         MSG_UDP              iDivisorNMEA    $MXPGN,01FF06,380B,0001520200360041*1A
+ 
+7.55299         MSG_UDP              iDivisorNMEA    $MXPGN,01FF06,380B,FFFFFFFFFF41C442*6A
+ 
+7.56321         MSG_UDP              iDivisorNMEA    $HCHDG,284.0,0.0,E,23.3,W*6C
+ 
+7.57340         MSG_UDP              iDivisorNMEA    $GPHDT,260.68,T*0F
+ 
+7.58368         MSG_UDP              iDivisorNMEA    $TIROT,0.89,A*0A
+ 
+7.59389         MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,0000000000007813*69
+ 
+7.60412         MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,00000020F6C17813*6E
+ 
+7.61436         MSG_UDP              iDivisorNMEA    $AGRSA,4.32,A,,V*4A
+ 
+7.61442         ANGULO_LEME          iDivisorNMEA    4.32000      
+7.62462         MSG_UDP              iDivisorNMEA    $HCHDG,284.0,0.0,E,23.3,W*6C
+ 
+7.63490         MSG_UDP              iDivisorNMEA    $GPHDT,260.67,T*00
+ 
+7.64513         MSG_UDP              iDivisorNMEA    $TIROT,0.79,A*05
+ 
+7.65537         MSG_UDP              iDivisorNMEA    $GPGSA,A,3,08,10,16,18,27,28,31,32,65,85,86,72,1.70,1.40,1.40*0A
+ 
+7.66559         MSG_UDP              iDivisorNMEA    $GPGSV,3,1,12,08,43,247,46,10,35,146,22,16,07,321,40,18,15,065,34*7D
+ 
+7.90157         MSG_UDP              iDivisorNMEA    $HCHDG,284.0,0.0,E,23.3,W*6C
+ 
+7.90174         MSG_UDP              iDivisorNMEA    $GPHDT,260.66,T*01
+ 
+7.91268         MSG_UDP              iDivisorNMEA    $TIROT,0.69,A*04
+ 
+7.92296         MSG_UDP              iDivisorNMEA    $GPGSA,A,3,08,10,16,18,21,23,26,,,,,,2.56,2.00,2.00*02
+ 
+7.93324         MSG_UDP              iDivisorNMEA    $GPGSV,2,1,07,08,43,246,47,10,35,146,00,16,07,320,42,18,14,065,43*7A
+ 
+7.94353         MSG_UDP              iDivisorNMEA    $GPGSV,2,2,07,21,15,219,00,23,11,121,00,26,00,354,00*46
+ 
+7.95383         MSG_UDP              iDivisorNMEA    $MXPGN,01FA06,681C,8A012300C8170F60*68
+ 
+7.96407         MSG_UDP              iDivisorNMEA    $MXPGN,01FA06,681C,008C0122F17C0061*62
+ 
+7.97438         MSG_UDP              iDivisorNMEA    $MXPGN,01FA06,681C,FFFFFFFFFF01A062*68
+ 
+7.98466         MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,0000000000000017*62
+ 
+7.99495         MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,0000006890C10017*10
+ 
+8.00518         MSG_UDP              iDivisorNMEA    $MXPGN,00FF3C,3808,8000F8FE00009F41*1C
+ 
+8.01548         MSG_UDP              iDivisorNMEA    $GPGGA,135642.300,2254.75279,S,04309.53850,W,1,07,2.00,-1.24,M,-5.00,M,,*5A
+ 
+8.02576         MSG_UDP              iDivisorNMEA    $GPGLL,2254.75279,S,04309.53850,W,135642.300,A,A*58
+ 
+8.03597         MSG_UDP              iDivisorNMEA    $GPRMC,135642.300,A,2254.75279,S,04309.53850,W,0.00,153.36,060323,23.39,W,A*1B
+ 
+8.04616         MSG_UDP              iDivisorNMEA    $GPVTG,153.36,T,,M,0.00,N,0.00,K,A*3F
+ 
+8.05632         MSG_UDP              iDivisorNMEA    $AGRSA,4.32,A,,V*4A
+ 
+8.05639         ANGULO_LEME          iDivisorNMEA    4.32000      
+8.06674         MSG_UDP              iDivisorNMEA    $MXPGN,01FF06,380B,060001FF99130F80*65
+ 
+8.07687         MSG_UDP              iDivisorNMEA    $MXPGN,01FF06,380B,0001B502002D0181*14
+ 
+8.08707         MSG_UDP              iDivisorNMEA    $MXPGN,01FF06,380B,FFFFFFFFFFF53C82*17
+ 
+8.09725         MSG_UDP              iDivisorNMEA    $HCHDG,284.0,0.0,E,23.3,W*6C
+ 
+8.10738         MSG_UDP              iDivisorNMEA    $GPHDT,260.65,T*02
+ 
+8.11758         MSG_UDP              iDivisorNMEA    $TIROT,0.89,A*0A
+ 
+8.12780         MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,0000000000001418*68
+ 
+8.13810         MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,0000006890C11418*1A
+ 
+8.14843         MSG_UDP              iDivisorNMEA    $MXPGN,00FF16,7808,FF0000002B0A9F41*1B
+ 
+8.15875         MSG_UDP              iDivisorNMEA    $AGRSA,4.32,A,,V*4A
+ 
+8.15885         ANGULO_LEME          iDivisorNMEA    4.32000      
+8.16906         MSG_UDP              iDivisorNMEA    $HCHDG,284.0,0.0,E,23.3,W*6C
+ 
+8.17932         MSG_UDP              iDivisorNMEA    $GPHDT,260.66,T*01
+ 
+8.18958         MSG_UDP              iDivisorNMEA    $TIROT,0.89,A*0A
+ 
+8.19981         MSG_UDP              iDivisorNMEA    $MXPGN,00FF00,280B,0002000005049913*19
+ 
+8.21007         MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,0000000000002819*66
+ 
+8.22031         MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,00000062CDC12819*10
+ 
+8.23061         MSG_UDP              iDivisorNMEA    $GPGGA,,2254.75279,S,04309.53929,W,1,,,,M,,M,,*56
+ 
+8.24086         MSG_UDP              iDivisorNMEA    $GPGLL,2254.75279,S,04309.53929,W,,A,A*4D
+ 
+8.25114         MSG_UDP              iDivisorNMEA    $GPVTG,7.40,T,,M,0.00,N,0.00,K,A*3E
+ 
+8.26139         MSG_UDP              iDivisorNMEA    $AGRSA,4.32,A,,V*4A
+ 
+8.26145         ANGULO_LEME          iDivisorNMEA    4.32000      
+8.27162         MSG_UDP              iDivisorNMEA    $HCHDG,284.0,0.0,E,23.3,W*6C
+ 
+8.28190         MSG_UDP              iDivisorNMEA    $GPHDT,260.66,T*01
+ 
+8.29219         MSG_UDP              iDivisorNMEA    $TIROT,0.69,A*04
+ 
+8.30245         MSG_UDP              iDivisorNMEA    !AIVDO,1,1,,,B:UOH3P007>Vt@Lf>cP4cwm5oP06,0*21
+ 
+8.31269         MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,0000000000003C1A*64
+ 
+8.32307         MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,00000062CDC13C1A*12
+ 
+8.33344         MSG_UDP              iDivisorNMEA    $MXPGN,01FF06,380B,080001FF99130FA0*12
+ 
+8.34369         MSG_UDP              iDivisorNMEA    $MXPGN,01FF06,380B,000B7A02028505A1*62
+ 
+8.35392         MSG_UDP              iDivisorNMEA    $MXPGN,01FF06,380B,FFFFFFFFFF4678A2*60
+ 
+8.36418         MSG_UDP              iDivisorNMEA    $AGRSA,4.32,A,,V*4A
+ 
+8.36423         ANGULO_LEME          iDivisorNMEA    4.32000      
+8.37443         MSG_UDP              iDivisorNMEA    $GPZDA,135641.690,06,03,2023,,*5B
+ 
+8.38471         MSG_UDP              iDivisorNMEA    $HCHDG,284.0,0.0,E,23.3,W*6C
+ 
+8.39498         MSG_UDP              iDivisorNMEA    $GPHDT,260.65,T*02
+ 
+8.40521         MSG_UDP              iDivisorNMEA    $TIROT,0.69,A*04
+ 
+8.41589         MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,000000000000501B*12
+ 
+8.42615         MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,0000006224C1501B*65
+ 
+8.43640         MSG_UDP              iDivisorNMEA    $GPGGA,135642.000,2254.75195,S,04309.54093,W,1,12,1.00,4.98,M,-5.60,M,,*76
+ 
+8.44667         MSG_UDP              iDivisorNMEA    $GPGLL,2254.75195,S,04309.54093,W,135642.000,A,A*5A
+ 
+8.45689         MSG_UDP              iDivisorNMEA    $GPRMC,135642.000,A,2254.75195,S,04309.54093,W,0.09,0.00,060323,23.30,W,A*1B
+ 
+8.46714         MSG_UDP              iDivisorNMEA    $GPVTG,0.00,T,,M,0.09,N,0.16,K,A*33
+ 
+8.47744         MSG_UDP              iDivisorNMEA    $AGRSA,4.32,A,,V*4A
+ 
+8.47749         ANGULO_LEME          iDivisorNMEA    4.32000      
+8.48767         MSG_UDP              iDivisorNMEA    $MXPGN,00FF00,280B,0002000005049913*19
+ 
+8.49792         MSG_UDP              iDivisorNMEA    $HCHDG,284.0,0.0,E,23.3,W*6C
+ 
+8.50822         MSG_UDP              iDivisorNMEA    $GPHDT,260.66,T*01
+ 
+8.51852         MSG_UDP              iDivisorNMEA    $TIROT,0.59,A*07
+ 
+8.52886         MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,000000000000641C*14
+ 
+8.53910         MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,0000006224C1641C*63
+ 
+8.80158         MSG_UDP              iDivisorNMEA    $HCHDG,284.0,0.0,E,23.3,W*6C
+ 
+8.80170         MSG_UDP              iDivisorNMEA    $GPHDT,260.67,T*00
+ 
+8.81192         MSG_UDP              iDivisorNMEA    $TIROT,0.39,A*01
+ 
+8.82210         MSG_UDP              iDivisorNMEA    $MXPGN,01FF1A,680B,FF022B849F410500*6C
+ 
+8.83233         MSG_UDP              iDivisorNMEA    !AIVDM,1,1,,B,1:U7ua0000LrR7EjsE=0c7Sp0pIE,0*2C
+ 
+8.84254         MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,000000000000A01F*62
+ 
+8.85274         MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,000000D55AC1A01F*12
+ 
+8.86299         MSG_UDP              iDivisorNMEA    $MXPGN,01FF1A,782B,FF010B049F410560*60
+ 
+8.87322         MSG_UDP              iDivisorNMEA    $AGRSA,4.32,A,,V*4A
+ 
+8.87330         ANGULO_LEME          iDivisorNMEA    4.32000      
+8.88353         MSG_UDP              iDivisorNMEA    $MXPGN,00FF00,280B,0002000005049913*19
+ 
+8.90162         MSG_UDP              iDivisorNMEA    $HCHDG,284.0,0.0,E,23.3,W*6C
+ 
+8.90484         MSG_UDP              iDivisorNMEA    $GPHDT,260.67,T*00
+ 
+8.91513         MSG_UDP              iDivisorNMEA    $TIROT,0.39,A*01
+ 
+8.92592         MSG_UDP              iDivisorNMEA    $GPGSA,A,3,08,10,16,18,21,23,26,,,,,,2.56,2.00,2.00*02
+ 
+8.93621         MSG_UDP              iDivisorNMEA    $GPGSV,2,1,07,08,43,246,46,10,35,146,00,16,07,320,41,18,14,065,43*78
+ 
+8.94660         MSG_UDP              iDivisorNMEA    $GPGSV,2,2,07,21,15,219,00,23,11,121,00,26,00,354,00*46
+ 
+8.95686         MSG_UDP              iDivisorNMEA    $MXPGN,01FA06,681C,8A012300C8200F80*62
+ 
+8.96715         MSG_UDP              iDivisorNMEA    $MXPGN,01FA06,681C,008C0122F17F0081*69
+ 
+8.97739         MSG_UDP              iDivisorNMEA    $MXPGN,01FA06,681C,FFFFFFFFFF01A082*66
+ 
+8.98762         MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,0000000000000020*66
+ 
+8.99788         MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,0000001543C10020*10
+ 
+9.00814         MSG_UDP              iDivisorNMEA    !AIVDM,1,1,,A,1:U6vLPP00trHf=jpdmV:OwF2<28,0*64
+ 
+9.01837         MSG_UDP              iDivisorNMEA    $MXPGN,00FF3C,3808,8000F8FE00009F41*1C
+ 
+9.02867         MSG_UDP              iDivisorNMEA    $MXPGN,01FF1A,782B,FFFAFF859F410580*13
+ 
+9.03892         MSG_UDP              iDivisorNMEA    $GPGGA,135643.100,2254.75279,S,04309.53850,W,1,07,2.00,-1.24,M,-5.00,M,,*59
+ 
+9.04917         MSG_UDP              iDivisorNMEA    $GPGLL,2254.75279,S,04309.53850,W,135643.100,A,A*5B
+ 
+9.05945         MSG_UDP              iDivisorNMEA    $GPRMC,135643.100,A,2254.75279,S,04309.53850,W,0.00,312.93,060323,23.39,W,A*10
+ 
+9.06972         MSG_UDP              iDivisorNMEA    $GPVTG,312.93,T,,M,0.00,N,0.00,K,A*37
+ 
+9.07993         MSG_UDP              iDivisorNMEA    $AGRSA,4.32,A,,V*4A
+ 
+9.08002         ANGULO_LEME          iDivisorNMEA    4.32000      
+9.09022         MSG_UDP              iDivisorNMEA    $HCHDG,284.0,0.0,E,23.3,W*6C
+ 
+9.10044         MSG_UDP              iDivisorNMEA    $GPHDT,260.68,T*0F
+ 
+9.11072         MSG_UDP              iDivisorNMEA    $TIROT,0.59,A*07
+ 
+9.12099         MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,0000000000002822*6E
+ 
+9.13129         MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,0000001543C12822*18
+ 
+9.14155         MSG_UDP              iDivisorNMEA    $MXPGN,00FF16,7808,FF0000002B0A9F41*1B
+ 
+9.15181         MSG_UDP              iDivisorNMEA    $AGRSA,4.32,A,,V*4A
+ 
+9.15191         ANGULO_LEME          iDivisorNMEA    4.32000      
+9.16211         MSG_UDP              iDivisorNMEA    $HCHDG,284.0,0.0,E,23.3,W*6C
+ 
+9.17238         MSG_UDP              iDivisorNMEA    $GPHDT,260.68,T*0F
+ 
+9.18266         MSG_UDP              iDivisorNMEA    $TIROT,0.49,A*06
+ 
+9.19285         MSG_UDP              iDivisorNMEA    $MXPGN,00FF00,280B,0002000005049913*19
+ 
+9.20309         MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,0000000000003C23*15
+ 
+9.21334         MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,0000001FBAC13C23*14
+ 
+9.22356         MSG_UDP              iDivisorNMEA    $GPGGA,,2254.75279,S,04309.53939,W,1,,,,M,,M,,*57
+ 
+9.23380         MSG_UDP              iDivisorNMEA    $GPGLL,2254.75279,S,04309.53939,W,,A,A*4C
+ 
+9.24404         MSG_UDP              iDivisorNMEA    $GPVTG,7.40,T,,M,0.00,N,0.00,K,A*3E
+ 
+9.25426         MSG_UDP              iDivisorNMEA    $AGRSA,4.32,A,,V*4A
+ 
+9.25433         ANGULO_LEME          iDivisorNMEA    4.32000      
+9.26450         MSG_UDP              iDivisorNMEA    $HCHDG,284.0,0.0,E,23.3,W*6C
+ 
+9.27478         MSG_UDP              iDivisorNMEA    $GPHDT,260.68,T*0F
+ 
+9.28501         MSG_UDP              iDivisorNMEA    $TIROT,0.69,A*04
+ 
+9.29517         MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,0000000000005024*67
+ 
+9.30539         MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,0000001FBAC15024*66
+ 
+9.31563         MSG_UDP              iDivisorNMEA    $AGRSA,4.32,A,,V*4A
+ 
+9.31568         ANGULO_LEME          iDivisorNMEA    4.32000      
+9.32587         MSG_UDP              iDivisorNMEA    $GPZDA,135642.690,06,03,2023,,*58
+ 
+9.33604         MSG_UDP              iDivisorNMEA    $HCHDG,284.0,0.0,E,23.3,W*6C
+ 
+9.34628         MSG_UDP              iDivisorNMEA    $GPHDT,260.69,T*0E
+ 
+9.35653         MSG_UDP              iDivisorNMEA    $TIROT,0.69,A*04
+ 
+9.36677         MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,0000000000006425*61
+ 
+9.37699         MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,0000005887C16425*16
+ 
+9.38721         MSG_UDP              iDivisorNMEA    $GPGGA,135643.000,2254.75189,S,04309.54097,W,1,12,1.00,4.71,M,-5.60,M,,*79
+ 
+9.39743         MSG_UDP              iDivisorNMEA    $GPGLL,2254.75189,S,04309.54097,W,135643.000,A,A*52
+ 
+9.40764         MSG_UDP              iDivisorNMEA    $GPRMC,135643.000,A,2254.75189,S,04309.54097,W,0.29,124.09,060323,23.30,W,A*1F
+ 
+9.41800         MSG_UDP              iDivisorNMEA    $GPVTG,124.09,T,,M,0.29,N,0.53,K,A*3E
+ 
+9.42868         MSG_UDP              iDivisorNMEA    $AGRSA,4.32,A,,V*4A
+ 
+9.42875         ANGULO_LEME          iDivisorNMEA    4.32000      
+9.43893         MSG_UDP              iDivisorNMEA    $MXPGN,00FF00,280B,0002000005049913*19
+ 
+9.69345         MSG_UDP              iDivisorNMEA    $MXPGN,00FF19,7808,0080000A0A009F41*1D
+ 
+9.70155         MSG_UDP              iDivisorNMEA    $HCHDG,284.0,0.0,E,23.3,W*6C
+ 
+9.70380         MSG_UDP              iDivisorNMEA    $GPHDT,260.70,T*06
+ 
+9.71406         MSG_UDP              iDivisorNMEA    $TIROT,0.39,A*01
+ 
+9.73557         MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,000000000000B429*19
+ 
+9.73639         MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,0000008621C1B429*61
+ 
+9.74659         MSG_UDP              iDivisorNMEA    $MXPGN,00FF8C,6808,FFF10695FA149F41*18
+ 
+9.75680         MSG_UDP              iDivisorNMEA    $MXPGN,00FF28,3808,FF08FFFDFC059F41*19
+ 
+9.76730         MSG_UDP              iDivisorNMEA    $AGRSA,4.32,A,,V*4A
+ 
+9.76740         ANGULO_LEME          iDivisorNMEA    4.32000      
+9.80151         MSG_UDP              iDivisorNMEA    $HCHDG,284.0,0.0,E,23.3,W*6C
+ 
+9.80167         MSG_UDP              iDivisorNMEA    $GPHDT,260.71,T*07
+ 
+9.81193         MSG_UDP              iDivisorNMEA    $TIROT,0.39,A*01
+ 
+9.82225         MSG_UDP              iDivisorNMEA    $MXPGN,01FF1A,680B,FF022B849F410520*6E
+ 
+9.83552         MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,000000000000C82A*6C
+ 
+9.84281         MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,0000008621C1C82A*14
+ 
+9.85308         MSG_UDP              iDivisorNMEA    !AIVDM,1,1,,B,1:U8M80P00trUdAjqUeR>wwJ2L2I,0*28
+ 
+9.86335         MSG_UDP              iDivisorNMEA    $AGRSA,4.32,A,,V*4A
+ 
+9.86340         ANGULO_LEME          iDivisorNMEA    4.32000      
+9.87361         MSG_UDP              iDivisorNMEA    $MXPGN,01FF1A,782B,FF010B049F410580*6E
+ 
+9.88393         MSG_UDP              iDivisorNMEA    $MXPGN,00FF00,280B,0002000005049913*19
+ 
+9.90142         MSG_UDP              iDivisorNMEA    $HCHDG,284.0,0.0,E,23.3,W*6C
+ 
+9.90468         MSG_UDP              iDivisorNMEA    $GPHDT,260.71,T*07
+ 
+9.91493         MSG_UDP              iDivisorNMEA    $TIROT,0.59,A*07
+ 
+9.92528         MSG_UDP              iDivisorNMEA    $GPGSA,A,3,08,10,16,18,21,23,26,,,,,,2.56,2.00,2.00*02
+ 
+9.93633         MSG_UDP              iDivisorNMEA    $GPGSV,2,1,07,08,43,246,46,10,35,146,00,16,07,320,42,18,14,065,43*7B
+ 
+9.94679         MSG_UDP              iDivisorNMEA    $GPGSV,2,2,07,21,15,219,00,23,11,121,00,26,00,354,00*46
+ 
+9.95740         MSG_UDP              iDivisorNMEA    $MXPGN,01FA06,681C,8A012300C82A0FA0*6A
+ 
+9.96763         MSG_UDP              iDivisorNMEA    $MXPGN,01FA06,681C,008C0122F17F00A1*10
+ 
+9.97778         MSG_UDP              iDivisorNMEA    $MXPGN,01FA06,681C,FFFFFFFFFF01A0A2*1F
+ 
+9.98795         MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,000000000000002A*17
+ 
+9.99809         MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,000000F01CC1002A*66
+ 
+10.00824        MSG_UDP              iDivisorNMEA    $MXPGN,00FF3C,3808,8000F8FE00009F41*1C
+ 
+10.01842        MSG_UDP              iDivisorNMEA    $GPGGA,135644.200,2254.75279,S,04309.53850,W,1,07,2.00,-1.24,M,-5.00,M,,*5D
+ 
+10.02860        MSG_UDP              iDivisorNMEA    $GPGLL,2254.75279,S,04309.53850,W,135644.200,A,A*5F
+ 
+10.03877        MSG_UDP              iDivisorNMEA    $GPRMC,135644.200,A,2254.75279,S,04309.53850,W,0.00,196.73,060323,23.39,W,A*14
+ 
+10.04894        MSG_UDP              iDivisorNMEA    $GPVTG,196.73,T,,M,0.00,N,0.00,K,A*37
+ 
+10.05907        MSG_UDP              iDivisorNMEA    $AGRSA,4.32,A,,V*4A
+ 
+10.05909        ANGULO_LEME          iDivisorNMEA    4.32000      
+10.06932        MSG_UDP              iDivisorNMEA    $HCHDG,284.0,0.0,E,23.3,W*6C
+ 
+10.07952        MSG_UDP              iDivisorNMEA    $GPHDT,260.71,T*07
+ 
+10.08969        MSG_UDP              iDivisorNMEA    $TIROT,0.59,A*07
+ 
+10.09988        MSG_UDP              iDivisorNMEA    !AIVDM,1,1,,B,16:>J;?P00LrE9Mjr;7GHgwJ08J1,0*05
+ 
+10.11005        MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,000000000000142B*11
+ 
+10.12027        MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,000000F01CC1142B*60
+ 
+10.13046        MSG_UDP              iDivisorNMEA    $MXPGN,00FF16,7808,FF0000002B0A9F41*1B
+ 
+10.14070        MSG_UDP              iDivisorNMEA    $AGRSA,4.32,A,,V*4A
+ 
+10.14074        ANGULO_LEME          iDivisorNMEA    4.32000      
+10.15090        MSG_UDP              iDivisorNMEA    $HCHDG,284.0,0.0,E,23.3,W*6C
+ 
+10.16106        MSG_UDP              iDivisorNMEA    $GPHDT,260.70,T*06
+ 
+10.17126        MSG_UDP              iDivisorNMEA    $TIROT,0.59,A*07
+ 
+10.18148        MSG_UDP              iDivisorNMEA    $MXPGN,00FF00,280B,0002000005049913*19
+ 
+10.19165        MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,000000000000282C*1F
+ 
+10.20180        MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,000000F01CC1282C*6E
+ 
+10.21198        MSG_UDP              iDivisorNMEA    $GPGGA,,2254.75279,S,04309.53939,W,1,,,,M,,M,,*57
+ 
+10.22214        MSG_UDP              iDivisorNMEA    $GPGLL,2254.75279,S,04309.53939,W,,A,A*4C
+ 
+10.23228        MSG_UDP              iDivisorNMEA    $GPVTG,7.40,T,,M,0.00,N,0.00,K,A*3E
+ 
+10.24241        MSG_UDP              iDivisorNMEA    $AGRSA,4.32,A,,V*4A
+ 
+10.24243        ANGULO_LEME          iDivisorNMEA    4.32000      
+10.25258        MSG_UDP              iDivisorNMEA    $HCHDG,284.0,0.0,E,23.3,W*6C
+ 
+10.26271        MSG_UDP              iDivisorNMEA    $GPHDT,260.69,T*0E
+ 
+10.27283        MSG_UDP              iDivisorNMEA    $TIROT,0.39,A*01
+ 
+10.28302        MSG_UDP              iDivisorNMEA    !AIVDO,1,1,,,B:UOH3P007>Vt?Lf>cT4cwn5oP06,0*59
+ 
+10.29317        MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,000000000000502E*16
+ 
+10.30334        MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,00000063E6C1502E*15
+ 
+10.31351        MSG_UDP              iDivisorNMEA    $AGRSA,4.32,A,,V*4A
+ 
+10.31353        ANGULO_LEME          iDivisorNMEA    4.32000      
+10.32368        MSG_UDP              iDivisorNMEA    $GPZDA,135643.690,06,03,2023,,*59
+ 
+10.33383        MSG_UDP              iDivisorNMEA    $HCHDG,284.0,0.0,E,23.3,W*6C
+ 
+10.34407        MSG_UDP              iDivisorNMEA    $GPHDT,260.68,T*0F
+ 
+10.60155        MSG_UDP              iDivisorNMEA    $HCHDG,284.0,0.0,E,23.3,W*6C
+ 
+10.60165        MSG_UDP              iDivisorNMEA    $GPHDT,260.65,T*02
+ 
+10.61235        MSG_UDP              iDivisorNMEA    $TIROT,0.19,A*03
+ 
+10.62548        MSG_UDP              iDivisorNMEA    $GPGSA,A,3,08,10,16,18,27,28,31,32,65,85,86,72,1.70,1.40,1.40*0A
+ 
+10.63275        MSG_UDP              iDivisorNMEA    $GPGSV,3,1,12,08,43,247,46,10,35,146,22,16,07,321,40,18,15,065,34*7D
+ 
+10.64311        MSG_UDP              iDivisorNMEA    $GPGSV,3,2,12,27,59,302,43,28,24,033,42,31,18,023,43,32,72,129,44*7D
+ 
+10.65339        MSG_UDP              iDivisorNMEA    $GPGSV,3,3,12,65,22,303,37,85,32,041,42,86,72,098,37,72,62,246,33*7D
+ 
+10.66378        MSG_UDP              iDivisorNMEA    $MXPGN,01FF0D,780B,FF030000989005E0*13
+ 
+10.67401        MSG_UDP              iDivisorNMEA    $MXPGN,00FF00,280B,0002000005049913*19
+ 
+10.68429        MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,000000000000A032*14
+ 
+10.69456        MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,000000E317C1A032*11
+ 
+10.70476        MSG_UDP              iDivisorNMEA    $AGRSA,4.32,A,,V*4A
+ 
+10.70483        ANGULO_LEME          iDivisorNMEA    4.32000      
+10.71503        MSG_UDP              iDivisorNMEA    $MXPGN,00FF19,7808,0000000202009F41*15
+ 
+10.72526        MSG_UDP              iDivisorNMEA    $MXPGN,00FF19,7808,0080000A0A009F41*1D
+ 
+10.73554        MSG_UDP              iDivisorNMEA    $HCHDG,283.9,0.0,E,23.3,W*62
+ 
+10.74579        MSG_UDP              iDivisorNMEA    $GPHDT,260.64,T*03
+ 
+10.75610        MSG_UDP              iDivisorNMEA    $TIROT,0.19,A*03
+ 
+10.76640        MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,000000000000B433*12
+ 
+10.77669        MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,000000E317C1B433*17
+ 
+10.78697        MSG_UDP              iDivisorNMEA    $MXPGN,00FF8C,6808,FFF10695FA149F41*18
+ 
+10.79720        MSG_UDP              iDivisorNMEA    $MXPGN,00FF28,3808,FF08FFFDFC059F41*19
+ 
+10.80742        MSG_UDP              iDivisorNMEA    $AGRSA,4.32,A,,V*4A
+ 
+10.80745        ANGULO_LEME          iDivisorNMEA    4.32000      
+10.81766        MSG_UDP              iDivisorNMEA    $HCHDG,283.9,0.0,E,23.3,W*62
+ 
+10.82790        MSG_UDP              iDivisorNMEA    $GPHDT,260.63,T*04
+ 
+10.83807        MSG_UDP              iDivisorNMEA    $TIROT,0.09,A*02
+ 
+10.84832        MSG_UDP              iDivisorNMEA    $MXPGN,01FF1A,680B,FF022B849F410540*68
+ 
+10.85844        MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,000000000000C834*18
+ 
+10.86869        MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,0000002808C1C834*6F
+ 
+10.87888        MSG_UDP              iDivisorNMEA    $MXPGN,01FF1A,782B,FF010B049F4105A0*17
+ 
+10.88904        MSG_UDP              iDivisorNMEA    $AGRSA,4.32,A,,V*4A
+ 
+10.88907        ANGULO_LEME          iDivisorNMEA    4.32000      
+10.89920        MSG_UDP              iDivisorNMEA    $MXPGN,00FF00,280B,0002000005049913*19
+ 
+10.90945        MSG_UDP              iDivisorNMEA    $HCHDG,283.9,0.0,E,23.3,W*62
+ 
+10.91969        MSG_UDP              iDivisorNMEA    $GPHDT,260.62,T*05
+ 
+10.92984        MSG_UDP              iDivisorNMEA    $TIROT,0.09,A*02
+ 
+10.94009        MSG_UDP              iDivisorNMEA    $GPGSA,A,3,08,10,16,18,21,23,26,,,,,,2.56,2.00,2.00*02
+ 
+10.95028        MSG_UDP              iDivisorNMEA    $GPGSV,2,1,07,08,43,246,46,10,35,146,00,16,07,321,41,18,14,065,43*79
+ 
+10.96055        MSG_UDP              iDivisorNMEA    $GPGSV,2,2,07,21,15,219,00,23,11,121,00,26,00,354,00*46
+ 
+10.97081        MSG_UDP              iDivisorNMEA    $MXPGN,01FA06,681C,8A012300C8350FC0*1D
+ 
+10.98107        MSG_UDP              iDivisorNMEA    $MXPGN,01FA06,681C,008C0122F17F00C1*12
+ 
+10.99132        MSG_UDP              iDivisorNMEA    $MXPGN,01FA06,681C,FFFFFFFFFF01A0C2*1D
+ 
+11.00160        MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,0000000000000035*62
+ 
+11.01186        MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,0000002808C10035*15
+ 
+11.02220        MSG_UDP              iDivisorNMEA    $MXPGN,00FF3C,3808,8000F8FE00009F41*1C
+ 
+11.03248        MSG_UDP              iDivisorNMEA    $GPGGA,135645.300,2254.75279,S,04309.53850,W,1,07,2.00,-1.24,M,-5.00,M,,*5D
+ 
+11.04281        MSG_UDP              iDivisorNMEA    $GPGLL,2254.75279,S,04309.53850,W,135645.300,A,A*5F
+ 
+11.05314        MSG_UDP              iDivisorNMEA    $GPRMC,135645.300,A,2254.75279,S,04309.53850,W,0.00,58.71,060323,23.39,W,A*25
+ 
+11.06348        MSG_UDP              iDivisorNMEA    $GPVTG,58.71,T,,M,0.00,N,0.00,K,A*06
+ 
+11.07376        MSG_UDP              iDivisorNMEA    $AGRSA,4.32,A,,V*4A
+ 
+11.07381        ANGULO_LEME          iDivisorNMEA    4.32000      
+11.08400        MSG_UDP              iDivisorNMEA    $HCHDG,283.9,0.0,E,23.3,W*62
+ 
+11.09423        MSG_UDP              iDivisorNMEA    $GPHDT,260.61,T*06
+ 
+11.10445        MSG_UDP              iDivisorNMEA    $TIROT,-0.09,A*2F
+ 
+11.11504        MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,0000000000001436*64
+ 
+11.12528        MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,0000002808C11436*13
+ 
+11.13553        MSG_UDP              iDivisorNMEA    $MXPGN,00FF16,7808,FF0000002B0A9F41*1B
+ 
+11.14575        MSG_UDP              iDivisorNMEA    $AGRSA,4.32,A,,V*4A
+ 
+11.14579        ANGULO_LEME          iDivisorNMEA    4.32000      
+11.15598        MSG_UDP              iDivisorNMEA    $HCHDG,283.9,0.0,E,23.3,W*62
+ 
+11.16624        MSG_UDP              iDivisorNMEA    $GPHDT,260.61,T*06
+ 
+11.17647        MSG_UDP              iDivisorNMEA    $TIROT,-0.09,A*2F
+ 
+11.18672        MSG_UDP              iDivisorNMEA    $MXPGN,00FF00,280B,0002000005049913*19
+ 
+11.19692        MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,0000000000002837*6A
+ 
+11.20720        MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,0000002918C12837*1D
+ 
+11.21745        MSG_UDP              iDivisorNMEA    $GPGGA,,2254.75269,S,04309.53949,W,1,,,,M,,M,,*51
+ 
+11.22778        MSG_UDP              iDivisorNMEA    $GPGLL,2254.75269,S,04309.53949,W,,A,A*4A
+ 
+11.23808        MSG_UDP              iDivisorNMEA    $GPVTG,7.40,T,,M,0.00,N,0.00,K,A*3E
+ 
+11.49669        MSG_UDP              iDivisorNMEA    !AIVDM,1,1,,B,1:U8vhSw@0LrNiUjsHCWtWSp0`Jq,0*6B
+ 
+11.50154        MSG_UDP              iDivisorNMEA    $HCHDG,283.9,0.0,E,23.3,W*62
+ 
+11.50773        MSG_UDP              iDivisorNMEA    $GPHDT,260.61,T*06
+ 
+11.51797        MSG_UDP              iDivisorNMEA    $TIROT,-0.39,A*2C
+ 
+11.53553        MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,000000000000783B*1A
+ 
+11.53883        MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,000000C7B5C1783B*6C
+ 
+11.55038        MSG_UDP              iDivisorNMEA    $AGRSA,4.32,A,,V*4A
+ 
+11.55047        ANGULO_LEME          iDivisorNMEA    4.32000      
+11.60163        MSG_UDP              iDivisorNMEA    $HCHDG,283.9,0.0,E,23.3,W*62
+ 
+11.60173        MSG_UDP              iDivisorNMEA    $GPHDT,260.61,T*06
+ 
+11.61189        MSG_UDP              iDivisorNMEA    $TIROT,-0.59,A*2A
+ 
+11.62552        MSG_UDP              iDivisorNMEA    $GPGSA,A,3,08,10,16,18,27,28,31,32,65,85,86,72,1.70,1.40,1.40*0A
+ 
+11.63272        MSG_UDP              iDivisorNMEA    $GPGSV,3,1,12,08,43,247,46,10,35,146,23,16,07,321,40,18,15,065,34*7C
+ 
+11.64297        MSG_UDP              iDivisorNMEA    $GPGSV,3,2,12,27,59,302,44,28,24,033,42,31,18,023,43,32,72,129,44*7A
+ 
+11.65321        MSG_UDP              iDivisorNMEA    $GPGSV,3,3,12,65,22,303,37,85,32,041,42,86,72,098,37,72,62,246,33*7D
+ 
+11.66348        MSG_UDP              iDivisorNMEA    $MXPGN,01FF0D,780B,FF03000098900500*66
+ 
+11.67373        MSG_UDP              iDivisorNMEA    $MXPGN,00FF00,280B,0002000005049913*19
+ 
+11.68398        MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,0000000000008C3C*6F
+ 
+11.69419        MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,00000024DBC18C3C*1A
+ 
+11.70435        MSG_UDP              iDivisorNMEA    $AGRSA,4.32,A,,V*4A
+ 
+11.70439        ANGULO_LEME          iDivisorNMEA    4.32000      
+11.71458        MSG_UDP              iDivisorNMEA    $MXPGN,00FF19,7808,0000000202009F41*15
+ 
+11.72477        MSG_UDP              iDivisorNMEA    $MXPGN,00FF19,7808,0080000A0A009F41*1D
+ 
+11.73497        MSG_UDP              iDivisorNMEA    $HCHDG,283.9,0.0,E,23.3,W*62
+ 
+11.74515        MSG_UDP              iDivisorNMEA    $GPHDT,260.61,T*06
+ 
+11.75537        MSG_UDP              iDivisorNMEA    $TIROT,-0.59,A*2A
+ 
+11.76554        MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,000000000000A03D*62
+ 
+11.77579        MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,00000024DBC1A03D*17
+ 
+11.78606        MSG_UDP              iDivisorNMEA    $MXPGN,00FF8C,6808,FFF10695FA149F41*18
+ 
+11.79625        MSG_UDP              iDivisorNMEA    $MXPGN,00FF28,3808,FF08FFFDFC059F41*19
+ 
+11.80645        MSG_UDP              iDivisorNMEA    $AGRSA,4.32,A,,V*4A
+ 
+11.80651        ANGULO_LEME          iDivisorNMEA    4.32000      
+11.81665        MSG_UDP              iDivisorNMEA    $HCHDG,283.9,0.0,E,23.3,W*62
+ 
+11.82682        MSG_UDP              iDivisorNMEA    $GPHDT,260.62,T*05
+ 
+11.83700        MSG_UDP              iDivisorNMEA    $TIROT,-0.59,A*2A
+ 
+11.84720        MSG_UDP              iDivisorNMEA    $MXPGN,01FF1A,680B,FF022B849F410560*6A
+ 
+11.85737        MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,000000000000A03D*62
+ 
+11.86755        MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,00000024DBC1A03D*17
+ 
+11.87781        MSG_UDP              iDivisorNMEA    $MXPGN,01FF1A,782B,FF010B049F4105C0*15
+ 
+11.88800        MSG_UDP              iDivisorNMEA    $AGRSA,4.32,A,,V*4A
+ 
+11.88804        ANGULO_LEME          iDivisorNMEA    4.32000      
+11.89818        MSG_UDP              iDivisorNMEA    $MXPGN,00FF00,280B,0002000005049913*19
+ 
+11.90837        MSG_UDP              iDivisorNMEA    $HCHDG,283.9,0.0,E,23.3,W*62
+ 
+11.91855        MSG_UDP              iDivisorNMEA    $GPHDT,260.62,T*05
+ 
+11.92868        MSG_UDP              iDivisorNMEA    $TIROT,-0.59,A*2A
+ 
+11.93885        MSG_UDP              iDivisorNMEA    $GPGSA,A,3,08,10,16,18,21,23,26,,,,,,2.56,2.00,2.00*02
+ 
+11.94905        MSG_UDP              iDivisorNMEA    $GPGSV,2,1,07,08,43,246,46,10,35,146,00,16,07,321,42,18,14,065,44*7D
+ 
+11.95927        MSG_UDP              iDivisorNMEA    $GPGSV,2,2,07,21,15,219,00,23,11,121,00,26,00,355,00*47
+ 
+11.96953        MSG_UDP              iDivisorNMEA    $MXPGN,01FA06,681C,8A012300C83E0FE0*6B
+ 
+11.97972        MSG_UDP              iDivisorNMEA    $MXPGN,01FA06,681C,008C0122F18100E1*6C
+ 
+11.98992        MSG_UDP              iDivisorNMEA    $MXPGN,01FA06,681C,FFFFFFFFFF01A0E2*1B
+ 
+12.00012        MSG_UDP              iDivisorNMEA    !AIVDM,1,1,,B,1:U7;pPP00LrGuEjpjWWT?wL2HK9,0*66
+ 
+12.01031        MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,000000000000003E*12
+ 
+12.02048        MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,00000053DFC1003E*63
+ 
+12.03070        MSG_UDP              iDivisorNMEA    $MXPGN,01FF1A,782B,FFFAFF859F4105E0*6E
+ 
+12.04085        MSG_UDP              iDivisorNMEA    $MXPGN,00FF3C,3808,8000F8FE00009F41*1C
+ 
+12.05103        MSG_UDP              iDivisorNMEA    $GPGGA,135646.100,2254.75279,S,04309.53850,W,1,07,2.00,-1.24,M,-5.00,M,,*5C
+ 
+12.06121        MSG_UDP              iDivisorNMEA    $GPGLL,2254.75279,S,04309.53850,W,135646.100,A,A*5E
+ 
+12.07149        MSG_UDP              iDivisorNMEA    $GPRMC,135646.100,A,2254.75279,S,04309.53850,W,0.00,54.05,060323,23.39,W,A*2B
+ 
+12.08163        MSG_UDP              iDivisorNMEA    $GPVTG,54.05,T,,M,0.00,N,0.00,K,A*09
+ 
+12.09181        MSG_UDP              iDivisorNMEA    $AGRSA,4.32,A,,V*4A
+ 
+12.09186        ANGULO_LEME          iDivisorNMEA    4.32000      
+12.10210        MSG_UDP              iDivisorNMEA    $HCHDG,283.9,0.0,E,23.3,W*62
+ 
+12.11227        MSG_UDP              iDivisorNMEA    $GPHDT,260.63,T*04
+ 
+12.12261        MSG_UDP              iDivisorNMEA    $TIROT,-0.59,A*2A
+ 
+12.13275        MSG_UDP              iDivisorNMEA    !AIVDM,1,1,,B,3:U7oI0610trLJ1jqwp`KFiL2000,0*08
+ 
+12.14288        MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,0000000000002840*6A
+ 
+12.15302        MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,00000053DFC12840*1B
+ 
+12.16318        MSG_UDP              iDivisorNMEA    $MXPGN,00FF16,7808,FF0000002B0A9F41*1B
+ 
+12.40157        MSG_UDP              iDivisorNMEA    $HCHDG,283.9,0.0,E,23.3,W*62
+ 
+12.40168        MSG_UDP              iDivisorNMEA    $GPHDT,260.61,T*06
+ 
+12.41192        MSG_UDP              iDivisorNMEA    $TIROT,-0.89,A*27
+ 
+12.43550        MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,0000000000007844*6B
+ 
+12.43636        MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,0000005026C17844*1F
+ 
+12.44669        MSG_UDP              iDivisorNMEA    $MXPGN,00FF00,280B,0002000005049913*19
+ 
+12.45695        MSG_UDP              iDivisorNMEA    $MXPGN,01FF2C,7808,FFFFFFFF9F4117C0*18
+ 
+12.46724        MSG_UDP              iDivisorNMEA    $MXPGN,01FF2C,7808,FFFF7FFFFFFF7FC1*65
+ 
+12.47753        MSG_UDP              iDivisorNMEA    $MXPGN,01FF2C,7808,FF7FFFFFFFFFFFC2*17
+ 
+12.48784        MSG_UDP              iDivisorNMEA    $MXPGN,01FF2C,7808,FFFFFFFF7FFFFFC3*16
+ 
+12.49811        MSG_UDP              iDivisorNMEA    $AGRSA,4.32,A,,V*4A
+ 
+12.49821        ANGULO_LEME          iDivisorNMEA    4.32000      
+12.50839        MSG_UDP              iDivisorNMEA    $SDDPT,1.76,0.00,*7B
+ 
+12.51868        MSG_UDP              iDivisorNMEA    $MXPGN,00FF3D,6808,7FFFFF0DFFFF9F41*6E
+ 
+12.52904        MSG_UDP              iDivisorNMEA    $HCHDG,283.9,0.0,E,23.3,W*62
+ 
+12.53940        MSG_UDP              iDivisorNMEA    $GPHDT,260.60,T*07
+ 
+12.54975        MSG_UDP              iDivisorNMEA    $TIROT,-0.89,A*27
+ 
+12.56009        MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,0000000000008C45*1E
+ 
+12.57034        MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,0000005026C18C45*6A
+ 
+12.58062        MSG_UDP              iDivisorNMEA    $AGRSA,4.32,A,,V*4A
+ 
+12.58067        ANGULO_LEME          iDivisorNMEA    4.32000      
+12.60147        MSG_UDP              iDivisorNMEA    $HCHDG,283.9,0.0,E,23.3,W*62
+ 
+12.60163        MSG_UDP              iDivisorNMEA    $GPHDT,260.60,T*07
+ 
+12.61194        MSG_UDP              iDivisorNMEA    $TIROT,-0.69,A*29
+ 
+12.62224        MSG_UDP              iDivisorNMEA    $GPGSA,A,3,08,10,16,18,27,28,31,32,65,85,86,72,1.70,1.40,1.40*0A
+ 
+12.63315        MSG_UDP              iDivisorNMEA    $GPGSV,3,1,12,08,43,247,46,10,35,146,23,16,07,321,40,18,15,065,33*7B
+ 
+12.64341        MSG_UDP              iDivisorNMEA    $GPGSV,3,2,12,27,59,302,44,28,24,033,42,31,18,023,43,32,72,129,44*7A
+ 
+12.65367        MSG_UDP              iDivisorNMEA    $GPGSV,3,3,12,65,22,303,37,85,32,041,42,86,72,098,38,72,62,246,33*72
+ 
+12.66397        MSG_UDP              iDivisorNMEA    $MXPGN,01FF0D,780B,FF03000098900520*64
+ 
+12.67424        MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,000000000000A046*17
+ 
+12.68449        MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,00000019BAC1A046*69
+ 
+12.69485        MSG_UDP              iDivisorNMEA    $AGRSA,4.32,A,,V*4A
+ 
+12.69495        ANGULO_LEME          iDivisorNMEA    4.32000      
+12.70516        MSG_UDP              iDivisorNMEA    $MXPGN,00FF19,7808,0000000202009F41*15
+ 
+12.71541        MSG_UDP              iDivisorNMEA    $MXPGN,00FF00,280B,0002000005049913*19
+ 
+12.72567        MSG_UDP              iDivisorNMEA    $MXPGN,00FF19,7808,0080000A0A009F41*1D
+ 
+12.73591        MSG_UDP              iDivisorNMEA    $HCHDG,283.9,0.0,E,23.3,W*62
+ 
+12.74618        MSG_UDP              iDivisorNMEA    $GPHDT,260.60,T*07
+ 
+12.75653        MSG_UDP              iDivisorNMEA    $TIROT,-0.69,A*29
+ 
+12.76689        MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,000000000000B447*11
+ 
+12.77717        MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,00000019BAC1B447*6F
+ 
+12.78744        MSG_UDP              iDivisorNMEA    $MXPGN,00FF8C,6808,FFF10695FA149F41*18
+ 
+12.79771        MSG_UDP              iDivisorNMEA    $MXPGN,00FF28,3808,FF08FFFDFC059F41*19
+ 
+12.80802        MSG_UDP              iDivisorNMEA    $AGRSA,4.32,A,,V*4A
+ 
+12.80813        ANGULO_LEME          iDivisorNMEA    4.32000      
+12.81834        MSG_UDP              iDivisorNMEA    $HCHDG,283.9,0.0,E,23.3,W*62
+ 
+12.82863        MSG_UDP              iDivisorNMEA    $GPHDT,260.61,T*06
+ 
+12.83891        MSG_UDP              iDivisorNMEA    $TIROT,-0.69,A*29
+ 
+12.84921        MSG_UDP              iDivisorNMEA    $MXPGN,01FF1A,680B,FF022B849F410580*64
+ 
+12.85952        MSG_UDP              iDivisorNMEA    !AIVDM,1,1,,B,1:U8?kPP1lLrL4mjqGhk>Owp0hKc,0*38
+ 
+12.86983        MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,000000000000C848*13
+ 
+12.88015        MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,000000B6A5C1C848*66
+ 
+12.89047        MSG_UDP              iDivisorNMEA    $MXPGN,01FF1A,782B,FF010B049F4105E0*13
+ 
+12.90074        MSG_UDP              iDivisorNMEA    $AGRSA,4.32,A,,V*4A
+ 
+12.90084        ANGULO_LEME          iDivisorNMEA    4.32000      
+12.91103        MSG_UDP              iDivisorNMEA    $HCHDG,283.9,0.0,E,23.3,W*62
+ 
+12.92130        MSG_UDP              iDivisorNMEA    $GPHDT,260.61,T*06
+ 
+12.93180        MSG_UDP              iDivisorNMEA    $TIROT,-0.69,A*29
+ 
+12.94213        MSG_UDP              iDivisorNMEA    $GPGSA,A,3,08,10,16,18,21,23,26,,,,,,2.56,2.00,2.00*02
+ 
+12.95247        MSG_UDP              iDivisorNMEA    $GPGSV,2,1,07,08,43,246,46,10,35,146,00,16,07,321,41,18,14,065,44*7E
+ 
+12.96282        MSG_UDP              iDivisorNMEA    $GPGSV,2,2,07,21,15,219,00,23,11,121,00,26,00,355,00*47
+ 
+12.97314        MSG_UDP              iDivisorNMEA    $MXPGN,01FA06,681C,8A012300C8490F00*65
+ 
+12.98348        MSG_UDP              iDivisorNMEA    $MXPGN,01FA06,681C,008C0122F1810001*19
+ 
+12.99379        MSG_UDP              iDivisorNMEA    $MXPGN,01FA06,681C,FFFFFFFFFF01A002*6E
+ 
+13.00409        MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,0000000000000049*69
+ 
+13.01438        MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,000000B6A5C10049*1C
+ 
+13.02470        MSG_UDP              iDivisorNMEA    $MXPGN,00FF00,280B,0002000005049913*19
+ 
+13.03503        MSG_UDP              iDivisorNMEA    $MXPGN,00FF3C,3808,8000F8FE00009F41*1C
+ 
+13.04529        MSG_UDP              iDivisorNMEA    $GPGGA,135647.300,2254.75279,S,04309.53850,W,1,07,2.00,-1.24,M,-5.00,M,,*5F
+ 
+13.30163        MSG_UDP              iDivisorNMEA    $HCHDG,284.0,0.0,E,23.3,W*6C
+ 
+13.30179        MSG_UDP              iDivisorNMEA    $GPHDT,260.65,T*02
+ 
+13.31255        MSG_UDP              iDivisorNMEA    $TIROT,-0.69,A*29
+ 
+13.33559        MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,000000000000504D*11
+ 
+13.33643        MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,0000005A6AC1504D*67
+ 
+13.35140        MSG_UDP              iDivisorNMEA    $AGRSA,4.32,A,,V*4A
+ 
+13.35151        ANGULO_LEME          iDivisorNMEA    4.32000      
+13.40268        MSG_UDP              iDivisorNMEA    $GPGGA,135647.000,2254.75205,S,04309.54085,W,1,12,1.00,4.06,M,-5.60,M,,*79
+ 
+13.40455        MSG_UDP              iDivisorNMEA    $GPGLL,2254.75205,S,04309.54085,W,135647.000,A,A*52
+ 
+13.41385        MSG_UDP              iDivisorNMEA    $GPRMC,135647.000,A,2254.75205,S,04309.54085,W,0.48,124.59,060323,23.30,W,A*1D
+ 
+13.42421        MSG_UDP              iDivisorNMEA    $GPVTG,124.59,T,,M,0.48,N,0.88,K,A*3A
+ 
+13.43450        MSG_UDP              iDivisorNMEA    $HCHDG,284.0,0.0,E,23.3,W*6C
+ 
+13.44476        MSG_UDP              iDivisorNMEA    $GPHDT,260.65,T*02
+ 
+13.45504        MSG_UDP              iDivisorNMEA    $TIROT,-0.69,A*29
+ 
+13.46526        MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,000000000000644E*17
+ 
+13.47554        MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,0000005A6AC1644E*61
+ 
+13.48580        MSG_UDP              iDivisorNMEA    $MXPGN,00FF00,280B,0002000005049913*19
+ 
+13.49610        MSG_UDP              iDivisorNMEA    $MXPGN,01FF2C,7808,FFFFFFFF9F4117E0*1E
+ 
+13.50637        MSG_UDP              iDivisorNMEA    $MXPGN,01FF2C,7808,FFFF7FFFFFFF7FE1*63
+ 
+13.51666        MSG_UDP              iDivisorNMEA    $MXPGN,01FF2C,7808,FF7FFFFFFFFFFFE2*11
+ 
+13.52694        MSG_UDP              iDivisorNMEA    $MXPGN,01FF2C,7808,FFFFFFFF7FFFFFE3*10
+ 
+13.53720        MSG_UDP              iDivisorNMEA    $AGRSA,4.32,A,,V*4A
+ 
+13.53727        ANGULO_LEME          iDivisorNMEA    4.32000      
+13.54747        MSG_UDP              iDivisorNMEA    $SDDPT,1.77,0.00,*7A
+ 
+13.55783        MSG_UDP              iDivisorNMEA    $MXPGN,00FF3D,6808,7FFFFF0DFFFF9F41*6E
+ 
+13.56807        MSG_UDP              iDivisorNMEA    $HCHDG,284.0,0.0,E,23.3,W*6C
+ 
+13.57827        MSG_UDP              iDivisorNMEA    $GPHDT,260.67,T*00
+ 
+13.58851        MSG_UDP              iDivisorNMEA    $TIROT,-0.69,A*29
+ 
+13.59886        MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,000000000000784F*19
+ 
+13.60915        MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,0000005A6AC1784F*6F
+ 
+13.61947        MSG_UDP              iDivisorNMEA    $AGRSA,4.32,A,,V*4A
+ 
+13.61958        ANGULO_LEME          iDivisorNMEA    4.32000      
+13.62979        MSG_UDP              iDivisorNMEA    $HCHDG,284.0,0.0,E,23.3,W*6C
+ 
+13.64009        MSG_UDP              iDivisorNMEA    $GPHDT,260.67,T*00
+ 
+13.65043        MSG_UDP              iDivisorNMEA    $TIROT,-0.79,A*28
+ 
+13.66075        MSG_UDP              iDivisorNMEA    $GPGSA,A,3,08,10,16,18,27,28,31,32,65,85,86,72,1.70,1.40,1.40*0A
+ 
+13.67101        MSG_UDP              iDivisorNMEA    $GPGSV,3,1,12,08,43,247,46,10,35,146,23,16,07,321,40,18,15,065,34*7C
+ 
+13.68128        MSG_UDP              iDivisorNMEA    $GPGSV,3,2,12,27,59,302,44,28,24,033,42,31,18,023,43,32,72,129,44*7A
+ 
+13.69157        MSG_UDP              iDivisorNMEA    $GPGSV,3,3,12,65,22,303,37,85,32,041,42,86,72,098,38,72,62,246,33*72
+ 
+13.70193        MSG_UDP              iDivisorNMEA    $MXPGN,01FF0D,780B,FF03000098900540*62
+ 
+13.71222        MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,0000000000008C50*1A
+ 
+13.72252        MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,0000006879C18C50*6F
+ 
+13.73275        MSG_UDP              iDivisorNMEA    $AGRSA,4.32,A,,V*4A
+ 
+13.73281        ANGULO_LEME          iDivisorNMEA    4.32000      
+13.74299        MSG_UDP              iDivisorNMEA    $MXPGN,00FF19,7808,0000000202009F41*15
+ 
+13.75320        MSG_UDP              iDivisorNMEA    $MXPGN,00FF00,280B,0002000005049913*19
+ 
+13.76346        MSG_UDP              iDivisorNMEA    $MXPGN,00FF19,7808,0080000A0A009F41*1D
+ 
+13.77374        MSG_UDP              iDivisorNMEA    $HCHDG,284.0,0.0,E,23.3,W*6C
+ 
+13.78401        MSG_UDP              iDivisorNMEA    $GPHDT,260.69,T*0E
+ 
+13.79427        MSG_UDP              iDivisorNMEA    $TIROT,-0.79,A*28
+ 
+13.80455        MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,000000000000A051*11
+ 
+13.81537        MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,0000006879C1A051*64
+ 
+13.82562        MSG_UDP              iDivisorNMEA    $MXPGN,00FF8C,6808,FFF10695FA149F41*18
+ 
+13.83589        MSG_UDP              iDivisorNMEA    $MXPGN,00FF28,3808,FF08FFFDFC059F41*19
+ 
+13.84614        MSG_UDP              iDivisorNMEA    $AGRSA,4.32,A,,V*4A
+ 
+13.84624        ANGULO_LEME          iDivisorNMEA    4.32000      
+13.85642        MSG_UDP              iDivisorNMEA    $HCHDG,284.0,0.0,E,23.3,W*6C
+ 
+13.86667        MSG_UDP              iDivisorNMEA    $GPHDT,260.69,T*0E
+ 
+13.87697        MSG_UDP              iDivisorNMEA    $TIROT,-0.79,A*28
+ 
+13.88719        MSG_UDP              iDivisorNMEA    $MXPGN,01FF1A,680B,FF022B849F4105A0*1D
+ 
+13.89739        MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,000000000000B452*15
+ 
+13.90768        MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,00000069D1C1B452*1A
+ 
+13.91798        MSG_UDP              iDivisorNMEA    $MXPGN,01FF1A,782B,FF010B049F410500*66
+ 
+13.92825        MSG_UDP              iDivisorNMEA    $AGRSA,4.32,A,,V*4A
+ 
+13.92832        ANGULO_LEME          iDivisorNMEA    4.32000      
+13.93851        MSG_UDP              iDivisorNMEA    $HCHDG,284.0,0.0,E,23.3,W*6C
+ 
+13.94876        MSG_UDP              iDivisorNMEA    $GPHDT,260.68,T*0F
+ 
+13.95906        MSG_UDP              iDivisorNMEA    $TIROT,-0.79,A*28
+ 
+13.96930        MSG_UDP              iDivisorNMEA    $GPGSA,A,3,08,10,16,18,21,23,26,,,,,,2.56,2.00,2.00*02
+ 
+13.97963        MSG_UDP              iDivisorNMEA    $GPGSV,2,1,07,08,43,246,46,10,35,146,00,16,07,321,41,18,14,065,44*7E
+ 
+14.19236        MSG_UDP              iDivisorNMEA    $MXPGN,00FF00,280B,0002000005049913*19
+ 
+14.20156        MSG_UDP              iDivisorNMEA    $HCHDG,284.0,0.0,E,23.3,W*6C
+ 
+14.20282        MSG_UDP              iDivisorNMEA    $GPHDT,260.71,T*07
+ 
+14.21310        MSG_UDP              iDivisorNMEA    $TIROT,-0.49,A*2B
+ 
+14.23559        MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,0000000000003C56*17
+ 
+14.23632        MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,00000051EDC13C56*67
+ 
+14.25035        MSG_UDP              iDivisorNMEA    $AGRSA,4.37,A,,V*4F
+ 
+14.25045        ANGULO_LEME          iDivisorNMEA    4.37000      
+14.25763        MSG_UDP              iDivisorNMEA    $GPZDA,135647.690,06,03,2023,,*5D
+ 
+14.28634        MSG_UDP              iDivisorNMEA    !AIVDO,1,1,,,B:UOH3P007>Vt>Lf>c`4cwp5oP06,0*72
+ 
+14.30143        MSG_UDP              iDivisorNMEA    $HCHDG,284.0,0.0,E,23.3,W*6C
+ 
+14.30158        MSG_UDP              iDivisorNMEA    $GPHDT,260.71,T*07
+ 
+14.31181        MSG_UDP              iDivisorNMEA    $TIROT,-0.49,A*2B
+ 
+14.33558        MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,0000000000005057*63
+ 
+14.33637        MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,0000009FF3C15057*1C
+ 
+14.35136        MSG_UDP              iDivisorNMEA    $AGRSA,4.32,A,,V*4A
+ 
+14.35147        ANGULO_LEME          iDivisorNMEA    4.32000      
+14.40262        MSG_UDP              iDivisorNMEA    $GPGGA,135648.000,2254.75210,S,04309.54064,W,1,12,1.00,4.39,M,-5.60,M,,*71
+ 
+14.40463        MSG_UDP              iDivisorNMEA    $GPGLL,2254.75210,S,04309.54064,W,135648.000,A,A*56
+ 
+14.41392        MSG_UDP              iDivisorNMEA    $GPRMC,135648.000,A,2254.75210,S,04309.54064,W,0.09,0.00,060323,23.30,W,A*17
+ 
+14.42420        MSG_UDP              iDivisorNMEA    $GPVTG,0.00,T,,M,0.09,N,0.16,K,A*33
+ 
+14.43442        MSG_UDP              iDivisorNMEA    $HCHDG,284.0,0.0,E,23.3,W*6C
+ 
+14.44469        MSG_UDP              iDivisorNMEA    $GPHDT,260.72,T*04
+ 
+14.45498        MSG_UDP              iDivisorNMEA    $TIROT,-0.49,A*2B
+ 
+14.46529        MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,0000000000006458*6B
+ 
+14.47562        MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,0000009FF3C16458*14
+ 
+14.48603        MSG_UDP              iDivisorNMEA    $MXPGN,00FF00,280B,0002000005049913*19
+ 
+14.49628        MSG_UDP              iDivisorNMEA    $MXPGN,01FF2C,7808,FFFFFFFF9F411700*6B
+ 
+14.50657        MSG_UDP              iDivisorNMEA    $MXPGN,01FF2C,7808,FFFF7FFFFFFF7F01*16
+ 
+14.51683        MSG_UDP              iDivisorNMEA    $MXPGN,01FF2C,7808,FF7FFFFFFFFFFF02*64
+ 
+14.52711        MSG_UDP              iDivisorNMEA    $MXPGN,01FF2C,7808,FFFFFFFF7FFFFF03*65
+ 
+14.53740        MSG_UDP              iDivisorNMEA    $AGRSA,4.32,A,,V*4A
+ 
+14.53748        ANGULO_LEME          iDivisorNMEA    4.32000      
+14.54770        MSG_UDP              iDivisorNMEA    $SDDPT,1.76,0.00,*7B
+ 
+14.55791        MSG_UDP              iDivisorNMEA    $MXPGN,00FF3D,6808,7FFFFF0DFFFF9F41*6E
+ 
+14.56820        MSG_UDP              iDivisorNMEA    $MXPGN,00FF3D,6808,0000FF0BFFFF9F41*19
+ 
+14.57843        MSG_UDP              iDivisorNMEA    $HCHDG,284.0,0.0,E,23.3,W*6C
+ 
+14.58870        MSG_UDP              iDivisorNMEA    $GPHDT,260.72,T*04
+ 
+14.59897        MSG_UDP              iDivisorNMEA    $TIROT,-0.49,A*2B
+ 
+14.60925        MSG_UDP              iDivisorNMEA    !AIVDM,1,1,,B,1:U8:OPP1NtrJs=jqJL9>gwN2@Lb,0*53
+ 
+14.61951        MSG_UDP              iDivisorNMEA    $MXPGN,00FF3D,6808,FFFFFF0CFFFF9F41*18
+ 
+14.62972        MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,0000000000007859*67
+ 
+14.63996        MSG_UDP              iDivisorNMEA    $MXPGN,01F804,281C,0000009FF3C17859*18
+ 
+14.65032        MSG_UDP              iDivisorNMEA    $MXPGN,00FF3D,6808,FFFFFF03FFFF9F41*68
+ 
+14.66067        MSG_UDP              iDivisorNMEA    $AGRSA,4.32,A,,V*4A
+ 
+14.66075        ANGULO_LEME          iDivisorNMEA    4.32000      
+14.66067        MSG_UDP              iDivisorNMEA    $AGRSA,4.32,A,,V*4A
+ 
+14.66075        ANGULO_LEME          iDivisorNMEA    4.32000      

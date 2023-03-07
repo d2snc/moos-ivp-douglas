@@ -222,44 +222,12 @@ void Serial::enviaSerial()
   std::string tempo_leme = std::to_string(tempo);
 
   if (tempo_leme.size() == 1) tempo_leme = "0"+tempo_leme; //Caso a string só tenha 1 número - Adiciono zero pela leitura do PIC
-  
-  // Função para transformar as variáveis DESIRED_RUDDER e DESIRED_THRUST para o envio via serial para o PIC
-  // No momento só verifica a variável rudder e thrust e faz a conversão
 
-  /*
-  Comandos para o PIC:
-  A0 - diminuir rotacao
-  A1 - aumentar rotacao
-  A2 - setar marcha pra vante
-  A3 - setar marcha pra re*/
-
-  //Iteração para o leme
-  /*
-  float erro_speed = nav_speed - desired_speed;
-
-  if (abs(erro_speed == 0)) {
-    //Faz nada se o erro for zero
-  }
-  else if (erro_speed < 0) {
-    porta_serial.Write("A2".c_str(),2); //Marcha para vante
-    porta_serial.Write("A1".c_str(),2); //Aumenta a rotação
-  }
-  else if (erro_speed > 0) {
-    //porta_serial.Write("A3".c_str(),2); //Marcha para ré
-    porta_serial.Write("A0".c_str(),2); //Diminui a rotação
-  }
-  */
+  //Comando de velocidade
+  //Basicamente pega o DESIRED_THRUST e envia para o serial
 
 
-  //Comando de leme
-  /* // COMANDO ANTIGO - PEGAVA PELO DESIRED_RUDDER= rudder
-  if (rudder > 0) {
-    rudder_convertido = "L0"+tempo_leme+"2"; //Guina tempo calculado para BE
-  }
-  else if (rudder < 0) {
-    rudder_convertido = "L0"+tempo_leme+"1"; //Guina tempo calculado para BB
-  }
-  */
+
 
   //Comando novo de leme baseado no erro
   if (erro_Leme < -2) {
@@ -284,11 +252,6 @@ void Serial::enviaSerial()
       porta_serial.Write(rudder_convertido.c_str(),5); //Envia os caracteres para essa porta, coloquei 2 pq nos testes por enquanto só tem 2 caracteres
     }
     
-    //if (tempo < 10) { 
-    //  usleep(1000000); //Coloquei 1 segundo como padrão mesmo em tempos mais baixos para não sobrecarregar o relé
-    //} else {
-      //usleep(tempo*100000); //Delay de tempo calculado - teste - 1000000 equivale a 1 seg.
-    //}
   }
 
 }

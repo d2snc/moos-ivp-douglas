@@ -81,7 +81,7 @@ long double heading_giro;
 long double angulo_leme;
 char* saida_pCmd;
 char* saida_pData;
-std::string msg_debug;
+int msg_debug;
 
 //Variáveis globais para o receiver UDP
 int sd, rc, n;
@@ -322,7 +322,12 @@ bool DivisorNMEA::Iterate()
       const std::string body(libais::GetBody(msg));
       
       const int pad = libais::GetPad(msg);
-      msg_debug = to_string(pad);
+      //std::string chksum_block = libais::GetNthField(msg, 6, ",");
+      //Removendo espacos em branco da string
+      //remove(chksum_block.begin(), chksum_block.end(), ' ');
+      
+      msg_debug = pad;
+      
       //std::string chksum_block(libais::GetNthField(msg, 6, ","));
       if (pad >= 0){
         
