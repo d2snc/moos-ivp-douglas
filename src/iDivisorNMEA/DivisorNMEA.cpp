@@ -89,6 +89,13 @@ socklen_t cliLen;
 struct sockaddr_in cliAddr, servAddr;
 char msg[MAX_MSG];
 
+//Variáveis globais para o sender UDP
+#define REMOTE_SERVER_PORT 10112 //Porta UDP do OpenCPN para receber
+#define IP_ADDRESS "127.0.0.1" //Endereço UDP do OpenCPN para receber
+
+int sd_envio, rc_envio, i;
+struct sockaddr_in cliAddr_envio, remoteServAddr;
+struct hostent *h;
 
 ///
 /// \class MyParser
@@ -265,6 +272,25 @@ bool DivisorNMEA::Iterate()
   printf(": from %s:UDP%u : %s \n", 
     inet_ntoa(cliAddr.sin_addr),
     ntohs(cliAddr.sin_port),msg);
+  
+  //Envia a mensagem recebida via UDP para a porta 10112 (OpenCPN)
+  try {
+  rc_envio = sendto(sd_envio, msg, strlen(msg)+1, 0, 
+  (struct sockaddr *) &remoteServAddr, 
+  sizeof(remoteServAddr));
+  }
+  catch (std::system_error& e)
+    {
+      std::cout << e.what();
+    }
+
+  printf("Sending data %s \n",msg);
+
+  if(rc_envio<0) {
+      printf(": cannot send data \n");
+      close(sd_envio);
+      exit(1);
+  }
 
   Notify("MSG_UDP",msg); //Declarar uma variável pro MOOSDB
 
@@ -422,6 +448,43 @@ bool DivisorNMEA::Iterate()
 bool DivisorNMEA::OnStartUp()
 {
   AppCastingMOOSApp::OnStartUp();
+
+  //Cria o socket para comunicação com o OpenCPN por UDP - Envia na porta 10112
+
+  /* get server IP address (no check if input is IP address or DNS name */
+  h = gethostbyname(IP_ADDRESS);
+  if(h==NULL) {
+    printf("unknown host  \n");
+    exit(1);
+  }
+
+  printf(": sending data to '%s' (IP : %s) \n", h->h_name,
+	 inet_ntoa(*(struct in_addr *)h->h_addr_list[0]));
+
+  remoteServAddr.sin_family = h->h_addrtype;
+  memcpy((char *) &remoteServAddr.sin_addr.s_addr, 
+	 h->h_addr_list[0], h->h_length);
+  remoteServAddr.sin_port = htons(REMOTE_SERVER_PORT);
+
+  /* socket creation */
+  sd_envio = socket(AF_INET,SOCK_DGRAM,0);
+  if(sd_envio<0) {
+    printf(" cannot open socket \n");
+    exit(1);
+  }
+  
+  /* bind any port */
+  cliAddr_envio.sin_family = AF_INET;
+  cliAddr_envio.sin_addr.s_addr = htonl(INADDR_ANY);
+  cliAddr_envio.sin_port = htons(0);
+  
+  rc_envio = bind(sd_envio, (struct sockaddr *) &cliAddr_envio, sizeof(cliAddr_envio));
+  if(rc_envio<0) {
+    printf(": cannot bind port\n");
+    exit(1);
+  }
+
+  //Cria o socket para receber UDP na porta 10111
 
   /* socket creation */
   sd=socket(AF_INET, SOCK_DGRAM, 0);
