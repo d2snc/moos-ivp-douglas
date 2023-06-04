@@ -89,13 +89,6 @@ socklen_t cliLen;
 struct sockaddr_in cliAddr, servAddr;
 char msg[MAX_MSG];
 
-//Variáveis globais para o sender UDP
-#define REMOTE_SERVER_PORT 10112 //Porta UDP do OpenCPN para receber
-#define IP_ADDRESS "127.0.0.1" //Endereço UDP do OpenCPN para receber
-
-int sd_envio, rc_envio, i;
-struct sockaddr_in cliAddr_envio, remoteServAddr;
-struct hostent *h;
 
 ///
 /// \class MyParser
@@ -195,7 +188,7 @@ DivisorNMEA::DivisorNMEA()
 
 DivisorNMEA::~DivisorNMEA()
 {
-    close(serial_port);
+    //close(serial_port);
 }
 
 //---------------------------------------------------------
@@ -272,40 +265,10 @@ bool DivisorNMEA::Iterate()
   printf(": from %s:UDP%u : %s \n", 
     inet_ntoa(cliAddr.sin_addr),
     ntohs(cliAddr.sin_port),msg);
-  
-  //Envia a mensagem recebida via UDP para a porta 10112 (OpenCPN)
-  try {
-  rc_envio = sendto(sd_envio, msg, strlen(msg)+1, 0, 
-  (struct sockaddr *) &remoteServAddr, 
-  sizeof(remoteServAddr));
-  }
-  catch (std::system_error& e)
-    {
-      std::cout << e.what();
-    }
-
-  printf("Sending data %s \n",msg);
-
-  if(rc_envio<0) {
-      printf(": cannot send data \n");
-      close(sd_envio);
-      exit(1);
-  }
 
   Notify("MSG_UDP",msg); //Declarar uma variável pro MOOSDB
 
   std::string msg_string = msg;
-
-  //Dou uma limpada no buffer antes de ler de novo
-  //memset(&read_buf, '\0', sizeof(read_buf));
-  //Faço a leitura das sentenças vindas da porta serial
-  //read_buff defini como variável de estado no arquivo '.h'
-  //int num_bytes = read(serial_port, &read_buf, sizeof(read_buf));
-  /*
-  if (num_bytes < 0) {
-      printf("Error reading: %s", strerror(errno));
-      return 1;
-  }*/
 
   // Crio um objeto para parse da msg NMEA
   MyNMEAParser NMEAParser;
@@ -421,6 +384,7 @@ bool DivisorNMEA::Iterate()
       }
       double ang = angulo_leme;
       Notify("ANGULO_LEME", ang);
+      Notify("NAV_YAW", ang); //Variável de retorno do valor do ângulo do leme para o PID
     }
     //Parser do Rumo Verdadeiro dado pela Giro
     else if (msg_string.substr(0,6) == "$GPHDT") {
@@ -449,42 +413,7 @@ bool DivisorNMEA::OnStartUp()
 {
   AppCastingMOOSApp::OnStartUp();
 
-  //Cria o socket para comunicação com o OpenCPN por UDP - Envia na porta 10112
-
-  /* get server IP address (no check if input is IP address or DNS name */
-  h = gethostbyname(IP_ADDRESS);
-  if(h==NULL) {
-    printf("unknown host  \n");
-    exit(1);
-  }
-
-  printf(": sending data to '%s' (IP : %s) \n", h->h_name,
-	 inet_ntoa(*(struct in_addr *)h->h_addr_list[0]));
-
-  remoteServAddr.sin_family = h->h_addrtype;
-  memcpy((char *) &remoteServAddr.sin_addr.s_addr, 
-	 h->h_addr_list[0], h->h_length);
-  remoteServAddr.sin_port = htons(REMOTE_SERVER_PORT);
-
-  /* socket creation */
-  sd_envio = socket(AF_INET,SOCK_DGRAM,0);
-  if(sd_envio<0) {
-    printf(" cannot open socket \n");
-    exit(1);
-  }
-  
-  /* bind any port */
-  cliAddr_envio.sin_family = AF_INET;
-  cliAddr_envio.sin_addr.s_addr = htonl(INADDR_ANY);
-  cliAddr_envio.sin_port = htons(0);
-  
-  rc_envio = bind(sd_envio, (struct sockaddr *) &cliAddr_envio, sizeof(cliAddr_envio));
-  if(rc_envio<0) {
-    printf(": cannot bind port\n");
-    exit(1);
-  }
-
-  //Cria o socket para receber UDP na porta 10111
+  //Cria o socket para receber UDP na porta 10110
 
   /* socket creation */
   sd=socket(AF_INET, SOCK_DGRAM, 0);
@@ -533,54 +462,6 @@ bool DivisorNMEA::OnStartUp()
   }
   
   registerVariables();	
-  //source: https://blog.mbedded.ninja/programming/operating-systems/linux/linux-serial-ports-using-c-cpp/
-  // Abro a porta serial
-  serial_port = open("/dev/pts/6", O_RDWR); //CONFIG DE PORTA SERIAL AQUI
-  // Check for errors
-  if (serial_port < 0) {
-      printf("Error %i from open: %s\n", errno, strerror(errno));
-  }
-  //Crio uma struct tty
-  struct termios tty;
-  
-  // Read in existing settings, and handle any error
-  if(tcgetattr(serial_port, &tty) != 0) {
-      printf("Error %i from tcgetattr: %s\n", errno, strerror(errno));
-      return 1;
-  }
-
-  tty.c_cflag &= ~PARENB; // Clear parity bit, disabling parity (most common)
-  tty.c_cflag &= ~CSTOPB; // Clear stop field, only one stop bit used in communication (most common)
-  tty.c_cflag &= ~CSIZE; // Clear all bits that set the data size 
-  tty.c_cflag |= CS8; // 8 bits per byte (most common)
-  tty.c_cflag &= ~CRTSCTS; // Disable RTS/CTS hardware flow control (most common)
-  tty.c_cflag |= CREAD | CLOCAL; // Turn on READ & ignore ctrl lines (CLOCAL = 1)
-
-  tty.c_lflag &= ~ICANON;
-  tty.c_lflag &= ~ECHO; // Disable echo
-  tty.c_lflag &= ~ECHOE; // Disable erasure
-  tty.c_lflag &= ~ECHONL; // Disable new-line echo
-  tty.c_lflag &= ~ISIG; // Disable interpretation of INTR, QUIT and SUSP
-  tty.c_iflag &= ~(IXON | IXOFF | IXANY); // Turn off s/w flow ctrl
-  tty.c_iflag &= ~(IGNBRK|BRKINT|PARMRK|ISTRIP|INLCR|IGNCR|ICRNL); // Disable any special handling of received bytes
-
-  tty.c_oflag &= ~OPOST; // Prevent special interpretation of output bytes (e.g. newline chars)
-  tty.c_oflag &= ~ONLCR; // Prevent conversion of newline to carriage return/line feed
-  // tty.c_oflag &= ~OXTABS; // Prevent conversion of tabs to spaces (NOT PRESENT ON LINUX)
-  // tty.c_oflag &= ~ONOEOT; // Prevent removal of C-d chars (0x004) in output (NOT PRESENT ON LINUX)
-
-  tty.c_cc[VTIME] = 10;    // Wait for up to 1s (10 deciseconds), returning as soon as any data is received.
-  tty.c_cc[VMIN] = 0;
-
-  // Set in/out baud rate to be 9600
-  cfsetispeed(&tty, B9600);
-  cfsetospeed(&tty, B9600);
-
-  // Save tty settings, also checking for error
-  if (tcsetattr(serial_port, TCSANOW, &tty) != 0) {
-      printf("Error %i from tcsetattr: %s\n", errno, strerror(errno));
-      return 1;
-  }
 
   return(true);
 }
@@ -592,6 +473,7 @@ void DivisorNMEA::registerVariables()
 {
   AppCastingMOOSApp::RegisterVariables();
   Register("LINHA_NMEA", 0);
+  //Register("NAV_YAW", 0);
  
 }
 
