@@ -65,9 +65,8 @@
 
 //Include do geodesy
 //Serve para fazer a conversão do LAT/LON recebido pelo AIS para Coordenadas Locais 
-#include "../../../moos-ivp/MOOS/MOOSGeodesy/libMOOSGeodesy/MOOSGeodesy.cpp"
-
-
+#include "MOOS/libMOOSGeodesy/MOOSGeodesy.h"
+#include "../MOOSGeodesy.cpp" // adiciono a funcao de referencia
 using namespace std;
 
 //Variáveis globais para usar no programa e debugs

@@ -14,8 +14,14 @@ ADD_EXECUTABLE(iDivisorNMEA ${SRC})
 
 TARGET_LINK_LIBRARIES(iDivisorNMEA
    ${MOOS_LIBRARIES}
+   ${MOOSGeodesy_LIBRARIES}
    apputil
    mbutil
    m
    pthread)
+
+#Find MOOSGeodesy
+find_package(MOOSGeodesy)
+include_directories(${MOOSGeodesy_INCLUDE_DIRS} ${MOOSGeodesy_LIBRARIES})
+
 

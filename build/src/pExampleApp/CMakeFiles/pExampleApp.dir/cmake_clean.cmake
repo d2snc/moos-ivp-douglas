@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/moos-ivp-douglas/bin/pExampleApp"
-  "/home/moos-ivp-douglas/bin/pExampleApp.pdb"
+  "../../../bin/pExampleApp"
+  "../../../bin/pExampleApp.pdb"
   "CMakeFiles/pExampleApp.dir/main.cpp.o"
   "CMakeFiles/pExampleApp.dir/main.cpp.o.d"
 )
