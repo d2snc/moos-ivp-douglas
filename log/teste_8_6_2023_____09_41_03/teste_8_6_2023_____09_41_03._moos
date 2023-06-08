@@ -1,0 +1,365 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% LOG FILE:       /home/moos-ivp-douglas/log/teste_8_6_2023_____09_41_03/teste_8_6_2023_____09_41_03._moos
+%% FILE OPENED ON  Wed Dec 31 21:00:00 1969
+%% LOGSTART           1686228063.265281
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+// Arquivo de configuração padrão VSNT-LAB
+
+ServerHost = localhost //100.92.169.58
+ServerPort = 9000 
+//Simulator  = true
+
+Community  = lancha
+
+MOOSTimeWarp = 1
+//Datum usado para o pMarineViewer
+LatOrigin = -22.93301145
+LongOrigin = -43.136674255
+
+ 
+
+//------------------------------------------
+// Antler configuration  block
+ProcessConfig = ANTLER
+{
+  MSBetweenLaunches = 100
+  
+  Run = MOOSDB		@ NewConsole = false
+  Run = uSimMarine	@ NewConsole = false
+  Run = pNodeReporter	@ NewConsole = false
+  Run = pHelmIvP	@ NewConsole = false
+//  Run = iSerial	@ NewConsole = false  
+  Run = pMarinePIDV22	@ NewConsole = false
+  Run = uProcessWatch   @ NewConsole = false
+//  Run = pContactMgrV20	@ NewConsole = false
+  Run = pMarineViewer	@ NewConsole = false ~ pFragata
+//  Run = iDivisorNMEA	@ NewConsole = false
+  Run = pLogger	@ NewConsole = false
+//  Run = iRemoteLite	@ NewConsole = false
+//  Run = pRealm	      @ NewConsole = false
+  //Run = pShare	      @ NewConsole = false
+  
+  
+}
+
+//------------------------------------------
+
+
+ProcessConfig = pShare
+{
+
+  AppTick   = 100
+  CommsTick = 100
+
+  input = route=192.168.14.138:9001 //recebe dados da lancha
+
+  //output = src_name=NODE_REPORT_LOCAL, dest_name=NODE_REPORT, route=100.92.169.58:9001
+  //output = src_name=VIEW_SEGLIST, dest_name=VIEW_SEGLIST, route=100.92.169.58:9001
+  //output = src_name=VIEW_POINT, dest_name=VIEW_POINT, route=100.92.169.58:9001
+  //output = src_name=VIEW_POLYGON, dest_name=VIEW_POLYGON, route=100.92.169.58:9001
+  //Variáveis para enviar para a lancha
+  output = src_name=DEPLOY, dest_name=DEPLOY, route=192.168.14.138:9001
+  output = src_name=MOOS_MANUAL_OVERIDE, dest_name=MOOS_MANUAL_OVERIDE, route=192.168.14.138:9001
+  output = src_name=RETURN, dest_name=RETURN, route=192.168.14.138:9001
+  output = src_name=DESIRED_THRUST, dest_name=DESIRED_THRUST, route=192.168.14.138:9001
+  output = src_name=DESIRED_RUDDER, dest_name=DESIRED_RUDDER, route=192.168.14.138:9001
+  output = src_name=WPT_UPDATE, dest_name=WPT_UPDATE, route=192.168.14.138:9001
+
+}
+
+//------------------------------------------
+// uSimMarine config block
+
+ProcessConfig = uSimMarine
+{
+  AppTick	= 10
+  CommsTick	= 10
+
+START_X = -2340.0
+START_Y = 2370.0 
+  START_SPEED   = 0
+START_HEADING = 0.0 
+
+  PREFIX        = NAV
+}
+
+
+//------------------------------------------
+// uProcessWatch config block
+
+ProcessConfig = uProcessWatch
+{
+  AppTick   = 100
+  CommsTick = 100
+
+  term_report_interval = 0.8
+
+  summary_wait = 5
+
+  nowatch   = uXMS*
+  nowatch   = uPokeDB*
+  nowatch   = uTermCommand*
+  watch_all = true
+}
+
+
+//------------------------------------------
+// pHelmIvP config block
+
+ProcessConfig = pHelmIvP
+{
+  AppTick    = 100
+  CommsTick  = 100
+
+  Behaviors  = alfa.bhv
+  Verbose    = quiet
+  Domain     = course:0:359:360
+  Domain     = speed:0:4:21
+
+  IVP_BEHAVIOR_DIR = /home/moos-ivp-douglas/lib
+  //IVP_BEHAVIOR_DIR = /Users/mikerb/Research/moos-ivp-extend/trunk/lib
+
+  ok_skew = any
+  start_in_drive = false
+  hold_on_apps = pContactMgrV20
+}
+
+//------------------------------------------
+// pMarinePID config block
+
+ProcessConfig = pMarinePIDV22
+{
+  AppTick    = 100
+  CommsTick  = 100
+
+  verbose       = true
+  depth_control = false
+
+  // SIM_INSTABILITY = 20
+
+  // Yaw PID controller
+  yaw_pid_kp		 = 0.8
+  yaw_pid_kd		 = 0.0
+  yaw_pid_ki		 = 0.1 //
+  yaw_pid_integral_limit = 0.07
+
+  // Speed PID controller
+  speed_pid_kp		 = 1.0
+  speed_pid_kd		 = 0.0
+  speed_pid_ki		 = 0.0
+  speed_pid_integral_limit = 0.07
+
+  //MAXIMUMS
+  //maxrudder    = 100
+  maxrudder    = 30 //Limite máximo do leme 
+  maxthrust    = 100
+
+  // A non-zero SPEED_FACTOR overrides use of SPEED_PID
+  // Will set DESIRED_THRUST = DESIRED_SPEED * SPEED_FACTOR
+  speed_factor = 20
+}
+
+//------------------------------------------
+// pMarineViewer config block
+
+ProcessConfig = pFragata
+{
+  AppTick    = 100
+  CommsTick  = 100
+
+  TIFF_FILE            = 1511geotiff.tif
+  //set_pan_x            = -90
+  //set_pan_y            = -280
+  zoom                 = 1
+  vehicle_shape_scale  = 20
+  //hash_delta           = 50
+  //hash_shade           = 0.4
+  //hash_viewable        = true
+
+  scope = MVIEWER_LCLICK
+  center_view = active
+
+   // Appcast configuration
+  appcast_height       = 75
+  appcast_width        = 30
+  appcast_viewable     = true
+  appcast_color_scheme = indigo
+  nodes_font_size      = medium
+  procs_font_size      = medium
+  appcast_font_size    = small
+
+  BUTTON_ONE = DEPLOY # DEPLOY=true
+  BUTTON_ONE = MOOS_MANUAL_OVERIDE=false # RETURN=false
+  BUTTON_TWO = RETURN # RETURN=true
+}
+
+//------------------------------------------
+// pNodeReporter config block
+
+ProcessConfig = pNodeReporter
+{
+  AppTick	= 100
+  CommsTick	= 100
+
+  platform_type      = ship // Tamanho do Navio
+  platform_length    = 3        // meters.  Range [0,inf) 
+  VESSEL_TYPE   = SHIP
+
+  //node_report_output = REPORT_POSICAO
+  cross_fill_policy = global
+}
+
+
+//-------------------------------------------
+// iSerial bloco de config
+
+ProcessConfig = iSerial
+{
+   AppTick   = 100
+   CommsTick = 100
+}
+//------------------------------------------------
+// iDivisorNMEA config block
+
+ProcessConfig = iDivisorNMEA
+{
+   AppTick   = 100
+   CommsTick = 100
+}
+//------------------------------------------------
+
+//pContactMgrV20 config block
+
+ProcessConfig = pContactMgrV20                                
+{                                                               
+  AppTick   = 100                                                 
+  CommsTick = 100                                               
+                                                                
+                                                                
+  // Policy for retaining potential stale contacts              
+  contact_max_age  = 100             //  default in secs.       
+  max_retired_history = 5            //  default in # of ships                         
+  
+  // Configuring other output                                   
+  display_radii     = false  // or {true}                        
+  alert_verbose     = false  // If true, ALERT_VERBOSE published.
+  //alert_range_color = color  // default is gray65       
+  //cpa_range_color   = color  // default is gray35       
+                                                                
+  // Policy for linear extrapolation of stale contacts          
+  decay = 15,30                       // the default in secs    
+                                                                
+  reject_range   = off      // default is 2000 (meter)                               
+  recap_interval = 10         // default in 1 (second)    
+                                                                
+  contact_local_coords    = force_lat_lon  // default is verbatim    
+  post_closest_range      = false     // default is false       
+}                  
+
+//-----------------------------------------
+
+//------------------------------------------------------------------
+// pLogger configuration block
+ProcessConfig = pLogger
+{
+    //over loading basic params..lets be fiesty
+    AppTick  = 100.0
+    CommsTick   = 100.0
+
+    //all file names begin with this stem
+      File        = teste
+  
+      //where is the root log directory
+      PATH        = /home/moos-ivp-douglas/log
+  
+      //yes we want some sync logging for crude
+      //performance checking
+      SyncLog     = false @ 0.2
+  
+      //yes we want async logging so we can replay
+      // exactly what happened and record strings
+      AsyncLog    = true
+
+
+    WildCardLogging = false
+
+      //yes append each created directory log file
+    //with a time stamp DAY MONTH YEAR TIME
+    FileTimeStamp   = true
+
+
+    // Captures everything
+    LOG     = MSG_UDP @ 0
+    LOG     = ANGULO_LEME @ 0
+    LOG     = DESIRED_RUDDER @ 0
+    LOG     = DESIRED_THRUST @ 0
+    LOG     = DESIRED_SPEED @ 0
+    LOG     = DESIRED_HEADING @ 0
+    LOG     = ERRO_Leme @ 0
+    LOG     = LEME_SERIAL @ 0
+    LOG     = TEMPO_LEME @ 0
+    LOG     = VALOR_CONTROLE_LEME @ 0
+    LOG     = GPS_HEADING @ 0
+    LOG     = VALOR_CONTROLE_LEME @ 0
+    LOG     = MAQUINA_SERIAL @ 0
+    LOG     = NAV_HEADING @ 0
+    LOG     = NAV_LAT @ 0
+    LOG     = NAV_LONG @ 0
+    LOG     = NAV_SPEED @ 0
+
+}
+
+//------------------------------------------------------------------
+
+ProcessConfig = uPlotViewer                                     
+{                                                               
+  AppTick   = 100                                                 
+  CommsTick = 100                                                 
+                                                                
+  plot_var = var=DESIRED_RUDDER,min=0,max=400,bars=50,color=red 
+  plot_var = var=ANGULO_LEME,min=0,max=400,bars=80,color=blue  
+  //plot_var = var=LGAUSS_TEST_VAL,min=0,max=400,bars=80,color=green
+                                                                
+} 
+
+
+//------------------------------------------------------------------
+//---------------------------------------------------------
+// pShare Config Block  (Created from Plugin)
+
+ProcessConfig = pShare
+{
+  AppTick    = 100
+  CommsTick  = 100
+
+  //CHECK: IP address shoreside laptop
+  //TODO add to script
+  input = route =  100.92.169.58:9001
+  
+      //& multicast_1
+
+  // =======================================================
+  // Usage Info below
+  // =======================================================
+
+  // Simple forward of X to A on channel 8
+  // output = src_name = X,dest_name=A, route=multicast_8
+ 
+  // Simple forward of Y to B on a udp address
+  // output = src_name=Y, dest_name=B, route=localhost:9300
+ 
+  // Simple forward of Z to Z on a named address (no renaming)
+  // output = src_name = Z, route = oceanai.mit.edu:9020
+
+  // if in simulation, we want to pass the node_reports to pMarineViewer,
+  // purely for visualization, then add this:
+//  output = NODE_REPORT_LOCAL->NODE_REPORT:localhost:9400
+//  output = VIEW_*->localhost:9400
+  
+  // temporary until acomms set up
+  // share positions vehicles between one another
+//  output = NODE_REPORT_LOCAL->NODE_REPORT:multicast_2
+  // share allowable width with underwater vehicles
+//  output = ALLOWABLE_WIDTH_FORM->ALLOWABLE_WIDTH:multicast_2
+}
+

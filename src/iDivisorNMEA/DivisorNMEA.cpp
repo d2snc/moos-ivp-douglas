@@ -65,9 +65,8 @@
 
 //Include do geodesy
 //Serve para fazer a conversão do LAT/LON recebido pelo AIS para Coordenadas Locais 
-#include "../../../moos-ivp/MOOS/MOOSGeodesy/libMOOSGeodesy/MOOSGeodesy.cpp"
-
-
+#include "MOOS/libMOOSGeodesy/MOOSGeodesy.h"
+#include "../MOOSGeodesy.cpp" // adiciono a funcao de referencia
 using namespace std;
 
 //Variáveis globais para usar no programa e debugs
@@ -188,7 +187,7 @@ DivisorNMEA::DivisorNMEA()
 
 DivisorNMEA::~DivisorNMEA()
 {
-    close(serial_port);
+    //close(serial_port);
 }
 
 //---------------------------------------------------------
@@ -270,17 +269,6 @@ bool DivisorNMEA::Iterate()
 
   std::string msg_string = msg;
 
-  //Dou uma limpada no buffer antes de ler de novo
-  //memset(&read_buf, '\0', sizeof(read_buf));
-  //Faço a leitura das sentenças vindas da porta serial
-  //read_buff defini como variável de estado no arquivo '.h'
-  //int num_bytes = read(serial_port, &read_buf, sizeof(read_buf));
-  /*
-  if (num_bytes < 0) {
-      printf("Error reading: %s", strerror(errno));
-      return 1;
-  }*/
-
   // Crio um objeto para parse da msg NMEA
   MyNMEAParser NMEAParser;
 
@@ -293,11 +281,24 @@ bool DivisorNMEA::Iterate()
     std::cout << e.what();
   }
 
+  //Publico NAV_X e NAV_Y
+  double lat_origin = -22.93335; //ALTERAR AQUI SE MUDAR A CARTA NÁUTICA !!!
+  double lon_origin = -43.136666665;
+  double nav_x = 0;
+  double nav_y = 0;
+  m_geodesy.Initialise(lat_origin, lon_origin);
+  m_geodesy.LatLong2LocalGrid(lat_gps, long_gps, nav_y, nav_x);
+
+  string x = to_string(nav_x);
+  string y = to_string(nav_y);
+
+  Notify("NAV_X", x);
+  Notify("NAV_Y", y);
+
   //Atualizo variáveis necessárias para o movimento do navio
   Notify("NAV_LAT", lat_gps);
   Notify("NAV_LONG", long_gps);
   Notify("NAV_SPEED", speed_gps);
-  
   Notify("NAV_HEADING", heading_giro);
   //para testes
   Notify("GPS_HEADING", heading_gps);
@@ -395,6 +396,7 @@ bool DivisorNMEA::Iterate()
       }
       double ang = angulo_leme;
       Notify("ANGULO_LEME", ang);
+      Notify("NAV_YAW", ang); //Variável de retorno do valor do ângulo do leme para o PID
     }
     //Parser do Rumo Verdadeiro dado pela Giro
     else if (msg_string.substr(0,6) == "$GPHDT") {
@@ -422,6 +424,8 @@ bool DivisorNMEA::Iterate()
 bool DivisorNMEA::OnStartUp()
 {
   AppCastingMOOSApp::OnStartUp();
+
+  //Cria o socket para receber UDP na porta 10110
 
   /* socket creation */
   sd=socket(AF_INET, SOCK_DGRAM, 0);
@@ -470,54 +474,6 @@ bool DivisorNMEA::OnStartUp()
   }
   
   registerVariables();	
-  //source: https://blog.mbedded.ninja/programming/operating-systems/linux/linux-serial-ports-using-c-cpp/
-  // Abro a porta serial
-  serial_port = open("/dev/pts/6", O_RDWR); //CONFIG DE PORTA SERIAL AQUI
-  // Check for errors
-  if (serial_port < 0) {
-      printf("Error %i from open: %s\n", errno, strerror(errno));
-  }
-  //Crio uma struct tty
-  struct termios tty;
-  
-  // Read in existing settings, and handle any error
-  if(tcgetattr(serial_port, &tty) != 0) {
-      printf("Error %i from tcgetattr: %s\n", errno, strerror(errno));
-      return 1;
-  }
-
-  tty.c_cflag &= ~PARENB; // Clear parity bit, disabling parity (most common)
-  tty.c_cflag &= ~CSTOPB; // Clear stop field, only one stop bit used in communication (most common)
-  tty.c_cflag &= ~CSIZE; // Clear all bits that set the data size 
-  tty.c_cflag |= CS8; // 8 bits per byte (most common)
-  tty.c_cflag &= ~CRTSCTS; // Disable RTS/CTS hardware flow control (most common)
-  tty.c_cflag |= CREAD | CLOCAL; // Turn on READ & ignore ctrl lines (CLOCAL = 1)
-
-  tty.c_lflag &= ~ICANON;
-  tty.c_lflag &= ~ECHO; // Disable echo
-  tty.c_lflag &= ~ECHOE; // Disable erasure
-  tty.c_lflag &= ~ECHONL; // Disable new-line echo
-  tty.c_lflag &= ~ISIG; // Disable interpretation of INTR, QUIT and SUSP
-  tty.c_iflag &= ~(IXON | IXOFF | IXANY); // Turn off s/w flow ctrl
-  tty.c_iflag &= ~(IGNBRK|BRKINT|PARMRK|ISTRIP|INLCR|IGNCR|ICRNL); // Disable any special handling of received bytes
-
-  tty.c_oflag &= ~OPOST; // Prevent special interpretation of output bytes (e.g. newline chars)
-  tty.c_oflag &= ~ONLCR; // Prevent conversion of newline to carriage return/line feed
-  // tty.c_oflag &= ~OXTABS; // Prevent conversion of tabs to spaces (NOT PRESENT ON LINUX)
-  // tty.c_oflag &= ~ONOEOT; // Prevent removal of C-d chars (0x004) in output (NOT PRESENT ON LINUX)
-
-  tty.c_cc[VTIME] = 10;    // Wait for up to 1s (10 deciseconds), returning as soon as any data is received.
-  tty.c_cc[VMIN] = 0;
-
-  // Set in/out baud rate to be 9600
-  cfsetispeed(&tty, B9600);
-  cfsetospeed(&tty, B9600);
-
-  // Save tty settings, also checking for error
-  if (tcsetattr(serial_port, TCSANOW, &tty) != 0) {
-      printf("Error %i from tcsetattr: %s\n", errno, strerror(errno));
-      return 1;
-  }
 
   return(true);
 }
@@ -529,6 +485,7 @@ void DivisorNMEA::registerVariables()
 {
   AppCastingMOOSApp::RegisterVariables();
   Register("LINHA_NMEA", 0);
+  //Register("NAV_YAW", 0);
  
 }
 
@@ -561,7 +518,6 @@ bool DivisorNMEA::buildReport()
 
   return(true);
 }
-
 
 
 

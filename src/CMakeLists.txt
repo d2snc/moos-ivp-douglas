@@ -26,6 +26,12 @@ ADD_SUBDIRECTORY(iSerial)
 ADD_SUBDIRECTORY(iDivisorNMEA)
 ADD_SUBDIRECTORY(pUDP_Receiver)
 
+#Find MOOSGeodesy
+find_package(MOOSGeodesy)
+include_directories(${MOOSGeodesy_LIBRARIES})
+include_directories(${MOOSGeodesy_INCLUDE_DIRS})
+link_directories(${MOOSGeodesy_LIBRARIES})
+
 
 
 ##############################################################################

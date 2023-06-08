@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/moos-ivp-douglas/bin/iSerial"
-  "/home/moos-ivp-douglas/bin/iSerial.pdb"
+  "../../../bin/iSerial"
+  "../../../bin/iSerial.pdb"
   "CMakeFiles/iSerial.dir/Serial.cpp.o"
   "CMakeFiles/iSerial.dir/Serial.cpp.o.d"
   "CMakeFiles/iSerial.dir/Serial_Info.cpp.o"

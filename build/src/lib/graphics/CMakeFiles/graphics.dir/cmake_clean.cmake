@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/moos-ivp-douglas/lib/libgraphics.a"
-  "/home/moos-ivp-douglas/lib/libgraphics.pdb"
+  "../../../../lib/libgraphics.a"
+  "../../../../lib/libgraphics.pdb"
   "CMakeFiles/graphics.dir/vibes/vibes.cpp.o"
   "CMakeFiles/graphics.dir/vibes/vibes.cpp.o.d"
 )

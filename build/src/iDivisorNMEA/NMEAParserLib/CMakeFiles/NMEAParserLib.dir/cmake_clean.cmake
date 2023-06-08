@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/moos-ivp-douglas/lib/libNMEAParserLib.a"
-  "/home/moos-ivp-douglas/lib/libNMEAParserLib.pdb"
+  "../../../../lib/libNMEAParserLib.a"
+  "../../../../lib/libNMEAParserLib.pdb"
   "CMakeFiles/NMEAParserLib.dir/NMEAParser.cpp.o"
   "CMakeFiles/NMEAParserLib.dir/NMEAParser.cpp.o.d"
   "CMakeFiles/NMEAParserLib.dir/NMEAParserPacket.cpp.o"

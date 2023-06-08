@@ -102,3 +102,15 @@ ENDIF( ${WIN32} )
 # Add Subdirectories
 #=======================================================================
 ADD_SUBDIRECTORY( src )
+
+#Find MOOSGeodesy
+find_package(MOOSGeodesy)
+include_directories(${MOOSGeodesy_INCLUDE_DIRS})
+link_directories(${MOOSGeodesy_LIBRARIES})
+message("+++++++++++++++++++++++++++++++++++++++++")
+message("MOOSGeodesy_INCLUDE_DIRS:" ${MOOSGeodesy_INCLUDE_DIRS})
+message("+++++++++++++++++++++++++++++++++++++++++")
+
+message("+++++++++++++++++++++++++++++++++++++++++")
+message("MOOSGeodesy_LIB_PATH:" ${MOOSGeodesy_LIBRARIES})
+message("+++++++++++++++++++++++++++++++++++++++++")
