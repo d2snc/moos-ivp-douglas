@@ -1,2 +1,2 @@
-/usr/bin/ar qc /home/moos-ivp-douglas/lib/libxml-documentation.a "CMakeFiles/xml-documentation.dir/MOOSAppDocumentation.cpp.o"
-/usr/bin/ranlib /home/moos-ivp-douglas/lib/libxml-documentation.a
+/usr/bin/ar qc ../../../../lib/libxml-documentation.a CMakeFiles/xml-documentation.dir/MOOSAppDocumentation.cpp.o
+/usr/bin/ranlib ../../../../lib/libxml-documentation.a

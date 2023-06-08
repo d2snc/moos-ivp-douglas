@@ -1,2 +1,2 @@
-/usr/bin/ar qc /home/moos-ivp-douglas/lib/liblibais.a CMakeFiles/libais.dir/ais.cpp.o CMakeFiles/libais.dir/ais_bitset.cpp.o CMakeFiles/libais.dir/ais1_2_3.cpp.o
-/usr/bin/ranlib /home/moos-ivp-douglas/lib/liblibais.a
+/usr/bin/ar qc ../../../../lib/liblibais.a CMakeFiles/libais.dir/ais.cpp.o CMakeFiles/libais.dir/ais_bitset.cpp.o CMakeFiles/libais.dir/ais1_2_3.cpp.o
+/usr/bin/ranlib ../../../../lib/liblibais.a

@@ -23,8 +23,8 @@ using namespace std;
 Serial::Serial()
 {
   //Configurações para envio de dados via Serial
-  endereco_porta_serial = "/dev/ttyUSB0"; //Porta real na lancha
-  //endereco_porta_serial = "/dev/pts/8"; //Porta simulada para testes
+  //endereco_porta_serial = "/dev/ttyUSB0"; //Porta real na lancha
+  endereco_porta_serial = "/dev/pts/0"; //Porta simulada para testes
   baudrate = 9600;
 
   // Valores padrões:

@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/moos-ivp-douglas/bin/iDivisorNMEA"
-  "/home/moos-ivp-douglas/bin/iDivisorNMEA.pdb"
+  "../../../bin/iDivisorNMEA"
+  "../../../bin/iDivisorNMEA.pdb"
   "CMakeFiles/iDivisorNMEA.dir/DivisorNMEA.cpp.o"
   "CMakeFiles/iDivisorNMEA.dir/DivisorNMEA.cpp.o.d"
   "CMakeFiles/iDivisorNMEA.dir/DivisorNMEA_Info.cpp.o"

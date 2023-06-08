@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/moos-ivp-douglas/bin/pXRelayTest"
-  "/home/moos-ivp-douglas/bin/pXRelayTest.pdb"
+  "../../../bin/pXRelayTest"
+  "../../../bin/pXRelayTest.pdb"
   "CMakeFiles/pXRelayTest.dir/Relayer.cpp.o"
   "CMakeFiles/pXRelayTest.dir/Relayer.cpp.o.d"
   "CMakeFiles/pXRelayTest.dir/Relayer_Info.cpp.o"
