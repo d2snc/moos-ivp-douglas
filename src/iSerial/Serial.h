@@ -56,6 +56,7 @@ class Serial : public AppCastingMOOSApp
     std::string thrust_convertido;
     std::string deploy;
     std::string return_var;
+    std::string angulo_convertido;
 };
 
 #endif 

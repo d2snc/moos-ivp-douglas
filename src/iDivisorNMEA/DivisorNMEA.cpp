@@ -287,6 +287,7 @@ bool DivisorNMEA::Iterate()
   double nav_x = 0;
   double nav_y = 0;
   m_geodesy.Initialise(lat_origin, lon_origin);
+  //m_geodesy.SetRefEllipsoid(23); // Set the ellipsoid to WGS-84
   m_geodesy.LatLong2LocalGrid(lat_gps, long_gps, nav_y, nav_x);
 
   string x = to_string(nav_x);
@@ -367,6 +368,7 @@ bool DivisorNMEA::Iterate()
           //Faz a conversão da Lat/Long para coordenadas locais
 
           m_geodesy.Initialise(lat_origin, lon_origin);
+          //m_geodesy.SetRefEllipsoid(23); // Set the ellipsoid to WGS-84
           m_geodesy.LatLong2LocalGrid(msg->position.lat_deg, msg->position.lng_deg, nav_y, nav_x);
 
           string x = to_string(nav_x);
