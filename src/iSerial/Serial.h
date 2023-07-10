@@ -35,7 +35,7 @@ class Serial : public AppCastingMOOSApp
  protected:
    void registerVariables();
 
-   void enviaSerial(); //Função que envia os dados via serial para o PIC
+   void enviaSerial(std::string sentenca); //Função que envia os dados via serial para o PIC
 
  private: // Configuration variables
     std::string endereco_porta_serial;
@@ -52,11 +52,13 @@ class Serial : public AppCastingMOOSApp
     double angulo_leme;
     double desired_speed;
     double nav_speed;
-    std::string rudder_convertido;
+    std::string ultimo_comando;
+    std::string leme_placa;
+    std::string sentenca;
     std::string thrust_convertido;
     std::string deploy;
     std::string return_var;
-    std::string angulo_convertido;
+    std::string feedback_leme;
 };
 
 #endif 

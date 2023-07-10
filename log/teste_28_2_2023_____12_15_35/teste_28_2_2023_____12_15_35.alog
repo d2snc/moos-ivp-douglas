@@ -1,65 +1,0 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% LOG FILE:       /home/moos-ivp-douglas/log/teste_28_2_2023_____12_15_35/teste_28_2_2023_____12_15_35.alog
-%% FILE OPENED ON  Wed Dec 31 21:00:00 1969
-%% LOGSTART           1677597334.543677
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
--115.85607      MOOS_DEBUG           pHelmIvP        pHelmIvP AllStop: clear 
--110.34560      ANGULO_LEME          iDivisorNMEA    2.03000      
--107.94259      DESIRED_RUDDER       pMarinePIDV22   0.00000      
--107.94259      DESIRED_THRUST       pMarinePIDV22   0.00000      
-0.74621         DESIRED_HEADING      pHelmIvP        4.00000      
-0.74621         DESIRED_SPEED        pHelmIvP        4.00000      
-0.74694         MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,000BB8000E0F50A0*1B 
-2.76074         DESIRED_SPEED        pHelmIvP        4.00000      
-2.76075         DESIRED_HEADING      pHelmIvP        9.00000      
-2.76330         MSG_UDP              iDivisorNMEA    $MXPGN,01FF1A,782B,FFFAFF859F410560*1D 
-3.31146         ANGULO_LEME          iDivisorNMEA    2.98000      
-4.76357         DESIRED_SPEED        pHelmIvP        4.00000      
-4.76357         DESIRED_HEADING      pHelmIvP        2.00000      
-4.77086         MSG_UDP              iDivisorNMEA    $SDDPT,4.22,0.00,*7F 
-5.43207         ANGULO_LEME          iDivisorNMEA    -5.13000     
-6.77152         DESIRED_SPEED        pHelmIvP        4.00000      
-6.77152         DESIRED_HEADING      pHelmIvP        0.00000      
-6.77862         MSG_UDP              iDivisorNMEA    $HEHDT,45.99,T*2E 
-7.82879         ANGULO_LEME          iDivisorNMEA    1.19000      
-8.77383         DESIRED_SPEED        pHelmIvP        4.00000      
-8.77383         DESIRED_HEADING      pHelmIvP        46.00000     
-8.78490         MSG_UDP              iDivisorNMEA    $GPGLL,2254.67849,S,04309.59689,W,185358.460,A,A*56 
-9.09563         DESIRED_RUDDER       pMarinePIDV22   0.00000      
-9.09563         DESIRED_THRUST       pMarinePIDV22   0.00000      
-9.90219         ANGULO_LEME          iDivisorNMEA    1.98000      
-10.78546        DESIRED_SPEED        pHelmIvP        4.00000      
-10.78546        DESIRED_HEADING      pHelmIvP        354.00000    
-10.78629        MSG_UDP              iDivisorNMEA    $MXPGN,01F803,281C,0002570004AF14E6*11 
-11.10440        DESIRED_RUDDER       pMarinePIDV22   -4.87000     
-11.10440        DESIRED_THRUST       pMarinePIDV22   80.00000     
-12.19838        ANGULO_LEME          iDivisorNMEA    -0.36000     
-12.78995        MSG_UDP              iDivisorNMEA    $VDVBW,,,A,,,A,,A,,A*51 
-12.79218        DESIRED_SPEED        pHelmIvP        4.00000      
-12.79218        DESIRED_HEADING      pHelmIvP        352.00000    
-13.11326        DESIRED_RUDDER       pMarinePIDV22   -6.47000     
-13.11326        DESIRED_THRUST       pMarinePIDV22   80.00000     
-14.35536        ANGULO_LEME          iDivisorNMEA    -2.17000     
-14.80084        DESIRED_SPEED        pHelmIvP        4.00000      
-14.80084        DESIRED_HEADING      pHelmIvP        337.00000    
-14.80333        MSG_UDP              iDivisorNMEA    $MXPGN,01FA04,681C,10044E6704C50DE4*1C 
-15.11975        DESIRED_RUDDER       pMarinePIDV22   -18.47000    
-15.11975        DESIRED_THRUST       pMarinePIDV22   80.00000     
-16.57334        ANGULO_LEME          iDivisorNMEA    -7.37000     
-16.80227        DESIRED_SPEED        pHelmIvP        4.00000      
-16.80228        DESIRED_HEADING      pHelmIvP        329.00000    
-16.80474        MSG_UDP              iDivisorNMEA    $MXPGN,01FA04,680A,4E06D110F2000007*6D 
-17.12478        DESIRED_RUDDER       pMarinePIDV22   -24.87000    
-17.12478        DESIRED_THRUST       pMarinePIDV22   80.00000     
-18.65679        ANGULO_LEME          iDivisorNMEA    -2.89000     
-18.81076        DESIRED_SPEED        pHelmIvP        4.00000      
-18.81076        DESIRED_HEADING      pHelmIvP        324.00000    
-18.81321        MSG_UDP              iDivisorNMEA    $MXPGN,01FF2C,7808,FF7FFFFFFFFFFF42*60 
-19.12934        DESIRED_RUDDER       pMarinePIDV22   -32.50000    
-19.12934        DESIRED_THRUST       pMarinePIDV22   80.00000     
-20.81093        DESIRED_SPEED        pHelmIvP        4.00000      
-20.81093        DESIRED_HEADING      pHelmIvP        317.00000    
-20.82162        MSG_UDP              iDivisorNMEA    $MXPGN,01FA04,681C,FFFE1004CD360372*1C 
-20.97102        ANGULO_LEME          iDivisorNMEA    -0.36000     
-21.13612        DESIRED_RUDDER       pMarinePIDV22   -32.50000    
-21.13614        DESIRED_THRUST       pMarinePIDV22   80.00000     

@@ -1,3 +1,3 @@
 file(REMOVE_RECURSE
-  "../../../../lib/libgraphics.a"
+  "/home/moos-ivp-douglas/lib/libgraphics.a"
 )

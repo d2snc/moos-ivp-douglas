@@ -71,7 +71,15 @@
         "regex": "cpp",
         "shared_mutex": "cpp",
         "cfenv": "cpp",
-        "*.ipp": "cpp"
+        "*.ipp": "cpp",
+        "compare": "cpp",
+        "concepts": "cpp",
+        "coroutine": "cpp",
+        "source_location": "cpp",
+        "numbers": "cpp",
+        "semaphore": "cpp",
+        "stop_token": "cpp",
+        "__nullptr": "cpp"
     },
     "cmake.configureOnOpen": false
 }

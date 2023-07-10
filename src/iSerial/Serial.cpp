@@ -13,6 +13,8 @@
 #include <cmath>
 #include <string>
 #include <iostream>
+#include <chrono>
+#include <thread>
 
 
 using namespace std;
@@ -23,19 +25,18 @@ using namespace std;
 Serial::Serial()
 {
   //Configurações para envio de dados via Serial
+
   //endereco_porta_serial = "/dev/ttyUSB0"; //Porta real na lancha
-  endereco_porta_serial = "/dev/pts/5"; //Porta simulada para testes
+  endereco_porta_serial = "/dev/ttyVIRT0"; //Porta simulada para testes
   baudrate = 9600;
 
   // Valores padrões:
   rudder = 0; //Valor inicial do leme
   thrust = 0; //Valor inicial da máquina
-  angulo_leme = 0; //Valor inicial do ângulo do leme
-  rudder_convertido = "NULL"; //Valor inicial de leme
+  feedback_leme = "NULL";
+  
   thrust_convertido = "NULL"; //Valor inicial de máquina
 
-
-  enviaSerial(); //Função que vai fazer o envio dos comandos via Serial
 }
 
 //---------------------------------------------------------
@@ -43,6 +44,8 @@ Serial::Serial()
 
 Serial::~Serial()
 {
+  enviaSerial("L0"); //Para o leme quando encerra o programa
+  std::cout << "Leme a meio" << std::endl;
 }
 
 //---------------------------------------------------------
@@ -71,7 +74,7 @@ bool Serial::OnNewMail(MOOSMSG_LIST &NewMail)
        rudder = msg.GetDouble();
      else if(key == "DESIRED_THRUST")
         thrust = msg.GetDouble();
-     else if(key == "NAV_YAW")
+     else if(key == "ANGULO_LEME")
         angulo_leme = msg.GetDouble();
      else if(key == "DEPLOY")
         deploy = msg.GetString(); 
@@ -107,9 +110,50 @@ bool Serial::Iterate()
   // Do your thing here!
   // Pensando em colocar aqui nessa interação o envio direto da porta serial
   // Vou fazer um teste primeiro para saber qual é a saída
-  enviaSerial(); // publica as variáveis rudder_convertido e thrust_convertido
-  Notify("LEME_SERIAL", rudder_convertido); //Divulga a variável LEME_SERIAL com a string para ser enviada para o PIC 
-  Notify("MAQUINA_SERIAL", thrust_convertido); //Divulga a variável MAQUINA_SERIAL com a string para ser enviada para o PIC
+
+  //Controle pelo erro obtido
+
+  double erro = rudder - angulo_leme;
+  Notify("ERRO_LEME", erro);
+
+  //L0 - parado
+  //L1 - bombordo
+  //L2 - boreste
+  //Adicionei ultimo comando para evitar passar de boreste direto para bombordo sem parar
+
+  //Manobrar a dead zone do erro nos condicionais
+  if (erro > 2) {
+    if (ultimo_comando == "L1"){
+      enviaSerial("L0");
+      enviaSerial("L2");
+    } else {
+      enviaSerial("L2");
+    }
+    ultimo_comando = "L2";
+  } else if (erro < -2) {
+    if (ultimo_comando == "L2") {
+      enviaSerial("L0");
+      enviaSerial("L1");
+    } else {
+      enviaSerial("L1");
+    }
+    ultimo_comando = "L1";
+  } else {
+    enviaSerial("L0");
+    ultimo_comando = "L0";
+  }
+  
+  
+  //String de comando de máquina 
+  //Apenas valores positivos por enquanto
+  if ((int(thrust) > 0) && (int(thrust) < 100)) {
+    thrust_convertido = "A0"+to_string(int(round(thrust))); //Envia o valor respectivo de máquina
+  } else if (int(thrust) <= 0) {
+    thrust_convertido = "A000"; //Apenas zera o atuador 
+  }
+
+  enviaSerial(thrust_convertido); //Faço envio do comando de maquina para placa
+
   AppCastingMOOSApp::PostReport();
   return(true);
 }
@@ -148,7 +192,6 @@ bool Serial::OnStartUp()
   }
   bool portOpened = porta_serial.Create(endereco_porta_serial.c_str(), baudrate); //Abertura da porta serial
   registerVariables();	
-  enviaSerial(); //Função que faz o envio
   return(true);
 }
 
@@ -179,97 +222,30 @@ bool Serial::buildReport()
   m_msgs << "============================================" << endl;
 
   ACTable actab(2);
-  actab << "deploy | angulo_leme | rudder | thrust | Maquina_Serial | Leme_Serial | Angulo_placa ";
+  actab << "deploy | feedback_leme | ultimo_comando | thrust_convertido ";
   actab.addHeaderLines();
-  actab << deploy << angulo_leme << rudder << thrust << thrust_convertido << rudder_convertido << angulo_convertido;
+  actab << deploy << feedback_leme << ultimo_comando << thrust_convertido;
   m_msgs << actab.getFormattedString();
 
   return(true);
 }
 
 
-void Serial::enviaSerial() 
+void Serial::enviaSerial(std::string sentenca) 
 {
-  //Envia comandos para a placa nova 
-
-  //Cria a string do feedback de leme para enviar para a placa
-  if (int(angulo_leme) > 0){
-    if (int(angulo_leme) < 10) { //Caso seja só 1 dígito
-      angulo_convertido = "P0"+to_string(int(round(angulo_leme)))+ "2"; //Guinando para BE
-    } else {
-      angulo_convertido = "P"+to_string(int(round(angulo_leme)))+ "2"; //Guinando para BE
-    }
-    
-  } else if (int(angulo_leme) <= 0) {
-    if (int(angulo_leme*(-1)) < 10) { //Caso seja só 1 dígito
-      angulo_convertido = "P0"+to_string(int(round(angulo_leme*(-1))))+ "1"; //Guinando para BB
-    } else {
-      angulo_convertido = "P"+to_string(int(round(angulo_leme*(-1))))+ "1"; //Guinando para BB
-    }
-  } 
-
-  Notify("ANGULO_PLACA", angulo_convertido);
-
   //Envio de feedback do leme para a porta serial
   try {
-    porta_serial.Write(angulo_convertido.c_str(),angulo_convertido.size()); //Envia para a placa nova no USB0
+    porta_serial.Write(sentenca.c_str(),sentenca.size()); //Envia a sentença via serial
   }
   catch (std::system_error& e)
   {
     std::cout << e.what();
   }
 
-  //String de comando de leme 
-  if (int(rudder) > 0) {
-    if (int(rudder) < 10) {
-      rudder_convertido = "L0"+to_string(int(round(rudder)))+"2"; //Guinando para BE
-    } else {
-      rudder_convertido = "L"+to_string(int(round(rudder)))+"2"; //Guinando para BE
-    }
-    
-  } else if (int(rudder) <= 0) {
-    if (int(rudder*(-1)) < 10) {
-      rudder_convertido = "L0"+to_string(int(round(rudder*(-1))))+"1"; //Guinando para BB
-      //correção bug
-      if (rudder_convertido == "L0-11") {
-        rudder_convertido = "L011";
-      }
-    } else {
-      rudder_convertido = "L"+to_string(int(round(rudder*(-1))))+"1"; //Guinando para BB
-    }
-    
-  }
+  //Delay de 100ms
+  std::chrono::milliseconds delay(100);
 
-  
-  //Envio dos dados via serial para o leme
-
-  try {
-    porta_serial.Write(rudder_convertido.c_str(),rudder_convertido.size()); //Envia para a placa do davi no USB0
-  }
-  catch (std::system_error& e)
-  {
-    std::cout << e.what();
-  }
-
-  //String de comando de máquina 
-  //Apenas valores positivos por enquanto
-  if ((int(thrust) > 0) && (int(thrust) < 100)) {
-    thrust_convertido = "A0"+to_string(int(round(thrust))); //Envia o valor respectivo de máquina
-  } else if (int(thrust) <= 0) {
-    thrust_convertido = "A000"; //Apenas zera o atuador 
-  }
-
-  
-  //Envio dos dados via serial para a máquina
-
-  try {
-    porta_serial.Write(thrust_convertido.c_str(),thrust_convertido.size()); //Envia para a placa o valor da máquina
-  }
-  catch (std::system_error& e)
-  {
-    std::cout << e.what();
-  }
-  
+  std::this_thread::sleep_for(delay);
 
 }
 

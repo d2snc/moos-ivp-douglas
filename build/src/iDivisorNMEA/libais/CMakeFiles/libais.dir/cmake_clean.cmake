@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "../../../../lib/liblibais.a"
-  "../../../../lib/liblibais.pdb"
+  "/home/moos-ivp-douglas/lib/liblibais.a"
+  "/home/moos-ivp-douglas/lib/liblibais.pdb"
   "CMakeFiles/libais.dir/ais.cpp.o"
   "CMakeFiles/libais.dir/ais.cpp.o.d"
   "CMakeFiles/libais.dir/ais1_2_3.cpp.o"

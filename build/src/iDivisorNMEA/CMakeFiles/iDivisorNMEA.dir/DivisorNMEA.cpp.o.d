@@ -303,7 +303,7 @@ src/iDivisorNMEA/CMakeFiles/iDivisorNMEA.dir/DivisorNMEA.cpp.o: \
  /home/moos-ivp/MOOS/MOOSCore/Core/libMOOS/Thirdparty/AppCasting/include/MOOS/libMOOS/Thirdparty/AppCasting/AppCast.h \
  /home/moos-ivp-douglas/src/iDivisorNMEA/../../../moos-ivp/MOOS/MOOSGeodesy/libMOOSGeodesy/include/MOOS/libMOOSGeodesy/MOOSGeodesy.h \
  /usr/include/boost/asio.hpp \
- /usr/include/boost/asio/associated_allocator.hpp \
+ /usr/include/boost/asio/any_completion_executor.hpp \
  /usr/include/boost/asio/detail/config.hpp /usr/include/boost/config.hpp \
  /usr/include/boost/config/user.hpp \
  /usr/include/boost/config/detail/select_compiler_config.hpp \
@@ -316,16 +316,29 @@ src/iDivisorNMEA/CMakeFiles/iDivisorNMEA.dir/DivisorNMEA.cpp.o: \
  /usr/include/boost/config/detail/posix_features.hpp \
  /usr/include/boost/config/detail/suffix.hpp \
  /usr/include/boost/config/helper_macros.hpp \
+ /usr/include/boost/config/detail/cxx_composite.hpp \
  /usr/include/boost/version.hpp /usr/include/linux/version.h \
+ /usr/include/boost/asio/execution.hpp \
+ /usr/include/boost/asio/execution/allocator.hpp \
  /usr/include/boost/asio/detail/type_traits.hpp \
+ /usr/include/boost/asio/execution/executor.hpp \
+ /usr/include/boost/asio/execution/invocable_archetype.hpp \
+ /usr/include/boost/asio/detail/variadic_templates.hpp \
  /usr/include/boost/asio/detail/push_options.hpp \
  /usr/include/boost/asio/detail/pop_options.hpp \
- /usr/include/boost/asio/associated_executor.hpp \
- /usr/include/boost/asio/execution/executor.hpp \
+ /usr/include/boost/asio/traits/equality_comparable.hpp \
+ /usr/include/boost/asio/traits/execute_member.hpp \
  /usr/include/boost/asio/execution/execute.hpp \
  /usr/include/boost/asio/execution/detail/as_invocable.hpp \
  /usr/include/boost/asio/detail/atomic_count.hpp \
  /usr/include/c++/11/atomic /usr/include/boost/asio/detail/memory.hpp \
+ /usr/include/boost/asio/detail/cstdint.hpp \
+ /usr/include/boost/asio/detail/throw_exception.hpp \
+ /usr/include/boost/throw_exception.hpp \
+ /usr/include/boost/exception/exception.hpp \
+ /usr/include/boost/assert/source_location.hpp \
+ /usr/include/boost/current_function.hpp \
+ /usr/include/boost/config/workaround.hpp /usr/include/boost/cstdint.hpp \
  /usr/include/boost/asio/execution/receiver_invocation_error.hpp \
  /usr/include/boost/asio/execution/impl/receiver_invocation_error.ipp \
  /usr/include/boost/asio/execution/set_done.hpp \
@@ -335,19 +348,10 @@ src/iDivisorNMEA/CMakeFiles/iDivisorNMEA.dir/DivisorNMEA.cpp.o: \
  /usr/include/boost/asio/traits/set_error_member.hpp \
  /usr/include/boost/asio/traits/set_error_free.hpp \
  /usr/include/boost/asio/execution/set_value.hpp \
- /usr/include/boost/asio/detail/variadic_templates.hpp \
  /usr/include/boost/asio/traits/set_value_member.hpp \
  /usr/include/boost/asio/traits/set_value_free.hpp \
  /usr/include/boost/asio/execution/detail/as_receiver.hpp \
- /usr/include/boost/asio/traits/execute_member.hpp \
  /usr/include/boost/asio/traits/execute_free.hpp \
- /usr/include/boost/asio/execution/invocable_archetype.hpp \
- /usr/include/boost/asio/traits/equality_comparable.hpp \
- /usr/include/boost/asio/is_executor.hpp \
- /usr/include/boost/asio/detail/is_executor.hpp \
- /usr/include/boost/asio/system_executor.hpp \
- /usr/include/boost/asio/execution.hpp \
- /usr/include/boost/asio/execution/allocator.hpp \
  /usr/include/boost/asio/execution/scheduler.hpp \
  /usr/include/boost/asio/execution/schedule.hpp \
  /usr/include/boost/asio/traits/schedule_member.hpp \
@@ -386,19 +390,19 @@ src/iDivisorNMEA/CMakeFiles/iDivisorNMEA.dir/DivisorNMEA.cpp.o: \
  /usr/include/boost/asio/detail/call_stack.hpp \
  /usr/include/boost/asio/detail/tss_ptr.hpp \
  /usr/include/boost/asio/detail/keyword_tss_ptr.hpp \
+ /usr/include/boost/asio/detail/impl/thread_context.ipp \
  /usr/include/boost/asio/detail/thread_info_base.hpp \
  /usr/include/boost/asio/multiple_exceptions.hpp \
  /usr/include/boost/asio/impl/multiple_exceptions.ipp \
+ /usr/include/boost/asio/associated_allocator.hpp \
+ /usr/include/boost/asio/associator.hpp \
+ /usr/include/boost/asio/detail/functional.hpp \
  /usr/include/boost/asio/handler_alloc_hook.hpp \
  /usr/include/boost/asio/impl/handler_alloc_hook.ipp \
+ /usr/include/boost/asio/detail/handler_invoke_helpers.hpp \
+ /usr/include/boost/asio/handler_invoke_hook.hpp \
  /usr/include/boost/asio/detail/non_const_lvalue.hpp \
  /usr/include/boost/asio/detail/scoped_ptr.hpp \
- /usr/include/boost/asio/detail/throw_exception.hpp \
- /usr/include/boost/throw_exception.hpp \
- /usr/include/boost/assert/source_location.hpp \
- /usr/include/boost/current_function.hpp /usr/include/boost/cstdint.hpp \
- /usr/include/boost/config/workaround.hpp \
- /usr/include/boost/exception/exception.hpp \
  /usr/include/boost/asio/execution/bad_executor.hpp \
  /usr/include/boost/asio/execution/impl/bad_executor.ipp \
  /usr/include/boost/asio/execution/blocking.hpp \
@@ -418,20 +422,47 @@ src/iDivisorNMEA/CMakeFiles/iDivisorNMEA.dir/DivisorNMEA.cpp.o: \
  /usr/include/boost/asio/detail/impl/posix_event.ipp \
  /usr/include/boost/asio/detail/throw_error.hpp \
  /usr/include/boost/system/error_code.hpp \
- /usr/include/boost/system/api_config.hpp \
+ /usr/include/boost/system/detail/error_code.hpp \
+ /usr/include/boost/system/is_error_code_enum.hpp \
+ /usr/include/boost/system/detail/error_category.hpp \
  /usr/include/boost/system/detail/config.hpp \
- /usr/include/boost/cerrno.hpp \
+ /usr/include/boost/system/detail/requires_cxx11.hpp \
+ /usr/include/boost/config/pragma_message.hpp \
+ /usr/include/boost/system/detail/error_condition.hpp \
  /usr/include/boost/system/detail/generic_category.hpp \
- /usr/include/boost/system/detail/system_category_posix.hpp \
- /usr/include/boost/system/detail/std_interoperability.hpp \
- /usr/include/c++/11/mutex /usr/include/c++/11/chrono \
- /usr/include/c++/11/ratio /usr/include/c++/11/bits/parse_numbers.h \
+ /usr/include/boost/system/detail/generic_category_message.hpp \
+ /usr/include/boost/system/detail/enable_if.hpp \
+ /usr/include/boost/system/detail/is_same.hpp \
+ /usr/include/boost/system/detail/errc.hpp \
+ /usr/include/boost/system/is_error_condition_enum.hpp \
+ /usr/include/boost/system/detail/cerrno.hpp \
+ /usr/include/boost/system/detail/append_int.hpp \
+ /usr/include/boost/system/detail/snprintf.hpp \
+ /usr/include/c++/11/cstdarg \
+ /usr/include/boost/system/detail/system_category.hpp \
+ /usr/include/boost/system/detail/system_category_impl.hpp \
+ /usr/include/boost/system/detail/system_category_message.hpp \
+ /usr/include/boost/system/api_config.hpp \
+ /usr/include/boost/system/detail/interop_category.hpp \
+ /usr/include/boost/system/detail/std_category.hpp \
+ /usr/include/boost/system/error_category.hpp \
+ /usr/include/boost/system/detail/error_category_impl.hpp \
+ /usr/include/boost/system/detail/std_category_impl.hpp \
+ /usr/include/boost/system/detail/mutex.hpp /usr/include/c++/11/mutex \
+ /usr/include/c++/11/chrono /usr/include/c++/11/ratio \
+ /usr/include/c++/11/bits/parse_numbers.h \
  /usr/include/c++/11/bits/std_mutex.h \
  /usr/include/c++/11/bits/unique_lock.h \
+ /usr/include/boost/system/error_condition.hpp \
+ /usr/include/boost/system/errc.hpp \
+ /usr/include/boost/system/generic_category.hpp \
+ /usr/include/boost/system/system_category.hpp \
+ /usr/include/boost/system/detail/throws.hpp \
  /usr/include/boost/asio/detail/impl/throw_error.ipp \
  /usr/include/boost/system/system_error.hpp \
- /usr/include/boost/asio/error.hpp /usr/include/netdb.h \
- /usr/include/netinet/in.h /usr/include/x86_64-linux-gnu/sys/socket.h \
+ /usr/include/boost/asio/error.hpp /usr/include/boost/cerrno.hpp \
+ /usr/include/netdb.h /usr/include/netinet/in.h \
+ /usr/include/x86_64-linux-gnu/sys/socket.h \
  /usr/include/x86_64-linux-gnu/bits/socket.h \
  /usr/include/x86_64-linux-gnu/bits/socket_type.h \
  /usr/include/x86_64-linux-gnu/bits/sockaddr.h \
@@ -471,12 +502,20 @@ src/iDivisorNMEA/CMakeFiles/iDivisorNMEA.dir/DivisorNMEA.cpp.o: \
  /usr/include/boost/asio/execution/detail/submit_receiver.hpp \
  /usr/include/boost/asio/traits/submit_member.hpp \
  /usr/include/boost/asio/traits/submit_free.hpp \
+ /usr/include/boost/asio/impl/any_completion_executor.ipp \
+ /usr/include/boost/asio/any_completion_handler.hpp \
+ /usr/include/boost/asio/associated_cancellation_slot.hpp \
+ /usr/include/boost/asio/cancellation_signal.hpp \
+ /usr/include/boost/asio/cancellation_type.hpp \
+ /usr/include/boost/asio/impl/cancellation_signal.ipp \
+ /usr/include/boost/asio/associated_executor.hpp \
+ /usr/include/boost/asio/is_executor.hpp \
+ /usr/include/boost/asio/detail/is_executor.hpp \
+ /usr/include/boost/asio/system_executor.hpp \
  /usr/include/boost/asio/impl/system_executor.hpp \
  /usr/include/boost/asio/detail/executor_op.hpp \
  /usr/include/boost/asio/detail/fenced_block.hpp \
  /usr/include/boost/asio/detail/std_fenced_block.hpp \
- /usr/include/boost/asio/detail/handler_invoke_helpers.hpp \
- /usr/include/boost/asio/handler_invoke_hook.hpp \
  /usr/include/boost/asio/detail/scheduler_operation.hpp \
  /usr/include/boost/asio/detail/handler_tracking.hpp \
  /usr/include/boost/asio/detail/impl/handler_tracking.ipp \
@@ -497,13 +536,36 @@ src/iDivisorNMEA/CMakeFiles/iDivisorNMEA.dir/DivisorNMEA.cpp.o: \
  /usr/include/boost/asio/detail/conditionally_enabled_mutex.hpp \
  /usr/include/boost/asio/detail/null_event.hpp \
  /usr/include/boost/asio/detail/impl/null_event.ipp \
- /usr/include/boost/asio/detail/reactor_fwd.hpp \
+ /usr/include/boost/asio/detail/scheduler_task.hpp \
  /usr/include/boost/asio/detail/thread.hpp \
  /usr/include/boost/asio/detail/posix_thread.hpp \
  /usr/include/boost/asio/detail/impl/posix_thread.ipp \
  /usr/include/boost/asio/detail/impl/scheduler.ipp \
  /usr/include/boost/asio/detail/concurrency_hint.hpp \
  /usr/include/boost/asio/detail/limits.hpp /usr/include/boost/limits.hpp \
+ /usr/include/boost/asio/detail/scheduler_thread_info.hpp \
+ /usr/include/boost/asio/detail/signal_blocker.hpp \
+ /usr/include/boost/asio/detail/posix_signal_blocker.hpp \
+ /usr/include/c++/11/csignal /usr/include/signal.h \
+ /usr/include/x86_64-linux-gnu/bits/signum-generic.h \
+ /usr/include/x86_64-linux-gnu/bits/signum-arch.h \
+ /usr/include/x86_64-linux-gnu/bits/types/sig_atomic_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/siginfo_t.h \
+ /usr/include/x86_64-linux-gnu/bits/siginfo-arch.h \
+ /usr/include/x86_64-linux-gnu/bits/siginfo-consts.h \
+ /usr/include/x86_64-linux-gnu/bits/siginfo-consts-arch.h \
+ /usr/include/x86_64-linux-gnu/bits/types/sigval_t.h \
+ /usr/include/x86_64-linux-gnu/bits/sigevent-consts.h \
+ /usr/include/x86_64-linux-gnu/bits/sigaction.h \
+ /usr/include/x86_64-linux-gnu/bits/sigcontext.h \
+ /usr/include/x86_64-linux-gnu/bits/types/stack_t.h \
+ /usr/include/x86_64-linux-gnu/sys/ucontext.h \
+ /usr/include/x86_64-linux-gnu/bits/sigstack.h \
+ /usr/include/x86_64-linux-gnu/bits/sigstksz.h \
+ /usr/include/x86_64-linux-gnu/bits/ss_flags.h \
+ /usr/include/x86_64-linux-gnu/bits/types/struct_sigstack.h \
+ /usr/include/x86_64-linux-gnu/bits/sigthread.h \
+ /usr/include/x86_64-linux-gnu/bits/signal_ext.h \
  /usr/include/boost/asio/detail/reactor.hpp \
  /usr/include/boost/asio/detail/epoll_reactor.hpp \
  /usr/include/boost/asio/detail/object_pool.hpp \
@@ -521,7 +583,6 @@ src/iDivisorNMEA/CMakeFiles/iDivisorNMEA.dir/DivisorNMEA.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/types/struct_statx.h \
  /usr/include/x86_64-linux-gnu/sys/eventfd.h \
  /usr/include/x86_64-linux-gnu/bits/eventfd.h \
- /usr/include/boost/asio/detail/cstdint.hpp \
  /usr/include/boost/asio/detail/socket_types.hpp \
  /usr/include/x86_64-linux-gnu/sys/ioctl.h \
  /usr/include/x86_64-linux-gnu/bits/ioctls.h \
@@ -546,50 +607,38 @@ src/iDivisorNMEA/CMakeFiles/iDivisorNMEA.dir/DivisorNMEA.cpp.o: \
  /usr/include/boost/asio/detail/impl/epoll_reactor.ipp \
  /usr/include/x86_64-linux-gnu/sys/epoll.h \
  /usr/include/x86_64-linux-gnu/bits/epoll.h \
- /usr/include/boost/asio/detail/scheduler_thread_info.hpp \
- /usr/include/boost/asio/detail/signal_blocker.hpp \
- /usr/include/boost/asio/detail/posix_signal_blocker.hpp \
- /usr/include/c++/11/csignal /usr/include/signal.h \
- /usr/include/x86_64-linux-gnu/bits/signum-generic.h \
- /usr/include/x86_64-linux-gnu/bits/signum-arch.h \
- /usr/include/x86_64-linux-gnu/bits/types/sig_atomic_t.h \
- /usr/include/x86_64-linux-gnu/bits/types/siginfo_t.h \
- /usr/include/x86_64-linux-gnu/bits/siginfo-arch.h \
- /usr/include/x86_64-linux-gnu/bits/siginfo-consts.h \
- /usr/include/x86_64-linux-gnu/bits/siginfo-consts-arch.h \
- /usr/include/x86_64-linux-gnu/bits/types/sigval_t.h \
- /usr/include/x86_64-linux-gnu/bits/sigevent-consts.h \
- /usr/include/x86_64-linux-gnu/bits/sigaction.h \
- /usr/include/x86_64-linux-gnu/bits/sigcontext.h \
- /usr/include/x86_64-linux-gnu/bits/types/stack_t.h \
- /usr/include/x86_64-linux-gnu/sys/ucontext.h \
- /usr/include/x86_64-linux-gnu/bits/sigstack.h \
- /usr/include/x86_64-linux-gnu/bits/sigstksz.h \
- /usr/include/x86_64-linux-gnu/bits/ss_flags.h \
- /usr/include/x86_64-linux-gnu/bits/types/struct_sigstack.h \
- /usr/include/x86_64-linux-gnu/bits/sigthread.h \
- /usr/include/x86_64-linux-gnu/bits/signal_ext.h \
  /usr/include/boost/asio/detail/thread_group.hpp \
  /usr/include/boost/asio/impl/system_context.hpp \
  /usr/include/boost/asio/impl/system_context.ipp \
+ /usr/include/boost/asio/cancellation_state.hpp \
+ /usr/include/boost/asio/recycling_allocator.hpp \
+ /usr/include/boost/asio/any_io_executor.hpp \
+ /usr/include/boost/asio/impl/any_io_executor.ipp \
+ /usr/include/boost/asio/append.hpp \
+ /usr/include/boost/asio/impl/append.hpp \
+ /usr/include/boost/asio/detail/handler_cont_helpers.hpp \
+ /usr/include/boost/asio/handler_continuation_hook.hpp \
+ /usr/include/boost/asio/detail/utility.hpp \
+ /usr/include/boost/asio/as_tuple.hpp \
+ /usr/include/boost/asio/impl/as_tuple.hpp \
+ /usr/include/boost/asio/associated_immediate_executor.hpp \
  /usr/include/boost/asio/awaitable.hpp \
  /usr/include/boost/asio/basic_datagram_socket.hpp \
  /usr/include/boost/asio/basic_socket.hpp \
- /usr/include/boost/asio/any_io_executor.hpp \
  /usr/include/boost/asio/detail/io_object_impl.hpp \
  /usr/include/boost/asio/io_context.hpp \
  /usr/include/boost/asio/detail/wrapped_handler.hpp \
  /usr/include/boost/asio/detail/bind_handler.hpp \
- /usr/include/boost/asio/detail/handler_cont_helpers.hpp \
- /usr/include/boost/asio/handler_continuation_hook.hpp \
  /usr/include/boost/asio/detail/chrono.hpp \
  /usr/include/boost/asio/impl/io_context.hpp \
  /usr/include/boost/asio/detail/completion_handler.hpp \
  /usr/include/boost/asio/detail/handler_work.hpp \
+ /usr/include/boost/asio/detail/initiate_dispatch.hpp \
+ /usr/include/boost/asio/detail/work_dispatcher.hpp \
  /usr/include/boost/asio/executor_work_guard.hpp \
  /usr/include/boost/asio/impl/io_context.ipp \
- /usr/include/boost/asio/post.hpp /usr/include/boost/asio/impl/post.hpp \
- /usr/include/boost/asio/detail/work_dispatcher.hpp \
+ /usr/include/boost/asio/post.hpp \
+ /usr/include/boost/asio/detail/initiate_post.hpp \
  /usr/include/boost/asio/socket_base.hpp \
  /usr/include/boost/asio/detail/io_control.hpp \
  /usr/include/boost/asio/detail/socket_option.hpp \
@@ -597,9 +646,11 @@ src/iDivisorNMEA/CMakeFiles/iDivisorNMEA.dir/DivisorNMEA.cpp.o: \
  /usr/include/boost/asio/buffer.hpp \
  /usr/include/boost/asio/detail/array_fwd.hpp \
  /usr/include/boost/asio/detail/string_view.hpp \
+ /usr/include/boost/asio/is_contiguous_iterator.hpp \
  /usr/include/boost/detail/workaround.hpp \
  /usr/include/boost/asio/detail/is_buffer_sequence.hpp \
  /usr/include/boost/asio/detail/buffer_sequence_adapter.hpp \
+ /usr/include/boost/asio/registered_buffer.hpp \
  /usr/include/boost/asio/detail/impl/buffer_sequence_adapter.ipp \
  /usr/include/boost/asio/detail/reactive_null_buffers_op.hpp \
  /usr/include/boost/asio/detail/reactive_socket_accept_op.hpp \
@@ -626,10 +677,10 @@ src/iDivisorNMEA/CMakeFiles/iDivisorNMEA.dir/DivisorNMEA.cpp.o: \
  /usr/include/boost/date_time/c_time.hpp \
  /usr/include/boost/date_time/compiler_config.hpp \
  /usr/include/boost/date_time/locale_config.hpp \
- /usr/include/boost/config/auto_link.hpp \
  /usr/include/x86_64-linux-gnu/sys/time.h \
  /usr/include/boost/shared_ptr.hpp \
  /usr/include/boost/smart_ptr/shared_ptr.hpp \
+ /usr/include/boost/smart_ptr/detail/requires_cxx11.hpp \
  /usr/include/boost/smart_ptr/detail/shared_count.hpp \
  /usr/include/boost/smart_ptr/bad_weak_ptr.hpp \
  /usr/include/boost/smart_ptr/detail/sp_counted_base.hpp \
@@ -639,7 +690,6 @@ src/iDivisorNMEA/CMakeFiles/iDivisorNMEA.dir/DivisorNMEA.cpp.o: \
  /usr/include/boost/smart_ptr/detail/sp_typeinfo_.hpp \
  /usr/include/boost/smart_ptr/detail/sp_counted_impl.hpp \
  /usr/include/boost/smart_ptr/detail/sp_noexcept.hpp \
- /usr/include/boost/checked_delete.hpp \
  /usr/include/boost/core/checked_delete.hpp \
  /usr/include/boost/core/addressof.hpp \
  /usr/include/boost/smart_ptr/detail/sp_disable_deprecated.hpp \
@@ -651,7 +701,6 @@ src/iDivisorNMEA/CMakeFiles/iDivisorNMEA.dir/DivisorNMEA.cpp.o: \
  /usr/include/boost/smart_ptr/detail/yield_k.hpp \
  /usr/include/boost/smart_ptr/detail/sp_thread_pause.hpp \
  /usr/include/boost/smart_ptr/detail/sp_thread_sleep.hpp \
- /usr/include/boost/config/pragma_message.hpp \
  /usr/include/boost/smart_ptr/detail/operator_bool.hpp \
  /usr/include/boost/smart_ptr/detail/local_sp_deleter.hpp \
  /usr/include/boost/smart_ptr/detail/local_counted_base.hpp \
@@ -753,15 +802,20 @@ src/iDivisorNMEA/CMakeFiles/iDivisorNMEA.dir/DivisorNMEA.cpp.o: \
  /usr/include/boost/preprocessor/control/if.hpp \
  /usr/include/boost/preprocessor/control/iif.hpp \
  /usr/include/boost/preprocessor/logical/bool.hpp \
+ /usr/include/boost/preprocessor/config/limits.hpp \
+ /usr/include/boost/preprocessor/logical/limits/bool_256.hpp \
  /usr/include/boost/preprocessor/facilities/empty.hpp \
  /usr/include/boost/preprocessor/punctuation/comma.hpp \
  /usr/include/boost/preprocessor/repeat.hpp \
  /usr/include/boost/preprocessor/repetition/repeat.hpp \
  /usr/include/boost/preprocessor/debug/error.hpp \
  /usr/include/boost/preprocessor/detail/auto_rec.hpp \
+ /usr/include/boost/preprocessor/detail/limits/auto_rec_256.hpp \
  /usr/include/boost/preprocessor/tuple/eat.hpp \
+ /usr/include/boost/preprocessor/repetition/limits/repeat_256.hpp \
  /usr/include/boost/preprocessor/inc.hpp \
  /usr/include/boost/preprocessor/arithmetic/inc.hpp \
+ /usr/include/boost/preprocessor/arithmetic/limits/inc_256.hpp \
  /usr/include/boost/mpl/aux_/preprocessor/enum.hpp \
  /usr/include/boost/mpl/aux_/preprocessor/def_params_tail.hpp \
  /usr/include/boost/mpl/limits/arity.hpp \
@@ -772,6 +826,7 @@ src/iDivisorNMEA/CMakeFiles/iDivisorNMEA.dir/DivisorNMEA.cpp.o: \
  /usr/include/boost/preprocessor/empty.hpp \
  /usr/include/boost/preprocessor/arithmetic/add.hpp \
  /usr/include/boost/preprocessor/arithmetic/dec.hpp \
+ /usr/include/boost/preprocessor/arithmetic/limits/dec_256.hpp \
  /usr/include/boost/preprocessor/control/while.hpp \
  /usr/include/boost/preprocessor/list/fold_left.hpp \
  /usr/include/boost/preprocessor/list/detail/fold_left.hpp \
@@ -780,17 +835,34 @@ src/iDivisorNMEA/CMakeFiles/iDivisorNMEA.dir/DivisorNMEA.cpp.o: \
  /usr/include/boost/preprocessor/detail/is_binary.hpp \
  /usr/include/boost/preprocessor/detail/check.hpp \
  /usr/include/boost/preprocessor/logical/compl.hpp \
+ /usr/include/boost/preprocessor/list/detail/limits/fold_left_256.hpp \
+ /usr/include/boost/preprocessor/list/limits/fold_left_256.hpp \
  /usr/include/boost/preprocessor/list/fold_right.hpp \
  /usr/include/boost/preprocessor/list/detail/fold_right.hpp \
  /usr/include/boost/preprocessor/list/reverse.hpp \
+ /usr/include/boost/preprocessor/list/detail/limits/fold_right_256.hpp \
  /usr/include/boost/preprocessor/control/detail/while.hpp \
+ /usr/include/boost/preprocessor/control/detail/limits/while_256.hpp \
+ /usr/include/boost/preprocessor/control/limits/while_256.hpp \
+ /usr/include/boost/preprocessor/logical/bitor.hpp \
  /usr/include/boost/preprocessor/tuple/elem.hpp \
  /usr/include/boost/preprocessor/facilities/expand.hpp \
  /usr/include/boost/preprocessor/facilities/overload.hpp \
  /usr/include/boost/preprocessor/variadic/size.hpp \
+ /usr/include/boost/preprocessor/facilities/check_empty.hpp \
+ /usr/include/boost/preprocessor/variadic/has_opt.hpp \
+ /usr/include/boost/preprocessor/variadic/limits/size_64.hpp \
  /usr/include/boost/preprocessor/tuple/rem.hpp \
  /usr/include/boost/preprocessor/tuple/detail/is_single_return.hpp \
  /usr/include/boost/preprocessor/variadic/elem.hpp \
+ /usr/include/boost/preprocessor/variadic/limits/elem_64.hpp \
+ /usr/include/boost/preprocessor/arithmetic/detail/is_maximum_number.hpp \
+ /usr/include/boost/preprocessor/comparison/equal.hpp \
+ /usr/include/boost/preprocessor/comparison/not_equal.hpp \
+ /usr/include/boost/preprocessor/comparison/limits/not_equal_256.hpp \
+ /usr/include/boost/preprocessor/arithmetic/detail/maximum_number.hpp \
+ /usr/include/boost/preprocessor/arithmetic/detail/is_minimum_number.hpp \
+ /usr/include/boost/preprocessor/logical/not.hpp \
  /usr/include/boost/preprocessor/arithmetic/sub.hpp \
  /usr/include/boost/mpl/aux_/config/overload_resolution.hpp \
  /usr/include/boost/mpl/aux_/lambda_support.hpp \
@@ -832,8 +904,6 @@ src/iDivisorNMEA/CMakeFiles/iDivisorNMEA.dir/DivisorNMEA.cpp.o: \
  /usr/include/boost/mpl/identity.hpp \
  /usr/include/boost/numeric/conversion/detail/int_float_mixture.hpp \
  /usr/include/boost/numeric/conversion/int_float_mixture_enum.hpp \
- /usr/include/boost/mpl/integral_c.hpp \
- /usr/include/boost/mpl/integral_c_fwd.hpp \
  /usr/include/boost/numeric/conversion/detail/sign_mixture.hpp \
  /usr/include/boost/numeric/conversion/sign_mixture_enum.hpp \
  /usr/include/boost/numeric/conversion/detail/udt_builtin_mixture.hpp \
@@ -841,6 +911,8 @@ src/iDivisorNMEA/CMakeFiles/iDivisorNMEA.dir/DivisorNMEA.cpp.o: \
  /usr/include/boost/numeric/conversion/detail/is_subranged.hpp \
  /usr/include/boost/mpl/multiplies.hpp /usr/include/boost/mpl/times.hpp \
  /usr/include/boost/mpl/aux_/arithmetic_op.hpp \
+ /usr/include/boost/mpl/integral_c.hpp \
+ /usr/include/boost/mpl/integral_c_fwd.hpp \
  /usr/include/boost/mpl/aux_/largest_int.hpp \
  /usr/include/boost/mpl/aux_/preprocessed/gcc/times.hpp \
  /usr/include/boost/mpl/aux_/preprocessor/default_params.hpp \
@@ -861,24 +933,29 @@ src/iDivisorNMEA/CMakeFiles/iDivisorNMEA.dir/DivisorNMEA.cpp.o: \
  /usr/include/boost/asio/detail/timer_scheduler.hpp \
  /usr/include/boost/asio/detail/timer_scheduler_fwd.hpp \
  /usr/include/boost/asio/detail/wait_handler.hpp \
+ /usr/include/boost/asio/basic_file.hpp \
  /usr/include/boost/asio/basic_io_object.hpp \
+ /usr/include/boost/asio/basic_random_access_file.hpp \
  /usr/include/boost/asio/basic_raw_socket.hpp \
+ /usr/include/boost/asio/basic_readable_pipe.hpp \
+ /usr/include/boost/asio/detail/reactive_descriptor_service.hpp \
+ /usr/include/boost/asio/detail/descriptor_ops.hpp \
+ /usr/include/boost/asio/detail/impl/descriptor_ops.ipp \
+ /usr/include/boost/asio/detail/descriptor_read_op.hpp \
+ /usr/include/boost/asio/dispatch.hpp \
+ /usr/include/boost/asio/detail/descriptor_write_op.hpp \
+ /usr/include/boost/asio/posix/descriptor_base.hpp \
+ /usr/include/boost/asio/detail/impl/reactive_descriptor_service.ipp \
  /usr/include/boost/asio/basic_seq_packet_socket.hpp \
  /usr/include/boost/asio/basic_serial_port.hpp \
  /usr/include/boost/asio/serial_port_base.hpp \
  /usr/include/boost/asio/impl/serial_port_base.hpp \
  /usr/include/boost/asio/impl/serial_port_base.ipp \
- /usr/include/boost/asio/detail/reactive_serial_port_service.hpp \
- /usr/include/boost/asio/detail/descriptor_ops.hpp \
- /usr/include/boost/asio/detail/impl/descriptor_ops.ipp \
- /usr/include/boost/asio/detail/reactive_descriptor_service.hpp \
- /usr/include/boost/asio/detail/descriptor_read_op.hpp \
- /usr/include/boost/asio/detail/descriptor_write_op.hpp \
- /usr/include/boost/asio/posix/descriptor_base.hpp \
- /usr/include/boost/asio/detail/impl/reactive_descriptor_service.ipp \
- /usr/include/boost/asio/detail/impl/reactive_serial_port_service.ipp \
+ /usr/include/boost/asio/detail/posix_serial_port_service.hpp \
+ /usr/include/boost/asio/detail/impl/posix_serial_port_service.ipp \
  /usr/include/boost/asio/basic_signal_set.hpp \
  /usr/include/boost/asio/detail/signal_set_service.hpp \
+ /usr/include/boost/asio/signal_set_base.hpp \
  /usr/include/boost/asio/detail/signal_handler.hpp \
  /usr/include/boost/asio/detail/signal_op.hpp \
  /usr/include/boost/asio/detail/impl/signal_set_service.ipp \
@@ -892,10 +969,16 @@ src/iDivisorNMEA/CMakeFiles/iDivisorNMEA.dir/DivisorNMEA.cpp.o: \
  /usr/include/boost/asio/basic_waitable_timer.hpp \
  /usr/include/boost/asio/detail/chrono_time_traits.hpp \
  /usr/include/boost/asio/wait_traits.hpp \
+ /usr/include/boost/asio/basic_stream_file.hpp \
  /usr/include/boost/asio/basic_streambuf.hpp \
  /usr/include/boost/asio/basic_streambuf_fwd.hpp \
+ /usr/include/boost/asio/basic_writable_pipe.hpp \
+ /usr/include/boost/asio/bind_allocator.hpp \
+ /usr/include/boost/asio/bind_cancellation_slot.hpp \
  /usr/include/boost/asio/bind_executor.hpp \
  /usr/include/boost/asio/uses_executor.hpp \
+ /usr/include/boost/asio/bind_immediate_executor.hpp \
+ /usr/include/boost/asio/buffer_registration.hpp \
  /usr/include/boost/asio/buffered_read_stream_fwd.hpp \
  /usr/include/boost/asio/buffered_read_stream.hpp \
  /usr/include/boost/asio/detail/buffer_resize_guard.hpp \
@@ -907,25 +990,33 @@ src/iDivisorNMEA/CMakeFiles/iDivisorNMEA.dir/DivisorNMEA.cpp.o: \
  /usr/include/boost/asio/buffered_write_stream_fwd.hpp \
  /usr/include/boost/asio/completion_condition.hpp \
  /usr/include/boost/asio/write.hpp /usr/include/boost/asio/impl/write.hpp \
+ /usr/include/boost/asio/detail/base_from_cancellation_state.hpp \
  /usr/include/boost/asio/detail/base_from_completion_cond.hpp \
  /usr/include/boost/asio/detail/consuming_buffers.hpp \
  /usr/include/boost/asio/detail/dependent_type.hpp \
  /usr/include/boost/asio/impl/buffered_write_stream.hpp \
  /usr/include/boost/asio/buffers_iterator.hpp \
  /usr/include/boost/asio/co_spawn.hpp /usr/include/boost/asio/compose.hpp \
- /usr/include/boost/asio/impl/compose.hpp \
+ /usr/include/boost/asio/detail/composed_work.hpp \
  /usr/include/boost/asio/connect.hpp \
  /usr/include/boost/asio/impl/connect.hpp \
+ /usr/include/boost/asio/connect_pipe.hpp \
+ /usr/include/boost/asio/impl/connect_pipe.hpp \
+ /usr/include/boost/asio/impl/connect_pipe.ipp \
+ /usr/include/boost/asio/consign.hpp \
+ /usr/include/boost/asio/impl/consign.hpp \
  /usr/include/boost/asio/coroutine.hpp \
  /usr/include/boost/asio/deadline_timer.hpp \
- /usr/include/boost/asio/defer.hpp /usr/include/boost/asio/impl/defer.hpp \
+ /usr/include/boost/asio/defer.hpp \
+ /usr/include/boost/asio/detail/initiate_defer.hpp \
+ /usr/include/boost/asio/deferred.hpp \
+ /usr/include/boost/asio/impl/deferred.hpp \
  /usr/include/boost/asio/detached.hpp \
  /usr/include/boost/asio/impl/detached.hpp \
- /usr/include/boost/asio/dispatch.hpp \
- /usr/include/boost/asio/impl/dispatch.hpp \
  /usr/include/boost/asio/executor.hpp \
  /usr/include/boost/asio/impl/executor.hpp \
  /usr/include/boost/asio/impl/executor.ipp \
+ /usr/include/boost/asio/file_base.hpp \
  /usr/include/boost/asio/generic/basic_endpoint.hpp \
  /usr/include/boost/asio/generic/detail/endpoint.hpp \
  /usr/include/boost/asio/generic/detail/impl/endpoint.ipp \
@@ -994,6 +1085,7 @@ src/iDivisorNMEA/CMakeFiles/iDivisorNMEA.dir/DivisorNMEA.cpp.o: \
  /usr/include/boost/asio/local/detail/impl/endpoint.ipp \
  /usr/include/boost/asio/local/connect_pair.hpp \
  /usr/include/boost/asio/local/datagram_protocol.hpp \
+ /usr/include/boost/asio/local/seq_packet_protocol.hpp \
  /usr/include/boost/asio/local/stream_protocol.hpp \
  /usr/include/boost/asio/packaged_task.hpp \
  /usr/include/boost/asio/detail/future.hpp /usr/include/c++/11/future \
@@ -1006,6 +1098,9 @@ src/iDivisorNMEA/CMakeFiles/iDivisorNMEA.dir/DivisorNMEA.cpp.o: \
  /usr/include/boost/asio/posix/basic_stream_descriptor.hpp \
  /usr/include/boost/asio/posix/descriptor.hpp \
  /usr/include/boost/asio/posix/stream_descriptor.hpp \
+ /usr/include/boost/asio/prepend.hpp \
+ /usr/include/boost/asio/impl/prepend.hpp \
+ /usr/include/boost/asio/random_access_file.hpp \
  /usr/include/boost/asio/read.hpp /usr/include/boost/asio/impl/read.hpp \
  /usr/include/boost/asio/read_at.hpp \
  /usr/include/boost/asio/impl/read_at.hpp \
@@ -1025,7 +1120,9 @@ src/iDivisorNMEA/CMakeFiles/iDivisorNMEA.dir/DivisorNMEA.cpp.o: \
  /usr/include/boost/predef/architecture/arm.h \
  /usr/include/boost/predef/architecture/blackfin.h \
  /usr/include/boost/predef/architecture/convex.h \
+ /usr/include/boost/predef/architecture/e2k.h \
  /usr/include/boost/predef/architecture/ia64.h \
+ /usr/include/boost/predef/architecture/loongarch.h \
  /usr/include/boost/predef/architecture/m68k.h \
  /usr/include/boost/predef/architecture/mips.h \
  /usr/include/boost/predef/architecture/parisc.h \
@@ -1116,6 +1213,8 @@ src/iDivisorNMEA/CMakeFiles/iDivisorNMEA.dir/DivisorNMEA.cpp.o: \
  /usr/include/boost/predef/os/windows.h /usr/include/boost/predef/other.h \
  /usr/include/boost/predef/other/endian.h \
  /usr/include/boost/predef/platform/android.h \
+ /usr/include/boost/predef/other/wordsize.h \
+ /usr/include/boost/predef/other/workaround.h \
  /usr/include/boost/predef/platform.h \
  /usr/include/boost/predef/platform/cloudabi.h \
  /usr/include/boost/predef/platform/mingw.h \
@@ -1140,10 +1239,10 @@ src/iDivisorNMEA/CMakeFiles/iDivisorNMEA.dir/DivisorNMEA.cpp.o: \
  /usr/include/boost/predef/hardware/simd/ppc.h \
  /usr/include/boost/predef/hardware/simd/ppc/versions.h \
  /usr/include/boost/predef/version.h \
- /usr/include/boost/regex/config/cwchar.hpp \
- /usr/include/boost/regex/v4/regex_fwd.hpp \
- /usr/include/boost/regex/v4/match_flags.hpp \
+ /usr/include/boost/regex/v5/regex_fwd.hpp \
+ /usr/include/boost/regex/v5/match_flags.hpp \
  /usr/include/boost/asio/impl/read_until.hpp \
+ /usr/include/boost/asio/readable_pipe.hpp \
  /usr/include/boost/asio/redirect_error.hpp \
  /usr/include/boost/asio/impl/redirect_error.hpp \
  /usr/include/boost/asio/require_concept.hpp \
@@ -1162,6 +1261,7 @@ src/iDivisorNMEA/CMakeFiles/iDivisorNMEA.dir/DivisorNMEA.cpp.o: \
  /usr/include/boost/asio/detail/strand_executor_service.hpp \
  /usr/include/boost/asio/detail/impl/strand_executor_service.hpp \
  /usr/include/boost/asio/detail/impl/strand_executor_service.ipp \
+ /usr/include/boost/asio/stream_file.hpp \
  /usr/include/boost/asio/streambuf.hpp \
  /usr/include/boost/asio/system_timer.hpp \
  /usr/include/boost/asio/this_coro.hpp \
@@ -1178,6 +1278,7 @@ src/iDivisorNMEA/CMakeFiles/iDivisorNMEA.dir/DivisorNMEA.cpp.o: \
  /usr/include/boost/asio/windows/overlapped_ptr.hpp \
  /usr/include/boost/asio/windows/random_access_handle.hpp \
  /usr/include/boost/asio/windows/stream_handle.hpp \
+ /usr/include/boost/asio/writable_pipe.hpp \
  /usr/include/boost/asio/write_at.hpp \
  /usr/include/boost/asio/impl/write_at.hpp \
  /home/moos-ivp/MOOS/MOOSCore/Core/libMOOS/Utils/include/MOOS/libMOOS/Utils/MOOSLinuxSerialPort.h \
