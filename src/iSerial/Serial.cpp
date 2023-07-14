@@ -17,6 +17,7 @@
 #include <thread>
 
 
+
 using namespace std;
 
 //---------------------------------------------------------
@@ -34,6 +35,12 @@ Serial::Serial()
   rudder = 0; //Valor inicial do leme
   thrust = 0; //Valor inicial da máquina
   feedback_leme = "NULL";
+
+  limite_positivo = 40; //Ângulo máximo do leme
+  limite_negativo = -55;
+
+  //Simulador de ângulo do leme
+  //angulo_leme = 0; //Começa zerado
   
   thrust_convertido = "NULL"; //Valor inicial de máquina
 
@@ -125,23 +132,51 @@ bool Serial::Iterate()
   if (erro > 2) {
     if (ultimo_comando == "L1"){
       enviaSerial("L0");
-      enviaSerial("L2");
+      if (angulo_leme < limite_negativo){
+        enviaSerial("L0");
+      } else {
+        enviaSerial("L2");
+      }
     } else {
-      enviaSerial("L2");
+      if (angulo_leme < limite_negativo){
+        enviaSerial("L0");
+      } else {
+        enviaSerial("L2");
+      }
     }
     ultimo_comando = "L2";
   } else if (erro < -2) {
     if (ultimo_comando == "L2") {
       enviaSerial("L0");
-      enviaSerial("L1");
+      if (angulo_leme > limite_positivo) {
+        enviaSerial("L0");
+      } else {
+        enviaSerial("L1");
+      }
     } else {
-      enviaSerial("L1");
+      if (angulo_leme > limite_positivo) {
+        enviaSerial("L0");
+      } else {
+        enviaSerial("L1");
+      }
     }
     ultimo_comando = "L1";
   } else {
     enviaSerial("L0");
     ultimo_comando = "L0";
   }
+
+ 
+
+  /*
+  //Simulador do ângulo de leme - COMENTAR NO REAL
+  if (ultimo_comando == "L1") { //leme para bombordo
+    angulo_leme -=1;
+  } else if (ultimo_comando == "L2") { //leme para boreste
+    angulo_leme +=1;
+  }
+
+   Notify("FEEDBACK_LEME", angulo_leme); //para debug*/
   
   
   //String de comando de máquina 

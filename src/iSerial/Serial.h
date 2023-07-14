@@ -52,6 +52,8 @@ class Serial : public AppCastingMOOSApp
     double angulo_leme;
     double desired_speed;
     double nav_speed;
+    double limite_negativo;
+    double limite_positivo;
     std::string ultimo_comando;
     std::string leme_placa;
     std::string sentenca;
