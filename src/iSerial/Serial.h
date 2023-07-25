@@ -54,6 +54,10 @@ class Serial : public AppCastingMOOSApp
     double nav_speed;
     double limite_negativo;
     double limite_positivo;
+    double erro_maximo_devagar;
+    double erro_minimo_devagar;
+    double erro_maximo_rapido;
+    double erro_minimo_rapido;
     std::string ultimo_comando;
     std::string leme_placa;
     std::string sentenca;

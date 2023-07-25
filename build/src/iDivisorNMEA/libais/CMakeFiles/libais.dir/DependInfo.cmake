@@ -13,8 +13,8 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/moos-ivp-douglas/src/iDivisorNMEA/libais/ais_bitset.cpp" "src/iDivisorNMEA/libais/CMakeFiles/libais.dir/ais_bitset.cpp.o" "gcc" "src/iDivisorNMEA/libais/CMakeFiles/libais.dir/ais_bitset.cpp.o.d"
   )
 
-# Targets to which this target links which contain Fortran sources.
-set(CMAKE_Fortran_TARGET_LINKED_INFO_FILES
+# Targets to which this target links.
+set(CMAKE_TARGET_LINKED_INFO_FILES
   )
 
 # Fortran module output directory.

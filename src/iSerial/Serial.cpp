@@ -27,8 +27,8 @@ Serial::Serial()
 {
   //Configurações para envio de dados via Serial
 
-  //endereco_porta_serial = "/dev/ttyUSB0"; //Porta real na lancha
-  endereco_porta_serial = "/dev/ttyVIRT0"; //Porta simulada para testes
+  endereco_porta_serial = "/dev/ttyUSB0"; //Porta real na lancha
+  //endereco_porta_serial = "/dev/ttyVIRT0"; //Porta simulada para testes
   baudrate = 9600;
 
   // Valores padrões:
@@ -43,6 +43,11 @@ Serial::Serial()
   //angulo_leme = 0; //Começa zerado
   
   thrust_convertido = "NULL"; //Valor inicial de máquina
+
+  erro_maximo_devagar = 2;
+  erro_minimo_devagar = -2;
+  erro_maximo_rapido = 6;
+  erro_minimo_rapido = -6;
 
 }
 
@@ -120,7 +125,7 @@ bool Serial::Iterate()
 
   //Controle pelo erro obtido
 
-  double erro = rudder - angulo_leme;
+  double erro = angulo_leme -rudder;
   Notify("ERRO_LEME", erro);
 
   //L0 - parado
@@ -129,7 +134,7 @@ bool Serial::Iterate()
   //Adicionei ultimo comando para evitar passar de boreste direto para bombordo sem parar
 
   //Manobrar a dead zone do erro nos condicionais
-  if (erro >= 6) {
+  if (erro >= erro_maximo_rapido) {
     if ((ultimo_comando == "L1R") || (ultimo_comando == "L1D")){
       enviaSerial("L0");
       if (angulo_leme < limite_negativo){
@@ -145,7 +150,7 @@ bool Serial::Iterate()
       }
     }
     ultimo_comando = "L2R";
-  } else if (erro <= -6) {
+  } else if (erro <= erro_minimo_rapido) {
     if ((ultimo_comando == "L2R") || (ultimo_comando == "L2D")) {
       enviaSerial("L0");
       if (angulo_leme > limite_positivo) {
@@ -161,7 +166,7 @@ bool Serial::Iterate()
       }
     }
     ultimo_comando = "L1R";
-  } else if ((erro >= 2) && (erro < 6)) {
+  } else if ((erro >= erro_maximo_devagar) && (erro < erro_maximo_rapido)) {
     if ((ultimo_comando == "L1R") || (ultimo_comando == "L1D")){
       enviaSerial("L0");
       if (angulo_leme < limite_negativo){
@@ -177,7 +182,7 @@ bool Serial::Iterate()
       }
     }
     ultimo_comando = "L2D";
-  } else if ((erro <= -2) && (erro > -6)) {
+  } else if ((erro <= erro_minimo_devagar) && (erro > erro_minimo_rapido)) {
     if ((ultimo_comando == "L2R") || (ultimo_comando == "L2D")) {
       enviaSerial("L0");
       if (angulo_leme > limite_positivo) {
@@ -205,7 +210,7 @@ bool Serial::Iterate()
 
   
   //Simulador do ângulo de leme - COMENTAR NO REAL
-  if (ultimo_comando == "L1R") { //leme para bombordo
+  /*if (ultimo_comando == "L1R") { //leme para bombordo
     angulo_leme -=1;
   } else if (ultimo_comando == "L2R") { //leme para boreste
     angulo_leme +=1;
@@ -213,9 +218,9 @@ bool Serial::Iterate()
     angulo_leme -= 0.5;
   } else if (ultimo_comando == "L2D") {
     angulo_leme += 0.5;
-  }
+  }*/
 
-   Notify("ANGULO_LEME", angulo_leme); //para debug
+   //Notify("ANGULO_LEME", angulo_leme); //para debug
   
   
   //String de comando de máquina 
