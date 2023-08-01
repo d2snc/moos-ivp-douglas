@@ -37,3 +37,7 @@
 /home/moos-ivp-douglas/build/src/pUDP_Receiver/CMakeFiles/pUDP_Receiver.dir
 /home/moos-ivp-douglas/build/src/pUDP_Receiver/CMakeFiles/edit_cache.dir
 /home/moos-ivp-douglas/build/src/pUDP_Receiver/CMakeFiles/rebuild_cache.dir
+/home/moos-ivp-douglas/build/src/pSimpass/CMakeFiles/pSimpass.dir
+/home/moos-ivp-douglas/build/src/pSimpass/CMakeFiles/edit_cache.dir
+/home/moos-ivp-douglas/build/src/pSimpass/CMakeFiles/rebuild_cache.dir
+/home/moos-ivp-douglas/build/src/pSimpass/CMakeFiles/pSimpass_autogen.dir

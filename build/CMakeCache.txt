@@ -172,6 +172,21 @@ CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 //Value Computed by CMake
 CMAKE_PROJECT_NAME:STATIC=IVP_EXTEND
 
+//Value Computed by CMake
+CMAKE_PROJECT_VERSION:STATIC=1.0.0
+
+//Value Computed by CMake
+CMAKE_PROJECT_VERSION_MAJOR:STATIC=1
+
+//Value Computed by CMake
+CMAKE_PROJECT_VERSION_MINOR:STATIC=0
+
+//Value Computed by CMake
+CMAKE_PROJECT_VERSION_PATCH:STATIC=0
+
+//Value Computed by CMake
+CMAKE_PROJECT_VERSION_TWEAK:STATIC=
+
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/usr/bin/ranlib
 
@@ -284,6 +299,18 @@ NMEAParserLib_IS_TOP_LEVEL:STATIC=OFF
 //Value Computed by CMake
 NMEAParserLib_SOURCE_DIR:STATIC=/home/moos-ivp-douglas/src/iDivisorNMEA/NMEAParserLib
 
+//The directory containing a CMake configuration file for Qt5Core.
+Qt5Core_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/Qt5Core
+
+//The directory containing a CMake configuration file for Qt5Gui.
+Qt5Gui_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui
+
+//The directory containing a CMake configuration file for Qt5Network.
+Qt5Network_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/Qt5Network
+
+//The directory containing a CMake configuration file for Qt5.
+Qt5_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/Qt5
+
 RUNTIME_OUTPUT_DIRECTORY:PATH=/home/moos-ivp-douglas/bin
 
 //tell me about all compiler warnings (-Wall) 
@@ -300,6 +327,15 @@ libais_IS_TOP_LEVEL:STATIC=OFF
 
 //Value Computed by CMake
 libais_SOURCE_DIR:STATIC=/home/moos-ivp-douglas/src/iDivisorNMEA/libais
+
+//Value Computed by CMake
+pSimpass_BINARY_DIR:STATIC=/home/moos-ivp-douglas/build/src/pSimpass
+
+//Value Computed by CMake
+pSimpass_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+pSimpass_SOURCE_DIR:STATIC=/home/moos-ivp-douglas/src/pSimpass
 
 //Dependencies for the target
 xml-documentation_LIB_DEPENDS:STATIC=general;tinyxml2;general;mbutil;
@@ -421,7 +457,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=14
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=15
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
