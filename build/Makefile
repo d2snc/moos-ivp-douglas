@@ -259,6 +259,32 @@ pUDP_Receiver/fast:
 	$(MAKE) $(MAKESILENT) -f src/pUDP_Receiver/CMakeFiles/pUDP_Receiver.dir/build.make src/pUDP_Receiver/CMakeFiles/pUDP_Receiver.dir/build
 .PHONY : pUDP_Receiver/fast
 
+#=============================================================================
+# Target rules for targets named pSimpass
+
+# Build rule for target.
+pSimpass: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pSimpass
+.PHONY : pSimpass
+
+# fast build rule for target.
+pSimpass/fast:
+	$(MAKE) $(MAKESILENT) -f src/pSimpass/CMakeFiles/pSimpass.dir/build.make src/pSimpass/CMakeFiles/pSimpass.dir/build
+.PHONY : pSimpass/fast
+
+#=============================================================================
+# Target rules for targets named pSimpass_autogen
+
+# Build rule for target.
+pSimpass_autogen: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pSimpass_autogen
+.PHONY : pSimpass_autogen
+
+# fast build rule for target.
+pSimpass_autogen/fast:
+	$(MAKE) $(MAKESILENT) -f src/pSimpass/CMakeFiles/pSimpass_autogen.dir/build.make src/pSimpass/CMakeFiles/pSimpass_autogen.dir/build
+.PHONY : pSimpass_autogen/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -267,6 +293,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... pSimpass_autogen"
 	@echo "... BHV_SimpleWaypoint"
 	@echo "... NMEAParserLib"
 	@echo "... graphics"
@@ -275,6 +302,7 @@ help:
 	@echo "... libais"
 	@echo "... pExampleApp"
 	@echo "... pOdometry"
+	@echo "... pSimpass"
 	@echo "... pUDP_Receiver"
 	@echo "... pXRelayTest"
 	@echo "... xml-documentation"
