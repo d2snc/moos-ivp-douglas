@@ -13,6 +13,9 @@
 #include <cmath>
 #include <string>
 #include <iostream>
+#include <chrono>
+#include <thread>
+
 
 
 using namespace std;
@@ -23,19 +26,30 @@ using namespace std;
 Serial::Serial()
 {
   //Configurações para envio de dados via Serial
-  //endereco_porta_serial = "/dev/ttyUSB0"; //Porta real na lancha
-  endereco_porta_serial = "/dev/pts/0"; //Porta simulada para testes
+
+  endereco_porta_serial = "/dev/ttyUSB0"; //Porta real na lancha
+  //endereco_porta_serial = "/dev/ttyVIRT0"; //Porta simulada para testes
+  //endereco_porta_serial = "/dev/pts/3";
   baudrate = 9600;
 
   // Valores padrões:
   rudder = 0; //Valor inicial do leme
   thrust = 0; //Valor inicial da máquina
-  angulo_leme = 0; //Valor inicial do ângulo do leme
-  rudder_convertido = "NULL"; //Valor inicial de leme
+  feedback_leme = "NULL";
+
+  limite_positivo = 40; //Ângulo máximo do leme
+  limite_negativo = -55;
+
+  //Simulador de ângulo do leme
+  //angulo_leme = 0; //Começa zerado
+  
   thrust_convertido = "NULL"; //Valor inicial de máquina
 
+  erro_maximo_devagar = 1.7;
+  erro_minimo_devagar = -erro_maximo_devagar;
+  erro_maximo_rapido = 5.5;
+  erro_minimo_rapido = -erro_maximo_rapido;
 
-  enviaSerial(); //Função que vai fazer o envio dos comandos via Serial
 }
 
 //---------------------------------------------------------
@@ -43,6 +57,9 @@ Serial::Serial()
 
 Serial::~Serial()
 {
+  enviaSerial("L0D"); //Para o leme quando encerra o programa
+  enviaSerial("A000"); //Para o atuador de máquina a 0%
+  std::cout << "Leme a meio" << std::endl;
 }
 
 //---------------------------------------------------------
@@ -75,6 +92,8 @@ bool Serial::OnNewMail(MOOSMSG_LIST &NewMail)
         angulo_leme = msg.GetDouble();
      else if(key == "DEPLOY")
         deploy = msg.GetString(); 
+     else if(key == "MOOS_MANUAL_OVERIDE")
+        manual_overide = msg.GetString(); 
      else if(key == "RETURN")
         return_var = msg.GetString();
      else if(key == "DESIRED_SPEED")
@@ -107,9 +126,104 @@ bool Serial::Iterate()
   // Do your thing here!
   // Pensando em colocar aqui nessa interação o envio direto da porta serial
   // Vou fazer um teste primeiro para saber qual é a saída
-  enviaSerial(); // publica as variáveis rudder_convertido e thrust_convertido
-  Notify("LEME_SERIAL", rudder_convertido); //Divulga a variável LEME_SERIAL com a string para ser enviada para o PIC 
-  Notify("MAQUINA_SERIAL", thrust_convertido); //Divulga a variável MAQUINA_SERIAL com a string para ser enviada para o PIC
+
+  //Controle pelo erro obtido
+
+  double erro = angulo_leme -rudder;
+  Notify("ERRO_LEME", erro);
+
+  //L0 - parado
+  //L1 - bombordo
+  //L2 - boreste
+  //Adicionei ultimo comando para evitar passar de boreste direto para bombordo sem parar
+
+  //Manobrar a dead zone do erro nos condicionais
+
+  if (erro >= erro_maximo_rapido) {
+    if (ultimo_comando == "L1"){
+      enviaSerial("L0D");
+      if (angulo_leme < limite_negativo){
+        enviaSerial("L0D");
+      } else {
+        enviaSerial("L2R");
+      }
+    } else {
+      if (angulo_leme < limite_negativo){
+        enviaSerial("L0D");
+      } else {
+        enviaSerial("L2R");
+      }
+    }
+    ultimo_comando = "L2";
+  } else if (erro <= erro_minimo_rapido) {
+    if (ultimo_comando == "L2") {
+      enviaSerial("L0D");
+      if (angulo_leme > limite_positivo) {
+        enviaSerial("L0D");
+      } else {
+        enviaSerial("L1R");
+      }
+    } else {
+      if (angulo_leme > limite_positivo) {
+        enviaSerial("L0D");
+      } else {
+        enviaSerial("L1R");
+      }
+    }
+    ultimo_comando = "L1";
+  } else if ((erro >= erro_maximo_devagar) && (erro < erro_maximo_rapido)) {
+    if (ultimo_comando == "L1"){
+      enviaSerial("L0D");
+      if (angulo_leme < limite_negativo){
+        enviaSerial("L0D");
+      } else {
+        enviaSerial("L2D");
+      }
+    } else {
+      if (angulo_leme < limite_negativo){
+        enviaSerial("L0D");
+      } else {
+        enviaSerial("L2D");
+      }
+    }
+    ultimo_comando = "L2";
+  } else if ((erro <= erro_minimo_devagar) && (erro > erro_minimo_rapido)) {
+    if (ultimo_comando == "L2"){
+      enviaSerial("L0D");
+      if (angulo_leme > limite_positivo) {
+        enviaSerial("L0D");
+      } else {
+        enviaSerial("L1D");
+      }
+    } else {
+      if (angulo_leme > limite_positivo) {
+        enviaSerial("L0D");
+      } else {
+        enviaSerial("L1D");
+      }
+    }
+    ultimo_comando = "L1";
+  }
+  
+  
+   else {
+    enviaSerial("L0D");
+    ultimo_comando = "L0";
+  }
+
+  //String de comando de máquina 
+  //Apenas valores positivos por enquanto
+  if ((int(thrust) > 0) && (int(thrust) <= 100)) {
+    int roundedThrust = static_cast<int>(std::round(thrust));
+    std::ostringstream oss;
+    oss << "A" << std::setfill('0') << std::setw(3) << roundedThrust;
+    thrust_convertido = oss.str(); //Envia o valor respectivo de máquina
+  } else if (int(thrust) <= 0) {
+    thrust_convertido = "A000"; //Apenas zera o atuador 
+  }
+
+enviaSerial(thrust_convertido); //Faço envio do comando de maquina para placa
+
   AppCastingMOOSApp::PostReport();
   return(true);
 }
@@ -148,7 +262,6 @@ bool Serial::OnStartUp()
   }
   bool portOpened = porta_serial.Create(endereco_porta_serial.c_str(), baudrate); //Abertura da porta serial
   registerVariables();	
-  enviaSerial(); //Função que faz o envio
   return(true);
 }
 
@@ -165,6 +278,7 @@ void Serial::registerVariables()
   Register("RETURN", 0); //Registro da variável return (start no pmarineviewer)
   Register("DESIRED_SPEED", 0); //Pega a veloc desejada
   Register("NAV_SPEED", 0); //Veloc do navio dada pelo GPS
+  Register("MOOS_MANUAL_OVERIDE", 0); //Comando manual da lancha
 
 }
 
@@ -179,79 +293,33 @@ bool Serial::buildReport()
   m_msgs << "============================================" << endl;
 
   ACTable actab(2);
-  actab << "deploy | angulo_leme | rudder | thrust | Maquina_Serial | Leme_Serial ";
+  actab << "deploy | feedback_leme | ultimo_comando | thrust_convertido ";
   actab.addHeaderLines();
-  actab << deploy << angulo_leme << rudder << thrust << thrust_convertido << rudder_convertido;
+  actab << deploy << feedback_leme << ultimo_comando << thrust_convertido;
   m_msgs << actab.getFormattedString();
 
   return(true);
 }
 
 
-void Serial::enviaSerial() 
+void Serial::enviaSerial(std::string sentenca) 
 {
-  //Função para controle já pronta pelo CASNAV
-  //Em testes, caso dê ruim só comentar aq
-
-  //Converto o DESIRED_RUDDER da escala de -100 a 100 para -32,5 a 32,5
-  //float valor_controle_leme = rudder/3.0769f; //Fiz uma função de 1 grau para conversão de escalas
-
-  Notify("VALOR_CONTROLE_LEME",rudder);
-
-  float erro_Leme = angulo_leme - rudder;
-
-  Notify("ERRO_Leme",erro_Leme);
-
-
-  //erro e foi calculado sendo atual - setpoint
-  float k = 0;//constante de variação tempo(s)/erro(graus);
-  //dados de k abaixo foram calculados em testes no seco (sem carga) com motor novo (bomba)
-  float k1 = 1.0f;//adjustment factor (ideally should be 1)
-  if (erro_Leme < 0)
-      k = 0.1495f;
-  else
-      k = 0.1812f;
-  int tempo = round(k*abs(erro_Leme)*10*k1);//times 10 because we need up to decimal of seconds precision
-  //UnityEngine.Debug.Log("Tempo Leme: " + tempo + "\n");
-
-  if (tempo > 100) tempo = 99; //O tempo é só dois dígitos
-  if (tempo > 80) tempo = 10; //Limite de 3 segundos para o tempo - Obtido em testes
-  Notify("TEMPO_LEME",tempo);
   
-  //Passo o tempo para string e assim mandar via serial
-  std::string tempo_leme = std::to_string(tempo);
-
-  if (tempo_leme.size() == 1) tempo_leme = "0"+tempo_leme; //Caso a string só tenha 1 número - Adiciono zero pela leitura do PIC
-
-  //Comando de velocidade
-  //Basicamente pega o DESIRED_THRUST e envia para o serial
-
-
-
-
-  //Comando novo de leme baseado no erro
-  if (erro_Leme < -2) {
-    rudder_convertido = "L0"+tempo_leme+"2"; //Guina tempo calculado para BE
-  }
-  else if (erro_Leme > 2) {
-    rudder_convertido = "L0"+tempo_leme+"1"; //Guina tempo calculado para BB
-  }
-  else if (int(erro_Leme) == 0) {
-    //Envia nada
-    rudder_convertido = "NULL";
-  } else {
-    rudder_convertido = "NULL";
-  }
-  
-  //Envio dos dados via serial para o leme
-  //Coloquei aqui o limite do erro do leme para evitar de ficar enviando ordens com erro pequeno - Por enquanto erro<-1 e erro>1
-  if (angulo_leme < 36 && angulo_leme > -36 && deploy == "true" && return_var == "false"){ //Modificação no teste da lancha 7fev2023 - deploy precisa ser true para enviar
-    if (rudder_convertido == "L0"){
-      porta_serial.Write(rudder_convertido.c_str(),2);
-    } else {
-      porta_serial.Write(rudder_convertido.c_str(),5); //Envia os caracteres para essa porta, coloquei 2 pq nos testes por enquanto só tem 2 caracteres
+  //Só manda se começar autonomo ou ficar no controle manual
+  if (deploy == "true" || manual_overide == "true") {
+    //Envio de feedback do leme para a porta serial
+    try {
+      porta_serial.Write(sentenca.c_str(),sentenca.size()); //Envia a sentença via serial
     }
-    
+    catch (std::system_error& e)
+    {
+      std::cout << e.what();
+    }
+
+    //Delay de 100ms
+    std::chrono::milliseconds delay(40);
+
+    std::this_thread::sleep_for(delay);
   }
 
 }
