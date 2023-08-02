@@ -52,7 +52,6 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/moos-ivp-douglas/build/src/iSerial/cmake_install.cmake")
   include("/home/moos-ivp-douglas/build/src/iDivisorNMEA/cmake_install.cmake")
   include("/home/moos-ivp-douglas/build/src/pUDP_Receiver/cmake_install.cmake")
-  include("/home/moos-ivp-douglas/build/src/pSimpass/cmake_install.cmake")
 
 endif()
 

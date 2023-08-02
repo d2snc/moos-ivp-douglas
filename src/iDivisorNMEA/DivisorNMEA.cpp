@@ -75,6 +75,7 @@ double lat_gps;
 double long_gps;
 double speed_gps;
 double heading_gps;
+double nav_depth;
 int contador_ais;
 long double heading_giro;
 long double angulo_leme;
@@ -268,6 +269,25 @@ bool DivisorNMEA::Iterate()
   Notify("MSG_UDP",msg); //Declarar uma variável pro MOOSDB
 
   std::string msg_string = msg;
+
+  //Parser de msg caso seja profundidade
+  // Create a string stream to split the input string by commas
+  std::stringstream ss(msg_string);
+  std::string token;
+
+  // Read the first token (should be "$SDDPT")
+  std::getline(ss, token, ',');
+
+  if (token == "$SDDPT") {
+      // Read the second token and convert it to a floating-point number
+      std::getline(ss, token, ',');
+      nav_depth = std::stof(token);
+
+      // Print the extracted nav_depth
+      Notify("NAV_PROFUNDIDADE", nav_depth);
+  }
+
+  
 
   // Crio um objeto para parse da msg NMEA
   MyNMEAParser NMEAParser;
