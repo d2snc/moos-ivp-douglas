@@ -259,6 +259,19 @@ pUDP_Receiver/fast:
 	$(MAKE) $(MAKESILENT) -f src/pUDP_Receiver/CMakeFiles/pUDP_Receiver.dir/build.make src/pUDP_Receiver/CMakeFiles/pUDP_Receiver.dir/build
 .PHONY : pUDP_Receiver/fast
 
+#=============================================================================
+# Target rules for targets named pXYZ
+
+# Build rule for target.
+pXYZ: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pXYZ
+.PHONY : pXYZ
+
+# fast build rule for target.
+pXYZ/fast:
+	$(MAKE) $(MAKESILENT) -f src/pXYZ/CMakeFiles/pXYZ.dir/build.make src/pXYZ/CMakeFiles/pXYZ.dir/build
+.PHONY : pXYZ/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -277,6 +290,7 @@ help:
 	@echo "... pOdometry"
 	@echo "... pUDP_Receiver"
 	@echo "... pXRelayTest"
+	@echo "... pXYZ"
 	@echo "... xml-documentation"
 .PHONY : help
 

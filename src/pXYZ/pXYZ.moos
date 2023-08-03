@@ -1,0 +1,9 @@
+//------------------------------------------------
+// pXYZ config block
+
+ProcessConfig = pXYZ
+{
+   AppTick   = 4
+   CommsTick = 4
+}
+

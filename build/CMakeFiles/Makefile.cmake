@@ -50,6 +50,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/home/moos-ivp-douglas/src/pOdometry/CMakeLists.txt"
   "/home/moos-ivp-douglas/src/pUDP_Receiver/CMakeLists.txt"
   "/home/moos-ivp-douglas/src/pXRelayTest/CMakeLists.txt"
+  "/home/moos-ivp-douglas/src/pXYZ/CMakeLists.txt"
   "/home/moos-ivp/build/MOOS/MOOSCore/MOOSConfig.cmake"
   "/home/moos-ivp/build/MOOS/MOOSCore/MOOSConfigVersion.cmake"
   "/home/moos-ivp/build/MOOS/MOOSCore/MOOSTargets.cmake"
@@ -79,6 +80,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "src/iDivisorNMEA/NMEAParserLib/CMakeFiles/CMakeDirectoryInformation.cmake"
   "src/iDivisorNMEA/libais/CMakeFiles/CMakeDirectoryInformation.cmake"
   "src/pUDP_Receiver/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "src/pXYZ/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
@@ -94,4 +96,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "src/iDivisorNMEA/NMEAParserLib/CMakeFiles/NMEAParserLib.dir/DependInfo.cmake"
   "src/iDivisorNMEA/libais/CMakeFiles/libais.dir/DependInfo.cmake"
   "src/pUDP_Receiver/CMakeFiles/pUDP_Receiver.dir/DependInfo.cmake"
+  "src/pXYZ/CMakeFiles/pXYZ.dir/DependInfo.cmake"
   )
