@@ -1,3 +1,6 @@
+
+
+
 ###Atualizações###
 
 19MAR23: Adicionado socket UDP para envio de informações para o OpenCPN localmente (127.0.0.1:10112), podendo ser alterado no código do iDivisorNMEA.
