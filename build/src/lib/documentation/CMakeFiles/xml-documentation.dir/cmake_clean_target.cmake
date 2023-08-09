@@ -1,3 +1,3 @@
 file(REMOVE_RECURSE
-  "../../../../lib/libxml-documentation.a"
+  "/home/moos-ivp-douglas/lib/libxml-documentation.a"
 )

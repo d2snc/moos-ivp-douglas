@@ -1,3 +1,3 @@
 file(REMOVE_RECURSE
-  "../../../../lib/libNMEAParserLib.a"
+  "/home/moos-ivp-douglas/lib/libNMEAParserLib.a"
 )

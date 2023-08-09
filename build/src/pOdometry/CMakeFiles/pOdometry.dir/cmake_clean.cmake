@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "../../../bin/pOdometry"
-  "../../../bin/pOdometry.pdb"
+  "/home/moos-ivp-douglas/bin/pOdometry"
+  "/home/moos-ivp-douglas/bin/pOdometry.pdb"
   "CMakeFiles/pOdometry.dir/Odometry.cpp.o"
   "CMakeFiles/pOdometry.dir/Odometry.cpp.o.d"
   "CMakeFiles/pOdometry.dir/Odometry_Info.cpp.o"

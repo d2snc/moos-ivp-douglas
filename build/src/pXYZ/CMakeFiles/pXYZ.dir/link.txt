@@ -1,0 +1,1 @@
+/usr/bin/c++  -fPIC -g -Wdeprecated-declarations -rdynamic CMakeFiles/pXYZ.dir/XYZ.cpp.o CMakeFiles/pXYZ.dir/XYZ_Info.cpp.o CMakeFiles/pXYZ.dir/main.cpp.o -o /home/moos-ivp-douglas/bin/pXYZ   -L/home/moos-ivp/lib  -Wl,-rpath,/home/moos-ivp/lib /home/moos-ivp/build/MOOS/MOOSCore/lib/libMOOS.a -lapputil -lmbutil -lm -lpthread 

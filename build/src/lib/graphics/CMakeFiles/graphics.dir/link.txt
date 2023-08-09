@@ -1,2 +1,2 @@
-/usr/bin/ar qc ../../../../lib/libgraphics.a CMakeFiles/graphics.dir/vibes/vibes.cpp.o
-/usr/bin/ranlib ../../../../lib/libgraphics.a
+/usr/bin/ar qc /home/moos-ivp-douglas/lib/libgraphics.a CMakeFiles/graphics.dir/vibes/vibes.cpp.o
+/usr/bin/ranlib /home/moos-ivp-douglas/lib/libgraphics.a
