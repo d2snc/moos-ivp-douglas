@@ -81,6 +81,7 @@ long double angulo_leme;
 char* saida_pCmd;
 char* saida_pData;
 int msg_debug;
+int current_gear;
 
 //Variáveis globais para o receiver UDP
 int sd, rc, n;
@@ -360,10 +361,12 @@ bool DivisorNMEA::Iterate()
           string y = to_string(nav_y);
           
           //Coloquei essa lógica para não confundir contato AIS com o navio principal no início da execução
+          /*
           if (contador_ais > 10) {
             Notify("NODE_REPORT","NAME=contato_"+msg_mmsi+",TYPE=SHIP,TIME="+time_string+",LAT="+msg_lat+",LON="+msg_lon+",SPD="+msg_spd+",HDG="+msg_cog+",LENGTH=3.8,MODE=DRIVE,X="+x+",Y="+y);
           }
           contador_ais +=1;
+          */
         }
       }
     }
@@ -395,6 +398,39 @@ bool DivisorNMEA::Iterate()
         std::cout << e.what();
       }
     }
+
+    else if (msg_string.substr(0,13) == "$MXPGN,01F205") {
+      try {
+        size_t lastCommaPos = msg_string.rfind(",");
+        size_t asteriskPos = msg_string.find("*");
+
+        if (lastCommaPos != std::string::npos && asteriskPos != std::string::npos && lastCommaPos < asteriskPos) {
+            // Extract the substring between the last comma and the asterisk
+
+            std::string hexSubstring = msg_string.substr(lastCommaPos + 1, asteriskPos - lastCommaPos - 1);
+
+            // Convert the hexadecimal substring to binary
+            std::stringstream ss;
+            ss << std::hex << hexSubstring;
+            unsigned long int intValue;
+            ss >> intValue;
+
+            // Convert to binary string
+            std::bitset<64> binaryValue(intValue); 
+            std::string binaryString = binaryValue.to_string();
+            // Get the 9th and 10th bits
+            char ninthBit = binaryString[8]; // 0-based indexing
+            char tenthBit = binaryString[9];
+
+            // Convert the bits to an integer value
+            current_gear = (ninthBit - '0') * 2 + (tenthBit - '0');  
+            Notify("CURRENT_GEAR", current_gear);    
+        } //endif
+      } //try
+      catch (std::system_error& e) {
+        std::cout << e.what();
+      } //catch
+    } //else if MXPGN
   
 
   //Reseto os dados
@@ -505,7 +541,3 @@ bool DivisorNMEA::buildReport()
 
   return(true);
 }
-
-
-
-

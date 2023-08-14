@@ -49,6 +49,9 @@ class Serial : public AppCastingMOOSApp
     #endif
     double rudder;
     double thrust;
+    int desired_gear;
+    int last_gear;
+    double min_thrust;
     double angulo_leme;
     double desired_speed;
     double nav_speed;

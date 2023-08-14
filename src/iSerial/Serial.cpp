@@ -16,9 +16,12 @@
 #include <chrono>
 #include <thread>
 
-
+//#define MARCHA_NEUTRA 0
+//#define MARCHA_RE -1
+//#define MARCHA_AVANTE 1
 
 using namespace std;
+
 
 //---------------------------------------------------------
 // Constructor()
@@ -36,9 +39,13 @@ Serial::Serial()
   rudder = 0; //Valor inicial do leme
   thrust = 0; //Valor inicial da máquina
   feedback_leme = "NULL";
+  desired_gear = 0;
+  last_gear = 0;
 
   limite_positivo = 40; //Ângulo máximo do leme
   limite_negativo = -55;
+
+  min_thrust = 5;
 
   //Simulador de ângulo do leme
   //angulo_leme = 0; //Começa zerado
@@ -53,12 +60,23 @@ Serial::Serial()
 }
 
 //---------------------------------------------------------
+// Comandos na Serial
+// L{0,1,2}{D,R} comando de Leme 
+// A{000-100} Atuador de máquina
+// E{0,1,2} Engrazamento Neutro, avante, Ré
+
+
+//---------------------------------------------------------
 // Destructor
 
 Serial::~Serial()
 {
   enviaSerial("L0D"); //Para o leme quando encerra o programa
   enviaSerial("A000"); //Para o atuador de máquina a 0%
+  std::chrono::milliseconds delay(500);
+  std::this_thread::sleep_for(delay);
+  enviaSerial("E0");  // Marcha no neutro
+  last_gear = 0;
   std::cout << "Leme a meio" << std::endl;
 }
 
@@ -90,6 +108,8 @@ bool Serial::OnNewMail(MOOSMSG_LIST &NewMail)
         thrust = msg.GetDouble();
      else if(key == "ANGULO_LEME")
         angulo_leme = msg.GetDouble();
+      else if(key == "DESIRED_GEAR")
+        desired_gear = (int)msg.GetDouble();
      else if(key == "DEPLOY")
         deploy = msg.GetString(); 
      else if(key == "MOOS_MANUAL_OVERIDE")
@@ -100,7 +120,7 @@ bool Serial::OnNewMail(MOOSMSG_LIST &NewMail)
         desired_speed = msg.GetDouble();
      else if(key == "NAV_SPEED")
         nav_speed = msg.GetDouble();
-     else if(key != "APPCAST_REQ") // handled by AppCastingMOOSApp
+     else if(key != "APPCAST_REQ") // handlinted by AppCastingMOOSApp
        reportRunWarning("Unhandled Mail: " + key);
    }
 	
@@ -126,6 +146,30 @@ bool Serial::Iterate()
   // Do your thing here!
   // Pensando em colocar aqui nessa interação o envio direto da porta serial
   // Vou fazer um teste primeiro para saber qual é a saída
+
+  if (desired_gear != last_gear) {
+    if (thrust < min_thrust) {
+      std::string gear_msg = "E" + std::to_string(desired_gear);
+      enviaSerial(gear_msg);
+      last_gear = desired_gear;
+    }
+  } 
+
+  //if (last_gear != 0) {
+    if ((int(thrust) > 0) && (int(thrust) <= 100)) {
+      int roundedThrust = static_cast<int>(std::round(thrust));
+      std::ostringstream oss;
+      oss << "A" << std::setfill('0') << std::setw(3) << roundedThrust;
+      thrust_convertido = oss.str(); //Envia o valor respectivo de máquina
+    } 
+    else if (int(thrust) <= 0) {
+      thrust_convertido = "A000"; //Apenas zera o atuador 
+    }
+
+    enviaSerial(thrust_convertido); //Faço envio do comando de maquina para placa
+  //}
+
+
 
   //Controle pelo erro obtido
 
@@ -211,18 +255,6 @@ bool Serial::Iterate()
     ultimo_comando = "L0";
   }
 
-  //String de comando de máquina 
-  //Apenas valores positivos por enquanto
-  if ((int(thrust) > 0) && (int(thrust) <= 100)) {
-    int roundedThrust = static_cast<int>(std::round(thrust));
-    std::ostringstream oss;
-    oss << "A" << std::setfill('0') << std::setw(3) << roundedThrust;
-    thrust_convertido = oss.str(); //Envia o valor respectivo de máquina
-  } else if (int(thrust) <= 0) {
-    thrust_convertido = "A000"; //Apenas zera o atuador 
-  }
-
-enviaSerial(thrust_convertido); //Faço envio do comando de maquina para placa
 
   AppCastingMOOSApp::PostReport();
   return(true);
@@ -263,6 +295,13 @@ bool Serial::OnStartUp()
   bool portOpened = porta_serial.Create(endereco_porta_serial.c_str(), baudrate); //Abertura da porta serial
   registerVariables();	
   return(true);
+
+  //enviaSerial("L0D"); //Para o leme quando encerra o programa
+  enviaSerial("A080"); //Para o atuador de máquina a 0%
+  //std::chrono::milliseconds delay(1000);
+  //std::this_thread::sleep_for(delay);
+  //enviaSerial("E0");  // Marcha no neutro
+
 }
 
 //---------------------------------------------------------
@@ -274,6 +313,7 @@ void Serial::registerVariables()
   Register("DESIRED_RUDDER", 0); //Registro da variável do leme
   Register("DESIRED_THRUST", 0); //Registro da variável da máquina
   Register("ANGULO_LEME", 0); //Registro da variável da máquina
+  Register("DESIRED_GEAR", 0); //Registro da leitura de marcha
   Register("DEPLOY", 0); //Registro da variável deploy (start no pmarineviewer)
   Register("RETURN", 0); //Registro da variável return (start no pmarineviewer)
   Register("DESIRED_SPEED", 0); //Pega a veloc desejada
