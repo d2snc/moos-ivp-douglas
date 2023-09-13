@@ -1,0 +1,1 @@
+/usr/bin/c++ -rdynamic CMakeFiles/xbow440_example.dir/examples/xbow440_example.cpp.o -o xbow440_example   -L/tmp/usr/local/lib  -Wl,-rpath,/tmp/usr/local/lib libxbow440.a /usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0 /usr/lib/x86_64-linux-gnu/libboost_thread.so.1.71.0 /usr/lib/x86_64-linux-gnu/libboost_atomic.so.1.71.0 -lpthread serial/libserial.a -lrt -lpthread 

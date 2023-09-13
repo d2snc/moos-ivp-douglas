@@ -1,0 +1,8 @@
+/home/douglas/desktop/TCC/xbow440/build/CMakeFiles/xbow440.dir
+/home/douglas/desktop/TCC/xbow440/build/CMakeFiles/xbow440_example.dir
+/home/douglas/desktop/TCC/xbow440/build/CMakeFiles/edit_cache.dir
+/home/douglas/desktop/TCC/xbow440/build/CMakeFiles/rebuild_cache.dir
+/home/douglas/desktop/TCC/xbow440/build/serial/CMakeFiles/serial.dir
+/home/douglas/desktop/TCC/xbow440/build/serial/CMakeFiles/serial_example.dir
+/home/douglas/desktop/TCC/xbow440/build/serial/CMakeFiles/edit_cache.dir
+/home/douglas/desktop/TCC/xbow440/build/serial/CMakeFiles/rebuild_cache.dir

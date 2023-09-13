@@ -1,0 +1,1 @@
+/usr/bin/c++  -fPIC -g -Wdeprecated-declarations -rdynamic CMakeFiles/serial_example.dir/examples/serial_example.cc.o -o /home/moos-ivp-douglas/bin/serial_example   -L/home/moos-ivp/lib  -Wl,-rpath,/home/moos-ivp/lib /home/moos-ivp-douglas/lib/libserial.a -lrt -lpthread 

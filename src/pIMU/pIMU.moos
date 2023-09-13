@@ -1,0 +1,9 @@
+//------------------------------------------------
+// pIMU config block
+
+ProcessConfig = pIMU
+{
+   AppTick   = 4
+   CommsTick = 4
+}
+

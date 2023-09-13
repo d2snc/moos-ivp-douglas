@@ -1,0 +1,8 @@
+prefix=/home/douglas/desktop/TCC/imu/xbow440/serial/build/devel
+
+Name: serial
+Description: Description of serial
+Version: 1.2.1
+Cflags: -I/home/douglas/desktop/TCC/imu/xbow440/serial/include
+Libs: -L${prefix}/lib -lserial -lrt -lpthread
+Requires: 

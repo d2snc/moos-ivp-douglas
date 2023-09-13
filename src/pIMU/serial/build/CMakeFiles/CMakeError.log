@@ -1,0 +1,65 @@
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/douglas/desktop/TCC/imu/xbow440/serial/build/CMakeFiles/CMakeScratch/TryCompile-Z0TOKc
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_be834/fast && make[1]: Entrando no diretório '/home/douglas/desktop/TCC/imu/xbow440/serial/build/CMakeFiles/CMakeScratch/TryCompile-Z0TOKc'
+/usr/bin/make  -f CMakeFiles/cmTC_be834.dir/build.make CMakeFiles/cmTC_be834.dir/build
+make[2]: Entrando no diretório '/home/douglas/desktop/TCC/imu/xbow440/serial/build/CMakeFiles/CMakeScratch/TryCompile-Z0TOKc'
+Building C object CMakeFiles/cmTC_be834.dir/src.c.o
+/usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_be834.dir/src.c.o -c /home/douglas/desktop/TCC/imu/xbow440/serial/build/CMakeFiles/CMakeScratch/TryCompile-Z0TOKc/src.c
+Linking C executable cmTC_be834
+/home/douglas/.local/lib/python3.10/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_be834.dir/link.txt --verbose=1
+/usr/bin/cc -rdynamic CMakeFiles/cmTC_be834.dir/src.c.o -o cmTC_be834 
+/usr/bin/ld: CMakeFiles/cmTC_be834.dir/src.c.o: na função "main":
+src.c:(.text+0x46): referência não definida para "pthread_create"
+/usr/bin/ld: src.c:(.text+0x52): referência não definida para "pthread_detach"
+/usr/bin/ld: src.c:(.text+0x5e): referência não definida para "pthread_cancel"
+/usr/bin/ld: src.c:(.text+0x6f): referência não definida para "pthread_join"
+collect2: error: ld returned 1 exit status
+make[2]: *** [CMakeFiles/cmTC_be834.dir/build.make:99: cmTC_be834] Erro 1
+make[2]: Saindo do diretório '/home/douglas/desktop/TCC/imu/xbow440/serial/build/CMakeFiles/CMakeScratch/TryCompile-Z0TOKc'
+make[1]: *** [Makefile:127: cmTC_be834/fast] Erro 2
+make[1]: Saindo do diretório '/home/douglas/desktop/TCC/imu/xbow440/serial/build/CMakeFiles/CMakeScratch/TryCompile-Z0TOKc'
+
+
+Source file was:
+#include <pthread.h>
+
+static void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/douglas/desktop/TCC/imu/xbow440/serial/build/CMakeFiles/CMakeScratch/TryCompile-6VGdEe
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_12f61/fast && make[1]: Entrando no diretório '/home/douglas/desktop/TCC/imu/xbow440/serial/build/CMakeFiles/CMakeScratch/TryCompile-6VGdEe'
+/usr/bin/make  -f CMakeFiles/cmTC_12f61.dir/build.make CMakeFiles/cmTC_12f61.dir/build
+make[2]: Entrando no diretório '/home/douglas/desktop/TCC/imu/xbow440/serial/build/CMakeFiles/CMakeScratch/TryCompile-6VGdEe'
+Building C object CMakeFiles/cmTC_12f61.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create -o CMakeFiles/cmTC_12f61.dir/CheckFunctionExists.c.o -c /home/douglas/desktop/TCC/imu/xbow440/serial/build/CMakeFiles/CMakeScratch/TryCompile-6VGdEe/CheckFunctionExists.c
+Linking C executable cmTC_12f61
+/home/douglas/.local/lib/python3.10/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_12f61.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create -rdynamic CMakeFiles/cmTC_12f61.dir/CheckFunctionExists.c.o -o cmTC_12f61  -lpthreads 
+/usr/bin/ld: não foi possível localizar -lpthreads
+collect2: error: ld returned 1 exit status
+make[2]: *** [CMakeFiles/cmTC_12f61.dir/build.make:99: cmTC_12f61] Erro 1
+make[2]: Saindo do diretório '/home/douglas/desktop/TCC/imu/xbow440/serial/build/CMakeFiles/CMakeScratch/TryCompile-6VGdEe'
+make[1]: *** [Makefile:127: cmTC_12f61/fast] Erro 2
+make[1]: Saindo do diretório '/home/douglas/desktop/TCC/imu/xbow440/serial/build/CMakeFiles/CMakeScratch/TryCompile-6VGdEe'
+
+
+

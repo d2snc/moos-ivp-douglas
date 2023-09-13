@@ -17,8 +17,8 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/moos-ivp-douglas/src/iDivisorNMEA/NMEAParserLib/NMEASentenceRMC.cpp" "src/iDivisorNMEA/NMEAParserLib/CMakeFiles/NMEAParserLib.dir/NMEASentenceRMC.cpp.o" "gcc" "src/iDivisorNMEA/NMEAParserLib/CMakeFiles/NMEAParserLib.dir/NMEASentenceRMC.cpp.o.d"
   )
 
-# Targets to which this target links which contain Fortran sources.
-set(CMAKE_Fortran_TARGET_LINKED_INFO_FILES
+# Targets to which this target links.
+set(CMAKE_TARGET_LINKED_INFO_FILES
   )
 
 # Fortran module output directory.

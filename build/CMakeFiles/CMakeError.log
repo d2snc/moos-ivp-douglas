@@ -1,22 +1,22 @@
 Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
-Change Dir: /home/moos-ivp-douglas/build/CMakeFiles/CMakeScratch/TryCompile-zqdEWN
+Change Dir: /home/moos-ivp-douglas/build/CMakeFiles/CMakeScratch/TryCompile-fH6elc
 
-Run Build Command(s):/usr/bin/make -f Makefile cmTC_43ddb/fast && /usr/bin/make  -f CMakeFiles/cmTC_43ddb.dir/build.make CMakeFiles/cmTC_43ddb.dir/build
-make[1]: Entrando no diretório '/home/moos-ivp-douglas/build/CMakeFiles/CMakeScratch/TryCompile-zqdEWN'
-Building C object CMakeFiles/cmTC_43ddb.dir/src.c.o
-/usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_43ddb.dir/src.c.o -c /home/moos-ivp-douglas/build/CMakeFiles/CMakeScratch/TryCompile-zqdEWN/src.c
-Linking C executable cmTC_43ddb
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_43ddb.dir/link.txt --verbose=1
-/usr/bin/cc -rdynamic CMakeFiles/cmTC_43ddb.dir/src.c.o -o cmTC_43ddb 
-/usr/bin/ld: CMakeFiles/cmTC_43ddb.dir/src.c.o: na função "main":
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_c996f/fast && /usr/bin/make  -f CMakeFiles/cmTC_c996f.dir/build.make CMakeFiles/cmTC_c996f.dir/build
+make[1]: Entrando no diretório '/home/moos-ivp-douglas/build/CMakeFiles/CMakeScratch/TryCompile-fH6elc'
+Building C object CMakeFiles/cmTC_c996f.dir/src.c.o
+/usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_c996f.dir/src.c.o -c /home/moos-ivp-douglas/build/CMakeFiles/CMakeScratch/TryCompile-fH6elc/src.c
+Linking C executable cmTC_c996f
+/home/douglas/.local/lib/python3.10/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c996f.dir/link.txt --verbose=1
+/usr/bin/cc -rdynamic CMakeFiles/cmTC_c996f.dir/src.c.o -o cmTC_c996f 
+/usr/bin/ld: CMakeFiles/cmTC_c996f.dir/src.c.o: na função "main":
 src.c:(.text+0x46): referência não definida para "pthread_create"
 /usr/bin/ld: src.c:(.text+0x52): referência não definida para "pthread_detach"
 /usr/bin/ld: src.c:(.text+0x5e): referência não definida para "pthread_cancel"
 /usr/bin/ld: src.c:(.text+0x6f): referência não definida para "pthread_join"
 collect2: error: ld returned 1 exit status
-make[1]: *** [CMakeFiles/cmTC_43ddb.dir/build.make:99: cmTC_43ddb] Erro 1
-make[1]: Saindo do diretório '/home/moos-ivp-douglas/build/CMakeFiles/CMakeScratch/TryCompile-zqdEWN'
-make: *** [Makefile:127: cmTC_43ddb/fast] Erro 2
+make[1]: *** [CMakeFiles/cmTC_c996f.dir/build.make:99: cmTC_c996f] Erro 1
+make[1]: Saindo do diretório '/home/moos-ivp-douglas/build/CMakeFiles/CMakeScratch/TryCompile-fH6elc'
+make: *** [Makefile:127: cmTC_c996f/fast] Erro 2
 
 
 Source file was:
